@@ -1,0 +1,64 @@
+project_name: MathorCup_2026_B
+# 数据集①官方说明使用北京时间 UTC+8，事件10:30来自赛题叙述，09:00为回放发布点
+snapshot_raw: '2026-08-26 09:00:00'
+timezone_confirmed: true
+station_timezone: Asia/Shanghai
+station_elevation_m: 4140
+station_source: official_tpdc_dataset_1
+external_data_policy: q2_only
+# 与灾害发生前时间严格隔离：所有Q1/Q3当前输入只取 snapshot_raw 之前的数据
+historic_years: [2021, 2022, 2023, 2024, 2025]
+match_doy_radius: 15
+min_valid_fraction: 0.75
+windows_hours: [6, 24, 72, 168]
+ranking_primary_window_hours: 24
+ranking_redundancy_spearman: 0.85
+n_pseudo_control_max: 400
+q2:
+  cv_splits: 4
+  C: 1.0
+  sensitivity_remove_lake: true
+  glacier_rho_kg_m3: 900
+  lapse_rates_C_per_km: [5.0, 6.5, 8.0]
+q3:
+  # 竞赛主任务：短时气象先兆预报，1/2小时分辨率可覆盖10:30题面事件时间
+  primary_horizon_hours: 6
+  step_hours: 0.5
+  official_event_time_same_clock_assumption: '2026-08-26 10:30:00'
+  warning_cross_probability_threshold: 0.25
+  precursor_score_quantile: 0.85
+  samples: 1200
+  random_seed: 20261023
+  scenario_only: true
+q4:
+  # 官方冰川数据能得到冰川面但不能自动识别2026年真正崩塌点
+  route_verified: false
+  release_source: 'q2_contiguous_high_score_component_unverified'
+  # 仅用于演示地形坐标与线路方案的参考口岸坐标，需要团队核对；不得作正式模拟真值
+  port_lonlat_provisional: [85.3800, 28.2800]
+  route_waypoints_file: 'events/verified_route.csv'
+  grid_step_m: 60
+  # 赛题推演的参考情景：文献初始冰岩崩~1.03e8m³，后续可动泥石流~3.6e7m³；
+  # 本情景使用5e7m³有效运动方量（含沿程动员可能性），不是宣称真实释放量。
+  # mu=0.04, xi=2500对应高流动性混合碎屑流的情景参数，需开展区间敏感性检验。
+  width_m: 150.0
+  release_volume_m3: 50000000
+  release_duration_s: 180
+  initial_velocity_m_s: 65.0
+  xi_m_s2: 2500
+  mu: 0.040
+  density_kg_m3: 1800
+  total_seconds: 1800
+  cfl: 0.35
+  output_frames: 12
+  run_inlet_ablation: true   # 额外运行旧3x3边界作为对照，只影响Q4_06B
+  scenario_grid:
+    volumes_m3: [30000000, 50000000, 80000000]
+    mus: [0.025, 0.040, 0.060]
+    xi_m_s2: [1500, 2500, 3500]
+    widths_m: [100, 150, 250]
+    initial_velocities_m_s: [40, 65, 90]
+    release_durations_s: [180, 360, 600]
+plot:
+  dpi: 170
+  style: clean_paper
