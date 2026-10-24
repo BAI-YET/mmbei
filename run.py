@@ -16,8 +16,10 @@ def main():
     p.add_argument('--official-dir',default=None,help='directory containing the official ZIP packages')
     p.add_argument('--config',default=None)
     p.add_argument('--allow-provisional-q4',action='store_true',help='legacy alias: run a physical scenario on the candidate DEM corridor')
-    p.add_argument('--strict-route',action='store_true',help='disable candidate-route scenario; only run numerical benchmark unless externally verified')
+    p.add_argument('--strict-route',action='store_true',help='require a checked route for the reference propagation calculation')
+    p.add_argument('--refit-q4',action='store_true',help='repeat Q4 calibration experiments instead of reusing matching fitted parameters')
     args=p.parse_args();ctx=Context(ROOT,args.config);configure_plotting()
+    ctx.cfg['refit_q4']=args.refit_q4
     # Each recomputed stage owns its output directory: never mix old and new figures.
     import shutil
     stages=['q1','q2','q3','q4','joint'] if args.stage=='all' else ([args.stage] if args.stage in ('q1','q2','q3','q4') else [])
@@ -56,6 +58,8 @@ def main():
     if args.stage in ('all','q1'):
         from mathorcup.q1_event_signatures import execute_q1
         execute_q1(ctx)
+        from mathorcup.question_completion import complete_q1
+        complete_q1(ctx)
     if args.stage in ('all','q2'):
         from mathorcup.q2_spatial_mechanism import execute_q2
         execute_q2(ctx)
@@ -63,11 +67,15 @@ def main():
         execute_q2_trigger(ctx)
         from mathorcup.task_evidence import q2_complete_evidence
         q2_complete_evidence(ctx)
+        from mathorcup.question_completion import complete_q2
+        complete_q2(ctx)
     if args.stage in ('all','q3'):
         from mathorcup.q3_task_aligned import execute_q3_aligned
         execute_q3_aligned(ctx)
         from mathorcup.q3_feature_bridge import execute_q3_feature_bridge
         execute_q3_feature_bridge(ctx)
+        from mathorcup.question_completion import complete_q3
+        complete_q3(ctx)
     if args.stage in ('all','q4'):
         from mathorcup.q4_flowpath import execute_q4_path
         from mathorcup.q4_solver import execute_q4_solver
@@ -75,6 +83,8 @@ def main():
         execute_q4_solver(ctx,route)
         from mathorcup.q4_grid_review import execute_q4_grid_review
         execute_q4_grid_review(ctx,route)
+        from mathorcup.q4_cascade_reconstruction import execute_cascade_reconstruction
+        execute_cascade_reconstruction(ctx)
         from mathorcup.q3_spatial_footprint import execute_q3_spatial
         execute_q3_spatial(ctx)
         if args.stage=='q4':
@@ -89,6 +99,8 @@ def main():
         make_report(ctx)
         from mathorcup.redraw_catalog import build_redraw_catalog
         build_redraw_catalog(ctx)
+        from mathorcup.provenance import audit_project
+        audit_project(ctx)
     if args.stage=='tests':
         import subprocess
         raise SystemExit(subprocess.call([sys.executable,'-m','pytest','-q','tests'],cwd=ROOT))

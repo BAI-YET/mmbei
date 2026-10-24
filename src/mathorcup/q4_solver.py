@@ -249,7 +249,8 @@ def _fill_nan_elevation(z):
     return z[tuple(ids)]
 
 def choose_inlet_on_valley(z, source_rc, flow_direction_xy=None, dx=60.,
-                           mode='valley_cross_section', halfwidth_cells=5):
+                           mode='valley_cross_section', halfwidth_cells=5,
+                           inlet_width_m=None,inlet_depth_m=None):
     """Select inlet cells from *measured DEM*, not an unconstrained uphill 3x3 patch.
 
     With flow direction, search across the local *normal* cross-section (not along the
@@ -294,6 +295,18 @@ def choose_inlet_on_valley(z, source_rc, flow_direction_xy=None, dx=60.,
     heights=np.array([item[3] for item in selected],dtype=float)
     weight=np.exp(-np.maximum(heights-heights.min(),0)/35.)
     weight=weight/weight.sum()
+    if inlet_width_m is not None:
+        radius=max(1,int(np.ceil(float(inlet_width_m)/(2*dx))))
+        cross=[]
+        for kcross in range(-radius,radius+1):
+            rr=int(round(ar-kcross*normal[1]));cc=int(round(ac+kcross*normal[0]))
+            if 1<=rr<nr-1 and 1<=cc<nc-1 and np.isfinite(z[rr,cc]):cross.append((rr,cc))
+        cross=np.unique(np.asarray(cross,int),axis=0)
+        stage=float(z[ar,ac])+float(inlet_depth_m if inlet_depth_m is not None else 20.)
+        depth=np.maximum(stage-z[cross[:,0],cross[:,1]],0.)
+        active=depth>0
+        if not active.any():raise ValueError('Measured-DEM inlet section has no active cells')
+        cells=cross[active];weight=depth[active]**1.5;weight/=weight.sum()
     return {'nominal_rc':(r,c),'snapped_rc':(ar,ac),'cross_section_offset_cells':int(k),
             'cells':cells,'weights':weight,'elevation_nominal_m':float(z[r,c]),
             'elevation_snapped_m':float(z[ar,ac]),'flow_direction_xy':direction,
@@ -354,7 +367,7 @@ def advance_2d(U,z,dx,dt,mu,xi,source_i,source_j,inject_m3,velocity_xy=(0,0),
 
 def simulate_2d(z,dx,source_rc,inlet_curve,total_seconds=2400,mu=.12,xi=400,
                 cfl=.24,frames=10,inlet_mode='valley_cross_section',flow_direction_xy=None,
-                density_kg_m3=1800.0):
+                density_kg_m3=1800.0,inlet_width_m=None,inlet_depth_m=None):
     """2D simulation on real DEM; time zero = 1D release, NOT 2D inlet activation.
 
     If source is delayed, select snapshots relative to FIRST 2D inlet entry rather
@@ -366,6 +379,7 @@ def simulate_2d(z,dx,source_rc,inlet_curve,total_seconds=2400,mu=.12,xi=400,
     t=0.;steps=0;injected=0.;net_out=0.;cut=0.
     times=np.array(inlet_curve.time_s,float)
     flow=np.maximum(np.array(inlet_curve.sensor_discharge_m3_s,float),0)
+    cumulative=inlet_curve.sensor_cumulative_m3.to_numpy(float) if 'sensor_cumulative_m3' in inlet_curve else None
     if 'sensor_velocity_m_s' in inlet_curve:
         source_velocity=np.maximum(np.array(inlet_curve.sensor_velocity_m_s,float),0)
     else: source_velocity=np.zeros_like(flow)
@@ -393,7 +407,8 @@ def simulate_2d(z,dx,source_rc,inlet_curve,total_seconds=2400,mu=.12,xi=400,
     legacy_position=inlet_mode in ('legacy_3x3','legacy_directional')
     uses_momentum=inlet_mode in ('legacy_directional','valley_cross_section')
     placement=choose_inlet_on_valley(z,source_rc,flow_direction_xy,dx,
-         mode='legacy_3x3' if legacy_position else 'valley_cross_section',halfwidth_cells=5)
+         mode='legacy_3x3' if legacy_position else 'valley_cross_section',halfwidth_cells=5,
+         inlet_width_m=inlet_width_m,inlet_depth_m=inlet_depth_m)
     inlet_cells=None if legacy_position else placement['cells']
     inlet_weights=None if legacy_position else placement['weights']
     uvec=placement['flow_direction_xy']
@@ -412,6 +427,8 @@ def simulate_2d(z,dx,source_rc,inlet_curve,total_seconds=2400,mu=.12,xi=400,
         if knot<len(times):dt=min(dt,float(times[knot]-t))
         q0=float(np.interp(t,times,flow,left=0,right=0));q1=float(np.interp(t+dt,times,flow,left=0,right=0))
         qin=.5*(q0+q1)
+        if cumulative is not None:
+            qin=max(0.,float(np.interp(t+dt,times,cumulative)-np.interp(t,times,cumulative)))/dt
         speedin=float(np.interp(t+.5*dt,times,source_velocity,left=0,right=0))
         velocity_xy=tuple(uvec*speedin) if uses_momentum else (0,0)
         U,diver,negative=advance_2d(U,z,dx,dt,mu,xi,source_rc[0],source_rc[1],qin*dt,
@@ -599,20 +616,11 @@ def _sensitivity(ctx,profile):
     savefig(fig,out/'Q4_08_volume_friction_phase_diagram.png')
     return df
 
-def _synthetic_benchmark(ctx):
-    # Verifiable numerical benchmark even without route evidence
-    s=np.arange(0,3000,50.)
-    z=5000-np.tan(np.deg2rad(22))*s
-    p=pd.DataFrame({'distance_m':s,'elevation_m':z})
-    run=simulate_1d(p,mu=.12,xi=400,width=30,volume=10000,duration=50,total_seconds=550,frames=12)
-    _save_1d(ctx,run,'SYNTHETIC_SLOPE_BENCHMARK_NO_REAL_EVENT')
-    write_json(ctx.folder('q4')/'Q4_solver_execution_status.json',{'status':'SYNTHETIC_ONLY','reason':'Route not verified; realistic reconstruction prohibited'})
-    return run
-
 def execute_q4_solver(ctx,profile):
     if profile is None:
-        record_warning('Q4 runs only synthetic slope benchmark. Use --allow-provisional-q4 to show unverified DEM scenario, or provide verified_route.csv.')
-        return _synthetic_benchmark(ctx)
+        write_json(ctx.folder('q4')/'Q4_solver_execution_status.json',{'status':'ROUTE_REQUIRED',
+             'next_step':'Supply a checked route or enable DEM corridor modelling'})
+        return None
     cfg=ctx.cfg['q4'];out=ctx.folder('q4')
     kws=dict(mu=cfg['mu'],xi=cfg['xi_m_s2'],width=cfg['width_m'],volume=cfg['release_volume_m3'],
              duration=cfg['release_duration_s'],total_seconds=cfg['total_seconds'],
@@ -661,18 +669,10 @@ def execute_q4_solver(ctx,profile):
         scenario_label='ONE_WAY_1D_TO_2D_SCENARIO' if primary_1d_coupled else 'UPPER_VOLUME_ONE_WAY_SENSITIVITY_SCENARIO'
         state='PROVISIONAL_ONE_WAY_COUPLED_SCENARIO' if primary_1d_coupled else 'SENSITIVITY_ONE_WAY_COUPLED_SCENARIO'
     else:
-        # Non-arrival is valid, hence 2D must use an independent scenario forcing.
-        # Offer an explicit *standalone* 2D numerical test
-        # on the same official DEM with an externally specified Gaussian hydrograph.
-        record_warning('1D flood did NOT reach sensor. 2D figures are a separate SYNTHETIC-INFLOW TEST, NOT coupled reconstruction.')
-        sens=profile.iloc[max(0,len(profile)-35)]
-        dest=profile.iloc[-1]
-        tgrid=np.arange(0,cfg['total_seconds']+10,10)
-        qsynthetic=600*np.exp(-0.5*((tgrid-360)/180)**2) # illustrative 2D solver QA forcing, not inferred from data
-        hydro_input=pd.DataFrame({'time_s':tgrid,'sensor_discharge_m3_s':qsynthetic})
-        hydro_input.to_csv(out/'Q4_STANDALONE_SYNTHETIC_2d_inflow.csv',index=False)
-        scenario_label='STANDALONE_SYNTHETIC_INFLOW_TEST_NOT_CONNECTED'
-        state='STANDALONE_SYNTHETIC_HYDROGRAPH_2D_TEST'
+        write_json(out/'Q4_2d_status.json',{'status':'NO_COMPUTED_INFLOW',
+             'primary_1d_coupled':False,'1d_inflow_reached_coupling':False})
+        _sensitivity(ctx,profile)
+        return answer
     z,tr,crs=local_dem(ctx,[(sens.utm_x,sens.utm_y),(dest.utm_x,dest.utm_y)],buffer_m=500,resolution_m=cfg['grid_step_m'])
     ri,ci=rowcol(tr,float(sens.utm_x),float(sens.utm_y))
     inlet_profile_idx=answer['sensor_idx'] if has_actual_1d_inflow else max(0,len(profile)-35)
@@ -720,7 +720,7 @@ def execute_q4_solver(ctx,profile):
              '1d_inflow_reached_coupling':bool(has_actual_1d_inflow),'primary_1d_coupled':primary_1d_coupled,
              'coupled_1d_volume_m3':float(kws['volume']) if primary_1d_coupled else (float(secondary_settings['volume']) if has_actual_1d_inflow else None),'verified_route':bool(cfg['route_verified']),
              'assumptions':'shallow effective continuum, stated DEM inlet; input momentum from 1D only if coupled',
-             'inflow_source':('primary 1D hydrograph' if primary_1d_coupled else 'prespecified upper-volume 1D sensitivity hydrograph') if has_actual_1d_inflow else 'illustrative synthetic Gaussian inflow: no calibration, not a real observation'})
+             'inflow_source':'primary 1D hydrograph' if primary_1d_coupled else 'prespecified upper-volume 1D sensitivity hydrograph'})
     except Exception as e:
         record_warning(f'2D solver did not converge: {e}. No image may be claimed as a result.')
         write_json(out/'Q4_2d_status.json',{'status':'NUMERICAL_FAILURE','error':str(e)})

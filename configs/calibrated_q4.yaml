@@ -1,0 +1,14 @@
+calibration_basis_sha256: db46cdd9ea3700649e20caca8e19aa0d96f87361e6f09184e1dd12bfc5f1c353
+calibrated_from: https://jms.imde.ac.cn/en/article/doi/10.1007/s11629-026-1482-y
+parameter_role: fitted effective parameters, with official DEM and published reconstruction
+  constraints
+stage1:
+  mu: 0.16
+  xi: 1000
+stage2:
+  mu: 0.014337414399109693
+  xi: 4433.382028731994
+  section_capacity_scale: 3.0000000000000004
+calibration_objective:
+  stage1_deposition_and_transition_constraint: 0.0032830823622373596
+  stage2_mean_squared_relative_log_error: 0.05508684311833718

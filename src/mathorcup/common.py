@@ -51,6 +51,19 @@ COLORS=['#205C92','#DA783F','#248F81','#9276A5','#C7AA41','#587A89','#CB5564','#
 # Stable paper-style titles used by the plotting functions and the figure gallery.
 # Methodological assumptions belong in figure captions/README, not in the heading.
 FIGURE_TITLES={
+ 'Q1_14_mechanisms_and_extreme_weather':'五项互补机制与极端天气识别',
+ 'Q2_18_energy_water_mechanism_channels':'降雨、前期热量与能量通道评估',
+ 'Q3_11_warning_time_and_lead_distribution':'预警时间与提前量分布',
+ 'Q3_12_reconstructed_spatial_warning':'源区至口岸的模型空间警戒范围',
+ 'Q4_14_drainage_route_and_cross_sections':'源区至口岸的地形与断面',
+ 'Q4_15_calibrated_cascade_process':'分阶段冰岩崩与泥石流传播过程',
+ 'Q4_16_event_constraint_comparison':'事后标定的定量对照',
+ 'Q4_17_calibration_parameter_experiments':'同一输入下的标定参数试验',
+ 'Q4_18_reconstructed_2d_depth_speed_arrival':'口岸二维传播强度与到达时间',
+ 'Q4_19_reconstructed_2d_six_frames':'真实通量驱动的六个传播阶段',
+ 'Q4_20_cascade_volume_and_grid_experiments':'级联体积守恒与网格试验',
+ 'Q4_21_cross_sections_and_1d_grid_experiment':'原始横断面与数值分辨率试验',
+ 'Q34_trigger_and_arrival_time':'触发条件与下游到达时间分布',
  'Q1_00_data_coverage':'逐小时观测数据有效率',
  'Q1_01_event_hourly_timeseries':'吉隆泥石流灾前气象要素变化',
  'Q1_02_boundary_layer_profiles':'高寒山区近地层风温垂直结构',

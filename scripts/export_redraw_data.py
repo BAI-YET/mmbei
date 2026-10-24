@@ -17,6 +17,8 @@ from mathorcup.q4_grid_review import execute_q4_grid_review
 from mathorcup.q3_spatial_footprint import execute_q3_spatial
 from mathorcup.q34_joint_arrival import execute_joint_arrival
 from mathorcup.publication_assets import make_publication_assets
+from mathorcup.question_completion import complete_q1,complete_q2,complete_q3
+from mathorcup.q4_cascade_reconstruction import execute_cascade_reconstruction
 
 
 def main():
@@ -24,10 +26,12 @@ def main():
     before={str(p.relative_to(original)):hashlib.sha256(p.read_bytes()).hexdigest() for p in original.rglob('*') if p.is_file() and 'redraw_data' not in p.parts}
     base.mkdir(exist_ok=True);os.environ['MATHORCUP_REDRAW_ROOT']=str(base)
     ctx=Context(ROOT);ctx.out=ROOT/'tmp/redraw_replay_outputs';ctx.out.mkdir(parents=True,exist_ok=True);configure_plotting()
-    print('Q1: export complete plotting arrays',flush=True);execute_q1(ctx)
-    print('Q2: export complete plotting arrays',flush=True);execute_q2(ctx);execute_q2_trigger(ctx);q2_complete_evidence(ctx)
-    print('Q3: export complete plotting arrays',flush=True);execute_q3_aligned(ctx);execute_q3_feature_bridge(ctx)
+    ctx.cfg['write_calibration_model']=False
+    print('Q1: export complete plotting arrays',flush=True);execute_q1(ctx);complete_q1(ctx)
+    print('Q2: export complete plotting arrays',flush=True);execute_q2(ctx);execute_q2_trigger(ctx);q2_complete_evidence(ctx);complete_q2(ctx)
+    print('Q3: export complete plotting arrays',flush=True);execute_q3_aligned(ctx);execute_q3_feature_bridge(ctx);complete_q3(ctx)
     print('Q4: export complete plotting arrays',flush=True);route=execute_q4_path(ctx,allow_provisional=True);execute_q4_solver(ctx,route);execute_q4_grid_review(ctx,route);execute_q3_spatial(ctx)
+    execute_cascade_reconstruction(ctx)
     print('Joint and publication figures',flush=True);execute_joint_arrival(ctx);make_publication_assets(ctx)
     after={name:hashlib.sha256((original/name).read_bytes()).hexdigest() for name in before}
     assert before==after,'Original published result changed during isolated replay'

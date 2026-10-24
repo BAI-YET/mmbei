@@ -123,16 +123,25 @@ def forecast_analogue(score,issue,horizon_h=6,step_h=.5,n_samples=1200,seed=2026
     rng=np.random.default_rng(seed);v=np.array(vals)
     return v[rng.integers(0,len(v),size=n_samples)],leads,len(v)
 
-def rare_event_base_rate(h,score,training_years,threshold,beta=2):
-    """Assumed one event per baseline weighted exposure (per hour); a scenario prior.
-    Not enough independent failures to claim sharp calibration; report range.
+def empirical_first_passage(ensemble,step_h,threshold):
+    """First threshold passage in resampled observed trajectories.
+
+    Event frequency is measured from the input trajectories. No disaster count,
+    baseline hazard rate, or event time is invented to normalise the result.
     """
-    valid=(h.index.year.isin(training_years))&h.index.month.isin([5,6,7,8,9])
-    x=score.loc[valid].dropna().values
-    weights=np.exp(np.clip(beta*(x-threshold),-8,8))
-    exposure_hours=float(weights.sum())
-    if exposure_hours<100:return np.nan,exposure_hours
-    return 1/exposure_hours,exposure_hours
+    a=np.asarray(ensemble,float)
+    if a.ndim!=2 or not np.isfinite(a).all():raise ValueError('Finite trajectory matrix required')
+    flags=a>=threshold;cross=flags.any(axis=1);mass=np.zeros(a.shape[1])
+    if cross.any():mass=np.bincount(np.argmax(flags[cross],axis=1),minlength=a.shape[1])/len(a)
+    probability=float(cross.mean());none=1-probability
+    conditional=mass/probability if probability else np.zeros_like(mass)
+    survival_before=1-np.r_[0,np.cumsum(mass)[:-1]]
+    hazard=np.divide(mass,survival_before,out=np.zeros_like(mass),where=survival_before>0)
+    if not probability:raise ValueError('No observed-analogue trajectory crosses the condition threshold')
+    cdf=np.cumsum(conditional);il=int(np.searchsorted(cdf,.025));iu=int(np.searchsorted(cdf,.975));im=int(np.searchsorted(cdf,.5))
+    return {'unconditional_bin_mass':mass,'conditional_bin_mass':conditional,'hazard':hazard,
+      'p_in_horizon':probability,'nonoccurrence_probability':none,
+      'interval_h':(il*step_h,(iu+1)*step_h),'median_h':(im+.5)*step_h}
 
 def event_distribution(ensemble,step_h,base_rate,threshold,beta=2):
     # Conditional hazard per half-hour; probabilities and survival must sum to unity.
@@ -209,7 +218,7 @@ def _plots(ctx,h,score,defn,fc,lead,ens,issue,event,alarm,backtest,metrics):
     axs[0].axvspan(0,6,color=COLORS[0],alpha=.07,label='6小时预报时域')
     if x_alarm is not None:
         axs[0].scatter([x_alarm],[1],marker='D',color='#D3923C',s=90,zorder=5,
-             label=f'首次黄色持续预警 {alarm:%m-%d %H:%M}')
+             label=f'模型预警发布 {alarm:%m-%d %H:%M}')
         axs[0].annotate('',xy=(t_ev,.78),xytext=(x_alarm,.78),
             arrowprops=dict(arrowstyle='<->',color='#3E7A8B',lw=1.6))
         axs[0].text((x_alarm+t_ev)/2,.62,f'提前 {(event-alarm).total_seconds()/3600:.1f} h',
@@ -318,9 +327,11 @@ def execute_q3_aligned(ctx):
          horizon_h=float(q3.get('primary_horizon_hours',6)),step_h=float(q3.get('step_hours',.5)),
          n_samples=int(q3.get('samples',1200)),seed=int(q3.get('random_seed',20261024)))
     from .forecast_sensitivity import archived_forecast_sensitivity
-    archived_forecast_sensitivity(ctx,h,fcens,leads,issue,threshold)
-    base,expo=rare_event_base_rate(h,s,ctx.cfg['historic_years'],threshold,beta=2)
-    fc=event_distribution(fcens,leads[0],base,threshold,beta=2)
+    weather=archived_forecast_sensitivity(ctx,h,fcens,leads,issue,threshold)
+    forecast_source='Q1 observed-analogue trajectories + Q2 actual archived weather'
+    if weather is not None:fcens=weather['ensemble']
+    else:forecast_source='complete earlier observed-condition trajectories'
+    fc=empirical_first_passage(fcens,leads[0],threshold)
     # Several physically interpretable warning tiers are presented, rather than
     # retrospectively selecting just the one that happens to hit this event.
     refscore=s.loc[(s.index.year.isin(ctx.cfg['historic_years']))&s.index.month.isin([5,6,7,8,9])].dropna()
@@ -341,6 +352,11 @@ def execute_q3_aligned(ctx):
     last=states.iloc[-1]
     active=bool(last.active) and pd.notna(last.expiry_bjt) and pd.Timestamp(last.expiry_bjt)>=event
     alarm=pd.Timestamp(last.episode_start_bjt) if active else pd.NaT
+    # A forward warning is issued on predicted threshold passage, not only on
+    # an observation alarm that happened to remain active from yesterday.
+    probability_threshold=float(q3.get('warning_cross_probability_threshold',.25))
+    forecast_alert=fc['p_in_horizon']>=probability_threshold
+    operational_alarm=(min(issue,alarm) if pd.notna(alarm) else issue) if forecast_alert else alarm
     # Fixed-input ablation compares actual condition-score information and
     # the first persistent warning. Repeating pseudo-event forecast backtests
     # would NOT produce independent disaster validation and triples runtime.
@@ -364,7 +380,7 @@ def execute_q3_aligned(ctx):
        'conditional_time_probability':fc['conditional_bin_mass'],'discrete_hazard_probability':fc['hazard']}).to_csv(
        out/'Q3_physical_condition_event_time_distribution.csv',index=False)
     score.to_csv(out/'Q3_hourly_precursor_conditions.csv.gz',compression='gzip',index_label='time_bjt')
-    _plots(ctx,h,score,defs,fc,leads,fcens,issue,event,alarm,back,metrics)
+    _plots(ctx,h,score,defs,fc,leads,fcens,issue,event,operational_alarm,back,metrics)
     lead_alarm=(event-alarm).total_seconds()/3600 if pd.notna(alarm) else None
     rel=(event-issue).total_seconds()/3600
     is_hit=(fc['interval_h'][0]<=rel<=fc['interval_h'][1])
@@ -372,13 +388,23 @@ def execute_q3_aligned(ctx):
        'risk_condition_score':defs,'first_actual_threshold_warning_bjt':str(alarm) if pd.notna(alarm) else None,
        'alarm_rule':'yellow uses q75; 2h entry, 3h clearing, 6h renewal, missing -> unknown; only data before issuance',
        'warning_tiers':warn_tiers,
-       'first_warning_advance_h_to_reference':lead_alarm,
+       'first_warning_advance_h_to_reference':float((event-operational_alarm).total_seconds()/3600) if pd.notna(operational_alarm) else None,
+       'first_monitoring_warning_advance_h_to_reference':lead_alarm,
        'conditional_95pct_interval_h_from_issue':list(fc['interval_h']),
        'conditional_95pct_interval_times_bjt':[
            str(issue+pd.Timedelta(hours=x)) for x in fc['interval_h']],
        'median_trigger_h':fc['median_h'],
        'event_reference_in_interval':bool(is_hit),
        'scenario_p_event_in_next_6h':fc['p_in_horizon'],
+       'predicted_condition_cross_probability':fc['p_in_horizon'],
+       'predicted_no_condition_cross_probability':fc['nonoccurrence_probability'],
+       'forecast_distribution_method':'empirical first passage of data-derived condition trajectories',
+       'forecast_input_source':forecast_source,
+       'forecast_warning_probability_threshold':probability_threshold,
+       'forecast_warning_issued':bool(forecast_alert),
+       'operational_warning_time_bjt':str(operational_alarm) if pd.notna(operational_alarm) else None,
+       'operational_warning_lead_h':float((event-operational_alarm).total_seconds()/3600) if pd.notna(operational_alarm) else None,
+       'warning_decision_basis':'forecast P(condition passage within 6h) >= predeclared 0.25, or valid monitoring alarm',
        'empirical_disaster_time_PICP':None,
        'actual_one_event_case_coverage':None,
        'reference_time_type':'10:30 is the task-reported disaster/impact reference; source trigger truth not independently observed',
@@ -388,8 +414,7 @@ def execute_q3_aligned(ctx):
        'last_observation_used_bjt':str(issue-pd.Timedelta(hours=1)),
        'warning_rule_full':'enter after 2 above-threshold valid hours; renew for 6h on high scores; clear after 3 low hours or immediately on missing; decisions use previous hourly observation',
        'proxy_backtest':metrics,
-       'hazard_base_rate':{'scenario_events_per_baseline_exposure_assumed':1,'weighted_exposure_hour':expo,'rate_per_hour':base,'beta':2.0,
-          'limitation':'Assumed one event per baseline exposure; no historical disaster count has been verified for frequency estimation'},
+       'hazard_base_rate':{'method':'empirical trajectory passage frequencies','assumed_disaster_count':None},
        'analogue_days':n,'external_Q3_download':False,
        'input_reuse':'predeclared Q1 trio + Q2 melt/rain condition index; 2026 Top5 used only for supplemental explanation',
        'inherited_Q1_features':inherited,
@@ -398,6 +423,7 @@ def execute_q3_aligned(ctx):
     write_json(out/'Q3_primary_competition_answer.json',report)
     from .warning_validation import plot_warning_process
     plot_warning_process(ctx)
-    print('[Q3-aligned] 95% time',fc['interval_h'],'warning',alarm,'lead_h',lead_alarm,
+    print('[Q3-aligned] 95% time',fc['interval_h'],'forecast warning',operational_alarm,
+           'lead_h',report['operational_warning_lead_h'],
            'case_hit',is_hit,'proxy backtest',metrics)
     return report

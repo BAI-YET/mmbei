@@ -1,0 +1,59 @@
+case: Gyirong_2026_08_26
+# Published reconstructions are calibration evidence, not pre-event observations.
+references:
+  case_study:
+    url: https://jms.imde.ac.cn/en/article/doi/10.1007/s11629-026-1482-y
+    doi: 10.1007/s11629-026-1482-y
+    authors: Li Hao et al.
+    year: 2026
+    role: published_event_reconstruction
+  source_mapping:
+    url: https://arxiv.org/abs/2609.04563
+    role: published_post_event_source_mapping
+  port_photo:
+    url: https://commons.wikimedia.org/wiki/File:Nepal_China_Border.jpg
+    role: geotagged_site_photograph_area_reference
+  hydrometric_station:
+    url: https://www.dhm.gov.np/hydrology/hms-Single/4913
+    role: government_downstream_station_location_check
+  friction_model:
+    url: https://ramms.ch/ramms-debrisflow/friction-parameters/
+    role: model_equations_and_calibration_method
+published_values:
+  release_volume_m3: {value: 103000000, reference: case_study}
+  source_area_m2: {value: 760000, reference: case_study}
+  source_elevation_m: {value: 5190, reference: case_study}
+  initial_ice_volume_m3: {value: 12600000, reference: case_study}
+  glacier_impact_elevation_m: {value: 4010, reference: case_study}
+  impact_elapsed_s: {value: 30, reference: case_study}
+  confluence_elapsed_s: {value: 130, reference: case_study, derivation: 30_plus_100}
+  retained_deposit_volume_m3: {value: 67000000, reference: case_study}
+  mobile_debris_volume_m3: {value: 36000000, reference: case_study}
+  source_to_port_distance_m: {value: 22800, reference: case_study}
+  confluence_to_port_distance_m: {value: 14200, reference: case_study}
+  confluence_to_port_elapsed_s: {value: 350, reference: case_study}
+  port_peak_discharge_m3_s: {value: 246000, reference: case_study}
+  port_cross_section_mean_velocity_m_s: {value: 36.2, reference: case_study}
+locations:
+  source_lonlat: {value: [85.530, 28.289], reference: source_mapping}
+  port_area_lonlat: {value: [85.378056, 28.278667], reference: port_photo}
+  downstream_gauge_lonlat: {value: [85.377649, 28.271297], reference: hydrometric_station}
+reconstruction:
+  # Numerical/geometry choices are varied in the numerical experiments.
+  routing_resolution_m: 30
+  solver_dx_m: 15
+  local_2d_resolution_m: 30
+  total_seconds: 1000
+  cfl: 0.30
+  cross_section_relief_m: 20
+  stage1_mu_candidates: [0.12, 0.16, 0.18, 0.20, 0.24]
+  stage1_xi_candidates: [500, 1000, 2500]
+  stage2_mu_candidates: [0.01, 0.025, 0.04, 0.06]
+  stage2_xi_candidates: [1000, 2500, 5000, 10000]
+  # Friction values are searched, not labelled field measurements.
+  parameter_roles:
+    mu: calibrated_effective_friction
+    xi: calibrated_effective_turbulent_drag
+    width: derived_from_official_DEM_cross_sections
+    release_distribution: projected_official_glacier_pixels
+    initial_velocity: zero_at_release

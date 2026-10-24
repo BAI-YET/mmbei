@@ -5,7 +5,8 @@ import numpy as np
 import pandas as pd
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
 base=ROOT/'outputs/redraw_data';metas=sorted(base.rglob('figure_metadata.json'));expected=[p for p in (ROOT/'outputs').rglob('*.png') if 'redraw_data' not in p.parts]
-assert len(metas)==len(expected)==63
+assert len(metas)==len(expected)>0
+assert {json.loads(p.read_text())['figure'] for p in metas}=={str(p.relative_to(ROOT/'outputs')) for p in expected}
 resolved=0
 for p in metas:
     d=json.loads(p.read_text());assert d['datasets']
@@ -39,7 +40,7 @@ assert np.nanmax(pressure)>layer['vmax'],'The original truncated color scale mus
 for f in (base/'q4/Q4_07_parameter_sensitivity').glob('*scatter.csv'):
     df=pd.read_csv(f)
     if 'marker_role' in df:assert df.loc[df.marker_role.eq('symbolic_nonarrival'),'actual_arrival_time_min'].isna().all()
-result={'figure_count':63,'resolved_plot_datasets':resolved,'all_numeric_raster_cells_roundtrip_exact':True,
+result={'figure_count':len(expected),'resolved_plot_datasets':resolved,'all_numeric_raster_cells_roundtrip_exact':True,
         'Q1_all_56_factor_values_present':True,'full_unclipped_dynamic_pressure_retained':True,
         'nonarrival_not_converted_to_time':True,'missing_references':0}
 (base/'retention_checks.json').write_text(json.dumps(result,ensure_ascii=False,indent=2))

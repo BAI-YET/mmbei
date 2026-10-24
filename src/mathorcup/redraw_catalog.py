@@ -159,6 +159,7 @@ def build_redraw_catalog(ctx):
 
 代码：src/mathorcup/redraw_export.py在保存图像前导出数值，redraw_catalog.py生成数据索引。可运行python scripts/export_redraw_data.py在隔离目录回放导出，并核对原结果不变。
 '''
+    readme=readme.replace('覆盖63张',f'覆盖{len(index)}张')
     (base/'使用说明.txt').write_text(readme,encoding='utf-8-sig')
     _json(base/'catalog_summary.json',{'figures':len(index),'panels':sum(x[5] for x in index),'plot_datasets':sum(x[6] for x in index),
        'per_figure_files':len(files),'unique_shared_rasters':len(list((base/'shared_rasters').glob('*'))),'raster_layers':len(raster_index),

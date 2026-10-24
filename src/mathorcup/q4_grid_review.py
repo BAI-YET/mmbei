@@ -14,14 +14,13 @@ def execute_q4_grid_review(ctx,profile=None):
     out=ctx.folder('q4');cfg=ctx.cfg['q4'];fn=out/'Q4_1d_discharge_and_mass_timeseries.csv'
     if not fn.exists():return {'status':'NO_ONE_D_HYDROGRAPH'}
     h=pd.read_csv(fn)
+    if not (out/'Q4_2d_inlet_geometry.json').exists():return {'status':'NO_COMPUTED_INLET_GEOMETRY'}
     geo=json.loads((out/'Q4_2d_inlet_geometry.json').read_text())
     coupled=bool(geo['coupled_to_primary_1d'])
     actual=out/'Q4_actual_2d_inflow_hydrograph.csv'
     if actual.exists():h=pd.read_csv(actual)
     if 'sensor_discharge_m3_s' not in h or h.sensor_discharge_m3_s.max()<=.01:
-        fallback=out/'Q4_STANDALONE_SYNTHETIC_2d_inflow.csv'
-        if not fallback.exists():return {'status':'NO_COUPLING_INFLOW'}
-        h=pd.read_csv(fallback);coupled=False
+        return {'status':'NO_COMPUTED_COUPLING_INFLOW'}
     if profile is None:profile=pd.read_csv(out/'Q4_route_profile.csv')
     target_dist=profile.distance_m.iloc[-1]-2500
     sens=profile.iloc[(profile.distance_m-target_dist).abs().argmin()]

@@ -62,7 +62,12 @@ def backtest_metrics(df,lower='lower_h',upper='upper_h',threshold=.25):
     onset=targets.loc[~targets.already_above_at_issue]
     ohit=(onset.first_true_cross_h>=onset[lower])&(onset.first_true_cross_h<=onset[upper])
     def div(a,b):return a/b if b else None
+    timely=df.loc[flag&truth&~df.already_above_at_issue.astype(bool),'first_true_cross_h'].dropna()
+    lead_summary=({'n':int(len(timely)),'minimum_h':float(timely.min()),'q25_h':float(timely.quantile(.25)),
+        'median_h':float(timely.median()),'q75_h':float(timely.quantile(.75)),
+        'maximum_h':float(timely.max())} if len(timely) else {'n':0})
     return {'n_backtest':len(df),'n_proxy_crossings':int(truth.sum()),'TP':TP,'FP':FP,'FN':FN,'TN':TN,
+       'new_onset_warning_lead_distribution':lead_summary,
        'proxy_recall':div(TP,TP+FN),'proxy_false_alarm':div(FP,FP+TN),
        'proxy_false_alarm_ratio':div(FP,TP+FP),'proxy_precision':div(TP,TP+FP),
        'proxy_interval_coverage':float(hit.mean()) if len(targets) else None,

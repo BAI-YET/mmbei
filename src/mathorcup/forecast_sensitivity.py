@@ -38,3 +38,4 @@ def archived_forecast_sensitivity(ctx,h,baseline_ensemble,leads,issue,threshold)
     ax.axhline(threshold,color='#777',ls='--',label='气象先兆阈值')
     ax.set(xlabel='距09:00发布时刻 (h)',ylabel='气象触发条件指数',title='实际历史天气预报与相似日外推的结果比较');ax.legend(frameon=False,ncol=3,fontsize=8)
     savefig(fig,ctx.folder('q3')/'Q3_10_archived_forecast_sensitivity.png')
+    return {'ensemble':joint,'report':report}

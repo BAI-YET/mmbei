@@ -113,6 +113,6 @@ def test_report_status_matches_v17_current_output():
     fn=ROOT/'outputs/SUMMARY_STATUS.json'
     if not fn.exists():pytest.skip('report not built')
     s=json.loads(fn.read_text())
-    assert s['version']=='v2.0'
+    assert s['version'] in ('v2.0','v2.1')
     assert s['extra_data_only_question_2'] is True
     assert s['Q3_disaster_event_PICP'] is None
