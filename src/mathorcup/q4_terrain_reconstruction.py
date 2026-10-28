@@ -91,7 +91,19 @@ def section_widths(z,tr,profile,relief_m=20.,sample_step_m=30.,half_span_m=900.)
 def prepare_reconstruction_geometry(ctx,evidence):
     settings=evidence['reconstruction'];dx=float(settings['routing_resolution_m'])
     project=Transformer.from_crs('EPSG:4326',UTM_CRS,always_xy=True)
-    source=project.transform(*evidence['locations']['source_lonlat']['value'])
+    mapped_source=project.transform(*evidence['locations']['source_lonlat']['value'])
+    # Select the same real ice-pixel footprint as before, then start the route
+    # on its upper-elevation part. This covers the physical release footprint
+    # instead of shifting its entire PCA length down an already lower valley.
+    g=glacier_grid(ctx);ii,jj=np.where(g['glacier_mask']&np.isfinite(g['thickness'])&np.isfinite(g['dem']))
+    all_pixels=np.column_stack([g['x'][jj],g['y'][ii]])
+    pixel_area=abs(float(np.median(np.diff(g['x'])))*float(np.median(np.diff(g['y']))))
+    n=int(round(evidence['published_values']['source_area_m2']['value']/pixel_area))
+    nearest=np.argsort(np.linalg.norm(all_pixels-np.asarray(mapped_source),axis=1))[:n]
+    pixels=all_pixels[nearest];pixel_heights=g['dem'][ii[nearest],jj[nearest]]
+    upper=pixels[pixel_heights>=np.quantile(pixel_heights,.9)].mean(axis=0)
+    origin=int(np.argmin(np.linalg.norm(pixels-upper,axis=1)))
+    source=tuple(pixels[origin])
     site=project.transform(*evidence['locations']['port_area_lonlat']['value'])
     z,tr,_=local_dem(ctx,[source,site],buffer_m=10000,resolution_m=dx)
     # The main river bends north of the straight source-to-port rectangle. The
@@ -100,21 +112,29 @@ def prepare_reconstruction_geometry(ctx,evidence):
     r0,r1,c0,c1=int(rr.min()),int(rr.max()+1),int(cc.min()),int(cc.max()+1)
     z=z[r0:r1,c0:c1];tr=tr*Affine.translation(c0,r0)
     filled,receiver,acc=priority_drainage(z,dx)
-    start=tuple(map(int,rowcol(tr,*source)))
-    chain=trace_drainage(receiver,start)
-    coord=np.array([xy(tr,int(r),int(c),offset='center') for r,c in chain])
-    distance=np.linalg.norm(coord-np.asarray(site),axis=1);closest=int(np.argmin(distance))
-    if closest<10 or distance[closest]>500:
-        # A declared drainage-weighted search is preferable to quietly inventing a river line.
-        # A larger uphill cost suppresses cross-ridge shortcuts; raw heights remain unchanged.
-        dest=tuple(map(int,rowcol(tr,*site)))
-        chain,_,_=directed_cost_path(z,start,dest,dx,uphill_penalty=250)
+    if ctx.cfg.get('strict_route',False):
+        from .q4_flowpath import require_verified_route
+        waypoints=require_verified_route(ctx)
+        xx,yy=project.transform(waypoints.lon.to_numpy(),waypoints.lat.to_numpy())
+        coord=np.column_stack([xx,yy]);source=tuple(coord[0]);site=tuple(coord[-1])
+        rr=(coord[:,1]-tr.f)/tr.e-.5;cc=(coord[:,0]-tr.c)/tr.a-.5
+        raw=map_coordinates(z,[rr,cc],order=1,mode='constant',cval=np.nan)
+        if not np.isfinite(raw).all():raise ValueError('Verified cascade waypoints leave valid official DEM')
+        method='verified ordered waypoints sampled on official DEM'
+    else:
+        start=tuple(map(int,rowcol(tr,*source)))
+        chain=trace_drainage(receiver,start)
         coord=np.array([xy(tr,int(r),int(c),offset='center') for r,c in chain])
-        method='high-uphill-penalty DEM corridor; drainage trace did not approach site'
-        closest=len(chain)-1
-    else:method='priority-flood D8 drainage trace, clipped at nearest port-area river cell'
-    chain=chain[:closest+1];coord=coord[:closest+1]
-    raw=z[chain[:,0],chain[:,1]]
+        distance=np.linalg.norm(coord-np.asarray(site),axis=1);closest=int(np.argmin(distance))
+        if closest<10 or distance[closest]>500:
+            dest=tuple(map(int,rowcol(tr,*site)))
+            chain,_,_=directed_cost_path(z,start,dest,dx,uphill_penalty=250)
+            coord=np.array([xy(tr,int(r),int(c),offset='center') for r,c in chain])
+            method='high-uphill-penalty DEM corridor; drainage trace did not approach site'
+            closest=len(chain)-1
+        else:method='priority-flood D8 drainage trace, clipped at nearest port-area river cell'
+        chain=chain[:closest+1];coord=coord[:closest+1]
+        raw=z[chain[:,0],chain[:,1]]
     profile=_to_profile(coord,raw,smooth=.5,spacing_m=float(settings['solver_dx_m']))
     # Strictly uniform cells are required by the finite-volume update.
     profile=profile.iloc[:-1].copy() if abs(np.diff(profile.distance_m)[-1]-settings['solver_dx_m'])>1e-7 else profile
@@ -135,21 +155,11 @@ def prepare_reconstruction_geometry(ctx,evidence):
     if not len(ids):raise ValueError('Published confluence-distance window outside DEM route')
     score=np.log1p(jump[ids]-1)-np.abs(profile.distance_m.to_numpy()[ids]-expected)/1500
     junction=int(ids[np.argmax(score)])
-    # Derive the release footprint from actual ice pixels nearest the mapped source.
-    g=glacier_grid(ctx);ii,jj=np.where(g['glacier_mask']&np.isfinite(g['thickness']))
-    pixels=np.column_stack([g['x'][jj],g['y'][ii]])
-    pixel_area=abs(float(np.median(np.diff(g['x'])))*float(np.median(np.diff(g['y']))))
-    n=int(round(evidence['published_values']['source_area_m2']['value']/pixel_area))
-    nearest=np.argsort(np.linalg.norm(pixels-np.asarray(source),axis=1))[:n]
-    pixels=pixels[nearest]
-    # A finite source polygon must not collapse to the first cell when its
-    # centroid lies upstream of the line endpoint. Project its measured along-
-    # slope extent, then retain its area density along the 1D release coordinate.
-    cov=np.cov(pixels.T);_,vectors=np.linalg.eigh(cov);axis=vectors[:,-1]
-    tangent=profile[['utm_x','utm_y']].iloc[min(40,len(profile)-1)].to_numpy()-np.asarray(source)
-    if np.dot(axis,tangent)<0:axis=-axis
-    projected=(pixels-np.mean(pixels,axis=0))@axis;projected-=projected.min()
-    along=np.minimum(np.rint(projected/settings['solver_dx_m']).astype(int),junction-1)
+    # Metric 3-D projection preserves both actual pixel locations and heights.
+    # Moving a PCA coordinate to zero would lower the initial material by
+    # hundreds of metres and change its gravitational energy before release.
+    along,projection=project_release_pixels(pixels,pixel_heights,profile)
+    if (along>=junction).any():raise ValueError('A mapped source pixel projects downstream of the transition')
     counts=np.bincount(along,minlength=len(profile)).astype(float)
     counts=gaussian_filter1d(counts,max(1,dx/settings['solver_dx_m']),mode='nearest')
     counts[junction:]=0
@@ -159,6 +169,7 @@ def prepare_reconstruction_geometry(ctx,evidence):
     profile['source_area_weight']=source_weights
     # Save exact arrays used by plots/solver; these generated tables remain local.
     out=ctx.folder('q4');profile.to_csv(out/'Q4_reconstruction_route.csv',index=False)
+    projection.to_csv(out/'Q4_release_pixel_projection.csv',index=False)
     np.savez_compressed(out/'Q4_reconstruction_sections.npz',offsets_m=offsets,elevation_m=sections,
                         thalweg_elevation_m=beds,source_pixels_utm=pixels,
                         background_elevation_m=z,background_transform=np.array(tuple(tr)))
@@ -171,6 +182,12 @@ def prepare_reconstruction_geometry(ctx,evidence):
        'confluence_index':junction,'confluence_distance_m':float(profile.distance_m.iloc[junction]),
        'downstream_reach_length_m':total-float(profile.distance_m.iloc[junction]),
        'source_pixels':len(pixels),'source_pixel_area_m2':pixel_area,
+       'route_source_origin_utm_xy':list(source),
+       'source_origin_rule':'actual source pixel nearest centroid of upper elevation decile',
+       'release_projection_method':'nearest point on actual route in metric UTM-x/UTM-y/elevation space',
+       'selected_source_mean_elevation_m':float(pixel_heights.mean()),
+       'assigned_release_mean_bed_elevation_m':float(np.dot(source_weights,profile.elevation_m)),
+       'release_projection_mean_abs_elevation_error_m':float(np.abs(projection.route_elevation_m-projection.source_elevation_m).mean()),
        'projected_source_area_m2':len(pixels)*pixel_area,
        'section_reference_relief_m':settings['cross_section_relief_m'],
        'cross_section_model':'trapezoid fitted to connected DEM widths at 20 m and 60 m relative height',
@@ -179,3 +196,18 @@ def prepare_reconstruction_geometry(ctx,evidence):
        'numerical_dx_m':settings['solver_dx_m'],'DEM_sampling_m':dx}
     write_json(out/'Q4_reconstruction_geometry.json',quality)
     return profile,junction,z,tr,quality
+
+
+def project_release_pixels(pixels_utm,heights,profile):
+    points=np.column_stack([np.asarray(pixels_utm,float),np.asarray(heights,float)])
+    route=profile[['utm_x','utm_y','elevation_m']].to_numpy(float)
+    if not np.isfinite(points).all() or not np.isfinite(route).all():
+        raise ValueError('Release projection requires finite actual coordinates and elevations')
+    distance,indices=cKDTree(route).query(points)
+    matched=profile.iloc[indices]
+    table=pd.DataFrame({'source_utm_x':points[:,0],'source_utm_y':points[:,1],
+        'source_elevation_m':points[:,2],'route_index':indices,
+        'route_distance_m':matched.distance_m.to_numpy(),
+        'route_elevation_m':matched.elevation_m.to_numpy(),
+        'projection_3d_distance_m':distance})
+    return indices,table

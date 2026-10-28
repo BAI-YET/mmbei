@@ -9,6 +9,22 @@ from sklearn.metrics import brier_score_loss,roc_auc_score
 from .common import write_json,savefig,COLORS
 
 
+def decide_warning_at_issue(issue,probability,threshold,monitoring_active=False,
+                            episode_start=None,expiry=None,horizon_h=6):
+    """An issue-time decision has no observed future event-time argument."""
+    issue=pd.Timestamp(issue);forecast=bool(probability>=threshold)
+    monitored=bool(monitoring_active and pd.notna(episode_start) and pd.notna(expiry)
+                   and pd.Timestamp(expiry)>=issue)
+    start=pd.Timestamp(episode_start) if monitored else None
+    ends=[]
+    if monitored:ends.append(pd.Timestamp(expiry))
+    if forecast:ends.append(issue+pd.Timedelta(hours=horizon_h))
+    warning_time=min(issue,start) if forecast and monitored else (issue if forecast else start)
+    return {'forecast_issued':forecast,'monitoring_active':monitored,
+            'warning_time':warning_time,'valid_until':max(ends) if ends else None,
+            'forecast_warning_time':issue if forecast else None}
+
+
 def warning_state_machine(score,threshold,enter_hours=2,clear_hours=3,ttl_hours=6):
     """Observation stamped t can first inform decision at t+1h.
     Invalid or nonconsecutive observations reset the state to UNKNOWN.
@@ -75,6 +91,8 @@ def backtest_metrics(df,lower='lower_h',upper='upper_h',threshold=.25):
        'new_onset_interval_coverage':float(ohit.mean()) if len(onset) else None,
        'proxy_coverage_7day_block_bootstrap_95':_block_coverage_ci(df,lower,upper),
        'mean_interval_width_h':float((df[upper]-df[lower]).mean()),
+       'full_horizon_interval_width_h':6.,'full_horizon_interval_coverage':1. if len(targets) else None,
+       'mean_width_reduction_vs_full_horizon':float(1-(df[upper]-df[lower]).mean()/6.),
        'brier_score':float(brier_score_loss(truth,df.forecast_cross_probability)),
        'persistence_brier':float(brier_score_loss(truth,df.already_above_at_issue.astype(float))),
        'proxy_roc_auc':float(roc_auc_score(truth,df.forecast_cross_probability)) if truth.nunique()==2 else None,

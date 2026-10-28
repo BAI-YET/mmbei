@@ -21,7 +21,13 @@ def main():
     flow_change=100*(float(fine['peak_discharge_m3_s'])/float(base['peak_discharge_m3_s'])-1)
     time_change=100*(float(fine['arrival_s'])/float(base['arrival_s'])-1)
     area_change=100*abs(two['grid_experiments'][1]['wet_area_km2']/two['grid_experiments'][0]['wet_area_km2']-1)
-    document=f'''# MathorCup 2026赛道B：四问代码、方法与PNG成果（v2.1）
+    review=j('quality/review_verdicts.json');checks=j('quality/test_result.json')
+    interval='至'.join(x for x in q3['conditional_95pct_interval_times_bjt'] if x is not None) or '该时域无条件超限轨迹'
+    forecast_time=q3['forecast_warning_time_bjt'] or '未达到预测预警阈值'
+    forecast_lead=q3['forecast_warning_lead_h_to_task_reference']
+    boundary='触及搜索边界' if q4['parameter_bound_diagnostics']['at_search_bound'] else '位于搜索范围内'
+    depth_change=100*abs(float(fine['peak_depth_m'])/float(base['peak_depth_m'])-1)
+    document=f'''# MathorCup 2026赛道B：四问代码、方法与PNG成果（v2.2）
 
 本仓库用于妈妈杯代码图片上传保存留档，以确保能够正确回退版本。本文整合数据准备、四问作答、模型原理、运行方法、图题图注与全部图像索引。当前成果由实际输入、分析计算和数值实验生成；参数的观测、文献、标定和实验设计角色分别记录。
 
@@ -32,16 +38,17 @@ def main():
 | Q1关联特征 | {c1['predefined']}项候选、{c1['eligible']}项有效；按机制合并相关变量后，五项代表通道为水汽VPD、近地层热力、地表能量余量、短波辐射、土壤水分。原始逐变量排序同时保留。 |
 | Q1极端过程 | 事件前七日VPD有{vpd['hours_above_matched_q95']}小时达到匹配历史q95，其中{vpd['new_matched_record_hours']}小时超过匹配历史记录；2m气温有{temp['hours_above_matched_q95']}小时达到q95，最长连续{temp['longest_consecutive_q95_hours']}小时。 |
 | Q2临界条件 | 非零24h降雨q90为{limits['rain_24h_nonzero_q90_mm']:.2f}mm，源区7日正积温q90为{limits['source_pdd7_warmseason_q90_Cday']:.2f}℃·d；新增30日热量、辐射能量和冻融通道。 |
-| Q2本次能量通道 | 正能量余量7日当量为{energy['value_at_issue']:.2f}mm，历史q90为{energy['historical_q90']:.2f}mm，达到历史第{100*energy['historical_percentile']:.1f}百分位。 |
-| Q3预警 | 实际历史起报驱动的6h条件超限频率为{q3['predicted_condition_cross_probability']:.3f}；按预设0.25阈值在09:00发布预测预警，相对题面10:30提前{q3['operational_warning_lead_h']:.1f}h。 |
-| Q3区间与检验 | 95%时间预测区间09:00至15:00；2025年{m['n_backtest']}次发布、{m['n_proxy_crossings']}次气象条件超限，覆盖率{100*m['proxy_interval_coverage']:.2f}%；TP/FP/FN/TN={m['TP']}/{m['FP']}/{m['FN']}/{m['TN']}。 |
+| Q2本次能量通道 | 正能量余量7日当量为{energy['value_at_issue']:.2f}mm，历史q90为{energy['historical_q90']:.2f}mm，达到历史第{100*energy['historical_percentile']:.1f}百分位；现已进入主动态指数。 |
+| Q3预测预警 | 6h条件超限频率{q3['predicted_condition_cross_probability']:.3f}；按0.25阈值，预测预警时间{forecast_time}，至题面参考时刻提前{forecast_lead}h。 |
+| Q3监测预警 | 有效监测段起点{q3['monitoring_episode_start_bjt']}，其较题面参考时刻的回放提前量{q3['first_monitoring_warning_advance_h_to_reference']}h；与09:00预测发布分别记录。 |
+| Q3区间与检验 | 条件首次超限95%区间{interval}；2025年相似日基准检验{m['n_backtest']}次发布、{m['n_proxy_crossings']}次气象超限，校准后覆盖率{100*m['proxy_interval_coverage']:.2f}%，平均宽度{m['mean_interval_width_h']:.2f}h；TP/FP/FN/TN={m['TP']}/{m['FP']}/{m['FN']}/{m['TN']}。 |
 | Q3提前量 | {advance['n']}次正确预警的新发超限中，提前量中位数{advance['median_h']:.2f}h，四分位范围{advance['q25_h']:.2f}至{advance['q75_h']:.2f}h。 |
 | Q3空间范围 | 源区至口岸模型廊道{space['source_to_port_corridor_km']:.2f}km，变断面与二维湿区融合包络{space['warning_envelope_km2']:.2f}km²。 |
 | Q4分阶段复现 | 官方DEM汇流路径长{geo['length_m']/1000:.2f}km、落差{geo['drop_m']:.0f}m；初始方量103百万m³，可动输入36百万m³，按实际求解通量连接上下游。 |
 | Q4口岸结果 | 源区释放后{q4['downstream']['arrival_s']:.1f}s到达口岸河段，峰值流量{q4['downstream']['peak_discharge_m3_s']:.0f}m³/s，对应断面平均速度{q4['downstream']['velocity_at_peak_discharge_m_s']:.2f}m/s。 |
 | Q4二维网格试验 | 30m与60m累计湿润面积分别{two['grid_experiments'][0]['wet_area_km2']:.4f}、{two['grid_experiments'][1]['wet_area_km2']:.4f}km²；每档输入体积均与一维累计通量一致。 |
 
-预测预警、持续监测状态和事后过程标定分别报告。题面所需95%区间采用条件首次超限的时间预测区间构造；历史覆盖率的评价对象是实际气象条件超限。模型假设与尺度影响集中在第6节解释。
+预测预警、持续监测状态和事后过程标定分别报告。95%区间对应条件首次超限，历史覆盖率评价实际气象超限；当前历史起报驱动的回放与相似日基准检验分别列示。校准前覆盖率{m['raw_proxy_interval_coverage']:.2%}；校准后平均区间比完整6h窗口缩短{m['mean_width_reduction_vs_full_horizon']:.2%}，同时报告宽度与覆盖率。模型约定集中于第6节。
 
 ## 2. 仓库上传范围
 
@@ -112,6 +119,8 @@ python scripts/build_answer_pdf.py
 
 支持`prepare`、`q1`、`q2`、`q3`、`q4`分阶段运行，按前后依赖顺序执行。`--force-rebuild`更新指定处理缓存，`--config`使用另一配置。输入或核心求解器变化时按指纹自动重标定；`--refit-q4`主动重复标定试验。重跑某阶段会刷新其成果，自己修改的本地图像应另存。
 
+`--strict-route`在清理任何旧结果之前检查`route_verified`与至少两个有效核验路径点，并约束全部Q4入口；严格模式实际沿核验路径计算。它与`--allow-provisional-q4`互斥。
+
 ## 4. 四问模型与代码
 
 ### 4.1 Q1：边界层、天气过程、极端事件和五项因素
@@ -130,7 +139,7 @@ python scripts/build_answer_pdf.py
 
 静态物源指数来自冰厚、坡度、历史速度与应变代理，驱动剪应力为`τ=ρgH sinθ`。速度梯度保持UTM北向符号，缺失保持未知。高分连通冰体提供候选源区，冰库存与实际可动体积分别记录。
 
-动态通道使用非零降雨q90、源区7日与30日正积温、站点净短波和正能量余量当量、冻融转换。正通量按`W/m²×3600/334000`转换成每小时水当量；1kg/m²数值等于1mm。各通道阈值固定来自2021至2025年暖季，未针对事件回调。新增分析识别出正能量余量通道越过历史q90；其他通道与固定组合指标如实保留计算值。
+主动态指数取降雨、源区7日正积温、站点正能量余量三个门控的最大值。30日热量、净短波能量和冻融转换继续单列。正通量按`W/m²×3600/334000`换算能量水当量，1kg/m²数值等于1mm；阈值来自所指定历史暖季。未来能量通道仅使用仍位于七日窗口内的灾前实测正能量贡献，作为非负累积能量的下界，不补造未来能量观测。源区高程q10/q50/q90与三档温度递减率、四组静态权重均实际重算。
 
 历史84条沟谷采用成因类别作为目标，比较全部候选模型的空间留出ROC-AUC；时间可靠性逐年向前拟合并比较更新间隔，空间可靠性比较30、60、120m的秩相关与高分区IoU。实际预报的温度、降水和短波进入未来条件；该次零度层缺失随原始记录保存。
 
@@ -140,7 +149,7 @@ python scripts/build_answer_pdf.py
 
 固定气象变量使用气温、短波和VPD，联合Q2水热通道；2026事件选出的因素用于补充解释。采用历史完整相似日轨迹并按最新观测作衰减调整，未来Q2通道由实际历史起报预报驱动。首次超限的频率和时间分布直接从数据轨迹计算；联合到达时间仅重采样实际计算的时间格点与传播试验结果。
 
-预测预警以`P(未来6h条件超限)≥0.25`判定；监测状态机分别处理2h进入、3h低值解除、6h续期和缺测暂停。本次预测预警为09:00、提前1.5h。历史检验将2021至2023、2024、2025分别用于拟合、校准、检验，保存所有发布、TP/FP/FN/TN、分母、提前量及覆盖过程。
+预测预警以`P(未来6h条件超限)≥0.25`判定；监测状态机处理2h进入、3h低值解除、6h续期和缺测暂停。当前预测发布、已有监测段起点和各自有效期分列；决策函数没有未来事件时刻输入，题面时刻只用于事后评价。历史检验将2021至2023、2024、2025分别用于拟合、校准、检验，保存TP/FP/FN/TN、分母、提前量与覆盖过程。敏感性曲线由不同阈值和7/14/21/28天历史轨迹窗口实际重算。
 
 空间回放以Q4河道和变断面最大水位形成廊道，融合释放网格及原始DEM上的二维湿区。研究段为源区至口岸，距离和面积来自米制几何计算。单阶段参考模型的空间范围仍保留用于实验比较，主作答采用`Q3_12`与分阶段结果。
 
@@ -150,13 +159,13 @@ python scripts/build_answer_pdf.py
 
 1. **真实地形**：扩大计算范围以覆盖主河道的北向弯曲；Priority-Flood只辅助D8寻路，动力学保持官方原始高程。汇入口邻域结合文献河道距离与DEM集水面积变化定位。
 2. **实际断面**：提取沿程DEM横剖面，以20m、60m相对高程的连通宽度拟合梯形。采用`A=b h+m h²`和静水压力矩`g(b h²/2+m h³/3)`；有效断面尺度由事件约束标定。
-3. **分布式释放**：官方冰川像元提供释放区域的沿坡面积分布，初速度0。事件研究提供103百万m³初始方量及0.76km²源区面积，36百万m³可动方量与67百万m³沉积分配分别约束。
-4. **守恒与动量**：变断面静水重构、Rusanov通量、Voellmy阻力与CFL步进；先计上游实际滞留，再按上游累计通量分配汇入口沉积与下游输入。阶段间传递求解体积与动量，去除原先额外施加的边界压力能量。
-5. **事后标定**：参数网格与有界优化联合比较河道传播时间、峰值流量及断面速度。文献重建与本次计算及相对偏差同时报告，标定参数写入带指纹的配置。
+3. **分布式释放**：先在源区上部真实冰川像元处建立地形路径，再按UTM东、北坐标和高程作三维投影，保留逐像元位置与高程差；初速度0。该方法避免把源区坐标整体平移到更低的沟谷。事件研究提供103百万m³初始方量及0.76km²源区面积，36百万m³可动方量与67百万m³沉积分配分别约束。
+4. **守恒与动量**：上游保留适用于本次强地形变化的原变断面Rusanov-Voellmy计算；下游使用静水重构MUSCL-HLL与SSP-RK2步进降低数值耗散。先计上游实际滞留，再按其累计通量分配汇入口沉积与下游输入，边界只施加相应体积与运动速度。
+5. **事后标定**：上游时间采用双侧误差约束，下游联合比较传播时间、峰值流量和断面速度。以源区释放为统一时间零点，导出前锋、洪峰、5%/50%累计量时刻。文献约130s与350s分别对应两段，其约480s总经历时间另行对照。参数边界状态和全部标定偏差共同输出。
 6. **真实通量耦合**：局部二维接收一维每个接受时间步的累计界面体积与速度；30m和60m网格独立计算。二维强度报告流深、速度、到达时间与单位质量动能`u²/2`。
-7. **数值与地形检查**：7.5/15/30m一维步长、30/60m二维网格、静水平衡、质量收支与能量范围；交汇断面按单位100m河长积分填高体积，评估堆积占据河槽的物质条件。
+7. **数值与地形检查**：上游15m、下游{q4['downstream']['dx_m']:g}m主网格，另以{float(fine['dx_m']):g}/{float(base['dx_m']):g}/{max(by_dx):g}m比较下游分辨率；二维30/60m独立计算。标定在15m网格进行，固定所得参数后在更细输出网格评价，不将加密结果写成重新标定。网格试验保持同一入流和物理端点，分别检查守恒、压力梯度、干湿前缘及分辨率响应。
 
-本次下游标定参数为μ={q4['stage2_parameters']['mu']:.6f}、ξ={q4['stage2_parameters']['xi']:.2f}m/s²、有效断面尺度{q4['stage2_parameters']['section_capacity_scale']:.3f}。全程体积相对残差{q4['cascade_volume_residual']:.2e}。`Q4_14`至`Q4_21`为分阶段主模型；早期编号为同一官方数据上的单阶段参考实验，供比较几何与参数假设的影响。
+本次下游标定参数为μ={q4['stage2_parameters']['mu']:.6f}、ξ={q4['stage2_parameters']['xi']:.2f}m/s²、有效断面尺度{q4['stage2_parameters']['section_capacity_scale']:.3f}（{boundary}）。全程体积相对残差{q4['cascade_volume_residual']:.2e}。`Q4_14`至`Q4_25`为分阶段计算与复核图；早期编号为同一官方数据上的单阶段参考实验。
 
 ## 5. 图表数据、重绘与测试
 
@@ -170,7 +179,7 @@ python scripts/export_redraw_data.py
 
 第一条从缓存数组重绘分阶段结果；第二条逐图校对数值保留；第三条在隔离目录回放完整绘图并检查原结果保持一致。缓存重绘和隔离回放均需先准备完整本地输入与数值结果。`replot_q4_figures.py`、`replot_q4_1d_cached.py`对应参考单阶段图。`build_answer_pdf.py`直接读取当前表与图，README由本脚本按当前结果更新。
 
-测试覆盖QC和单位、未来信息隔离、预警状态、误报分母、静水平衡、变断面守恒、能量范围、累计体积精确耦合及重绘导出。数学测试用的解析或合成小网格只用于验证求解器，正式个案输入与输出按来源清单单独审计。
+本次{checks.get('passed','见记录')}项测试通过。测试覆盖QC和单位、未来信息隔离、预警状态、误报分母、静水平衡、真实压力梯度、干湿前缘、变断面守恒、能量范围、路径保护与累计体积耦合。解析小网格只用于验证求解器，正式个案输入与输出由来源清单单独审计。
 
 ## 6. 模型约定与尺度解释
 
@@ -180,7 +189,7 @@ python scripts/export_redraw_data.py
 | 跨境推算链 | 站点4140m、源区代表高程约5297m，以6.5℃/km主递减率并比较5与8℃/km；实际预报格点偏移约8.38km。站点能量按站点尺度解释。 |
 | 时间与覆盖率 | 95%区间是条件首次超限的时间预测区间，经验覆盖率由历史气象超限事件计算；题面10:30作为影响参考时刻。 |
 | 标定资料与空间 | Q4结合事后事件研究进行过程复现；Q3天气输入与Q4事后标定资料分别记录，空间范围属于模型回放包络。 |
-| 断面和网格 | 有效断面尺度本次达到搜索上界{q4['stage2_parameters']['section_capacity_scale']:.1f}；一维15m至7.5m的峰值流量变化{flow_change:+.1f}%，到达时间变化{time_change:+.1f}%；二维面积变化{area_change:.1f}%。原始断面、参数响应和网格表共同解释结果。 |
+| 断面和网格 | 有效断面尺度{q4['stage2_parameters']['section_capacity_scale']:.3f}，{boundary}；一维{float(base['dx_m']):g}m至{float(fine['dx_m']):g}m的峰值流量变化{flow_change:+.1f}%，到达时间变化{time_change:+.1f}%，最大流深变化{depth_change:.1f}%；二维面积变化{area_change:.1f}%。质量闭合与各量的分辨率响应分别报告。 |
 | 传播强度 | 等效介质方程描述体积与动量演变；研究段终点设在口岸。动能按单位质量报告，结构受力可结合介质组成和构件参数进一步计算。 |
 
 ## 7. 资料出处与配置来源
@@ -193,23 +202,34 @@ python scripts/export_redraw_data.py
 - [尼泊尔DHM站点4913](https://www.dhm.gov.np/hydrology/hms-Single/4913)：口岸下游水文站地理位置辅助核对。
 - [口岸附近原图地理标记](https://commons.wikimedia.org/wiki/File:Nepal_China_Border.jpg)：区域参考点；数值终点投影至DEM河槽。
 - Audusse等，2004，SIAM Journal on Scientific Computing，DOI 10.1137/S1064827503431090：静水重构方法。
+- Gottlieb与Shu，1998，Mathematics of Computation，DOI 10.1090/S0025-5718-98-00913-2：两阶段TVD/SSP时间步进。
 
 输入的逐项数值、来源URL和角色见`configs/case_evidence.yaml`。完整输入、源码和配置的SHA256记录由`audit_provenance.py`生成，位于`outputs/quality/reproducibility_manifest.json`。
 
-## 8. 全部PNG的用途与源码索引
+## 8. 审查总结逐项复核
+
+原审查为静态判断；本次依据赛题、最新代码与实际重算进行复核。下表保留合理的模型解释要求，并明确哪些属于实现错误。
+
+| 序号 | 审查项 | 判断 | 实际处理 |
+|---|---|---|---|
+'''
+    for item in review['findings']:
+        document+=f"| {item['id']} | {item['finding']} | {item['judgement']} | {item['evidence']} {item['action']} |\n"
+    document+='''
+## 9. 全部PNG的用途与源码索引
 
 下表链接为当前PNG；“数值证据”列给出本地计算结果文件名。这些表和缓存按本次上传范围留在本地。
 '''
     sections=[('Q1','问题一'),('Q2','问题二'),('Q3','问题三'),('Q4','问题四'),('JOINT','触发至到达联合计算')]
     for group,title in sections:
         selected=[r for r in rows if r['question']==group]
-        if group=='Q4':selected=sorted(selected,key=lambda r:(0 if any(r['figure'].split('/')[-1].startswith(f'Q4_{i}') for i in range(14,22)) else 1,r['figure']))
+        if group=='Q4':selected=sorted(selected,key=lambda r:(0 if any(r['figure'].split('/')[-1].startswith(f'Q4_{i}') for i in range(14,26)) else 1,r['figure']))
         document+=f'\n### {title}（{len(selected)}张）\n\n| PNG | 用途 | 生成代码 | 数值证据 |\n|---|---|---|---|\n'
         for r in selected:
             paths=[x if '/' in x else 'src/mathorcup/'+x for x in r['generating_code'].split(';')]
             code='、'.join(f'[{Path(x).name}]({x})' for x in paths)
             evidence='；'.join('`'+x+'`' for x in r['numerical_evidence'].split(';'))
-            role='参考单阶段实验；' if group=='Q4' and not any(Path(r['figure']).name.startswith(f'Q4_{i}') for i in range(14,22)) else ''
+            role='参考单阶段实验；' if group=='Q4' and not any(Path(r['figure']).name.startswith(f'Q4_{i}') for i in range(14,26)) else ''
             document+=f"| [{Path(r['figure']).name}](outputs/{r['figure']}) | {role+r['purpose']} | {code} | {evidence} |\n"
     (ROOT/'README.md').write_text(document,encoding='utf-8')
     print({'README':'README.md','figures':len(rows)})

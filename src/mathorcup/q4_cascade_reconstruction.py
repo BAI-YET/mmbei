@@ -76,7 +76,10 @@ def advance_channel(A,Q,bed,width,dx,dt,mu,xi,qin=0.,vin=0.,bank_side_slope=None
 
 
 def simulate_channel(profile,mu,xi,total_seconds=1000,cfl=.3,initial_volume_m3=0.,
-                     inlet=None,frames=12,sensor_upstream_m=2500):
+                     inlet=None,frames=12,sensor_upstream_m=2500,numerical_order=2):
+    if numerical_order not in (1,2):raise ValueError('Numerical order must be 1 or 2')
+    from .q4_high_order import advance_channel_muscl
+    update=advance_channel_muscl if numerical_order==2 else advance_channel
     p=profile.reset_index(drop=True);s=p.distance_m.to_numpy(float);s=s-s[0]
     z=p.elevation_m.to_numpy(float);width=p.effective_width_m.to_numpy(float)
     side=p.bank_side_slope.to_numpy(float) if 'bank_side_slope' in p else np.zeros(len(p))
@@ -124,7 +127,7 @@ def simulate_channel(profile,mu,xi,total_seconds=1000,cfl=.3,initial_volume_m3=0
             before=float(np.interp(t,times,cumulative));after=float(np.interp(t+dt,times,cumulative))
             qin=max((after-before)/dt,0.)
         transfer_velocity=max(float(Q[-1]/max(A[-1],EPS)),0.)
-        A,Q,dv,loss,flux=advance_channel(A,Q,z,width,dx,dt,mu,xi,qin,vin,bank_side_slope=side,return_interface_flux=True)
+        A,Q,dv,loss,flux=update(A,Q,z,width,dx,dt,mu,xi,qin,vin,bank_side_slope=side,return_interface_flux=True)
         sensor_flux=float(flux[sensor]);sensor_cumulative+=max(sensor_flux,0.)*dt
         sensor_reverse+=max(-sensor_flux,0.)*dt
         t+=dt;steps+=1;outvol+=dv;inputvol+=qin*dt;clip+=loss
@@ -144,12 +147,14 @@ def simulate_channel(profile,mu,xi,total_seconds=1000,cfl=.3,initial_volume_m3=0
       'negative_clip_m3':clip,'arrival_s':first,'sensor_arrival_s':first_sensor,
       'peak_discharge_m3_s':peak_port,'velocity_at_peak_discharge_m_s':peak_v,
       'maximum_depth_m':float(max_depth.max()),'maximum_wet_speed_m_s':float(max_speed.max()),
-      'steps':steps,'dx_m':dx,'sensor_distance_m':float(s[sensor])}
+      'steps':steps,'dx_m':dx,'sensor_distance_m':float(s[sensor]),
+      'numerical_method':'MUSCL-HLL / SSP-RK2' if numerical_order==2 else 'first-order Rusanov',
+      'numerical_order':numerical_order}
     inlet_speed_max=float(np.max(speeds)) if speeds is not None else 0.
     bound=np.sqrt(inlet_speed_max**2+2*G*(float(np.max(z)-np.min(z))+2*mass['maximum_depth_m']))
     mass['generous_energy_speed_bound_m_s']=float(bound)
     if mass['maximum_wet_speed_m_s']>bound*1.1:
-        raise FloatingPointError('Computed wet-flow speed exceeds the terrain/input energy bound')
+        raise FloatingPointError(f'Computed wet-flow speed {mass["maximum_wet_speed_m_s"]:.3f} exceeds terrain/input bound {bound:.3f} m/s')
     return {'profile':p,'s':s,'z':z,'width':width,'history':pd.DataFrame(rows),
             'captures':captures,'mass':mass,'max_depth':max_depth,'max_speed':max_speed,
             'sensor_idx':sensor,'A':A,'Q':Q,'arrival_field_s':arrival_field}
@@ -165,6 +170,7 @@ def upstream_transfer(answer,mobile_fraction):
 
 def fit_cascade(ctx,profile,junction,evidence):
     model_path=ctx.root/'configs/calibrated_q4.yaml'
+    previous_model=yaml.safe_load(model_path.read_text()) if model_path.exists() else None
     if model_path.exists() and not ctx.cfg.get('refit_q4',False):
         model=yaml.safe_load(model_path.read_text())
         if model.get('calibration_basis_sha256')==calibration_fingerprint(profile,evidence):
@@ -174,17 +180,17 @@ def fit_cascade(ctx,profile,junction,evidence):
     candidates=[];stage1=[];best1=None;loss1=np.inf
     for mu,xi in itertools.product(cfg['stage1_mu_candidates'],cfg['stage1_xi_candidates']):
         a=simulate_channel(first_profile,mu,xi,total_seconds=cfg['total_seconds'],cfl=cfg['cfl'],
-                           initial_volume_m3=values['release_volume_m3'],frames=12)
+                           initial_volume_m3=values['release_volume_m3'],frames=12,numerical_order=1)
         arrival=a['mass']['arrival_s']
         passed=a['mass']['outflow_m3'];mobile=values['mobile_debris_volume_m3']
-        # The literature's 30+100 s describes the transition interval, rather
-        # than an independently timed first 0.2 m wetting front. Use it as an
-        # upper bound, and fit the observed retained/mobile volume partition.
+        # Approximate published transition time is a TWO-sided calibration
+        # target. Record the 0.2 m numerical-front definition separately.
         if arrival and passed>=mobile:
-            error=float(np.log(passed/mobile)**2+max(0,np.log(arrival/values['confluence_elapsed_s']))**2)
+            error=float(np.log(passed/mobile)**2+np.log(arrival/values['confluence_elapsed_s'])**2)
         else:error=np.inf
         stage1.append({'stage':1,'mu':mu,'xi':xi,'arrival_s':arrival,'objective':error,
                        'passed_to_confluence_m3':a['mass']['outflow_m3']})
+        pd.DataFrame(stage1).to_csv(ctx.folder('q4')/'Q4_calibration_progress.csv',index=False)
         if error<loss1:best1=(mu,xi,a);loss1=error
     if best1 is None:raise RuntimeError('No upstream parameter set reaches the confluence')
     mu1,xi1,upper=best1
@@ -206,6 +212,7 @@ def fit_cascade(ctx,profile,junction,evidence):
         candidates.append({'stage':2,'mu':mu,'xi':xi,'arrival_s':m['arrival_s'],'transit_s':transit,
              'peak_discharge_m3_s':m['peak_discharge_m3_s'],'velocity_m_s':m['velocity_at_peak_discharge_m_s'],
              'objective':error,'mass_error':m['relative_mass_error']})
+        pd.DataFrame(stage1+candidates).to_csv(ctx.folder('q4')/'Q4_calibration_progress.csv',index=False)
         if error<loss2:best2=(mu,xi,a);loss2=error
     if best2 is None:raise RuntimeError('No downstream calibration member reaches the port')
     # The effective capacity of a trapezoidal section is an estimated model
@@ -229,13 +236,22 @@ def fit_cascade(ctx,profile,junction,evidence):
              'arrival_s':m['arrival_s'],'transit_s':transit,'peak_discharge_m3_s':m['peak_discharge_m3_s'],
              'velocity_m_s':m['velocity_at_peak_discharge_m_s'],'objective':error,'mass_error':m['relative_mass_error']})
         evaluations+=1
+        pd.DataFrame(stage1+candidates).to_csv(ctx.folder('q4')/'Q4_calibration_progress.csv',index=False)
         if error<loss2:best2=(float(mu),float(xi),a);best_scale=float(scale);loss2=error
         if evaluations%10==0:print('[Q4 calibration]',evaluations,'best relative-log objective',loss2,flush=True)
         return error
-    x0=np.log([initial[0],initial[1],1.])
-    simplex=np.array([x0,x0+[.15,0,0],x0+[0,.25,0],x0+[0,0,.35]])
+    if previous_model is not None:
+        seed=previous_model['stage2']
+        objective(np.log([seed['mu'],seed['xi'],seed['section_capacity_scale']]))
+    x0=np.log([best2[0],best2[1],best_scale])
+    bounds=np.log(np.array([[.003,.12],[500,15000],[.5,3.]]))
+    vertices=[x0]
+    for k,size in enumerate([.15,.25,.35]):
+        direction=size if x0[k]+size<bounds[k,1] else -size
+        x=x0.copy();x[k]=np.clip(x[k]+direction,*bounds[k]);vertices.append(x)
+    simplex=np.array(vertices)
     optimize=minimize(objective,x0,method='Nelder-Mead',
-       bounds=np.log(np.array([[.003,.12],[500,15000],[.5,3.]])),
+       bounds=bounds,
        options={'maxfev':48,'xatol':.015,'fatol':.0005,'initial_simplex':simplex})
     mu2,xi2,lower=best2
     return save_cascade_results(ctx,profile,junction,evidence,upper,lower,
@@ -245,8 +261,12 @@ def fit_cascade(ctx,profile,junction,evidence):
 def calibration_fingerprint(profile,evidence):
     p=profile.copy()
     for name in p:p[name]=p[name].round(12 if name=='source_area_weight' else 6)
-    code=''.join(inspect.getsource(f) for f in [section_depth,section_pressure,advance_channel,simulate_channel,upstream_transfer])
-    return hashlib.sha256((p.to_csv(index=False)+yaml.safe_dump(evidence,sort_keys=True)+code).encode()).hexdigest()
+    from .q4_high_order import advance_channel_muscl,muscl_euler,limited_slope
+    code=''.join(inspect.getsource(f) for f in [section_depth,section_pressure,advance_channel,simulate_channel,upstream_transfer,
+        advance_channel_muscl,muscl_euler,limited_slope,fit_cascade])
+    fitting_evidence=json.loads(json.dumps(evidence))
+    fitting_evidence['reconstruction'].pop('downstream_output_dx_m',None)
+    return hashlib.sha256((p.to_csv(index=False)+yaml.safe_dump(fitting_evidence,sort_keys=True)+code).encode()).hexdigest()
 
 
 def save_cascade_results(ctx,profile,junction,evidence,upper,lower,first_params,second_params,losses,trials):
@@ -255,8 +275,16 @@ def save_cascade_results(ctx,profile,junction,evidence,upper,lower,first_params,
     fraction=values['mobile_debris_volume_m3']/upper['mass']['outflow_m3']
     inlet=upstream_transfer(upper,fraction);out=ctx.folder('q4')
     pd.DataFrame(trials).to_csv(out/'Q4_reconstruction_calibration_trials.csv',index=False)
-    if len(trials)>10:pd.DataFrame(trials).to_csv(out/'Q4_reconstruction_training_trials.csv',index=False)
-    else:pd.DataFrame(trials).to_csv(out/'Q4_reconstruction_sensitivity.csv',index=False)
+    history_cache=ctx.processed/'q4_calibration'/calibration_fingerprint(profile,evidence)/'training_trials.csv'
+    if len(trials)>10:
+        pd.DataFrame(trials).to_csv(out/'Q4_reconstruction_training_trials.csv',index=False)
+        history_cache.parent.mkdir(parents=True,exist_ok=True)
+        pd.DataFrame(trials).to_csv(history_cache,index=False)
+    else:
+        pd.DataFrame(trials).to_csv(out/'Q4_reconstruction_sensitivity.csv',index=False)
+        if history_cache.exists():
+            import shutil
+            shutil.copy2(history_cache,out/'Q4_reconstruction_training_trials.csv')
     upper['history'].to_csv(out/'Q4_reconstruction_upper_history.csv',index=False)
     lower['history'].to_csv(out/'Q4_reconstruction_lower_history.csv',index=False)
     inlet.to_csv(out/'Q4_reconstruction_transfer.csv',index=False)
@@ -283,6 +311,48 @@ def save_cascade_results(ctx,profile,junction,evidence,upper,lower,first_params,
       'tongue_elevation_crossing_s':float(upper['arrival_field_s'][int(np.argmin(abs(upper['z']-values['glacier_impact_elevation_m'])))]),
       'input_hydrograph':'recorded upstream finite-volume flux times published mobile fraction',
       'calibration_is_independent_validation':False}
+    # All event-clock comparisons share t=0 at the initial source release.
+    # The publication supplies approximate reconstruction constraints, while
+    # arrival_s is explicitly the computed h>0.2 m leading front.
+    reference_total=values['confluence_elapsed_s']+values['confluence_to_port_elapsed_s']
+    diagnostics=[
+      ('source_to_confluence_s',values['confluence_elapsed_s'],upper['mass']['arrival_s']),
+      ('confluence_to_port_s',values['confluence_to_port_elapsed_s'],report['downstream_transit_s']),
+      ('source_to_port_s',reference_total,lower['mass']['arrival_s']),
+      ('port_peak_discharge_m3_s',values['port_peak_discharge_m3_s'],lower['mass']['peak_discharge_m3_s']),
+      ('port_velocity_at_peak_m_s',values['port_cross_section_mean_velocity_m_s'],lower['mass']['velocity_at_peak_discharge_m_s'])]
+    comparison=pd.DataFrame([{'quantity':name,'published_reconstruction_reference':target,
+        'computed_value':actual,'relative_error':actual/target-1.}
+        for name,target,actual in diagnostics])
+    comparison.to_csv(out/'Q4_calibration_residuals.csv',index=False)
+    report['event_clock']={'zero':'initial source release','numerical_arrival_definition':'first local depth >0.2 m',
+        'reference_source_to_port_elapsed_s':reference_total,
+        'reference_time_role':'approximate published event reconstruction milestones',
+        'comparison_file':'Q4_calibration_residuals.csv'}
+    report['parameter_bound_diagnostics']={'capacity_scale':float(best_scale),
+        'capacity_scale_bounds':[.5,3.], 'at_search_bound':bool(np.isclose(best_scale,.5) or np.isclose(best_scale,3.)),
+        'capacity_is_field_measurement':False}
+    settings=evidence['reconstruction']
+    report['parameter_bound_diagnostics']['all_parameters']=[
+        {'parameter':name,'value':float(value),'lower':float(lo),'upper':float(hi),
+         'at_bound':bool(np.isclose(value,lo) or np.isclose(value,hi))}
+        for name,value,lo,hi in [
+            ('stage1_mu',mu1,min(settings['stage1_mu_candidates']),max(settings['stage1_mu_candidates'])),
+            ('stage1_xi',xi1,min(settings['stage1_xi_candidates']),max(settings['stage1_xi_candidates'])),
+            ('stage2_mu',mu2,.003,.12),('stage2_xi',xi2,500,15000),('section_capacity_scale',best_scale,.5,3.)]]
+    report['numerical_formulation']={'upstream':'variable-section Rusanov-Voellmy',
+        'downstream_transport':'MUSCL-HLL with SSP-RK2 transport update',
+        'friction':'dissipative semi-implicit quadratic drag',
+        'parameters_fitted_grid_m':float(evidence['reconstruction']['solver_dx_m']),
+        'downstream_output_grid_m':float(lower['mass']['dx_m'])}
+    timing=[]
+    for name,a in [('confluence',upper),('port',lower)]:
+        hist=a['history'];flow=hist.outlet_discharge_m3_s;volume=hist.outflow_cumulative_m3
+        timing.append({'section':name,'first_depth_gt_0p2m_s':a['mass']['arrival_s'],
+            'peak_discharge_time_s':float(hist.time_s.iloc[flow.idxmax()]),
+            'cumulative_5pct_time_s':float(hist.loc[volume>=.05*volume.iloc[-1],'time_s'].iloc[0]),
+            'cumulative_50pct_time_s':float(hist.loc[volume>=.5*volume.iloc[-1],'time_s'].iloc[0])})
+    pd.DataFrame(timing).to_csv(out/'Q4_event_time_alignment.csv',index=False)
     write_json(out/'Q4_cascade_reconstruction.json',report)
     model={'calibration_basis_sha256':calibration_fingerprint(profile,evidence),
        'calibrated_from':evidence['references']['case_study']['url'],
@@ -298,7 +368,7 @@ def replay_calibrated_cascade(ctx,profile,junction,evidence,model):
     cfg=evidence['reconstruction'];values={k:v['value'] for k,v in evidence['published_values'].items()}
     first=model['stage1'];second=model['stage2'];scale=second['section_capacity_scale']
     upper=simulate_channel(profile.iloc[:junction+1],first['mu'],first['xi'],
-        total_seconds=cfg['total_seconds'],cfl=cfg['cfl'],initial_volume_m3=values['release_volume_m3'])
+        total_seconds=cfg['total_seconds'],cfl=cfg['cfl'],initial_volume_m3=values['release_volume_m3'],numerical_order=1)
     inlet=upstream_transfer(upper,values['mobile_debris_volume_m3']/upper['mass']['outflow_m3'])
     downstream=profile.iloc[junction:].copy()
     downstream['effective_width_m']*=scale;downstream['bank_side_slope']*=scale
@@ -316,7 +386,8 @@ def replay_calibrated_cascade(ctx,profile,junction,evidence,model):
            'transit_s':transit,'arrival_s':m['arrival_s'],'peak_discharge_m3_s':m['peak_discharge_m3_s'],
            'velocity_m_s':m['velocity_at_peak_discharge_m_s'],'objective':float(np.mean(np.square(terms))),
            'mass_error':m['relative_mass_error']})
-    loss1=float(np.log(upper['mass']['outflow_m3']/values['mobile_debris_volume_m3'])**2)
+    loss1=float(np.log(upper['mass']['outflow_m3']/values['mobile_debris_volume_m3'])**2+
+                np.log(upper['mass']['arrival_s']/values['confluence_elapsed_s'])**2)
     return save_cascade_results(ctx,profile,junction,evidence,upper,lower,
        (first['mu'],first['xi']),(second['mu'],second['xi'],scale),(loss1,trials[0]['objective']),trials)
 
@@ -372,9 +443,13 @@ def plot_reconstruction(ctx,profile,junction,z,tr,geometry,upper,lower,report,tr
 
 
 def execute_cascade_reconstruction(ctx):
+    if ctx.cfg.get('strict_route',False):
+        from .q4_flowpath import require_verified_route
+        require_verified_route(ctx)
     evidence=yaml.safe_load((ctx.root/'configs/case_evidence.yaml').read_text())
     profile,junction,z,tr,geometry=prepare_reconstruction_geometry(ctx,evidence)
     upper,lower,report,trials=fit_cascade(ctx,profile,junction,evidence)
+    upper,lower,report,trials=refine_accepted_cascade(ctx,profile,junction,evidence,upper,lower,report,trials)
     plot_reconstruction(ctx,profile,junction,z,tr,geometry,upper,lower,report,trials)
     from .q4_reconstructed_spatial import execute_reconstructed_spatial
     execute_reconstructed_spatial(ctx,lower,report,evidence)
@@ -383,22 +458,72 @@ def execute_cascade_reconstruction(ctx):
     return upper,lower,report
 
 
+def refine_accepted_cascade(ctx,profile,junction,evidence,upper,lower,report,trials):
+    """Evaluate accepted fitted parameters on the declared finer output grid."""
+    cfg=evidence['reconstruction'];requested=float(cfg.get('downstream_output_dx_m',cfg['solver_dx_m']))
+    if np.isclose(requested,lower['mass']['dx_m']):return upper,lower,report,trials
+    coarse=lower;p=resample_channel_profile(lower['profile'],requested)
+    inlet=upstream_transfer(upper,report['mobile_fraction_of_computed_upper_outflow'])
+    params=report['stage2_parameters'];values=report['published_constraints']
+    fine=simulate_channel(p,params['mu'],params['xi'],total_seconds=cfg['total_seconds'],cfl=cfg['cfl'],inlet=inlet)
+    lower['history'].to_csv(ctx.folder('q4')/'Q4_reconstruction_lower_calibration_grid_history.csv',index=False)
+    transit=fine['mass']['arrival_s']-upper['mass']['arrival_s']
+    loss=float(np.mean(np.square([np.log(transit/values['confluence_to_port_elapsed_s']),
+        np.log(fine['mass']['peak_discharge_m3_s']/values['port_peak_discharge_m3_s']),
+        np.log(fine['mass']['velocity_at_peak_discharge_m_s']/values['port_cross_section_mean_velocity_m_s'])])))
+    all_trials=pd.read_csv(ctx.folder('q4')/'Q4_reconstruction_calibration_trials.csv')
+    previous=ctx.cfg.get('write_calibration_model',True);ctx.cfg['write_calibration_model']=False
+    try:
+        _,_,updated,updated_trials=save_cascade_results(ctx,profile,junction,evidence,upper,fine,
+            (report['stage1_parameters']['mu'],report['stage1_parameters']['xi']),
+            (params['mu'],params['xi'],params['section_capacity_scale']),
+            (report['calibration_objective']['stage1_deposition_and_transition_constraint'],loss),
+            all_trials.to_dict('records'))
+    finally:ctx.cfg['write_calibration_model']=previous
+    updated['calibration_objective_at_fitted_grid']=report['calibration_objective']
+    updated['output_grid_evaluation']='fixed accepted parameters evaluated at the declared finer grid; no retuning'
+    write_json(ctx.folder('q4')/'Q4_cascade_reconstruction.json',updated)
+    # Save one consistent spatial route for the mixed upstream/downstream mesh.
+    unscaled=p.copy();unscaled.effective_width_m/=params['section_capacity_scale']
+    unscaled.bank_side_slope/=params['section_capacity_scale']
+    spatial=pd.concat([profile.iloc[:junction],unscaled],ignore_index=True)
+    spatial.to_csv(ctx.folder('q4')/'Q4_reconstruction_route.csv',index=False)
+    fine['calibration_grid_solution']=coarse
+    return upper,fine,updated,updated_trials
+
+
 def reconstruction_grid_experiment(ctx,upper,lower,report,evidence):
     cfg=evidence['reconstruction'];p=lower['profile'];out=ctx.folder('q4')
     fraction=report['mobile_input_derived_m3']/upper['mass']['outflow_m3'];inlet=upstream_transfer(upper,fraction)
     rows=[]
-    for dx in [cfg['solver_dx_m']/2,cfg['solver_dx_m'],cfg['solver_dx_m']*2]:
-        if dx==cfg['solver_dx_m']:a=lower
+    primary_dx=lower['mass']['dx_m']
+    for dx in [primary_dx/2,primary_dx,primary_dx*2]:
+        if np.isclose(dx,primary_dx):a=lower
+        elif 'calibration_grid_solution' in lower and np.isclose(dx,lower['calibration_grid_solution']['mass']['dx_m']):
+            a=lower['calibration_grid_solution']
         else:
-            s=np.arange(float(p.distance_m.iloc[0]),float(p.distance_m.iloc[-1]),dx)
-            q=pd.DataFrame({name:np.interp(s,p.distance_m,p[name]) for name in p if name!='distance_m'})
-            q.insert(0,'distance_m',s)
+            q=resample_channel_profile(p,dx)
             a=simulate_channel(q,report['stage2_parameters']['mu'],report['stage2_parameters']['xi'],
                 total_seconds=cfg['total_seconds'],cfl=cfg['cfl'],inlet=inlet)
-        rows.append({'dx_m':dx,'arrival_s':a['mass']['arrival_s'],
+        rows.append({'dx_m':a['mass']['dx_m'],'requested_dx_m':dx,'arrival_s':a['mass']['arrival_s'],
            'peak_discharge_m3_s':a['mass']['peak_discharge_m3_s'],
-           'peak_depth_m':a['mass']['maximum_depth_m'],'mass_error':a['mass']['relative_mass_error']})
+           'peak_depth_m':a['mass']['maximum_depth_m'],'mass_error':a['mass']['relative_mass_error'],
+           'domain_start_m':float(a['profile'].distance_m.iloc[0]),
+           'domain_end_m':float(a['profile'].distance_m.iloc[-1]),
+           'numerical_method':a['mass']['numerical_method']})
     pd.DataFrame(rows).to_csv(out/'Q4_reconstruction_1d_grid_experiment.csv',index=False)
+    ordered=sorted(rows,key=lambda r:r['dx_m']);fine,primary=ordered[:2]
+    peak_change=abs(fine['peak_discharge_m3_s']/primary['peak_discharge_m3_s']-1)
+    time_change=abs(fine['arrival_s']/primary['arrival_s']-1)
+    depth_change=abs(fine['peak_depth_m']/primary['peak_depth_m']-1)
+    write_json(out/'Q4_numerical_resolution_diagnostics.json',{
+        'fixed_inlet_and_parameters':True,'physical_endpoints_held_fixed':True,
+        'comparison':'two finest tested grids; sensitivity, not a claim of asymptotic convergence',
+        'fine_dx_m':fine['dx_m'],'primary_dx_m':primary['dx_m'],
+        'peak_discharge_relative_change':peak_change,'arrival_relative_change':time_change,
+        'maximum_depth_relative_change':depth_change,
+        'maximum_mass_error':max(r['mass_error'] for r in rows),
+        'mass_conservation_and_resolution_reported_separately':True})
     sections=np.load(out/'Q4_reconstruction_sections.npz');offsets=sections['offsets_m'];z=sections['elevation_m']
     geometry=json.loads((out/'Q4_reconstruction_geometry.json').read_text())
     fig,axs=plt.subplots(1,3,figsize=(14,4.2),layout='constrained')
@@ -410,6 +535,18 @@ def reconstruction_grid_experiment(ctx,upper,lower,report,evidence):
     fig.suptitle('原始横断面与固定参数的数值分辨率试验')
     savefig(fig,out/'Q4_21_cross_sections_and_1d_grid_experiment.png')
     reconstruction_deposition_geometry(ctx)
+
+
+def resample_channel_profile(profile,requested_dx):
+    """Hold BOTH physical endpoints fixed when comparing numerical grids."""
+    if requested_dx<=0:raise ValueError('Grid size must be positive')
+    start=float(profile.distance_m.iloc[0]);end=float(profile.distance_m.iloc[-1])
+    n=max(2,int(round((end-start)/requested_dx))+1)
+    s=np.linspace(start,end,n)
+    result=pd.DataFrame({name:np.interp(s,profile.distance_m,profile[name])
+        for name in profile if name!='distance_m'})
+    result.insert(0,'distance_m',s)
+    return result
 
 
 def reconstruction_deposition_geometry(ctx):

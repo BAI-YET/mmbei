@@ -61,10 +61,11 @@ def make_publication_assets(ctx):
             code='question_completion.py';data={'q1':'Q1_direct_answer.json;Q1_explicit_extreme_weather.csv','q2':'Q2_expanded_mechanism_answer.json;Q2_expanded_channel_thresholds.csv','q3':'Q3_warning_lead_answer.json;Q3_proxy_backtest_2025.csv'}[q]
         elif stem.startswith('Q3_12'):
             code='q4_reconstructed_spatial.py';data='Q3_reconstructed_spatial_answer.json;Q3_reconstructed_warning_range.gpkg'
-        elif q=='q4' and stem.startswith(tuple(f'Q4_{i}' for i in range(14,22))):
-            code='q4_terrain_reconstruction.py;q4_cascade_reconstruction.py;q4_reconstructed_spatial.py'
+        elif q=='q4' and stem.startswith(tuple(f'Q4_{i}' for i in range(14,26))):
+            code='q4_terrain_reconstruction.py;q4_cascade_reconstruction.py;q4_reconstructed_spatial.py;q4_diagnostics.py'
             data='Q4_cascade_reconstruction.json;Q4_reconstruction_geometry.json;Q4_reconstruction_2d_summary.json'
-        rows.append({'question':q.upper(),'figure':str(path.relative_to(ctx.out)),'purpose':purpose,'generating_code':'src/mathorcup/'+code,
+        if stem.startswith('Q2_19'):code='q2_trigger_evaluation.py';data='Q2_source_elevation_lapse_sensitivity.csv;Q2_static_weight_sensitivity.csv'
+        rows.append({'question':q.upper(),'figure':str(path.relative_to(ctx.out)),'purpose':purpose,'generating_code':';'.join('src/mathorcup/'+part for part in code.split(';')),
             'numerical_evidence':data,'figure_type':'历史观测/物理条件' if q in ('q1','q2') else '气象回测/条件情景' if q=='q3' else '参数情景/数值验证'})
     with (ctx.out/'FIGURE_INDEX.csv').open('w',encoding='utf-8-sig',newline='') as f:
         w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)

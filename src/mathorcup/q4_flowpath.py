@@ -16,6 +16,19 @@ from .common import COLORS,savefig,write_json,record_warning,find_first
 
 UTM_CRS='EPSG:32645'
 
+def require_verified_route(ctx):
+    """One policy for reference, cascade, and direct reconstruction entry points."""
+    path=ctx.root/ctx.cfg['q4'].get('route_waypoints_file','events/verified_route.csv')
+    if not ctx.cfg['q4'].get('route_verified',False) or not path.exists():
+        raise ValueError('Strict route policy requires route_verified=true and an inspected waypoint file')
+    points=pd.read_csv(path)
+    if not {'lon','lat'}.issubset(points) or len(points)<2:
+        raise ValueError('Strict route policy requires at least two lon/lat waypoints')
+    coordinates=points[['lon','lat']].to_numpy(float)
+    if not np.isfinite(coordinates).all() or (abs(coordinates[:,0])>180).any() or (abs(coordinates[:,1])>90).any():
+        raise ValueError('Verified route contains invalid coordinates')
+    return points
+
 def glacier_source_candidate(ctx):
     # Prefer Q2's contiguous upper-score ice patch based on historical speed,
     # slope and thickness rather than the whole-glacier centroid.

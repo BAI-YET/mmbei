@@ -33,6 +33,10 @@ def execute_joint_arrival(ctx):
     if not q3.exists() or not q4.exists():
         write_json(out/'Q34_status.json',{'status':'NO_INPUTS','claim':'not executable before Q3,Q4'});return
     a=pd.read_csv(q3);route=json.loads(q4.read_text())
+    if not np.isclose(a.conditional_time_probability.sum(),1):
+        write_json(out/'Q34_status.json',{'status':'NO_CONDITION_PASSAGE_TRAJECTORIES',
+            'source':'Q3 numerical first-passage result; no event-time samples generated'})
+        return
     if massfile.exists():
         m=json.loads(massfile.read_text())
         endpoint_time=m['mass'].get('first_arrival_to_downstream_end_s')

@@ -31,7 +31,7 @@ for a in q1['axes']:
     f=base/'q1/Q1_11_all_candidate_ranking'/f"{a['axis']}_bars.csv"
     bars.extend(pd.read_csv(f,float_precision='round_trip').width)
 ref=pd.read_csv(ROOT/'outputs/q1/Q1_all_candidate_ranking.csv',float_precision='round_trip')
-assert len(bars)==56 and np.allclose(sorted(bars),sorted(ref.rarity_anomaly_score),rtol=0,atol=1e-15)
+assert len(bars)==len(ref) and np.allclose(sorted(bars),sorted(ref.rarity_anomaly_score),rtol=0,atol=1e-15)
 p=json.loads((base/'q4/Q4_10_impact_pressure_distribution/figure_metadata.json').read_text())
 layer=p['axes'][0]['rasters'][1];pressure=np.load(base/layer['shared_data']/'array.npz')['values']
 peak=json.loads((ROOT/'outputs/q4/Q4_2d_status.json').read_text())['mass']['max_dynamic_pressure_kPa']
@@ -41,7 +41,7 @@ for f in (base/'q4/Q4_07_parameter_sensitivity').glob('*scatter.csv'):
     df=pd.read_csv(f)
     if 'marker_role' in df:assert df.loc[df.marker_role.eq('symbolic_nonarrival'),'actual_arrival_time_min'].isna().all()
 result={'figure_count':len(expected),'resolved_plot_datasets':resolved,'all_numeric_raster_cells_roundtrip_exact':True,
-        'Q1_all_56_factor_values_present':True,'full_unclipped_dynamic_pressure_retained':True,
+        'Q1_all_56_factor_values_present':len(ref)==56,'Q1_complete_factor_count':len(ref),'full_unclipped_dynamic_pressure_retained':True,
         'nonarrival_not_converted_to_time':True,'missing_references':0}
 (base/'retention_checks.json').write_text(json.dumps(result,ensure_ascii=False,indent=2))
 print(result)

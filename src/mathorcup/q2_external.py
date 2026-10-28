@@ -129,6 +129,19 @@ def source_forecast_conditions(ctx,h,limits,forecast):
     r=future_rain;th=limits['rain_24h_nonzero_q90_mm']
     f['rain_gate_forecast']=np.where(r.notna(),np.where((r>=th)&(r>.01),physical_exceedance(r,th),0),np.nan)
     f['trigger_condition_forecast']=np.maximum(f.melt_gate_forecast,f.rain_gate_forecast)
+    if limits.get('station_positive_energy_7d_q90_mmwe') is not None:
+        # This is a LOWER BOUND on accumulated nonnegative energy: retain only
+        # measured pre-issue contributions still inside each future window.
+        # No future residual-energy observation is invented from shortwave.
+        observed=h.loc[h.index<issue,'energy_balance_residual'].clip(lower=0)*3600/334000
+        memory=[]
+        for t in f.index:
+            retained=observed.loc[(observed.index>t-pd.Timedelta(hours=168)) & (observed.index<=t)]
+            memory.append(float(retained.sum()) if retained.notna().sum()>=126 else np.nan)
+        f['station_energy_memory_lower_bound_mmwe']=memory
+        f['energy_gate_forecast_memory_lower_bound']=physical_exceedance(
+            memory,limits['station_positive_energy_7d_q90_mmwe'],limits['station_energy_gate_response_scale_mmwe'])
+        f['trigger_condition_forecast']=np.maximum(f.trigger_condition_forecast,f.energy_gate_forecast_memory_lower_bound)
     from pyproj import Geod
     _,_,distance=Geod(ellps='WGS84').inv(85.52723,28.2877,payload['longitude'],payload['latitude'])
     status={'status':'ACTUAL_ARCHIVED_RUN_PROPAGATED_THROUGH_Q2',
@@ -143,6 +156,7 @@ def source_forecast_conditions(ctx,h,limits,forecast):
        'spatial_proxy_limitation':'past rain/thermal memory from distant station, future source grid; no site-calibrated correction',
        'availability_at_issue':'run init + assumed 6h publication latency; actual historic dissemination not independently observed',
        'used_for_current_issue_sensitivity':True}
+    status['energy_forecast_rule']='nonnegative seven-day energy memory lower bound from pre-issue measured contributions; future contributions unknown'
     f.to_csv(ctx.folder('q2')/'Q2_archived_forecast_trigger_conditions.csv',index_label='forecast_time_bjt')
     write_json(ctx.folder('q2')/'Q2_archived_forecast_quality.json',status)
     return f,status

@@ -1,4 +1,4 @@
-# MathorCup 2026赛道B：四问代码、方法与PNG成果（v2.1）
+# MathorCup 2026赛道B：四问代码、方法与PNG成果（v2.2）
 
 本仓库用于妈妈杯代码图片上传保存留档，以确保能够正确回退版本。本文整合数据准备、四问作答、模型原理、运行方法、图题图注与全部图像索引。当前成果由实际输入、分析计算和数值实验生成；参数的观测、文献、标定和实验设计角色分别记录。
 
@@ -9,22 +9,23 @@
 | Q1关联特征 | 62项候选、56项有效；按机制合并相关变量后，五项代表通道为水汽VPD、近地层热力、地表能量余量、短波辐射、土壤水分。原始逐变量排序同时保留。 |
 | Q1极端过程 | 事件前七日VPD有29小时达到匹配历史q95，其中3小时超过匹配历史记录；2m气温有15小时达到q95，最长连续6小时。 |
 | Q2临界条件 | 非零24h降雨q90为10.20mm，源区7日正积温q90为39.05℃·d；新增30日热量、辐射能量和冻融通道。 |
-| Q2本次能量通道 | 正能量余量7日当量为192.72mm，历史q90为189.46mm，达到历史第92.3百分位。 |
-| Q3预警 | 实际历史起报驱动的6h条件超限频率为0.382；按预设0.25阈值在09:00发布预测预警，相对题面10:30提前1.5h。 |
-| Q3区间与检验 | 95%时间预测区间09:00至15:00；2025年151次发布、80次气象条件超限，覆盖率96.25%；TP/FP/FN/TN=72/22/8/49。 |
-| Q3提前量 | 27次正确预警的新发超限中，提前量中位数2.00h，四分位范围0.50至3.75h。 |
-| Q3空间范围 | 源区至口岸模型廊道23.14km，变断面与二维湿区融合包络10.95km²。 |
-| Q4分阶段复现 | 官方DEM汇流路径长23.14km、落差3353m；初始方量103百万m³，可动输入36百万m³，按实际求解通量连接上下游。 |
-| Q4口岸结果 | 源区释放后342.5s到达口岸河段，峰值流量200559m³/s，对应断面平均速度44.11m/s。 |
-| Q4二维网格试验 | 30m与60m累计湿润面积分别0.6291、0.6408km²；每档输入体积均与一维累计通量一致。 |
+| Q2本次能量通道 | 正能量余量7日当量为192.72mm，历史q90为189.46mm，达到历史第92.3百分位；现已进入主动态指数。 |
+| Q3预测预警 | 6h条件超限频率0.853；按0.25阈值，预测预警时间2026-08-26 09:00:00，至题面参考时刻提前1.5h。 |
+| Q3监测预警 | 有效监测段起点2026-08-25 18:00:00，其较题面参考时刻的回放提前量16.5h；与09:00预测发布分别记录。 |
+| Q3区间与检验 | 条件首次超限95%区间2026-08-26 09:00:00至2026-08-26 15:00:00；2025年相似日基准检验151次发布、67次气象超限，校准后覆盖率100.00%，平均宽度5.84h；TP/FP/FN/TN=59/23/8/61。 |
+| Q3提前量 | 20次正确预警的新发超限中，提前量中位数4.00h，四分位范围0.88至4.50h。 |
+| Q3空间范围 | 源区至口岸模型廊道23.71km，变断面与二维湿区融合包络9.58km²。 |
+| Q4分阶段复现 | 官方DEM汇流路径长23.71km、落差3427m；初始方量103百万m³，可动输入36百万m³，按实际求解通量连接上下游。 |
+| Q4口岸结果 | 源区释放后403.5s到达口岸河段，峰值流量208522m³/s，对应断面平均速度43.26m/s。 |
+| Q4二维网格试验 | 30m与60m累计湿润面积分别0.6246、0.6768km²；每档输入体积均与一维累计通量一致。 |
 
-预测预警、持续监测状态和事后过程标定分别报告。题面所需95%区间采用条件首次超限的时间预测区间构造；历史覆盖率的评价对象是实际气象条件超限。模型假设与尺度影响集中在第6节解释。
+预测预警、持续监测状态和事后过程标定分别报告。95%区间对应条件首次超限，历史覆盖率评价实际气象超限；当前历史起报驱动的回放与相似日基准检验分别列示。校准前覆盖率91.04%；校准后平均区间比完整6h窗口缩短2.70%，同时报告宽度与覆盖率。模型约定集中于第6节。
 
 ## 2. 仓库上传范围
 
 - 计算入口、全部模型代码、配置与测试：[run.py](run.py)、[src/mathorcup](src/mathorcup)、[configs](configs)、[scripts](scripts)、[tests](tests)。
 - 输入模板：[events](events)，两个仅含表头的CSV用于登记核验事件与路径。
-- 成果目录仅提交75张PNG，分布于`outputs/q1`、`q2`、`q3`、`q4`、`joint`。
+- 成果目录仅提交80张PNG，分布于`outputs/q1`、`q2`、`q3`、`q4`、`joint`。
 - `.gitignore`使生成的CSV、JSON、NPZ、GIS、SVG、GIF、PDF、图廊、缓存和重绘副本留在本地。原始附件、下载产品和字体按下一节恢复。
 
 `configs/case_evidence.yaml`是带出处和角色的事件约束；`configs/calibrated_q4.yaml`保存本次数值实验得到的有效参数与输入指纹，属于复现模型配置。
@@ -89,6 +90,8 @@ python scripts/build_answer_pdf.py
 
 支持`prepare`、`q1`、`q2`、`q3`、`q4`分阶段运行，按前后依赖顺序执行。`--force-rebuild`更新指定处理缓存，`--config`使用另一配置。输入或核心求解器变化时按指纹自动重标定；`--refit-q4`主动重复标定试验。重跑某阶段会刷新其成果，自己修改的本地图像应另存。
 
+`--strict-route`在清理任何旧结果之前检查`route_verified`与至少两个有效核验路径点，并约束全部Q4入口；严格模式实际沿核验路径计算。它与`--allow-provisional-q4`互斥。
+
 ## 4. 四问模型与代码
 
 ### 4.1 Q1：边界层、天气过程、极端事件和五项因素
@@ -107,7 +110,7 @@ python scripts/build_answer_pdf.py
 
 静态物源指数来自冰厚、坡度、历史速度与应变代理，驱动剪应力为`τ=ρgH sinθ`。速度梯度保持UTM北向符号，缺失保持未知。高分连通冰体提供候选源区，冰库存与实际可动体积分别记录。
 
-动态通道使用非零降雨q90、源区7日与30日正积温、站点净短波和正能量余量当量、冻融转换。正通量按`W/m²×3600/334000`转换成每小时水当量；1kg/m²数值等于1mm。各通道阈值固定来自2021至2025年暖季，未针对事件回调。新增分析识别出正能量余量通道越过历史q90；其他通道与固定组合指标如实保留计算值。
+主动态指数取降雨、源区7日正积温、站点正能量余量三个门控的最大值。30日热量、净短波能量和冻融转换继续单列。正通量按`W/m²×3600/334000`换算能量水当量，1kg/m²数值等于1mm；阈值来自所指定历史暖季。未来能量通道仅使用仍位于七日窗口内的灾前实测正能量贡献，作为非负累积能量的下界，不补造未来能量观测。源区高程q10/q50/q90与三档温度递减率、四组静态权重均实际重算。
 
 历史84条沟谷采用成因类别作为目标，比较全部候选模型的空间留出ROC-AUC；时间可靠性逐年向前拟合并比较更新间隔，空间可靠性比较30、60、120m的秩相关与高分区IoU。实际预报的温度、降水和短波进入未来条件；该次零度层缺失随原始记录保存。
 
@@ -117,7 +120,7 @@ python scripts/build_answer_pdf.py
 
 固定气象变量使用气温、短波和VPD，联合Q2水热通道；2026事件选出的因素用于补充解释。采用历史完整相似日轨迹并按最新观测作衰减调整，未来Q2通道由实际历史起报预报驱动。首次超限的频率和时间分布直接从数据轨迹计算；联合到达时间仅重采样实际计算的时间格点与传播试验结果。
 
-预测预警以`P(未来6h条件超限)≥0.25`判定；监测状态机分别处理2h进入、3h低值解除、6h续期和缺测暂停。本次预测预警为09:00、提前1.5h。历史检验将2021至2023、2024、2025分别用于拟合、校准、检验，保存所有发布、TP/FP/FN/TN、分母、提前量及覆盖过程。
+预测预警以`P(未来6h条件超限)≥0.25`判定；监测状态机处理2h进入、3h低值解除、6h续期和缺测暂停。当前预测发布、已有监测段起点和各自有效期分列；决策函数没有未来事件时刻输入，题面时刻只用于事后评价。历史检验将2021至2023、2024、2025分别用于拟合、校准、检验，保存TP/FP/FN/TN、分母、提前量与覆盖过程。敏感性曲线由不同阈值和7/14/21/28天历史轨迹窗口实际重算。
 
 空间回放以Q4河道和变断面最大水位形成廊道，融合释放网格及原始DEM上的二维湿区。研究段为源区至口岸，距离和面积来自米制几何计算。单阶段参考模型的空间范围仍保留用于实验比较，主作答采用`Q3_12`与分阶段结果。
 
@@ -127,13 +130,13 @@ python scripts/build_answer_pdf.py
 
 1. **真实地形**：扩大计算范围以覆盖主河道的北向弯曲；Priority-Flood只辅助D8寻路，动力学保持官方原始高程。汇入口邻域结合文献河道距离与DEM集水面积变化定位。
 2. **实际断面**：提取沿程DEM横剖面，以20m、60m相对高程的连通宽度拟合梯形。采用`A=b h+m h²`和静水压力矩`g(b h²/2+m h³/3)`；有效断面尺度由事件约束标定。
-3. **分布式释放**：官方冰川像元提供释放区域的沿坡面积分布，初速度0。事件研究提供103百万m³初始方量及0.76km²源区面积，36百万m³可动方量与67百万m³沉积分配分别约束。
-4. **守恒与动量**：变断面静水重构、Rusanov通量、Voellmy阻力与CFL步进；先计上游实际滞留，再按上游累计通量分配汇入口沉积与下游输入。阶段间传递求解体积与动量，去除原先额外施加的边界压力能量。
-5. **事后标定**：参数网格与有界优化联合比较河道传播时间、峰值流量及断面速度。文献重建与本次计算及相对偏差同时报告，标定参数写入带指纹的配置。
+3. **分布式释放**：先在源区上部真实冰川像元处建立地形路径，再按UTM东、北坐标和高程作三维投影，保留逐像元位置与高程差；初速度0。该方法避免把源区坐标整体平移到更低的沟谷。事件研究提供103百万m³初始方量及0.76km²源区面积，36百万m³可动方量与67百万m³沉积分配分别约束。
+4. **守恒与动量**：上游保留适用于本次强地形变化的原变断面Rusanov-Voellmy计算；下游使用静水重构MUSCL-HLL与SSP-RK2步进降低数值耗散。先计上游实际滞留，再按其累计通量分配汇入口沉积与下游输入，边界只施加相应体积与运动速度。
+5. **事后标定**：上游时间采用双侧误差约束，下游联合比较传播时间、峰值流量和断面速度。以源区释放为统一时间零点，导出前锋、洪峰、5%/50%累计量时刻。文献约130s与350s分别对应两段，其约480s总经历时间另行对照。参数边界状态和全部标定偏差共同输出。
 6. **真实通量耦合**：局部二维接收一维每个接受时间步的累计界面体积与速度；30m和60m网格独立计算。二维强度报告流深、速度、到达时间与单位质量动能`u²/2`。
-7. **数值与地形检查**：7.5/15/30m一维步长、30/60m二维网格、静水平衡、质量收支与能量范围；交汇断面按单位100m河长积分填高体积，评估堆积占据河槽的物质条件。
+7. **数值与地形检查**：上游15m、下游7.5m主网格，另以3.75/7.5/15m比较下游分辨率；二维30/60m独立计算。标定在15m网格进行，固定所得参数后在更细输出网格评价，不将加密结果写成重新标定。网格试验保持同一入流和物理端点，分别检查守恒、压力梯度、干湿前缘及分辨率响应。
 
-本次下游标定参数为μ=0.014337、ξ=4433.38m/s²、有效断面尺度3.000。全程体积相对残差4.34e-16。`Q4_14`至`Q4_21`为分阶段主模型；早期编号为同一官方数据上的单阶段参考实验，供比较几何与参数假设的影响。
+本次下游标定参数为μ=0.003006、ξ=2711.18m/s²、有效断面尺度3.000（触及搜索边界）。全程体积相对残差1.88e-15。`Q4_14`至`Q4_25`为分阶段计算与复核图；早期编号为同一官方数据上的单阶段参考实验。
 
 ## 5. 图表数据、重绘与测试
 
@@ -147,7 +150,7 @@ python scripts/export_redraw_data.py
 
 第一条从缓存数组重绘分阶段结果；第二条逐图校对数值保留；第三条在隔离目录回放完整绘图并检查原结果保持一致。缓存重绘和隔离回放均需先准备完整本地输入与数值结果。`replot_q4_figures.py`、`replot_q4_1d_cached.py`对应参考单阶段图。`build_answer_pdf.py`直接读取当前表与图，README由本脚本按当前结果更新。
 
-测试覆盖QC和单位、未来信息隔离、预警状态、误报分母、静水平衡、变断面守恒、能量范围、累计体积精确耦合及重绘导出。数学测试用的解析或合成小网格只用于验证求解器，正式个案输入与输出按来源清单单独审计。
+本次84项测试通过。测试覆盖QC和单位、未来信息隔离、预警状态、误报分母、静水平衡、真实压力梯度、干湿前缘、变断面守恒、能量范围、路径保护与累计体积耦合。解析小网格只用于验证求解器，正式个案输入与输出由来源清单单独审计。
 
 ## 6. 模型约定与尺度解释
 
@@ -157,7 +160,7 @@ python scripts/export_redraw_data.py
 | 跨境推算链 | 站点4140m、源区代表高程约5297m，以6.5℃/km主递减率并比较5与8℃/km；实际预报格点偏移约8.38km。站点能量按站点尺度解释。 |
 | 时间与覆盖率 | 95%区间是条件首次超限的时间预测区间，经验覆盖率由历史气象超限事件计算；题面10:30作为影响参考时刻。 |
 | 标定资料与空间 | Q4结合事后事件研究进行过程复现；Q3天气输入与Q4事后标定资料分别记录，空间范围属于模型回放包络。 |
-| 断面和网格 | 有效断面尺度本次达到搜索上界3.0；一维15m至7.5m的峰值流量变化+29.8%，到达时间变化-5.7%；二维面积变化1.9%。原始断面、参数响应和网格表共同解释结果。 |
+| 断面和网格 | 有效断面尺度3.000，触及搜索边界；一维7.5m至3.75m的峰值流量变化+2.4%，到达时间变化-1.2%，最大流深变化13.2%；二维面积变化8.4%。质量闭合与各量的分辨率响应分别报告。 |
 | 传播强度 | 等效介质方程描述体积与动量演变；研究段终点设在口岸。动能按单位质量报告，结构受力可结合介质组成和构件参数进一步计算。 |
 
 ## 7. 资料出处与配置来源
@@ -170,10 +173,29 @@ python scripts/export_redraw_data.py
 - [尼泊尔DHM站点4913](https://www.dhm.gov.np/hydrology/hms-Single/4913)：口岸下游水文站地理位置辅助核对。
 - [口岸附近原图地理标记](https://commons.wikimedia.org/wiki/File:Nepal_China_Border.jpg)：区域参考点；数值终点投影至DEM河槽。
 - Audusse等，2004，SIAM Journal on Scientific Computing，DOI 10.1137/S1064827503431090：静水重构方法。
+- Gottlieb与Shu，1998，Mathematics of Computation，DOI 10.1090/S0025-5718-98-00913-2：两阶段TVD/SSP时间步进。
 
 输入的逐项数值、来源URL和角色见`configs/case_evidence.yaml`。完整输入、源码和配置的SHA256记录由`audit_provenance.py`生成，位于`outputs/quality/reproducibility_manifest.json`。
 
-## 8. 全部PNG的用途与源码索引
+## 8. 审查总结逐项复核
+
+原审查为静态判断；本次依据赛题、最新代码与实际重算进行复核。下表保留合理的模型解释要求，并明确哪些属于实现错误。
+
+| 序号 | 审查项 | 判断 | 实际处理 |
+|---|---|---|---|
+| 1 | Q3预测对象 | 成立：属于预测对象与验证含义 | 主模型输出条件首次超限时间，历史检验目标也为气象条件；本次题面时刻单例命中另列。 统一图题、字段和中位时刻的离散支持；当前天气驱动回放与历史相似日检验分别登记，保留无超限的零概率输出。 |
+| 2 | Q2临界条件与能量通道 | 部分成立：历史分位定义合理，能量衔接确有遗漏 | q90是明确的历史参考阈值；静态权重是声明的指数设计参数。 把实测正能量余量纳入主动态指数，补算静态权重与高程递减率敏感性；未来能量只取实测历史贡献的下界。 |
+| 3 | Q4时间拟合 | 成立：旧版数值偏差与单侧时间约束均已复算 | 旧版汇入口至口岸261.71s；本次304.94s，文献约350s。 将上游时间改为双侧标定约束，统一源区释放时钟，分别导出前锋、洪峰、5%与50%累计量时间。文献参照保留为近似重建值。 |
+| 4 | Q4网格敏感性 | 成立：体积守恒与分辨率响应是两项不同检查 | 本次两档较细网格峰值差2.41%，到达时间差1.19%。 下游改用静水重构MUSCL-HLL与SSP-RK2；网格试验保持同一入流、参数及两端位置，分别报告各量变化。 |
+| 5 | Q4局部二维范围 | 事实正确，局部单向嵌套本身是合理实现 | 一维覆盖源区至口岸，二维覆盖口岸邻域；输入为上游实际到达局部断面的累计通量。 新增全程一维过程的地图投影，并与局部二维湿区分列，记录各计算域及对应体积收支。 |
+| 6 | Q4参数测量约束 | 事实正确，标定参数不等于程序错误 | 本次有效断面尺度3.0000，边界状态见参数诊断。 保留观测、文献重建、标定参数、数值设置的角色；自动记录搜索上下界与是否触界，不用改写观测或强行消除残差。 |
+| 7 | Q2源区气象代表性 | 成立：属于空间代理与资料可用性约定 | 站点、冰川代表高程与预报格点的空间尺度不同，运行时延按已有资料声明检查。 增加冰川高程q10/q50/q90与三档递减率的九组合重算；保留实际格点偏移和预报来源。 |
+| 8 | Q1异常与因果 | 判断合理；当前异常排序方法可保留 | 题面要求关联性排序，单次事件与历史匹配可定义异常关联；该评分本身没有估计因果效应。 保持全部候选、原始前五、机制代表项和年份敏感性共同输出；用异常关联说明评分含义。 |
+| 9 | strict-route保护 | 成立：是真实的程序控制缺口 | 旧入口在常规路径分支后仍能进入级联重建。 在清理旧图前校验，所有级联入口执行同一检查；严格模式实际使用核验路径，冲突命令参数直接拒绝。 |
+| 10 | 代码副本不一致 | 在本次最新交付包中未复现 | 压缩包只有一个代码根目录；61/61个Python文件与基准GitHub版本逐一相同。 继续使用唯一源码根目录，结果清单记录输入、源码、参数、图表及版本的校验摘要。 |
+| 11 | 另查出：源区释放投影 | 成立：原PCA平移改变了初始释放势能 | 旧版释放平均床高4690.3m，真实像元均值5132.0m；修正后释放平均床高5116.2m，逐像元投影平均绝对高程差29.3m。 改为源区上部真实像元起始的地形路径和UTM三维最近点投影；逐像元导出高程差，并用修正后的释放位置重新标定与求解。 |
+
+## 9. 全部PNG的用途与源码索引
 
 下表链接为当前PNG；“数值证据”列给出本地计算结果文件名。这些表和缓存按本次上传范围留在本地。
 
@@ -199,7 +221,7 @@ python scripts/export_redraw_data.py
 | [Q1_13_all_factor_redundancy.png](outputs/q1/Q1_13_all_factor_redundancy.png) | 全部候选冗余结构；区分原始排序与机制代表项 | [q1_event_signatures.py](src/mathorcup/q1_event_signatures.py)、[task_evidence.py](src/mathorcup/task_evidence.py) | `Q1_all_candidate_ranking.csv`；`Q1_all_factors_effect_and_stability.csv` |
 | [Q1_14_mechanisms_and_extreme_weather.png](outputs/q1/Q1_14_mechanisms_and_extreme_weather.png) | 五项互补机制与极端天气识别 | [question_completion.py](src/mathorcup/question_completion.py) | `Q1_direct_answer.json`；`Q1_explicit_extreme_weather.csv` |
 
-### 问题二（18张）
+### 问题二（19张）
 
 | PNG | 用途 | 生成代码 | 数值证据 |
 |---|---|---|---|
@@ -221,13 +243,14 @@ python scripts/export_redraw_data.py
 | [Q2_16_all_predictor_distributions.png](outputs/q2/Q2_16_all_predictor_distributions.png) | 全部五项判别变量分布与解释 | [q2_spatial_mechanism.py](src/mathorcup/q2_spatial_mechanism.py)、[q2_trigger_evaluation.py](src/mathorcup/q2_trigger_evaluation.py)、[q2_external.py](src/mathorcup/q2_external.py)、[task_evidence.py](src/mathorcup/task_evidence.py) | `Q2_primary_trigger_assessment.json`；`Q2_all_models_comparison.csv` |
 | [Q2_17_forward_time_reliability.png](outputs/q2/Q2_17_forward_time_reliability.png) | 逐年向前阈值与不同更新间隔的监测误差 | [q2_spatial_mechanism.py](src/mathorcup/q2_spatial_mechanism.py)、[q2_trigger_evaluation.py](src/mathorcup/q2_trigger_evaluation.py)、[q2_external.py](src/mathorcup/q2_external.py)、[task_evidence.py](src/mathorcup/task_evidence.py) | `Q2_primary_trigger_assessment.json`；`Q2_all_models_comparison.csv` |
 | [Q2_18_energy_water_mechanism_channels.png](outputs/q2/Q2_18_energy_water_mechanism_channels.png) | 降雨、前期热量与能量通道评估 | [question_completion.py](src/mathorcup/question_completion.py) | `Q2_expanded_mechanism_answer.json`；`Q2_expanded_channel_thresholds.csv` |
+| [Q2_19_source_proxy_and_weight_sensitivity.png](outputs/q2/Q2_19_source_proxy_and_weight_sensitivity.png) | 源区空间代理与静态权重敏感性 | [q2_trigger_evaluation.py](src/mathorcup/q2_trigger_evaluation.py) | `Q2_source_elevation_lapse_sensitivity.csv`；`Q2_static_weight_sensitivity.csv` |
 
 ### 问题三（13张）
 
 | PNG | 用途 | 生成代码 | 数值证据 |
 |---|---|---|---|
 | [Q3_01_precursor_and_scenario_hazard.png](outputs/q3/Q3_01_precursor_and_scenario_hazard.png) | 灾前气象条件及触发风险演变 | [q3_task_aligned.py](src/mathorcup/q3_task_aligned.py)、[warning_validation.py](src/mathorcup/warning_validation.py)、[q3_spatial_footprint.py](src/mathorcup/q3_spatial_footprint.py)、[forecast_sensitivity.py](src/mathorcup/forecast_sensitivity.py) | `Q3_primary_competition_answer.json`；`Q3_all_models_forward_backtest.csv`；`Q3_warning_state_hourly.csv` |
-| [Q3_02_95percent_conditional_time_interval.png](outputs/q3/Q3_02_95percent_conditional_time_interval.png) | 泥石流触发时间分布与95%预测区间 | [q3_task_aligned.py](src/mathorcup/q3_task_aligned.py)、[warning_validation.py](src/mathorcup/warning_validation.py)、[q3_spatial_footprint.py](src/mathorcup/q3_spatial_footprint.py)、[forecast_sensitivity.py](src/mathorcup/forecast_sensitivity.py) | `Q3_primary_competition_answer.json`；`Q3_all_models_forward_backtest.csv`；`Q3_warning_state_hourly.csv` |
+| [Q3_02_95percent_conditional_time_interval.png](outputs/q3/Q3_02_95percent_conditional_time_interval.png) | 触发条件首次超限时间与95%预测区间 | [q3_task_aligned.py](src/mathorcup/q3_task_aligned.py)、[warning_validation.py](src/mathorcup/warning_validation.py)、[q3_spatial_footprint.py](src/mathorcup/q3_spatial_footprint.py)、[forecast_sensitivity.py](src/mathorcup/forecast_sensitivity.py) | `Q3_primary_competition_answer.json`；`Q3_all_models_forward_backtest.csv`；`Q3_warning_state_hourly.csv` |
 | [Q3_03_warning_lead_and_backtest.png](outputs/q3/Q3_03_warning_lead_and_backtest.png) | 泥石流预警时间与气象条件回测 | [q3_task_aligned.py](src/mathorcup/q3_task_aligned.py)、[warning_validation.py](src/mathorcup/warning_validation.py)、[q3_spatial_footprint.py](src/mathorcup/q3_spatial_footprint.py)、[forecast_sensitivity.py](src/mathorcup/forecast_sensitivity.py) | `Q3_primary_competition_answer.json`；`Q3_all_models_forward_backtest.csv`；`Q3_warning_state_hourly.csv` |
 | [Q3_04_parameter_sensitivity.png](outputs/q3/Q3_04_parameter_sensitivity.png) | 预警模型参数敏感性分析 | [q3_task_aligned.py](src/mathorcup/q3_task_aligned.py)、[warning_validation.py](src/mathorcup/warning_validation.py)、[q3_spatial_footprint.py](src/mathorcup/q3_spatial_footprint.py)、[forecast_sensitivity.py](src/mathorcup/forecast_sensitivity.py) | `Q3_primary_competition_answer.json`；`Q3_all_models_forward_backtest.csv`；`Q3_warning_state_hourly.csv` |
 | [Q3_05_spatial_warning_distance.png](outputs/q3/Q3_05_spatial_warning_distance.png) | 泥石流传播廊道与空间预警距离 | [q3_task_aligned.py](src/mathorcup/q3_task_aligned.py)、[warning_validation.py](src/mathorcup/warning_validation.py)、[q3_spatial_footprint.py](src/mathorcup/q3_spatial_footprint.py)、[forecast_sensitivity.py](src/mathorcup/forecast_sensitivity.py) | `Q3_primary_competition_answer.json`；`Q3_all_models_forward_backtest.csv`；`Q3_warning_state_hourly.csv` |
@@ -240,18 +263,22 @@ python scripts/export_redraw_data.py
 | [Q3_11_warning_time_and_lead_distribution.png](outputs/q3/Q3_11_warning_time_and_lead_distribution.png) | 预警时间与提前量分布 | [question_completion.py](src/mathorcup/question_completion.py) | `Q3_warning_lead_answer.json`；`Q3_proxy_backtest_2025.csv` |
 | [Q3_12_reconstructed_spatial_warning.png](outputs/q3/Q3_12_reconstructed_spatial_warning.png) | 源区至口岸的模型空间警戒范围 | [q4_reconstructed_spatial.py](src/mathorcup/q4_reconstructed_spatial.py) | `Q3_reconstructed_spatial_answer.json`；`Q3_reconstructed_warning_range.gpkg` |
 
-### 问题四（26张）
+### 问题四（30张）
 
 | PNG | 用途 | 生成代码 | 数值证据 |
 |---|---|---|---|
-| [Q4_14_drainage_route_and_cross_sections.png](outputs/q4/Q4_14_drainage_route_and_cross_sections.png) | 源区至口岸的地形与断面 | [q4_terrain_reconstruction.py](src/mathorcup/q4_terrain_reconstruction.py)、[q4_cascade_reconstruction.py](src/mathorcup/q4_cascade_reconstruction.py)、[q4_reconstructed_spatial.py](src/mathorcup/q4_reconstructed_spatial.py) | `Q4_cascade_reconstruction.json`；`Q4_reconstruction_geometry.json`；`Q4_reconstruction_2d_summary.json` |
-| [Q4_15_calibrated_cascade_process.png](outputs/q4/Q4_15_calibrated_cascade_process.png) | 分阶段冰岩崩与泥石流传播过程 | [q4_terrain_reconstruction.py](src/mathorcup/q4_terrain_reconstruction.py)、[q4_cascade_reconstruction.py](src/mathorcup/q4_cascade_reconstruction.py)、[q4_reconstructed_spatial.py](src/mathorcup/q4_reconstructed_spatial.py) | `Q4_cascade_reconstruction.json`；`Q4_reconstruction_geometry.json`；`Q4_reconstruction_2d_summary.json` |
-| [Q4_16_event_constraint_comparison.png](outputs/q4/Q4_16_event_constraint_comparison.png) | 事后标定的定量对照 | [q4_terrain_reconstruction.py](src/mathorcup/q4_terrain_reconstruction.py)、[q4_cascade_reconstruction.py](src/mathorcup/q4_cascade_reconstruction.py)、[q4_reconstructed_spatial.py](src/mathorcup/q4_reconstructed_spatial.py) | `Q4_cascade_reconstruction.json`；`Q4_reconstruction_geometry.json`；`Q4_reconstruction_2d_summary.json` |
-| [Q4_17_calibration_parameter_experiments.png](outputs/q4/Q4_17_calibration_parameter_experiments.png) | 同一输入下的标定参数试验 | [q4_terrain_reconstruction.py](src/mathorcup/q4_terrain_reconstruction.py)、[q4_cascade_reconstruction.py](src/mathorcup/q4_cascade_reconstruction.py)、[q4_reconstructed_spatial.py](src/mathorcup/q4_reconstructed_spatial.py) | `Q4_cascade_reconstruction.json`；`Q4_reconstruction_geometry.json`；`Q4_reconstruction_2d_summary.json` |
-| [Q4_18_reconstructed_2d_depth_speed_arrival.png](outputs/q4/Q4_18_reconstructed_2d_depth_speed_arrival.png) | 口岸二维传播强度与到达时间 | [q4_terrain_reconstruction.py](src/mathorcup/q4_terrain_reconstruction.py)、[q4_cascade_reconstruction.py](src/mathorcup/q4_cascade_reconstruction.py)、[q4_reconstructed_spatial.py](src/mathorcup/q4_reconstructed_spatial.py) | `Q4_cascade_reconstruction.json`；`Q4_reconstruction_geometry.json`；`Q4_reconstruction_2d_summary.json` |
-| [Q4_19_reconstructed_2d_six_frames.png](outputs/q4/Q4_19_reconstructed_2d_six_frames.png) | 真实通量驱动的六个传播阶段 | [q4_terrain_reconstruction.py](src/mathorcup/q4_terrain_reconstruction.py)、[q4_cascade_reconstruction.py](src/mathorcup/q4_cascade_reconstruction.py)、[q4_reconstructed_spatial.py](src/mathorcup/q4_reconstructed_spatial.py) | `Q4_cascade_reconstruction.json`；`Q4_reconstruction_geometry.json`；`Q4_reconstruction_2d_summary.json` |
-| [Q4_20_cascade_volume_and_grid_experiments.png](outputs/q4/Q4_20_cascade_volume_and_grid_experiments.png) | 级联体积守恒与网格试验 | [q4_terrain_reconstruction.py](src/mathorcup/q4_terrain_reconstruction.py)、[q4_cascade_reconstruction.py](src/mathorcup/q4_cascade_reconstruction.py)、[q4_reconstructed_spatial.py](src/mathorcup/q4_reconstructed_spatial.py) | `Q4_cascade_reconstruction.json`；`Q4_reconstruction_geometry.json`；`Q4_reconstruction_2d_summary.json` |
-| [Q4_21_cross_sections_and_1d_grid_experiment.png](outputs/q4/Q4_21_cross_sections_and_1d_grid_experiment.png) | 原始横断面与数值分辨率试验 | [q4_terrain_reconstruction.py](src/mathorcup/q4_terrain_reconstruction.py)、[q4_cascade_reconstruction.py](src/mathorcup/q4_cascade_reconstruction.py)、[q4_reconstructed_spatial.py](src/mathorcup/q4_reconstructed_spatial.py) | `Q4_cascade_reconstruction.json`；`Q4_reconstruction_geometry.json`；`Q4_reconstruction_2d_summary.json` |
+| [Q4_14_drainage_route_and_cross_sections.png](outputs/q4/Q4_14_drainage_route_and_cross_sections.png) | 源区至口岸的地形与断面 | [q4_terrain_reconstruction.py](src/mathorcup/q4_terrain_reconstruction.py)、[q4_cascade_reconstruction.py](src/mathorcup/q4_cascade_reconstruction.py)、[q4_reconstructed_spatial.py](src/mathorcup/q4_reconstructed_spatial.py)、[q4_diagnostics.py](src/mathorcup/q4_diagnostics.py) | `Q4_cascade_reconstruction.json`；`Q4_reconstruction_geometry.json`；`Q4_reconstruction_2d_summary.json` |
+| [Q4_15_calibrated_cascade_process.png](outputs/q4/Q4_15_calibrated_cascade_process.png) | 分阶段冰岩崩与泥石流传播过程 | [q4_terrain_reconstruction.py](src/mathorcup/q4_terrain_reconstruction.py)、[q4_cascade_reconstruction.py](src/mathorcup/q4_cascade_reconstruction.py)、[q4_reconstructed_spatial.py](src/mathorcup/q4_reconstructed_spatial.py)、[q4_diagnostics.py](src/mathorcup/q4_diagnostics.py) | `Q4_cascade_reconstruction.json`；`Q4_reconstruction_geometry.json`；`Q4_reconstruction_2d_summary.json` |
+| [Q4_16_event_constraint_comparison.png](outputs/q4/Q4_16_event_constraint_comparison.png) | 事后标定的定量对照 | [q4_terrain_reconstruction.py](src/mathorcup/q4_terrain_reconstruction.py)、[q4_cascade_reconstruction.py](src/mathorcup/q4_cascade_reconstruction.py)、[q4_reconstructed_spatial.py](src/mathorcup/q4_reconstructed_spatial.py)、[q4_diagnostics.py](src/mathorcup/q4_diagnostics.py) | `Q4_cascade_reconstruction.json`；`Q4_reconstruction_geometry.json`；`Q4_reconstruction_2d_summary.json` |
+| [Q4_17_calibration_parameter_experiments.png](outputs/q4/Q4_17_calibration_parameter_experiments.png) | 同一输入下的标定参数试验 | [q4_terrain_reconstruction.py](src/mathorcup/q4_terrain_reconstruction.py)、[q4_cascade_reconstruction.py](src/mathorcup/q4_cascade_reconstruction.py)、[q4_reconstructed_spatial.py](src/mathorcup/q4_reconstructed_spatial.py)、[q4_diagnostics.py](src/mathorcup/q4_diagnostics.py) | `Q4_cascade_reconstruction.json`；`Q4_reconstruction_geometry.json`；`Q4_reconstruction_2d_summary.json` |
+| [Q4_18_reconstructed_2d_depth_speed_arrival.png](outputs/q4/Q4_18_reconstructed_2d_depth_speed_arrival.png) | 口岸二维传播强度与到达时间 | [q4_terrain_reconstruction.py](src/mathorcup/q4_terrain_reconstruction.py)、[q4_cascade_reconstruction.py](src/mathorcup/q4_cascade_reconstruction.py)、[q4_reconstructed_spatial.py](src/mathorcup/q4_reconstructed_spatial.py)、[q4_diagnostics.py](src/mathorcup/q4_diagnostics.py) | `Q4_cascade_reconstruction.json`；`Q4_reconstruction_geometry.json`；`Q4_reconstruction_2d_summary.json` |
+| [Q4_19_reconstructed_2d_six_frames.png](outputs/q4/Q4_19_reconstructed_2d_six_frames.png) | 真实通量驱动的六个传播阶段 | [q4_terrain_reconstruction.py](src/mathorcup/q4_terrain_reconstruction.py)、[q4_cascade_reconstruction.py](src/mathorcup/q4_cascade_reconstruction.py)、[q4_reconstructed_spatial.py](src/mathorcup/q4_reconstructed_spatial.py)、[q4_diagnostics.py](src/mathorcup/q4_diagnostics.py) | `Q4_cascade_reconstruction.json`；`Q4_reconstruction_geometry.json`；`Q4_reconstruction_2d_summary.json` |
+| [Q4_20_cascade_volume_and_grid_experiments.png](outputs/q4/Q4_20_cascade_volume_and_grid_experiments.png) | 级联体积守恒与网格试验 | [q4_terrain_reconstruction.py](src/mathorcup/q4_terrain_reconstruction.py)、[q4_cascade_reconstruction.py](src/mathorcup/q4_cascade_reconstruction.py)、[q4_reconstructed_spatial.py](src/mathorcup/q4_reconstructed_spatial.py)、[q4_diagnostics.py](src/mathorcup/q4_diagnostics.py) | `Q4_cascade_reconstruction.json`；`Q4_reconstruction_geometry.json`；`Q4_reconstruction_2d_summary.json` |
+| [Q4_21_cross_sections_and_1d_grid_experiment.png](outputs/q4/Q4_21_cross_sections_and_1d_grid_experiment.png) | 原始横断面与数值分辨率试验 | [q4_terrain_reconstruction.py](src/mathorcup/q4_terrain_reconstruction.py)、[q4_cascade_reconstruction.py](src/mathorcup/q4_cascade_reconstruction.py)、[q4_reconstructed_spatial.py](src/mathorcup/q4_reconstructed_spatial.py)、[q4_diagnostics.py](src/mathorcup/q4_diagnostics.py) | `Q4_cascade_reconstruction.json`；`Q4_reconstruction_geometry.json`；`Q4_reconstruction_2d_summary.json` |
+| [Q4_22_time_alignment_and_residuals.png](outputs/q4/Q4_22_time_alignment_and_residuals.png) | 事件时间起点与全部标定残差 | [q4_terrain_reconstruction.py](src/mathorcup/q4_terrain_reconstruction.py)、[q4_cascade_reconstruction.py](src/mathorcup/q4_cascade_reconstruction.py)、[q4_reconstructed_spatial.py](src/mathorcup/q4_reconstructed_spatial.py)、[q4_diagnostics.py](src/mathorcup/q4_diagnostics.py) | `Q4_cascade_reconstruction.json`；`Q4_reconstruction_geometry.json`；`Q4_reconstruction_2d_summary.json` |
+| [Q4_23_whole_route_six_stages.png](outputs/q4/Q4_23_whole_route_six_stages.png) | 源区至口岸的全程传播过程投影 | [q4_terrain_reconstruction.py](src/mathorcup/q4_terrain_reconstruction.py)、[q4_cascade_reconstruction.py](src/mathorcup/q4_cascade_reconstruction.py)、[q4_reconstructed_spatial.py](src/mathorcup/q4_reconstructed_spatial.py)、[q4_diagnostics.py](src/mathorcup/q4_diagnostics.py) | `Q4_cascade_reconstruction.json`；`Q4_reconstruction_geometry.json`；`Q4_reconstruction_2d_summary.json` |
+| [Q4_24_resolution_response_comparison.png](outputs/q4/Q4_24_resolution_response_comparison.png) | 修订前后网格敏感性的完整比较 | [q4_terrain_reconstruction.py](src/mathorcup/q4_terrain_reconstruction.py)、[q4_cascade_reconstruction.py](src/mathorcup/q4_cascade_reconstruction.py)、[q4_reconstructed_spatial.py](src/mathorcup/q4_reconstructed_spatial.py)、[q4_diagnostics.py](src/mathorcup/q4_diagnostics.py) | `Q4_cascade_reconstruction.json`；`Q4_reconstruction_geometry.json`；`Q4_reconstruction_2d_summary.json` |
+| [Q4_25_release_geometry_and_elevation.png](outputs/q4/Q4_25_release_geometry_and_elevation.png) | 源区三维投影与初始释放势能核查 | [q4_terrain_reconstruction.py](src/mathorcup/q4_terrain_reconstruction.py)、[q4_cascade_reconstruction.py](src/mathorcup/q4_cascade_reconstruction.py)、[q4_reconstructed_spatial.py](src/mathorcup/q4_reconstructed_spatial.py)、[q4_diagnostics.py](src/mathorcup/q4_diagnostics.py) | `Q4_cascade_reconstruction.json`；`Q4_reconstruction_geometry.json`；`Q4_reconstruction_2d_summary.json` |
 | [Q4_00B_local_true_DEM_detail.png](outputs/q4/Q4_00B_local_true_DEM_detail.png) | 参考单阶段实验；下游二维计算区域地形图 | [q4_solver.py](src/mathorcup/q4_solver.py)、[q4_visuals.py](src/mathorcup/q4_visuals.py)、[q4_grid_review.py](src/mathorcup/q4_grid_review.py)、[publication_assets.py](src/mathorcup/publication_assets.py) | `Q4_1d_settings_and_summary.json`；`Q4_2d_status.json`；`Q4_parameter_sensitivity.csv` |
 | [Q4_00_actual_DEM_geographic_context.png](outputs/q4/Q4_00_actual_DEM_geographic_context.png) | 参考单阶段实验；吉隆冰崩—泥石流研究区地形图 | [q4_solver.py](src/mathorcup/q4_solver.py)、[q4_visuals.py](src/mathorcup/q4_visuals.py)、[q4_grid_review.py](src/mathorcup/q4_grid_review.py)、[publication_assets.py](src/mathorcup/publication_assets.py) | `Q4_1d_settings_and_summary.json`；`Q4_2d_status.json`；`Q4_parameter_sensitivity.csv` |
 | [Q4_01_route_geolocation_quality_gate.png](outputs/q4/Q4_01_route_geolocation_quality_gate.png) | 参考单阶段实验；冰崩—泥石流传播路径及地形纵剖面 | [q4_solver.py](src/mathorcup/q4_solver.py)、[q4_visuals.py](src/mathorcup/q4_visuals.py)、[q4_grid_review.py](src/mathorcup/q4_grid_review.py)、[publication_assets.py](src/mathorcup/publication_assets.py) | `Q4_1d_settings_and_summary.json`；`Q4_2d_status.json`；`Q4_parameter_sensitivity.csv` |

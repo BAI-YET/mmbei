@@ -31,7 +31,9 @@ def main():
     print('Q2: export complete plotting arrays',flush=True);execute_q2(ctx);execute_q2_trigger(ctx);q2_complete_evidence(ctx);complete_q2(ctx)
     print('Q3: export complete plotting arrays',flush=True);execute_q3_aligned(ctx);execute_q3_feature_bridge(ctx);complete_q3(ctx)
     print('Q4: export complete plotting arrays',flush=True);route=execute_q4_path(ctx,allow_provisional=True);execute_q4_solver(ctx,route);execute_q4_grid_review(ctx,route);execute_q3_spatial(ctx)
-    execute_cascade_reconstruction(ctx)
+    upper,lower,report=execute_cascade_reconstruction(ctx)
+    from mathorcup.q4_diagnostics import plot_review_diagnostics
+    plot_review_diagnostics(ctx,upper,lower,report)
     print('Joint and publication figures',flush=True);execute_joint_arrival(ctx);make_publication_assets(ctx)
     after={name:hashlib.sha256((original/name).read_bytes()).hexdigest() for name in before}
     assert before==after,'Original published result changed during isolated replay'

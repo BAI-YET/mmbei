@@ -42,6 +42,7 @@ reconstruction:
   # Numerical/geometry choices are varied in the numerical experiments.
   routing_resolution_m: 30
   solver_dx_m: 15
+  downstream_output_dx_m: 7.5
   local_2d_resolution_m: 30
   total_seconds: 1000
   cfl: 0.30

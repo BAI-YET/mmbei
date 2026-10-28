@@ -42,6 +42,8 @@ def make_font(src,dst,charset):
 
 TMP=ROOT/'tmp/report';TMP.mkdir(parents=True,exist_ok=True)
 charset=Path(__file__).read_text()+json.dumps(LABELS,ensure_ascii=False)+''.join(chr(i) for i in range(32,256))+'αβγδλμπρτξσΔΣ∂∇≤≥≠≈×√²³⁴⁵⁶⁷⁸⁹⁰−°'
+for text_source in [ROOT/'README.md',OUT/'quality/review_verdicts.json']:
+    if text_source.exists():charset+=text_source.read_text(encoding='utf-8')
 for name,source in [('NR','NotoSansCJKsc-Regular.otf'),('NB','NotoSansCJKsc-Bold.otf')]:
     target=TMP/f'{name}.ttf';make_font(ROOT/'assets/fonts'/source,target,charset)
     pdfmetrics.registerFont(ReportFont(name,str(target)))
@@ -84,7 +86,7 @@ def image(path,caption,maxh=145*mm,width=None):
 
 def foot(canvas,doc):
     w,h=canvas._pagesize;canvas.saveState();canvas.setStrokeColor(colors.HexColor('#D5DEE3'));canvas.setLineWidth(.5);canvas.line(18*mm,16*mm,w-18*mm,16*mm)
-    canvas.setFont('NR',7.5);canvas.setFillColor(GRAY);canvas.drawString(18*mm,11.5*mm,'2026 MathorCup B | v2.1 数据分析与四问作答');canvas.drawRightString(w-18*mm,11.5*mm,str(doc.page));canvas.restoreState()
+    canvas.setFont('NR',7.5);canvas.setFillColor(GRAY);canvas.drawString(18*mm,11.5*mm,'2026 MathorCup B | v2.2 数据分析与四问作答');canvas.drawRightString(w-18*mm,11.5*mm,str(doc.page));canvas.restoreState()
 
 q1=read('q1/Q1_answer_mechanism_top5.csv');raw1=read('q1/Q1_top5_with_stability.csv')
 answer1=j('q1/Q1_direct_answer.json');extreme=read('q1/Q1_explicit_extreme_weather.csv')
@@ -95,16 +97,21 @@ space=j('q3/Q3_reconstructed_spatial_answer.json')
 q4=j('q4/Q4_cascade_reconstruction.json');geometry=j('q4/Q4_reconstruction_geometry.json')
 two=j('q4/Q4_reconstruction_2d_summary.json');deposition=j('q4/Q4_confluence_deposition_geometry.json');grid=read('q4/Q4_reconstruction_1d_grid_experiment.csv')
 observation=q4['published_constraints'];down=q4['downstream'];up=q4['upstream'];par=q4['stage2_parameters']
+fine_grid,primary_grid=grid.sort_values('dx_m').iloc[:2].to_dict('records')
+review=j('quality/review_verdicts.json');residual=read('q4/Q4_calibration_residuals.csv')
+time_interval=' 至 '.join(x for x in q3['conditional_95pct_interval_times_bjt'] if x is not None) or '该时域无条件超限轨迹'
+forecast_lead=q3['forecast_warning_lead_h_to_task_reference']
+boundary='触及搜索边界' if q4['parameter_bound_diagnostics']['at_search_bound'] else '位于搜索范围内'
 
-page('吉隆泥石流灾害：四问作答','2026 MathorCup 大数据竞赛 / 赛道B / v2.1')
+page('吉隆泥石流灾害：四问作答','2026 MathorCup 大数据竞赛 / 赛道B / v2.2')
 STORY.append(Spacer(1,8));P('气象关联、风险预警<br/>与灾害链过程仿真','cover')
 P('本文围绕四道题依次建立气象特征分析、触发条件评估、时间及空间预警、分阶段传播仿真。观测数据取自八类官方附件，第二问使用历史起报天气预报；第四问结合事件研究开展事后标定。正文中的数值与图像由本版代码计算并自动读入。')
 table(['题目','核心作答'],[
  ['问题一',f'在62项候选、56项有效特征的比较中，将同机制变量合并，得到水汽、近地层热力、地表能量余量、短波辐射及土壤水分五项互补通道，并识别事件前极端小时。'],
  ['问题二',f'建立物源、水源和能量共同评估模型；七日正能量余量当量为{extra2["channels"][3]["value_at_issue"]:.2f} mm，位于历史第{extra2["channels"][3]["historical_percentile"]*100:.1f}百分位。'],
- ['问题三',f'本次09:00发布预警，较题面10:30提前{q3["operational_warning_lead_h"]:.1f}小时；95%时间预测区间为09:00至15:00，历史气象条件检验覆盖率为{pct(metrics["proxy_interval_coverage"])}。'],
+ ['问题三',f'预测预警较题面10:30提前{val(forecast_lead,1)}小时；条件时间区间{time_interval}。历史气象检验覆盖率{pct(metrics["proxy_interval_coverage"])}，平均区间宽{metrics["mean_interval_width_h"]:.2f}小时。'],
  ['问题四',f'在{geometry["length_m"]/1000:.2f} km地形河道上进行分阶段计算，传递{q4["mobile_input_derived_m3"]/1e6:.1f}百万m³可动体积，模拟口岸流量、流速、流深及二维传播。']],[.16,.84])
-P('报告日期：2026年10月24日。时间统一为北京时间，空间计算采用UTM 45N米制坐标。','small')
+P('报告日期：2026年10月28日。时间统一为北京时间，空间计算采用UTM 45N米制坐标。','small')
 
 page('数据与计算路线','数据 / 从附件到四问结果')
 table(['数据','进入模型的内容'],[
@@ -143,20 +150,29 @@ image('q2/Q2_18_energy_water_mechanism_channels.png','图6  新增能量通道�
 P('正能量余量通道超过历史q90，为本次无强降雨背景提供了可量化的热能积累线索。能量当量按正通量×3600/334000换算，单位为mm水当量；它描述站点可用能量，源区水热条件通过高差修正和空间物源条件共同解释。')
 
 page('问题二：空间条件与尺度可靠性','Q2 / 空间物源、天气预报与检验')
-image('q2/Q2_09_source_spatial_condition_index.png','图7  官方冰川网格上的物源条件及动态门控后的空间分布。',maxh=80*mm)
+image('q2/Q2_09_source_spatial_condition_index.png','图7  官方冰川网格上的坡度、驱动应力代理与静态物源条件。',maxh=80*mm)
 P(f'历史84条沟谷以成因类别为目标进行空间留出比较，四地貌变量Logistic的OOF AUC为{float(models.loc[models.model.eq("L2_Logistic_4geo"),"auc_oof"].iloc[0]):.3f}。该分类检验与动态触发条件分别报告；30、60、120m空间尺度比较高分区交并比和排序相关，逐年向前拟合阈值并检验不同更新间隔的监测误差。')
 image('q2/Q2_17_forward_time_reliability.png','图8  逐年向前阈值、条件超限及更新间隔误差。',maxh=89*mm)
 P(f"补充遥感资料采用ICIMOD公开的Sentinel-1分析摘要，登记2026年7月7日至8月24日观测到的最高约{remote2['los_max_displacement_m']:.2f}m视线形变，作为事后物源演化线索；公开多传感器源区解译另用于第四问地理定位。",'small')
 P(f'本次采用2026年8月25日18:00 UTC起报的ECMWF历史预报。预报格点相对申请源点偏移{forecast["model_grid_offset_km"]:.2f}km，并按格点与源区高程差调整温度；零度层高度缺失状态随原响应保存。跨境推算链的参数敏感性集中列于文末。','small')
 
+page('问题二：能量衔接与源区代理','Q2 / 主指数与空间代表性检验')
+P('主动态指数采用降雨、源区七日正积温和站点正能量余量三条门控的最大值。站点能量仍按站点尺度解释；它提供水热支持条件。未来七日能量只保留预测窗口内尚未过期的灾前实测正贡献，作为非负能量累积的下界。')
+image('q2/Q2_19_source_proxy_and_weight_sensitivity.png','补图A  由官方冰川高程与观测序列重算九组高程-递减率组合，并比较四组声明的静态权重。',maxh=99*mm)
+weights=read('q2/Q2_static_weight_sensitivity.csv')
+table(['权重试验','相对参考空间秩相关','高分区IoU'],[[r.weight_experiment,f'{r.spearman_vs_reference:.3f}',f'{r.top20_IoU_vs_reference:.3f}'] for r in weights.itertuples()],[.4,.3,.3])
+P('历史q90作为统一的条件参考阈值。相同模型在不同高程代理、递减率与权重下的响应一并保留，用于判断结论对空间代表性及参数设计的依赖。')
+
 page('问题三：预测区间与预警时间','Q3 / 由实际预报轨迹给出前瞻预警')
 P('将Q1预先固定的气温、短波和VPD异常通道与Q2水热条件组合，利用完整历史相似日轨迹保留变量间及时间上的相关结构；本次未来水热条件由实际历史起报预报驱动。对每条轨迹计算首次达到条件阈值的时间，直接以轨迹频数构造分布。')
-P(f'按题目对95%时间区间的要求，本次预测区间为2026年8月26日09:00至15:00。未来6小时条件超限频率为{q3["predicted_condition_cross_probability"]:.3f}，不超限频率为{q3["predicted_no_condition_cross_probability"]:.3f}。预设预警阈值为{q3["forecast_warning_probability_threshold"]:.2f}，因此09:00发布预测预警，较题面10:30提前{q3["operational_warning_lead_h"]:.1f}小时。')
+P(f'条件首次超限的95%预测区间为{time_interval}。未来6小时超限频率为{q3["predicted_condition_cross_probability"]:.3f}，不超限频率为{q3["predicted_no_condition_cross_probability"]:.3f}。预设阈值{q3["forecast_warning_probability_threshold"]:.2f}，预测发布至题面10:30的提前量为{val(forecast_lead,1)}小时。')
+P(f'持续监测的有效预警段起点另记为{q3["monitoring_episode_start_bjt"]}，回放至题面参考时刻的提前量{q3["first_monitoring_warning_advance_h_to_reference"]}小时。两类预警的发布、起点和有效期分别保存；决策仅使用发布时可得信息。','small')
 image('q3/Q3_02_95percent_conditional_time_interval.png','图9  首次条件超限时间分布及其95%预测区间，条件于预测时域内发生超限。',maxh=77*mm)
 image('q3/Q3_11_warning_time_and_lead_distribution.png','图10  历史新发超限的预警提前量及本次发布判断。',maxh=76*mm)
 
 page('问题三：覆盖率与提前量检验','Q3 / 拟合、校准、检验分别进行')
 P(f'采用2021至2023年拟合、2024年校准、2025年检验。独立检验期有{metrics["n_backtest"]}次可评价发布，其中{metrics["n_proxy_crossings"]}次出现气象条件超限；区间覆盖率为{pct(metrics["proxy_interval_coverage"])}，平均区间宽度为{metrics["mean_interval_width_h"]:.2f}小时。')
+P(f'校准前覆盖率{pct(metrics["raw_proxy_interval_coverage"])}；校准后区间平均比完整6小时窗口缩短{pct(metrics["mean_width_reduction_vs_full_horizon"])}。覆盖率与区间宽度共同评价，当前天气驱动回放与历史相似日基准检验分别登记。','small')
 table(['统计','次数或结果'],[['TP / FP / FN / TN',f'{metrics["TP"]} / {metrics["FP"]} / {metrics["FN"]} / {metrics["TN"]}'],['召回率 / 预警精确率',f'{pct(metrics["proxy_recall"])} / {pct(metrics["proxy_precision"])}'],['新发超限正确预警数',str(lead['historical_new_onset_lead']['n'])],['提前量中位数及四分位范围',f'{lead["historical_new_onset_lead"]["median_h"]:.2f} h；{lead["historical_new_onset_lead"]["q25_h"]:.2f}至{lead["historical_new_onset_lead"]["q75_h"]:.2f} h']],[.48,.52])
 image('q3/Q3_08_full_forward_validation.png','图11  完整2025年检验期的预警概率、区间覆盖过程和三组输入比较。',maxh=124*mm)
 P('覆盖率的评价对象为实际气象条件首次超限。监测状态机与预测预警分别记录：前者处理持续观测、解除和续期，后者依据未来轨迹概率发布，因此可以直接回答本次预警时间。','small')
@@ -171,18 +187,23 @@ P(f'采用官方DEM构造覆盖主河道北向弯曲部分的计算范围，经P
 image('q4/Q4_14_drainage_route_and_cross_sections.png','图13  河道连通路径、原始地形剖面与沿程断面；填洼用于寻路，水动力计算保留原始高程。',maxh=91*mm)
 P('对梯形断面采用A=b h+m h²，静水压力矩为g(b h²/2+m h³/3)。计算中横断面可随地形变化，避免全程固定150m沟宽造成的局部过深。','formula')
 
+page('问题四：源区投影与初始势能','Q4 / 让释放位置保持实际地形含义')
+image('q4/Q4_25_release_geometry_and_elevation.png','补图D  源区实际像元与沿程投影的空间及高程对照。采用三维最近点，而非把源区长度平移至沟谷下段。',maxh=103*mm)
+P(f'所选官方源区网格的平均高程为{geometry["selected_source_mean_elevation_m"]:.1f}m，投影后初始释放物质的平均床高为{geometry["assigned_release_mean_bed_elevation_m"]:.1f}m；逐像元平均绝对高程差为{geometry["release_projection_mean_abs_elevation_error_m"]:.1f}m。路径起点取源区上部真实像元，初始体积仍按实际像元面积分配。')
+P('该检查约束初始重力势能，使传播时间和摩阻标定建立在实际释放高度之上。逐像元三维位置、投影路径距离及高程差均由代码导出。')
+
 page('问题四：分阶段参数与体积传递','Q4 / 释放、滞留、再动员与下游传播')
 P('将灾害链分为上游冰岩崩和下游泥石流两段。文献重建的初始方量、释放面积和可动方量作为事件约束；官方冰川像元的沿坡投影给出分布式释放范围，初始速度取零，由地形势能驱动运动。上游已经滞留的部分先计入沉积，再在汇入口分配剩余沉积与下游可动体积。')
 table(['参数或结果','数值','取值依据'],[
  ['初始方量 / 释放面积',f'{observation["release_volume_m3"]/1e6:.1f}百万m³ / {observation["source_area_m2"]/1e6:.2f}km²','事件研究重建值'],
  ['上游数值滞留量',f'{up["stored_m3"]/1e6:.2f}百万m³','上游动力学结果'],
- ['汇入口再滞留量',f'{q4["deposit_partition_m3"]/1e6:.2f}百万m³','观测方量约束与上游收支共同确定'],
+ ['汇入口再滞留量',f'{q4["deposit_partition_m3"]/1e6:.2f}百万m³','文献重建与上游收支共同确定'],
  ['下游可动输入',f'{q4["mobile_input_derived_m3"]/1e6:.2f}百万m³','实际上游累计通量按分配比例传递'],
  ['上游 μ / ξ',f'{q4["stage1_parameters"]["mu"]:.3f} / {q4["stage1_parameters"]["xi"]:.0f}','参数标定试验'],
  ['下游 μ / ξ',f'{par["mu"]:.5f} / {par["xi"]:.1f}','传播时间、流量、速度联合约束'],
  ['有效断面尺度',f'{par["section_capacity_scale"]:.3f}','基于DEM断面及口岸Q/u标定'],
- ['一维 / 二维主网格','15m / 30m','另设更细和更粗网格进行对照']],[.34,.32,.34])
-P('连续方程与动量方程使用守恒型有限体积方法。断面变化与床面高差共同进入静水重构，摩阻采用Voellmy形式；时间步满足CFL条件。阶段间保存每个接受时间步的累计体积和速度，下游直接读取这些结果，保持体积与动量的一致传递。')
+ ['上游 / 下游 / 二维主网格',f'{up["dx_m"]:g} / {down["dx_m"]:g} / 30m','15m标定后固定参数，以更细网格评价']],[.34,.32,.34])
+P('连续与动量方程采用有限体积方法。上游保留变断面Rusanov-Voellmy计算，下游采用MUSCL-HLL静水重构与两阶段SSP-RK2，以降低数值耗散。断面和床面共同进入重构，时间步满足CFL条件。阶段间保存累计体积与运动速度，下游直接读取相应结果。')
 
 P('交汇区的堆积与回水条件','h2')
 table(['相对填高','每100m河段的占据体积','占模型汇入口沉积比例'],[[f"{r['relative_fill_height_m']:.0f}m",f"{r['volume_per_100m_channel_m3']:,.0f}m³",pct(r['fraction_of_model_confluence_deposit'])] for r in deposition['results']],[.22,.44,.34])
@@ -194,12 +215,12 @@ P(f'上游流动到达过渡断面的计算时刻为源区释放后{up["arrival_
 P('各阶段均保存时空流深、最大流速、逐步流量及体积收支。源区至汇入口采用冰岩崩等效介质，下游采用可动泥石流等效介质，方量的转换由事件研究的沉积与再动员分配约束。')
 
 page('问题四：事件约束与标定结果','Q4 / 报告计算值及其定量偏差')
-P('标定首先约束上游滞留与可动方量，再以河道传播时间、口岸峰值流量和峰值流量对应速度联合评价下游参数。以相对误差的对数平方构造目标函数，先进行参数网格试验，再作有界局部优化。以下同时列出文献约束和本次计算。')
+P('上游以滞留方量和双侧时间误差约束，下游联合评价传播时间、峰值流量及其断面速度。以源区释放为时间零点，文献约130秒与350秒对应两段，总经历时间约480秒。数值前锋定义为局部流深首次超过0.2m；洪峰和累计量时刻另行导出。')
 table(['对照量','文献重建','本次计算','相对差异'],[
  ['河道传播时间 / s',f'{observation["confluence_to_port_elapsed_s"]:.1f}',f'{q4["downstream_transit_s"]:.1f}',f'{100*(q4["downstream_transit_s"]/observation["confluence_to_port_elapsed_s"]-1):+.1f}%'],
  ['口岸峰值流量 / m³/s',f'{observation["port_peak_discharge_m3_s"]:.0f}',f'{down["peak_discharge_m3_s"]:.0f}',f'{100*(down["peak_discharge_m3_s"]/observation["port_peak_discharge_m3_s"]-1):+.1f}%'],
  ['断面平均速度 / m/s',f'{observation["port_cross_section_mean_velocity_m_s"]:.2f}',f'{down["velocity_at_peak_discharge_m_s"]:.2f}',f'{100*(down["velocity_at_peak_discharge_m_s"]/observation["port_cross_section_mean_velocity_m_s"]-1):+.1f}%']],[.37,.21,.21,.21])
-image('q4/Q4_16_event_constraint_comparison.png','图15  使用同一单位对照文献重建值与本次计算结果；方量约束与动力学响应分别核对。',maxh=85*mm)
+image('q4/Q4_22_time_alignment_and_residuals.png','图15  统一时间起点，比较两段及全程时间，并展示五项标定量的全部相对偏差。',maxh=85*mm)
 P('本次标定使可动体积与事件重建一致，并形成可以到达口岸的连续计算链。时间、流量和流速保留各自的计算偏差，便于评估有效断面、阻力与前缘判据的影响。参数和每次目标函数评价随计算结果保存；校验采用静水平衡、质量收支、能量范围与网格试验。')
 
 page('问题四：口岸局部二维传播','Q4 / 原始DEM、实际入流与空间结果')
@@ -211,6 +232,13 @@ P(f'{primary["resolution_m"]:.0f}m网格计算的累计湿润面积为{primary["
 page('问题四：六个传播阶段','Q4 / 连续演变的可视化',wide=True)
 image('q4/Q4_19_reconstructed_2d_six_frames.png','图17  六个时刻采用共同地理范围和流深色标，红色方形标出口岸河段参考位置。每一帧来自实际时间步进数组。',maxh=120*mm)
 P('过程图展示入流后沿谷传播、局部扩展及回落。与上游通量过程配合，可以检查何时进入局部区域、何时形成较大流深，以及网格与入口断面对传播范围的影响。','small')
+
+page('问题四：全程传播与局部空间结果','Q4 / 源区至口岸的连续计算链',wide=True)
+image('q4/Q4_23_whole_route_six_stages.png','补图B  把全程一维计算断面的流深投影到真实路线。各时刻由已保存的求解快照插值；图中着色表示沿程断面状态，口岸局部二维湿区由上一图单独给出。',maxh=119*mm)
+
+page('问题四：修订前后的网格响应','Q4 / 固定输入与端点的分辨率比较')
+image('q4/Q4_24_resolution_response_comparison.png','补图C  两版均分别固定各自标定参数，比较峰值流量与到达时间的网格响应。修订版保持同一物理起终点。',maxh=99*mm)
+P('该图比较两版数值方案与各自标定结果的整体变化。当前版本内部的网格试验使用相同入流和阻力参数，并单列各网格的质量残差、流量与到达时间。数值分辨率响应与质量守恒分别核查。')
 
 page('问题四：收支与数值分辨率','Q4 / 对仿真结果进行定量检查')
 image('q4/Q4_20_cascade_volume_and_grid_experiments.png','图18  全程一维与局部二维分别核对体积收支，避免重复累加重叠计算域；同时比较二维网格。',maxh=74*mm)
@@ -224,10 +252,14 @@ table(['环节','建模约定及检查方式'],[
  ['Q2跨境推算链',f'站点海拔{limits["station_elevation_m"]:.0f}m，源区代表高程{limits["source_elevation_m"]:.0f}m；主递减率{limits["lapse_rate_C_per_km"]:.1f}℃/km，另比较5和8℃/km。预报格点偏移{forecast["model_grid_offset_km"]:.2f}km，站点能量指标按站点尺度解释。'],
  ['Q3时间区间','题目所需95%时间区间按条件首次超限的预测区间构造；覆盖率以历史气象超限事件评价。本次10:30按题面灾害影响参考时刻计算预警提前量。'],
  ['Q4事后标定','方量与口岸断面约束来自事后事件研究，用于过程复现；Q3回放预报的天气输入与Q4标定资料分别记录。空间警戒范围为模型回放包络。'],
- ['地形与断面','官方DEM提供地形依据；汇流寻路的填洼高程与动力学使用的原始高程分开。断面以梯形近似，并标定有效尺度；本次尺度达到搜索上界3.0，参数试验与原始断面共同展示其影响。'],
+ ['地形与断面',f'官方DEM提供地形依据；寻路填洼与动力学原始高程分开。断面采用梯形近似，有效尺度{par["section_capacity_scale"]:.3f}，{boundary}；参数试验与原始断面共同展示其影响。'],
  ['传播与强度','等效介质模型描述体积和动量演变；沉积与可动体积采用分阶段约束。二维图显示流深、速度和单位质量动能，结构受力需进一步结合介质组成与构件参数。']],[.23,.77])
-P(f"一维15m加密至7.5m后，到达时间变化{100*(grid.loc[grid.dx_m.eq(7.5),'arrival_s'].iloc[0]/grid.loc[grid.dx_m.eq(15),'arrival_s'].iloc[0]-1):+.1f}%，峰值流量变化{100*(grid.loc[grid.dx_m.eq(7.5),'peak_discharge_m3_s'].iloc[0]/grid.loc[grid.dx_m.eq(15),'peak_discharge_m3_s'].iloc[0]-1):+.1f}%。二维30m与60m的湿润面积差异为{100*abs(two['grid_experiments'][1]['wet_area_km2']/two['grid_experiments'][0]['wet_area_km2']-1):.1f}%。因此，沿程一维峰值对数值步长更敏感，局部二维面积在本次两档网格下较接近。")
+P(f"下游一维{primary_grid['dx_m']:g}m加密至{fine_grid['dx_m']:g}m后，到达时间变化{100*(fine_grid['arrival_s']/primary_grid['arrival_s']-1):+.1f}%，峰值流量变化{100*(fine_grid['peak_discharge_m3_s']/primary_grid['peak_discharge_m3_s']-1):+.1f}%，最大流深变化{100*(fine_grid['peak_depth_m']/primary_grid['peak_depth_m']-1):+.1f}%。二维30m与60m湿润面积差异为{100*abs(two['grid_experiments'][1]['wet_area_km2']/two['grid_experiments'][0]['wet_area_km2']-1):.1f}%。局部最大值与整体范围分别解释，质量收支与各量的分辨率响应分别评价。")
 P('以上约定集中用于解释四问结果。正文按模型、计算结果和物理解释作答；来源分类、参数试验、完整图表数据及数值测试记录均随代码保留。')
+
+for start in [0,6]:
+    page(f'审查总结逐项复核（{1 if start==0 else 2}）','代码复核 / 对照赛题、源码与实际重算')
+    table(['审查项','判断','依据与处理'],[[f"{r['id']}. {r['finding']}",r['judgement'],r['evidence']+' '+r['action']] for r in review['findings'][start:start+6]],[.19,.25,.56])
 
 page('来源与复现','参考 / 数据、方法与代码对应')
 refs=[
@@ -238,6 +270,7 @@ refs=[
  'Open-Meteo Single Runs API: https://open-meteo.com/en/docs/single-runs-api. 起报响应、变量缺测和来源哈希分别保存。',
  'RAMMS Debrisflow friction model: https://ramms.ch/ramms-debrisflow/friction-parameters/. 用于Voellmy形式与事件标定方法。',
  'Audusse E, Bouchut F, Bristeau MO, et al. A Fast and Stable Well-Balanced Scheme with Hydrostatic Reconstruction for Shallow Water Flows. SIAM J Sci Comput, 2004;25:2050-2065. DOI:10.1137/S1064827503431090.',
+ 'Gottlieb S, Shu CW. Total variation diminishing Runge-Kutta schemes. Mathematics of Computation, 1998;67:73-85. DOI:10.1090/S0025-5718-98-00913-2.',
  'Department of Hydrology and Meteorology, Nepal: Bhotekoshi at Rasuwagadi, station 4913, https://www.dhm.gov.np/hydrology/hms-Single/4913. 站点地理位置辅助核对。',
  'Wikimedia Commons, Nepal China Border.jpg: 原图作者的口岸附近相机地理标记，作为区域参考点；数值终点投影至DEM河槽。'
 ]
@@ -247,11 +280,11 @@ P('python -m pip install -r requirements.txt<br/>python run.py --stage all --no-
 P('原始附件与预报缓存按README中的目录恢复。模型参数文件记录标定输入指纹；数据或核心数值代码变化后重新标定。用--refit-q4可主动重跑标定实验。GitHub保留代码、统一README及PNG成果；本地计算同时导出数值表与逐图重绘数据。')
 
 pdfpath=ROOT/'docs/MathorCup_B_v2_四问作答与原理分析.pdf';pdfpath.parent.mkdir(parents=True,exist_ok=True)
-doc=BaseDocTemplate(str(pdfpath),pagesize=A4,leftMargin=18*mm,rightMargin=18*mm,topMargin=18*mm,bottomMargin=20*mm,title='MathorCup B 四问作答与计算结果 v2.1',author='数据分析与模型实验')
+doc=BaseDocTemplate(str(pdfpath),pagesize=A4,leftMargin=18*mm,rightMargin=18*mm,topMargin=18*mm,bottomMargin=20*mm,title='MathorCup B 四问作答与计算结果 v2.2',author='数据分析与模型实验')
 for name,size in [('P',A4),('W',landscape(A4))]:
     frame=Frame(18*mm,21*mm,size[0]-36*mm,size[1]-39*mm,id=name,leftPadding=0,rightPadding=0,topPadding=0,bottomPadding=0)
     doc.addPageTemplates(PageTemplate(id=name,frames=[frame],onPage=foot,pagesize=size))
 doc.build(STORY)
 (ROOT/'outputs/quality').mkdir(parents=True,exist_ok=True)
-(ROOT/'outputs/quality/pdf_build_metadata.json').write_text(json.dumps({'pdf':str(pdfpath),'planned_pages':len(PAGE_TITLES),'page_titles':PAGE_TITLES,'source':'current v2.1 model outputs and provenance'},ensure_ascii=False,indent=2))
+(ROOT/'outputs/quality/pdf_build_metadata.json').write_text(json.dumps({'pdf':str(pdfpath),'planned_pages':len(PAGE_TITLES),'page_titles':PAGE_TITLES,'source':'current v2.2 model outputs and provenance'},ensure_ascii=False,indent=2))
 print(pdfpath)

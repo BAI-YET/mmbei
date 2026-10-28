@@ -12,8 +12,8 @@ for name in ['src','scripts','tests','configs','events','assets','docs','data/pr
     for p in (ROOT/name).rglob('*'):
         if not p.is_file() or '__pycache__' in p.parts or '.pytest_cache' in p.parts:continue
         files.append(p)
-files.extend([ROOT/'README.md',ROOT/'requirements.txt',ROOT/'run.py'])
-archive=DELIVERY/'MathorCup_B_v2_代码图表与复现数据.zip'
+files.extend([ROOT/'README.md',ROOT/'requirements.txt',ROOT/'run.py',ROOT/'.gitignore',ROOT/'.gitattributes'])
+archive=DELIVERY/'MathorCup_B_v2_2_complete_release.zip'
 with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=5,allowZip64=True) as z:
     for p in sorted(set(files)):
         z.write(p,'MathorCup_B_v2/'+str(p.relative_to(ROOT)))

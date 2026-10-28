@@ -38,7 +38,9 @@ def q1_feature_contract(ctx,available_columns):
 def prepare_joint(ctx):
     a=pd.read_csv(ctx.processed/'features_hourly.csv.gz',parse_dates=['timestamp_raw']).set_index('timestamp_raw')
     b=pd.read_csv(ctx.folder('q2')/'Q2_station_based_dynamic_trigger_conditions.csv.gz',parse_dates=['time_bjt']).set_index('time_bjt')
-    h=a.join(b[['source_pdd7_lapse_Cd','rain_gate','melt_gate','trigger_condition_index']],how='left')
+    columns=['source_pdd7_lapse_Cd','rain_gate','melt_gate','trigger_condition_index']
+    columns += [c for c in ['energy_gate','station_positive_energy_7d_mmwe'] if c in b]
+    h=a.join(b[columns],how='left')
     if not set(BASELINE_VARS+['trigger_condition_index']).issubset(h.columns):raise ValueError('Q3 must inherit official Q1 and Q2 features')
     import json
     lim=json.loads((ctx.folder('q2')/'Q2_primary_trigger_assessment.json').read_text())['thresholds']
@@ -79,12 +81,13 @@ def anomaly_score(h,baseline_years,threshold_prob=.85,variables=None,mode='q1q2'
     anomalies=pd.concat(z,axis=1).mean(axis=1,skipna=False)
     melt=h['melt_gate'].clip(0,1)
     rain=h['rain_gate'].clip(0,1)
+    thermal_water=h['trigger_condition_index'].clip(0,1)
     if mode=='q2_only':
-        result['combined_condition_score']=np.maximum(melt,rain)
+        result['combined_condition_score']=thermal_water
     elif mode=='q1_only':
         result['combined_condition_score']=anomalies
     else:
-        result['combined_condition_score']=.45*np.maximum(melt,rain)+.55*anomalies
+        result['combined_condition_score']=.45*thermal_water+.55*anomalies
     baseline_ref=result.loc[baseline,'combined_condition_score'].dropna()
     if len(baseline_ref)<300:raise ValueError('Insufficient matched Q3 baseline for its condition score')
     threshold=float(baseline_ref.quantile(threshold_prob))
@@ -137,11 +140,15 @@ def empirical_first_passage(ensemble,step_h,threshold):
     conditional=mass/probability if probability else np.zeros_like(mass)
     survival_before=1-np.r_[0,np.cumsum(mass)[:-1]]
     hazard=np.divide(mass,survival_before,out=np.zeros_like(mass),where=survival_before>0)
-    if not probability:raise ValueError('No observed-analogue trajectory crosses the condition threshold')
+    if not probability:
+        return {'unconditional_bin_mass':mass,'conditional_bin_mass':conditional,'hazard':hazard,
+          'p_in_horizon':0.,'nonoccurrence_probability':1.,'interval_h':(None,None),
+          'median_h':None,'time_target':'condition_threshold_first_passage'}
     cdf=np.cumsum(conditional);il=int(np.searchsorted(cdf,.025));iu=int(np.searchsorted(cdf,.975));im=int(np.searchsorted(cdf,.5))
     return {'unconditional_bin_mass':mass,'conditional_bin_mass':conditional,'hazard':hazard,
       'p_in_horizon':probability,'nonoccurrence_probability':none,
-      'interval_h':(il*step_h,(iu+1)*step_h),'median_h':(im+.5)*step_h}
+      'interval_h':(il*step_h,(iu+1)*step_h),'median_h':(im+1)*step_h,
+      'time_target':'condition_threshold_first_passage'}
 
 def event_distribution(ensemble,step_h,base_rate,threshold,beta=2):
     # Conditional hazard per half-hour; probabilities and survival must sum to unity.
@@ -193,18 +200,18 @@ def _plots(ctx,h,score,defn,fc,lead,ens,issue,event,alarm,backtest,metrics):
     fig,axs=plt.subplots(1,2,figsize=(11.9,4.6),layout='constrained')
     ax=axs[0]
     ax.bar(lead,fc['conditional_bin_mass'],width=lead[0]*.85,color=COLORS[2])
-    ax.axvspan(*fc['interval_h'],alpha=.18,color=COLORS[0])
+    if fc['interval_h'][0] is not None:ax.axvspan(*fc['interval_h'],alpha=.18,color=COLORS[0])
     t_ev=(event-issue).total_seconds()/3600
     ax.axvline(t_ev,color='#C35A4B',ls='--',label='赛题参考时刻')
-    ax.axvline(fc['median_h'],color='#C58C46',ls=':',label='模型中位时间')
-    ax.set(xlabel='距预报发布时刻 (h)',ylabel='条件时间概率',title='a  触发时间概率分布')
+    if fc['median_h'] is not None:ax.axvline(fc['median_h'],color='#C58C46',ls=':',label='模型中位时间')
+    ax.set(xlabel='距预报发布时刻 (h)',ylabel='条件时间概率',title='a  条件首次超限时间分布')
     ax.legend(frameon=False,fontsize=8)
     axs[1].step(lead,np.cumsum(fc['conditional_bin_mass']),where='post',color=COLORS[0],lw=2)
     axs[1].axhline(.025,ls=':',color='gray');axs[1].axhline(.975,ls=':',color='gray')
-    axs[1].axvspan(*fc['interval_h'],alpha=.18,color=COLORS[0])
+    if fc['interval_h'][0] is not None:axs[1].axvspan(*fc['interval_h'],alpha=.18,color=COLORS[0])
     axs[1].axvline(t_ev,color='#C35A4B',ls='--')
     axs[1].set(xlabel='距预报发布时刻 (h)',ylabel='条件累计概率',ylim=(0,1.03),title='b  累计时间分布')
-    fig.suptitle('泥石流触发时间分布与95%条件预测区间',fontsize=13)
+    fig.suptitle('触发条件首次超限时间分布与95%预测区间',fontsize=13)
     savefig(fig,out/'Q3_02_95percent_conditional_time_interval.png')
     fig,axs=plt.subplots(1,2,figsize=(11.8,4.4),layout='constrained')
     # All three markers use the SAME UTC+8 clock reference; the first alarm
@@ -240,17 +247,25 @@ def _plots(ctx,h,score,defn,fc,lead,ens,issue,event,alarm,backtest,metrics):
     savefig(fig,out/'Q3_03_warning_lead_and_backtest.png')
     fig,axs=plt.subplots(1,2,figsize=(11.5,4.3),layout='constrained')
     aa=np.linspace(.55,.95,9)
-    pp=[(ens>=np.quantile(ref.loc[ref.index.year.isin([2021,2022,2023,2024])].dropna(),x)).any(axis=1).mean() for x in aa]
+    baseline=ref.loc[ref.index.year.isin(ctx.cfg['historic_years']) & ref.index.month.isin([5,6,7,8,9])].dropna()
+    pp=[float((ens>=np.quantile(baseline,x)).any(axis=1).mean()) for x in aa]
     axs[0].plot(aa,pp,marker='o',color=COLORS[0])
     axs[0].set(xlabel='参考气象条件分位阈值',ylabel='未来6小时至少超限一次的比例',title='a  气象条件阈值敏感性')
-    bb=np.linspace(1,3.5,9)
-    rate=fc['p_in_horizon']
-    # derivative all param scenarios evaluated by rescaling the physically derived intensity
-    pp2=[1-(1-rate)**(b/2.) for b in bb]
-    axs[1].plot(bb,pp2,marker='s',color=COLORS[1])
-    axs[1].set(xlabel='相对事件强度倍率',ylabel='未来6小时发生概率（精确重算）',title='b  事件强度敏感性')
+    days=[7,14,21,28];pp2=[];counts=[]
+    for window in days:
+        try:
+            trials,_,count=forecast_analogue(ref.loc[ref.index<issue],issue,
+                horizon_h=ctx.cfg['q3']['primary_horizon_hours'],step_h=lead[0],
+                n_samples=ctx.cfg['q3']['samples'],seed=ctx.cfg['q3']['random_seed'],past_days=window)
+            pp2.append(float((trials>=defn['threshold']).any(axis=1).mean()));counts.append(count)
+        except ValueError:pp2.append(np.nan);counts.append(0)
+    axs[1].plot(days,pp2,marker='s',color=COLORS[1])
+    axs[1].set(xlabel='相似日回看窗口 (天)',ylabel='基准模型6h条件超限频率',title='b  实际轨迹重算的窗口敏感性')
+    rows=[{'experiment':'reference_quantile','setting':x,'cross_frequency':p,'n_analogue_days':None} for x,p in zip(aa,pp)]
+    rows += [{'experiment':'analogue_lookback_days','setting':x,'cross_frequency':p,'n_analogue_days':n} for x,p,n in zip(days,pp2,counts)]
+    pd.DataFrame(rows).to_csv(out/'Q3_sensitivity_recomputed_experiments.csv',index=False)
     for ax in axs:ax.grid(axis='y',alpha=.12)
-    fig.suptitle('风险预报阈值与事件强度敏感性',fontsize=13)
+    fig.suptitle('条件预报阈值与历史轨迹窗口敏感性',fontsize=13)
     savefig(fig,out/'Q3_04_parameter_sensitivity.png')
     fig,axs=plt.subplots(1,2,figsize=(10.8,4.1),layout='constrained')
     c=metrics.get('proxy_interval_coverage')
@@ -306,7 +321,7 @@ def execute_q3_aligned(ctx):
     q1_only=pd.DataFrame(index=score.index)
     q1_only['combined_condition_score']=score[group_cols].abs().clip(0,4).mean(axis=1)/4.0
     q2_only=pd.DataFrame(index=score.index)
-    q2_only['combined_condition_score']=h[['melt_gate','rain_gate']].max(axis=1,skipna=False)
+    q2_only['combined_condition_score']=h.trigger_condition_index
     mask_year=h.index.year.isin(ctx.cfg['historic_years']) & h.index.month.isin([5,6,7,8,9])
     q1def={'threshold':float(q1_only.loc[mask_year,'combined_condition_score'].quantile(.85))}
     q2def={'threshold':float(q2_only.loc[mask_year,'combined_condition_score'].quantile(.85))}
@@ -342,7 +357,7 @@ def execute_q3_aligned(ctx):
         warn_tiers[level]={'quantile':q,'threshold':threshold_level,
               'first_2hour_alarm_bjt':str(ts) if pd.notna(ts) else None}
     alarm=pd.Timestamp(warn_tiers['yellow']['first_2hour_alarm_bjt']) if warn_tiers['yellow']['first_2hour_alarm_bjt'] else pd.NaT
-    from .warning_validation import complete_q3_validation,warning_state_machine
+    from .warning_validation import complete_q3_validation,warning_state_machine,decide_warning_at_issue
     back,metrics=complete_q3_validation(ctx,h)
     history=s.loc[(s.index>=issue-pd.Timedelta(days=7))&(s.index<issue)]
     states,episodes=warning_state_machine(history,warn_tiers['yellow']['threshold'])
@@ -350,13 +365,16 @@ def execute_q3_aligned(ctx):
     episodes.to_csv(out/'Q3_warning_episodes.csv',index=False)
     old_alarm=alarm
     last=states.iloc[-1]
-    active=bool(last.active) and pd.notna(last.expiry_bjt) and pd.Timestamp(last.expiry_bjt)>=event
+    active=bool(last.active) and pd.notna(last.expiry_bjt) and pd.Timestamp(last.expiry_bjt)>=issue
     alarm=pd.Timestamp(last.episode_start_bjt) if active else pd.NaT
     # A forward warning is issued on predicted threshold passage, not only on
     # an observation alarm that happened to remain active from yesterday.
     probability_threshold=float(q3.get('warning_cross_probability_threshold',.25))
-    forecast_alert=fc['p_in_horizon']>=probability_threshold
-    operational_alarm=(min(issue,alarm) if pd.notna(alarm) else issue) if forecast_alert else alarm
+    decision=decide_warning_at_issue(issue,fc['p_in_horizon'],probability_threshold,
+        active,alarm,last.expiry_bjt,float(q3.get('primary_horizon_hours',6)))
+    forecast_alert=decision['forecast_issued']
+    operational_alarm=decision['warning_time'] if decision['warning_time'] is not None else pd.NaT
+    effective_reference=decision['valid_until'] is not None and decision['valid_until']>=event
     # Fixed-input ablation compares actual condition-score information and
     # the first persistent warning. Repeating pseudo-event forecast backtests
     # would NOT produce independent disaster validation and triples runtime.
@@ -383,40 +401,48 @@ def execute_q3_aligned(ctx):
     _plots(ctx,h,score,defs,fc,leads,fcens,issue,event,operational_alarm,back,metrics)
     lead_alarm=(event-alarm).total_seconds()/3600 if pd.notna(alarm) else None
     rel=(event-issue).total_seconds()/3600
-    is_hit=(fc['interval_h'][0]<=rel<=fc['interval_h'][1])
+    is_hit=(fc['interval_h'][0]<=rel<=fc['interval_h'][1]) if fc['interval_h'][0] is not None else False
     report={'prediction_issue_bjt':str(issue),'event_time_reference_bjt':str(event),
        'risk_condition_score':defs,'first_actual_threshold_warning_bjt':str(alarm) if pd.notna(alarm) else None,
        'alarm_rule':'yellow uses q75; 2h entry, 3h clearing, 6h renewal, missing -> unknown; only data before issuance',
        'warning_tiers':warn_tiers,
-       'first_warning_advance_h_to_reference':float((event-operational_alarm).total_seconds()/3600) if pd.notna(operational_alarm) else None,
+       'first_warning_advance_h_to_reference':float((event-operational_alarm).total_seconds()/3600) if pd.notna(operational_alarm) and effective_reference else None,
        'first_monitoring_warning_advance_h_to_reference':lead_alarm,
        'conditional_95pct_interval_h_from_issue':list(fc['interval_h']),
        'conditional_95pct_interval_times_bjt':[
-           str(issue+pd.Timedelta(hours=x)) for x in fc['interval_h']],
+           str(issue+pd.Timedelta(hours=x)) if x is not None else None for x in fc['interval_h']],
        'median_trigger_h':fc['median_h'],
        'event_reference_in_interval':bool(is_hit),
-       'scenario_p_event_in_next_6h':fc['p_in_horizon'],
+       'forecast_target':'first passage of the multi-channel meteorological trigger-condition threshold',
        'predicted_condition_cross_probability':fc['p_in_horizon'],
        'predicted_no_condition_cross_probability':fc['nonoccurrence_probability'],
        'forecast_distribution_method':'empirical first passage of data-derived condition trajectories',
        'forecast_input_source':forecast_source,
+       'interval_estimand':'first passage time conditional on meteorological condition crossing within the horizon',
+       'current_forecast_validation_scope':'archived-weather hybrid case replay; historical proxy metrics belong to the analogue-reference model',
        'forecast_warning_probability_threshold':probability_threshold,
        'forecast_warning_issued':bool(forecast_alert),
+       'forecast_warning_time_bjt':str(issue) if forecast_alert else None,
+       'forecast_warning_lead_h_to_task_reference':float((event-issue).total_seconds()/3600) if forecast_alert else None,
+       'monitoring_episode_start_bjt':str(alarm) if pd.notna(alarm) else None,
+       'operational_warning_valid_until_bjt':str(decision['valid_until']) if decision['valid_until'] is not None else None,
+       'warning_decision_uses_future_event_time':False,
        'operational_warning_time_bjt':str(operational_alarm) if pd.notna(operational_alarm) else None,
-       'operational_warning_lead_h':float((event-operational_alarm).total_seconds()/3600) if pd.notna(operational_alarm) else None,
+       'operational_warning_lead_h':float((event-operational_alarm).total_seconds()/3600) if pd.notna(operational_alarm) and effective_reference else None,
        'warning_decision_basis':'forecast P(condition passage within 6h) >= predeclared 0.25, or valid monitoring alarm',
        'empirical_disaster_time_PICP':None,
-       'actual_one_event_case_coverage':None,
+       'single_task_reference_hit':{'n_evaluable_references':1,'n_interval_hits':int(is_hit),
+           'reference_kind':'task-reported impact clock, compared with the condition time window'},
        'reference_time_type':'10:30 is the task-reported disaster/impact reference; source trigger truth not independently observed',
        'old_first_alarm_bjt':str(old_alarm) if pd.notna(old_alarm) else None,
        'active_warning_at_issue':bool(last.active),
-       'warning_valid_through_task_reference':bool(active),
+       'warning_valid_through_task_reference':bool(effective_reference),
        'last_observation_used_bjt':str(issue-pd.Timedelta(hours=1)),
        'warning_rule_full':'enter after 2 above-threshold valid hours; renew for 6h on high scores; clear after 3 low hours or immediately on missing; decisions use previous hourly observation',
        'proxy_backtest':metrics,
        'hazard_base_rate':{'method':'empirical trajectory passage frequencies','assumed_disaster_count':None},
        'analogue_days':n,'external_Q3_download':False,
-       'input_reuse':'predeclared Q1 trio + Q2 melt/rain condition index; 2026 Top5 used only for supplemental explanation',
+       'input_reuse':'predeclared Q1 trio + Q2 rain/melt/station-energy condition index; 2026 Top5 used only for supplemental explanation',
        'inherited_Q1_features':inherited,
        'Q1_Q2_ablation_file':'Q3_Q1_Q2_ablation_validation.csv',
        'forecast_method':'complete earlier day score trajectories adjusted to issuance observation; no future data'}

@@ -1,11 +1,20 @@
 #!/usr/bin/env python
-"""MathorCup B 2026 end-to-end run. Default Q3/Q4 are SCENARIOS until independent evidence arrives."""
+"""MathorCup B: reproducible observations, condition forecasts and event reconstruction."""
 from pathlib import Path
 import argparse,sys
 ROOT=Path(__file__).resolve().parent
 sys.path.insert(0,str(ROOT/'src'))
 from mathorcup.common import Context,configure_plotting,record_warning
 from mathorcup.catalog import prepare_official_data
+
+def validate_route_policy(ctx,strict=False,allow_provisional=False):
+    """Apply the strict policy before deleting results or entering ANY Q4 branch."""
+    if strict and allow_provisional:
+        raise ValueError('--strict-route and --allow-provisional-q4 cannot be combined')
+    ctx.cfg['strict_route']=bool(strict)
+    if strict:
+        from mathorcup.q4_flowpath import require_verified_route
+        require_verified_route(ctx)
 
 def main():
     p=argparse.ArgumentParser(description='2026 MathorCup B reproducible experiments')
@@ -20,6 +29,8 @@ def main():
     p.add_argument('--refit-q4',action='store_true',help='repeat Q4 calibration experiments instead of reusing matching fitted parameters')
     args=p.parse_args();ctx=Context(ROOT,args.config);configure_plotting()
     ctx.cfg['refit_q4']=args.refit_q4
+    if args.stage in ('all','q4'):
+        validate_route_policy(ctx,args.strict_route,args.allow_provisional_q4)
     # Each recomputed stage owns its output directory: never mix old and new figures.
     import shutil
     stages=['q1','q2','q3','q4','joint'] if args.stage=='all' else ([args.stage] if args.stage in ('q1','q2','q3','q4') else [])
@@ -79,12 +90,14 @@ def main():
     if args.stage in ('all','q4'):
         from mathorcup.q4_flowpath import execute_q4_path
         from mathorcup.q4_solver import execute_q4_solver
-        route=execute_q4_path(ctx,allow_provisional=(not args.strict_route or args.allow_provisional_q4))
+        route=execute_q4_path(ctx,allow_provisional=not args.strict_route)
         execute_q4_solver(ctx,route)
         from mathorcup.q4_grid_review import execute_q4_grid_review
         execute_q4_grid_review(ctx,route)
         from mathorcup.q4_cascade_reconstruction import execute_cascade_reconstruction
-        execute_cascade_reconstruction(ctx)
+        upper,lower,reconstruction=execute_cascade_reconstruction(ctx)
+        from mathorcup.q4_diagnostics import plot_review_diagnostics
+        plot_review_diagnostics(ctx,upper,lower,reconstruction)
         from mathorcup.q3_spatial_footprint import execute_q3_spatial
         execute_q3_spatial(ctx)
         if args.stage=='q4':
@@ -101,6 +114,8 @@ def main():
         build_redraw_catalog(ctx)
         from mathorcup.provenance import audit_project
         audit_project(ctx)
+        from mathorcup.review_audit import build_review_verdict
+        build_review_verdict(ctx)
     if args.stage=='tests':
         import subprocess
         raise SystemExit(subprocess.call([sys.executable,'-m','pytest','-q','tests'],cwd=ROOT))

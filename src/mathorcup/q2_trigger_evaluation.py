@@ -63,6 +63,19 @@ def dynamic_conditions(h,baseline_years=(2022,2023,2024,2025),source_z=5300,stat
     d['rain_gate']=np.asarray(rain_gate,float)
     d['melt_gate']=np.asarray(melt_gate,float)
     d['trigger_condition_index']=np.maximum(d.rain_gate,d.melt_gate)
+    energy_limit=None;energy_scale=None
+    if 'energy_balance_residual' in d:
+        # Positive station energy is a thermal-support proxy, with its own
+        # measured footprint. It is never relabelled as observed glacier melt.
+        energy=(d.energy_balance_residual.clip(lower=0)*3600/334000).rolling(
+            '168h',min_periods=126).sum()
+        energy_ref=energy.loc[baseline].dropna()
+        if len(energy_ref)>=300:
+            energy_limit=float(energy_ref.quantile(quantile))
+            energy_scale=max(.05,float(energy_ref.std())*.3)
+            d['station_positive_energy_7d_mmwe']=energy
+            d['energy_gate']=physical_exceedance(energy,energy_limit,energy_scale)
+            d['trigger_condition_index']=np.maximum(d.trigger_condition_index,d.energy_gate)
     d['melt_condition_met']=(src_pdd7>=pdd_limit).astype('boolean').mask(t_src.isna()|src_pdd7.isna())
     d['rain_condition_met']=((d.rain_24h>=rain24_limit)&(d.rain_24h>0.01)).astype('boolean').mask(d.rain_24h.isna())
     thresholds={'baseline_years':list(baseline_years),'reference_quantile':float(quantile),
@@ -71,6 +84,11 @@ def dynamic_conditions(h,baseline_years=(2022,2023,2024,2025),source_z=5300,stat
                 'source_pdd7_warmseason_q90_Cday':pdd_limit,
                 'rain_24h_nonzero_q90_mm':rain24_limit,
                 'hourly_nonzero_precip_q90_mm_h':hourly_rain_limit,
+                'station_positive_energy_7d_q90_mmwe':energy_limit,
+                'station_energy_gate_response_scale_mmwe':energy_scale,
+                'primary_dynamic_channels':['rain','source_positive_temperature']+(['station_energy_support'] if energy_limit is not None else []),
+                'threshold_role':'historical_reference_condition',
+                'station_energy_scope':'station positive residual energy equivalent; thermal support proxy',
                 'zero_rain_cannot_activate_rain_trigger':True,
                 'all_quantiles_are_climate_conditions_not_demonstrated_failure_strength':True}
     return d,thresholds
@@ -97,7 +115,10 @@ def velocity_strain_proxy(g,sigma_cells=1.0):
     norm[~mask | (denom<.85)]=np.nan
     return norm
 
-def static_ice_susceptibility(g):
+def static_ice_susceptibility(g,weights=None):
+    weights=np.asarray([.40,.25,.20,.15] if weights is None else weights,float)
+    if weights.shape!=(4,) or not np.isfinite(weights).all() or np.any(weights<0) or not np.isclose(weights.sum(),1):
+        raise ValueError('Four nonnegative susceptibility weights must sum to one')
     m=(g['glacier_mask'] & np.isfinite(g['thickness']) &
        np.isfinite(g['slope']) & np.isfinite(g['v']))
     tau=900*9.81*g['thickness']*np.sin(np.deg2rad(g['slope']))/1000
@@ -109,10 +130,51 @@ def static_ice_susceptibility(g):
     speed=robust_norm(g['v'],m)
     strain_normalized=robust_norm(strain,m & np.isfinite(strain))
     # Diagnostic fixed weights, not P(failure) or fitted event probabilities.
-    base=.40*shear+.25*thick+.20*speed
-    score=np.where(np.isfinite(strain),base+.15*strain_normalized,base/.85)
+    base=weights[0]*shear+weights[1]*thick+weights[2]*speed
+    score=np.where(np.isfinite(strain),base+weights[3]*strain_normalized,
+                   base/max(float(weights[:3].sum()),EPS))
     score[~m]=np.nan
     return score,m,tau
+
+
+def source_proxy_sensitivity(ctx,h,g,static,mask,limits):
+    """Recompute declared weight and elevation/lapse cases from actual source grids."""
+    out=ctx.folder('q2');issue=pd.Timestamp(ctx.cfg['snapshot_raw']);rows=[]
+    for q in [.1,.5,.9]:
+        height=float(np.nanquantile(g['dem'][mask],q))
+        for lapse in ctx.cfg['q2']['lapse_rates_C_per_km']:
+            d,lim=dynamic_conditions(h,ctx.cfg['historic_years'],height,limits['station_elevation_m'],lapse)
+            current=d.loc[d.index<issue].iloc[-1]
+            rows.append({'glacier_elevation_quantile':q,'source_elevation_m':height,'lapse_C_per_km':lapse,
+                'source_pdd7_Cday':current.source_pdd7_lapse_Cd,
+                'historical_pdd7_q90_Cday':lim['source_pdd7_warmseason_q90_Cday'],
+                'condition_index':current.trigger_condition_index})
+    thermal=pd.DataFrame(rows);thermal.to_csv(out/'Q2_source_elevation_lapse_sensitivity.csv',index=False)
+    base=static[mask];high=base>=np.quantile(base,.8);weight_rows=[]
+    scenarios={'reference':[.4,.25,.2,.15],'equal':[.25]*4,
+        'gravity_emphasis':[.55,.15,.15,.15],'motion_emphasis':[.25,.2,.3,.25]}
+    for name,weights in scenarios.items():
+        alternative,_,_=static_ice_susceptibility(g,weights);value=alternative[mask]
+        top=value>=np.nanquantile(value,.8)
+        weight_rows.append({'weight_experiment':name,'weights':','.join(map(str,weights)),
+            'spearman_vs_reference':float(spearmanr(base,value,nan_policy='omit').statistic),
+            'top20_IoU_vs_reference':float(np.logical_and(high,top).sum()/max(1,np.logical_or(high,top).sum()))})
+    weight_table=pd.DataFrame(weight_rows);weight_table.to_csv(out/'Q2_static_weight_sensitivity.csv',index=False)
+    fig,axs=plt.subplots(1,2,figsize=(11.5,4.4),layout='constrained')
+    for q,color in zip([.1,.5,.9],COLORS):
+        d=thermal.loc[thermal.glacier_elevation_quantile.eq(q)]
+        axs[0].plot(d.lapse_C_per_km,d.source_pdd7_Cday,'-o',color=color,label=f'冰川高程q{100*q:.0f}')
+    axs[0].set(xlabel='温度递减率 (°C/km)',ylabel='源区7日正积温 (°C·d)',title='a  高程与递减率代理敏感性')
+    axs[0].legend(frameon=False,fontsize=8)
+    x=np.arange(len(weight_table))
+    axs[1].bar(x-.18,weight_table.spearman_vs_reference,width=.36,label='空间秩相关',color=COLORS[0])
+    axs[1].bar(x+.18,weight_table.top20_IoU_vs_reference,width=.36,label='高分区IoU',color=COLORS[2])
+    axs[1].set(xticks=x,xticklabels=['参考','等权','重力优先','运动优先'],ylim=(0,1.05),title='b  固定权重的实际重算比较')
+    axs[1].legend(frameon=False,fontsize=8)
+    fig.suptitle('源区空间代理与静态权重敏感性')
+    savefig(fig,out/'Q2_19_source_proxy_and_weight_sensitivity.png')
+    return {'elevation_lapse_cases':rows,'static_weight_cases':weight_rows,
+        'design_role':'declared sensitivity experiments; no disaster labels fitted'}
 
 def candidate_release_regions(g,source_score,mask,quantiles=(.8,.85,.9)):
     """Consecutive physically high-scoring ice clusters define *candidate*
@@ -268,11 +330,14 @@ def execute_q2_trigger(ctx):
             fig.suptitle('源区历史起报天气预报条件',fontsize=12)
             savefig(fig,out/'Q2_12_forecast_weather_conditions.png')
     else:forecast_summary={'warning':'No real downloadable archived run available in runtime; station proxy is not falsely labelled a forecast.'}
-    d[['source_temp_lapse_C','source_pdd7_lapse_Cd','rain_24h','rain_gate','melt_gate',
-       'trigger_condition_index','melt_condition_met','rain_condition_met']].to_csv(
+    columns=['source_temp_lapse_C','source_pdd7_lapse_Cd','rain_24h','rain_gate','melt_gate',
+             'trigger_condition_index','melt_condition_met','rain_condition_met']
+    columns += [c for c in ['station_positive_energy_7d_mmwe','energy_gate'] if c in d]
+    d[columns].to_csv(
           out/'Q2_station_based_dynamic_trigger_conditions.csv.gz',compression='gzip',index_label='time_bjt')
     snap=pd.Timestamp(ctx.cfg['snapshot_raw']);valid=d.loc[d.index<snap].iloc[-1]
     spatial=scale_reliability(static,mask,g)
+    source_sensitivity=source_proxy_sensitivity(ctx,h,g,static,mask,lim)
     spatial.to_csv(out/'Q2_spatial_scale_reliability.csv',index=False)
     risk=static*float(valid['trigger_condition_index'])
     _save_risk_tif(ctx,risk,g)
@@ -292,6 +357,7 @@ def execute_q2_trigger(ctx):
             'source_pdd7_Cday':float(valid.source_pdd7_lapse_Cd),
             'melt_condition_met':bool(valid.melt_condition_met) if pd.notna(valid.melt_condition_met) else None,
             'trigger_condition_index':float(valid.trigger_condition_index),
+            'station_energy_gate':float(valid.energy_gate) if 'energy_gate' in valid else None,
             'spatial_index_max':float(np.nanmax(risk)),
             'spatial_index_mean':float(np.nanmean(risk))}
     report={'task':'multi-source physical threshold condition assessment',
@@ -299,9 +365,10 @@ def execute_q2_trigger(ctx):
        'external_satellite_evidence_used':extra['satellite_summary'],
        'external_forecast_status':forecast_status,'external_forecast_summary':forecast_summary,
        'thresholds':lim,'current':current,
-       'model':'conditional index = static glacier gravitational supply index x max(melt_gate, rainfall_gate)',
+       'model':'conditional index = static glacier gravitational supply index x max(melt_gate, rainfall_gate, station_energy_support_gate when available)',
        'static_weights':{'gravity_shear':.40,'ice_thickness':.25,'historic_speed':.20,'velocity_strain':.15},
        'not_failure_probability':True,
+       'source_proxy_sensitivity':source_sensitivity,
        'weather_station_not_nepal_source':True,
        'release_candidate_regions':candidate_regions.to_dict('records'),'time_resolution_reliability':response,'spatial_resolution_reliability':spatial.to_dict('records')}
     write_json(out/'Q2_primary_trigger_assessment.json',report)
