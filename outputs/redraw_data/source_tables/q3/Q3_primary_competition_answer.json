@@ -1,0 +1,88 @@
+{
+  "model_family": "Q2_conditioned_event_time",
+  "prediction_issue_bjt": "2026-08-26 09:00:00",
+  "forecast_target": "mudslide event time conditional on the identified case source and occurrence within the forecast horizon",
+  "criterion": "Q2 statistical trigger assessment; conditional time density proportional to assessment intensity",
+  "conditional_95pct_interval_h_from_issue": [
+    0.07923834125820603,
+    5.720158663985457
+  ],
+  "conditional_95pct_interval_times_bjt": [
+    "2026-08-26 09:04:00",
+    "2026-08-26 14:44:00"
+  ],
+  "median_trigger_h": 1.802571655479229,
+  "median_event_time_bjt": "2026-08-26 10:48:09.257959725",
+  "interval_estimand": "event time conditional on occurrence within horizon and fixed source",
+  "within_bin_time_assumption": "uniform density; numerical interpolation, not extra time observations",
+  "event_occurrence_probability": null,
+  "conditional_on_occurrence": true,
+  "assessment_cross_probability": 0.9416666666666667,
+  "assessment_cross_probability_is_disaster_probability": false,
+  "forecast_warning_probability_threshold": 0.25,
+  "forecast_warning_issued": true,
+  "forecast_warning_time_bjt": "2026-08-26 09:00:00",
+  "operational_warning_time_bjt": "2026-08-26 09:00:00",
+  "operational_warning_lead_h": 1.5,
+  "operational_warning_valid_until_bjt": "2026-08-26 15:00:00",
+  "monitoring_episode_start_bjt": "2026-08-25 18:00:00",
+  "active_warning_at_issue": true,
+  "warning_decision_uses_future_event_time": false,
+  "last_observation_used_bjt": "2026-08-26 08:00:00",
+  "event_time_used_to_fit_parameters": false,
+  "case_reference_coverage": {
+    "n_references": 1,
+    "n_covered": 1,
+    "coverage": 1.0,
+    "binomial_95_interval": [
+      0.025,
+      1.0
+    ],
+    "scope": "one competition-reported reference under the adopted event clock, not multi-disaster generalization"
+  },
+  "case_reference_median_error_h": 0.30257165547922904,
+  "case_reference_interval_width_h": 5.6409203227272515,
+  "single_task_reference_hit": {
+    "n_references": 1,
+    "n_covered": 1,
+    "coverage": 1.0,
+    "binomial_95_interval": [
+      0.025,
+      1.0
+    ],
+    "scope": "one competition-reported reference under the adopted event clock, not multi-disaster generalization"
+  },
+  "empirical_disaster_time_PICP": null,
+  "reference_time_type": "competition event clock adopted as trigger-time benchmark; minute-scale source/impact distinctions are simplified",
+  "event_time_reference_bjt": "2026-08-26 10:30:00",
+  "inherited_Q1_features": [
+    "vpd",
+    "temp_10m",
+    "energy_balance_residual",
+    "sw_down",
+    "vwc_gradient"
+  ],
+  "input_contract": "q2/Q2_sequential_model_contract.json",
+  "source_geometry_sha256": "29753a05f81c8d53974000eb01bfa1f2abcae67e0d893f026390b8449d0a3193",
+  "source_to_port_km": 23.715,
+  "spatial_distance_range_km": [
+    0.0,
+    23.715
+  ],
+  "spatial_scope": "Q2 static source-to-port DEM corridor, determined before Q4 simulation; not full 2D inundation",
+  "forecast_input_source": "Q1-selected anomaly trajectories + Q2 actual archived weather water/thermal gate, with unchanged Q2 equation",
+  "analogue_days": 16,
+  "external_Q3_download": false,
+  "n_uniform_prior_trajectories": 0,
+  "hazard_base_rate": {
+    "assumed_disaster_count": null,
+    "method": "conditional intensity normalization; no invented baseline event count"
+  },
+  "model_assumptions": [
+    "fixed case source and available material",
+    "one event in the specified horizon when reporting conditional time",
+    "time density proportional to Q2 assessment intensity"
+  ],
+  "independent_multi_event_validation": false,
+  "Q4_results_used_as_Q3_inputs": false
+}

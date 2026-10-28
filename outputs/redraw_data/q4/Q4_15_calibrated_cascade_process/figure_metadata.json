@@ -1,0 +1,409 @@
+{
+  "figure": "q4/Q4_15_calibrated_cascade_process.png",
+  "title": "分阶段冰岩崩与泥石流传播过程",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "a  动力学求解的通量传递",
+      "xlabel": "源区释放后 (s)",
+      "ylabel": "断面流量 (m³/s)",
+      "xlim": [
+        -50.0,
+        1050.0
+      ],
+      "ylim": [
+        -29965.261536289556,
+        629270.4922620807
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "上游冰岩崩",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#205C92",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.5,
+          "alpha": null
+        },
+        {
+          "series_id": "L002",
+          "label": "下游泥石流",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#DA783F",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.5,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [],
+      "patches": []
+    },
+    {
+      "axis": "A02",
+      "title": "b  口岸速度过程",
+      "xlabel": "源区释放后 (s)",
+      "ylabel": "口岸断面流速 (m/s)",
+      "xlim": [
+        -50.0,
+        1050.0
+      ],
+      "ylim": [
+        -2.163214956913011,
+        45.42751409517323
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_child0",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#DA783F",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.5,
+          "alpha": null
+        },
+        {
+          "series_id": "L002",
+          "label": "文献断面平均速度",
+          "x_space": "axes_fraction",
+          "y_space": "data",
+          "color": "#666",
+          "linestyle": "--",
+          "marker": "None",
+          "linewidth": 1.5,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [],
+      "patches": []
+    },
+    {
+      "axis": "A03",
+      "title": "c  冰岩崩流深演进",
+      "xlabel": "本河段距离 (km)",
+      "ylabel": "源区释放后 (s)",
+      "xlim": [
+        0.0,
+        8.445
+      ],
+      "ylim": [
+        0.15278947623665165,
+        1000.0
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [],
+      "rasters": [
+        {
+          "image_id": "I001",
+          "raster_id": "ada07358211bf5aab262",
+          "shared_data": "shared_rasters/ada07358211bf5aab262",
+          "shape": [
+            12,
+            564
+          ],
+          "extent": [
+            0.0,
+            8.445,
+            0.15278947623665165,
+            1000.0
+          ],
+          "origin": "lower",
+          "coordinates": "A03_I001_coordinates.csv",
+          "cmap": "turbo",
+          "norm": "Normalize",
+          "vmin": 0.0,
+          "vmax": 101.68638195876896,
+          "alpha": null,
+          "interpolation": "auto",
+          "raw_coordinate_unit": "plot_axis_units",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": null,
+          "colorbar_label": "流深 (m)",
+          "quantity": "流深 (m)",
+          "value_unit": "流深 (m)"
+        }
+      ],
+      "collections": [],
+      "patches": []
+    },
+    {
+      "axis": "A04",
+      "title": "d  河道泥石流流深演进",
+      "xlabel": "本河段距离 (km)",
+      "ylabel": "源区释放后 (s)",
+      "xlim": [
+        0.0,
+        15.27
+      ],
+      "ylim": [
+        0.15278947623665165,
+        1000.0
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [],
+      "rasters": [
+        {
+          "image_id": "I001",
+          "raster_id": "cee33ab18bcb622ae39c",
+          "shared_data": "shared_rasters/cee33ab18bcb622ae39c",
+          "shape": [
+            12,
+            2037
+          ],
+          "extent": [
+            0.0,
+            15.27,
+            0.15278947623665165,
+            1000.0
+          ],
+          "origin": "lower",
+          "coordinates": "A04_I001_coordinates.csv",
+          "cmap": "turbo",
+          "norm": "Normalize",
+          "vmin": 0.0,
+          "vmax": 28.5963410821659,
+          "alpha": null,
+          "interpolation": "auto",
+          "raw_coordinate_unit": "plot_axis_units",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": null,
+          "colorbar_label": "流深 (m)",
+          "quantity": "流深 (m)",
+          "value_unit": "流深 (m)"
+        }
+      ],
+      "collections": [],
+      "patches": []
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 17,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 36639,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A02_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 15,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 28182,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A03_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 16,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A03_I001_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 564,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "shared_rasters/ada07358211bf5aab262/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 6768,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A04_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 15,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A04",
+      "note": ""
+    },
+    {
+      "file": "A04_I001_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 2037,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A04",
+      "note": ""
+    },
+    {
+      "file": "shared_rasters/cee33ab18bcb622ae39c/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 24444,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A04",
+      "note": ""
+    },
+    {
+      "file": "A02_curves_wide_01.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 28180,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L001"
+      ],
+      "axis": "A02",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A02_curves_wide_02.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L002"
+      ],
+      "axis": "A02",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    }
+  ],
+  "decorative_colorbars": [
+    {
+      "label": "流深 (m)",
+      "ticks": [
+        0.0,
+        20.0,
+        40.0,
+        60.0,
+        80.0,
+        100.0,
+        120.0
+      ],
+      "vmin": 0.0,
+      "vmax": 101.68638195876896,
+      "norm": "Normalize"
+    },
+    {
+      "label": "流深 (m)",
+      "ticks": [
+        0.0,
+        5.0,
+        10.0,
+        15.0,
+        20.0,
+        25.0,
+        30.0
+      ],
+      "vmin": 0.0,
+      "vmax": 28.5963410821659,
+      "norm": "Normalize"
+    }
+  ],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

@@ -1,0 +1,198 @@
+{
+  "figure": "q1/Q1_09_radiation_and_turbulent_energy.png",
+  "title": "灾前地表辐射与热量通量变化",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "a  净短波与净长波辐射",
+      "xlabel": "",
+      "ylabel": "辐射通量 (W/m²)",
+      "xlim": [
+        20684.027083333334,
+        20691.681249999998
+      ],
+      "ylim": [
+        -278.43755,
+        1112.5025499999997
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": true,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "净短波",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#205C92",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.2,
+          "alpha": null
+        },
+        {
+          "series_id": "L002",
+          "label": "净长波",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#DA783F",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.2,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [],
+      "patches": []
+    },
+    {
+      "axis": "A02",
+      "title": "b  湍流与土壤热量交换",
+      "xlabel": "北京时间（UTC+8）",
+      "ylabel": "热通量 (W/m²)",
+      "xlim": [
+        20684.027083333334,
+        20691.681249999998
+      ],
+      "ylim": [
+        -218.86951499999998,
+        496.280415
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": true,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "感热 H",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#248F81",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.2,
+          "alpha": null
+        },
+        {
+          "series_id": "L002",
+          "label": "潜热 LE",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#9276A5",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.2,
+          "alpha": null
+        },
+        {
+          "series_id": "L003",
+          "label": "土壤热通量 G",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#C7AA41",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.2,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [],
+      "patches": []
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 9,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 336,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A02_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 16,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 504,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_curves_wide_01.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 168,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L001",
+        "y_L002",
+        "y_L003"
+      ],
+      "axis": "A02",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    }
+  ],
+  "decorative_colorbars": [],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

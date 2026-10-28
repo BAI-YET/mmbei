@@ -1,0 +1,13 @@
+{
+  "upper_score_quantile": 0.85,
+  "selected_score_threshold": 0.5552034956185277,
+  "candidate_area_km2": 0.6552,
+  "candidate_inventory_ice_volume_m3": 66060900.0,
+  "n_pixels": 728.0,
+  "candidate_centroid_utm_x": 356615.65934065933,
+  "candidate_centroid_utm_y": 3129799.464285714,
+  "n_spatial_components": 19.0,
+  "not_measured_collapse_release": true,
+  "release_volume_is_total_ice_inventory_within_high_score_candidate": true,
+  "historical_velocity_not_2026_speed": true
+}

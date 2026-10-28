@@ -1,0 +1,22 @@
+{
+  "status": "PHYSICS_SCENARIO_ENSEMBLE_CONDITIONAL_ON_REACH",
+  "source": "computed 1D parameter-sensitivity ensemble; conditional on downstream reachability",
+  "speed_band_m_s": null,
+  "propagation_path_verified": false,
+  "source_mapping_assumption": "Q2 fixed source and terrain contract inherited by Q3 and Q4",
+  "q4_ensemble_n_scenarios_with_reach": 7,
+  "trigger_time_empirically_calibrated": false,
+  "trigger_time_source": "mudslide event time conditional on the identified case source and occurrence within the forecast horizon",
+  "trigger_scenario_fraction": null,
+  "trigger_time_sampling": "piecewise-uniform density explicitly specified by the Q3 conditional time model",
+  "n_unique_Q4_scenarios": 7,
+  "n_nonreaching_Q4_scenarios": 0,
+  "ensemble_weights": "equal per distinct tested scenario; sensitivity-design weights, not calibrated probabilities",
+  "nominal_95_interval_hours_from_raw_issuance": [
+    0.20006616388853157,
+    5.864460799758091
+  ],
+  "conditional_on_event_within_configured_horizon": 6,
+  "empirical_joint_coverage": null,
+  "note": "Arrival-time sensitivity combines the specified Q3 conditional event-time density with calculated Q4 scenario travel times; the event-clock simplification follows Q3."
+}

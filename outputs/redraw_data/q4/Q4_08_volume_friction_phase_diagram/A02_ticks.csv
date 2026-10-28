@@ -1,0 +1,7 @@
+﻿axis,tick_order,plot_coordinate,display_label
+x,0,0.0,30
+x,1,1.0,50
+x,2,2.0,80
+y,0,0.0,0.025
+y,1,1.0,0.040
+y,2,2.0,0.060

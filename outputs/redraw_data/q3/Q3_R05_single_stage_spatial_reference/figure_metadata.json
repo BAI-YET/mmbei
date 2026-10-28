@@ -1,0 +1,279 @@
+{
+  "figure": "q3/Q3_R05_single_stage_spatial_reference.png",
+  "title": "",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "参考实验：单阶段传播空间范围",
+      "xlabel": "UTM45N 东向坐标 (m)",
+      "ylabel": "UTM45N 北向坐标 (m)",
+      "xlim": [
+        339357.74873686465,
+        358437.74873686465
+      ],
+      "ylim": [
+        3126855.8517232644,
+        3134415.8517232644
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "完整候选通道",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#888",
+          "linestyle": "--",
+          "marker": "None",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L002",
+          "label": "基准情景实际传播段",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#1c648b",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.8,
+          "alpha": null
+        }
+      ],
+      "rasters": [
+        {
+          "image_id": "I001",
+          "raster_id": "d1cee2e447575c62d377",
+          "shared_data": "shared_rasters/d1cee2e447575c62d377",
+          "shape": [
+            63,
+            159
+          ],
+          "extent": [
+            339357.74873686465,
+            358437.74873686465,
+            3126855.8517232644,
+            3134415.8517232644
+          ],
+          "origin": "upper",
+          "coordinates": "A01_I001_coordinates.csv",
+          "cmap": "Greys",
+          "norm": "Normalize",
+          "vmin": 0.0,
+          "vmax": 1.0,
+          "alpha": null,
+          "interpolation": "auto",
+          "raw_coordinate_unit": "m",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": "EPSG:32645",
+          "GeoTIFF": "A01_I001_georeferenced.tif",
+          "quantity": "I001",
+          "value_unit": "见原图色标及变量说明",
+          "GeoTIFF_display": "A01_I001_georeferenced_display.tif"
+        }
+      ],
+      "collections": [
+        {
+          "collection_id": "C001",
+          "type": "LineCollection",
+          "label": "参数情景包络",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": null
+        },
+        {
+          "collection_id": "C002",
+          "type": "_GeoPandasPolyCollection",
+          "label": "_child2",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": 0.5
+        },
+        {
+          "collection_id": "C003",
+          "type": "PathCollection",
+          "label": "_child5",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": null
+        }
+      ],
+      "patches": []
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 20,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 615,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_C001_paths.csv",
+      "kind": "contours_polygons_and_intervals",
+      "rows": 556,
+      "fields": [
+        "path_id",
+        "vertex_order",
+        "path_code",
+        "x",
+        "y"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_C002_paths.csv",
+      "kind": "contours_polygons_and_intervals",
+      "rows": 356,
+      "fields": [
+        "path_id",
+        "vertex_order",
+        "path_code",
+        "x",
+        "y"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_C003_scatter.csv",
+      "kind": "scatter_points",
+      "rows": 2,
+      "fields": [
+        "point_order",
+        "x",
+        "y",
+        "color_value",
+        "marker_size_pt2",
+        "red",
+        "green",
+        "blue",
+        "alpha"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I001_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 159,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I001_georeferenced.tif",
+      "kind": "georeferenced_full_raster",
+      "rows": 10017,
+      "fields": [
+        "raster_values"
+      ],
+      "axis": "A01",
+      "note": "original numeric values; display mask is a separate file"
+    },
+    {
+      "file": "shared_rasters/d1cee2e447575c62d377/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 10017,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_annotations.csv",
+      "kind": "numeric_annotations_and_labels",
+      "rows": 1,
+      "fields": [
+        "text_id",
+        "x",
+        "y",
+        "text",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_curves_wide_01.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 372,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L001"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_02.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 243,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L002"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    }
+  ],
+  "decorative_colorbars": [],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

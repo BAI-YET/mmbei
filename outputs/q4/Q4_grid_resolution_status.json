@@ -1,0 +1,25 @@
+{
+  "status": "SECONDARY_SCENARIO_60_AND_120_M",
+  "results": [
+    {
+      "resolution_m": 60,
+      "primary_1d_coupled": false,
+      "wet_area_km2": 0.3456,
+      "max_depth_m": 47.92824752701417,
+      "mass_balance_rel_error": 7.552543056455165e-16,
+      "first_input_time_s": 362.2934978893318,
+      "n_steps": 4315
+    },
+    {
+      "resolution_m": 120,
+      "primary_1d_coupled": false,
+      "wet_area_km2": 0.3024,
+      "max_depth_m": 55.82445309280646,
+      "mass_balance_rel_error": 5.664407292341377e-16,
+      "first_input_time_s": 362.2934978893318,
+      "n_steps": 4132
+    }
+  ],
+  "primary_1d_coupled": false,
+  "limitations": "Two-grid sensitivity does not prove asymptotic grid convergence; model boundary and DEM coarsening remain important"
+}

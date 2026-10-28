@@ -1,0 +1,1052 @@
+{
+  "version": "v2.3.1",
+  "files": [
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/1/FLUX_Gyirong_2021.csv",
+      "bytes": 1781827,
+      "sha256": "2f493e18232ed3a8c7c517e2b57e8dd9ac6c2a448f67a7e241355a73c4a62409"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/1/FLUX_Gyirong_2022.csv",
+      "bytes": 1704763,
+      "sha256": "d5913e0ed45e78fa5440646fb8451becbce5ebc2a7754a206ba79a7fa27bfedf"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/1/FLUX_Gyirong_2023.csv",
+      "bytes": 2106293,
+      "sha256": "1dd38328dab47873af92dbae8d8ecf5745ac9683d78a961fc8b41db39aba7102"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/1/FLUX_Gyirong_2024.csv",
+      "bytes": 2163215,
+      "sha256": "ff8cb28da61c8297468a07e1ca6ec550a6c8bffabf53a9be6e587f59b13fdc8c"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/1/FLUX_Gyirong_2025.csv",
+      "bytes": 2211463,
+      "sha256": "fa36e7088fbb7fc74ed37654898926ea49c535a9efdc94b214df5725014aff95"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/1/FLUX_Gyirong_2026.csv",
+      "bytes": 1800913,
+      "sha256": "9422c99a38ecac4c7ad3a7f416e047400aa87f70012da5fcb76fb99c8aa72791"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/1/MET_Gyirong_2021.csv",
+      "bytes": 1666729,
+      "sha256": "443b42a6602578fa11ad3988db3a622dbcb63c9f1ba21c13adf93bc5d5361cac"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/1/MET_Gyirong_2022.csv",
+      "bytes": 1591541,
+      "sha256": "d7a2cd91e783e80077f42aa37d22fc3cc843664c0f80f52f22d3b3e585c76824"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/1/MET_Gyirong_2023.csv",
+      "bytes": 1585900,
+      "sha256": "5334911d95397d876b45e7b469cc460e12e19f6bff674683a40b669a08c6a06f"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/1/MET_Gyirong_2024.csv",
+      "bytes": 1596015,
+      "sha256": "86ff4b2fdf7b3390664621ab8a5b18b707756cdc7219d5d769a1f27b48f92101"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/1/MET_Gyirong_2025.csv",
+      "bytes": 1584489,
+      "sha256": "6e252e33ec1674547e82c7d60d352bcbf354e74972be100d1a0d945264249854"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/1/MET_Gyirong_2026.csv",
+      "bytes": 1680672,
+      "sha256": "66f9ce15d43d0e2403905136e9997ea4458cd87d9390891ec3f9ea5af0eeae53"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/1/RADM_Gyirong_2021.csv",
+      "bytes": 475770,
+      "sha256": "b2e3387401b1ac131b3c8fdc8bfc892c53347f4fb84c5344cb95c15f59164fd6"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/1/RADM_Gyirong_2022.csv",
+      "bytes": 487575,
+      "sha256": "5f522c201e420500d9dd2401d3a5787798412aaa1b5f530b1d7b15402239b122"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/1/RADM_Gyirong_2023.csv",
+      "bytes": 487379,
+      "sha256": "e4ee23b7e3ef83b8323c204c4a73a364a79e74e585d78c6b17361fc0b17b4a1c"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/1/RADM_Gyirong_2024.csv",
+      "bytes": 488760,
+      "sha256": "1c1a04ebe3899a89dccbdf0b5b38b64696d39190c292a28bf14ef4809146ca5f"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/1/RADM_Gyirong_2025.csv",
+      "bytes": 487388,
+      "sha256": "3f91af8809aa23f4115e698114823471265308e7779b6eecf3d84eb012400aa1"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/1/RADM_Gyirong_2026.csv",
+      "bytes": 474824,
+      "sha256": "702adb9b792184ece3a1cf1a74460237b050171a44762acc05f26837a273c40f"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/1/SOIL_Gyirong_2021.csv",
+      "bytes": 1030464,
+      "sha256": "1f3608f4724d2af6b98f75588501622da07ae508361ab7008c72f128037017d1"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/1/SOIL_Gyirong_2022.csv",
+      "bytes": 1013676,
+      "sha256": "d54a95c3236615cadc463160bee6cc4d6e780bbe840bd534d721e85299a367a9"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/1/SOIL_Gyirong_2023.csv",
+      "bytes": 1007493,
+      "sha256": "e285a8edd8646cff3b0bd8c5c6d1b2c95f70fc281a240bc406a0325502fe1ac0"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/1/SOIL_Gyirong_2024.csv",
+      "bytes": 1245453,
+      "sha256": "ce8096b515d0732d5ea97be6add09b432c416bff256442b22f9c4e2c3311689b"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/1/SOIL_Gyirong_2025.csv",
+      "bytes": 1258833,
+      "sha256": "af92b23302ed1a0e2e94c825857468f4f58af277404c561a5996e947bdeb31ba"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/1/SOIL_Gyirong_2026.csv",
+      "bytes": 1196302,
+      "sha256": "b0956e6c0c8d88146db00956a107dd348721e3629736fb6ac66541302ddefa32"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/2/2005-2025年吉隆县周边县市逐日平均气温数据/2米气温数据_2005.xlsx",
+      "bytes": 30402,
+      "sha256": "c85fe67efb94bf796f0ac78fdd533d2e7bf3b6f3bb9451a603d97272abee4ec1"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/2/2005-2025年吉隆县周边县市逐日平均气温数据/2米气温数据_2006.xlsx",
+      "bytes": 30407,
+      "sha256": "3f50d2b0341da91c124cac3fd4e769bd9cd3545a487fdd12b1e211597e5d8a2c"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/2/2005-2025年吉隆县周边县市逐日平均气温数据/2米气温数据_2007.xlsx",
+      "bytes": 30524,
+      "sha256": "cecea826ced4c816420918dbd907be704443ad9916c3d14e74a20c62283e28ac"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/2/2005-2025年吉隆县周边县市逐日平均气温数据/2米气温数据_2008.xlsx",
+      "bytes": 30479,
+      "sha256": "8c90df1a9e51f8b70b53e512a6d4c4c8dd6f42302efcf75723e931af636e503f"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/2/2005-2025年吉隆县周边县市逐日平均气温数据/2米气温数据_2009.xlsx",
+      "bytes": 30534,
+      "sha256": "da2b7ca8473cd0425d64bb38ff86c5b6d1cd602771553b0fd9bdc928edd97a2f"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/2/2005-2025年吉隆县周边县市逐日平均气温数据/2米气温数据_2010.xlsx",
+      "bytes": 30534,
+      "sha256": "502a1631014c4e99d5aa7321066a4aad5ea38dba9ee1cf82d83cbbab82148f00"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/2/2005-2025年吉隆县周边县市逐日平均气温数据/2米气温数据_2011.xlsx",
+      "bytes": 30439,
+      "sha256": "814faf97d47c16b2a5adcd962d81c78da986b6fba263ef486a9d02058834e917"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/2/2005-2025年吉隆县周边县市逐日平均气温数据/2米气温数据_2012.xlsx",
+      "bytes": 30457,
+      "sha256": "d12663549bc65bd4ef87977ead2c8a1e7f9de706a4fa3eb406420c5ca6443c91"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/2/2005-2025年吉隆县周边县市逐日平均气温数据/2米气温数据_2013.xlsx",
+      "bytes": 30314,
+      "sha256": "f01abfe34603e73dc1af32ab0551660e0a5e4cbc31bdf3147e4e937c7ae6039d"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/2/2005-2025年吉隆县周边县市逐日平均气温数据/2米气温数据_2014.xlsx",
+      "bytes": 30443,
+      "sha256": "f7bcc935cc9d37f64fa8a719f2c58d273d0a42903b1097ffe4a7b84be5c8b08b"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/2/2005-2025年吉隆县周边县市逐日平均气温数据/2米气温数据_2015.xlsx",
+      "bytes": 30355,
+      "sha256": "64f1a76c681e28b66488a3124e2a6b528db330f443ae2c89e941c510f1b8ebc5"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/2/2005-2025年吉隆县周边县市逐日平均气温数据/2米气温数据_2016.xlsx",
+      "bytes": 30554,
+      "sha256": "973807053b91902a62303f5d5071a6db324726872c760753917fc7dd683802a2"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/2/2005-2025年吉隆县周边县市逐日平均气温数据/2米气温数据_2017.xlsx",
+      "bytes": 30482,
+      "sha256": "ac4acdbd759f3ad685cafcb74019e7f141c423658df3f92cdb506be752c61355"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/2/2005-2025年吉隆县周边县市逐日平均气温数据/2米气温数据_2018.xlsx",
+      "bytes": 30396,
+      "sha256": "e14bdec62e5244907f444d76ab05676202681ad5be185bbd38ece52f69ff8fc0"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/2/2005-2025年吉隆县周边县市逐日平均气温数据/2米气温数据_2019.xlsx",
+      "bytes": 30498,
+      "sha256": "973d361f9b3da582456547a7fe2dd3963196664f8d1b4175d0151ca361eb36e8"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/2/2005-2025年吉隆县周边县市逐日平均气温数据/2米气温数据_2020.xlsx",
+      "bytes": 30429,
+      "sha256": "4eb34f174aa99664fa1a4f7c4b141ead26039d3df19a850e4424ed2ae11f468e"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/2/2005-2025年吉隆县周边县市逐日平均气温数据/2米气温数据_2021.xlsx",
+      "bytes": 30600,
+      "sha256": "3719f2b87306bbdcddee8b1a5932e45db398d3c7afe51ac84bd9dddae4acc5ed"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/2/2005-2025年吉隆县周边县市逐日平均气温数据/2米气温数据_2022.xlsx",
+      "bytes": 30604,
+      "sha256": "1b2d9bd8728669f4e610a4433b9b9082b44a243defb057dc58b456c8a6f0ebf8"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/2/2005-2025年吉隆县周边县市逐日平均气温数据/2米气温数据_2023.xlsx",
+      "bytes": 30431,
+      "sha256": "2e1f430aba3dfbe9bc02661933a177cd71ada4995ea952154691fa9b8bb89aa1"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/2/2005-2025年吉隆县周边县市逐日平均气温数据/2米气温数据_2024.xlsx",
+      "bytes": 30473,
+      "sha256": "f9d8276b303f45f99e6687855cf7f1ffec591210c39d5a9e12d0e17d8fa1c12f"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/2/2005-2025年吉隆县周边县市逐日平均气温数据/2米气温数据_2025.xlsx",
+      "bytes": 19657,
+      "sha256": "673ae21c010de63997f78d56a62f248eefb980303cc73b185ffcd5b13737cbe9"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/2/2005-2025年吉隆县周边县市逐日平均气温数据/五县年度平均气温热图.jpg",
+      "bytes": 193008,
+      "sha256": "67e5f0aa8fbaeb52cbd5a01dfe959965be16657170c84b1908c8d717b4182392"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/2/数据引用-数据来源.doc",
+      "bytes": 13824,
+      "sha256": "ab9030b577ccee55ec8aeadca811ae3d11510f74a36617e2b08541b343e7b7b2"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/3_selected/N28E085_2000-01-01_2005-01-01_dhdt_UTM45_UTM45_GCS.tif",
+      "bytes": 3604384,
+      "sha256": "70c83a48136e3b26103c0ac2326e64005bf9cfbae07712d8d73f0fb643720f20"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/3_selected/N28E085_2005-01-01_2010-01-01_dhdt_UTM45_UTM45_GCS.tif",
+      "bytes": 3599292,
+      "sha256": "1a335f6965477c6ce379e7dd8f842408b3440b83679cc3f77aed97486058df2f"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/3_selected/N28E085_2010-01-01_2015-01-01_dhdt_UTM45_UTM45_GCS.tif",
+      "bytes": 3597000,
+      "sha256": "501383cf88fc61682bef04db6846459d4ae93c7902ac8acb7908a855401fbac3"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/3_selected/N28E085_2015-01-01_2020-01-01_dhdt_UTM45_UTM45_GCS.tif",
+      "bytes": 3600854,
+      "sha256": "55f1caf2795c31725976085377d0ce1c5058d6f16c705e1a9a9bcf168bf77fdb"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/4/Glacier topographic and dynamic drivers (Glacier-collapse and debris-flow disasters at Langtang Lirung, Nepal).nc",
+      "bytes": 362728,
+      "sha256": "0a57192a65557f052dbc0bfbca71687ad1d158d4edaa363f26b3d65f337f32c8"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/5/jilong_LUCD_2020.tif",
+      "bytes": 25144116,
+      "sha256": "03a2de7e6545bb4973add8a54040f24a81ae22f71b227c71e0ed19084b7f2073"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/5/jilong_LUCD_2021.tif",
+      "bytes": 25095672,
+      "sha256": "7ef2dace1fbcfb8d6b13dbfcb0b3caa31c7feeb7648da19a759b7928b127db56"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/5/jilong_LUCD_2022.tif",
+      "bytes": 25095672,
+      "sha256": "5ba75e0b5e4c89502dbadcb296cf67ff1b83c3762c17fa5d00dab2228f8d49bb"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/5/jilong_LUCD_2023.tif",
+      "bytes": 25095672,
+      "sha256": "4f5cc202b88b5c73a66e07c178bad11146237750790add5fecda8869d47da7b4"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/6/西藏日喀则市吉隆县泥石流灾害区历史灾点数据/西藏日喀则市吉隆县泥石流灾害区历史灾点数据.dbf",
+      "bytes": 124318,
+      "sha256": "c521cde04df6819e18b241a08655cefcfa7166e4a72e76051ae0d267f138ce66"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/6/西藏日喀则市吉隆县泥石流灾害区历史灾点数据/西藏日喀则市吉隆县泥石流灾害区历史灾点数据.prj",
+      "bytes": 176,
+      "sha256": "b10dbe4d6d1de908d340f892c90b3d31a552630af3742bb515bfe1bd26124f2c"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/6/西藏日喀则市吉隆县泥石流灾害区历史灾点数据/西藏日喀则市吉隆县泥石流灾害区历史灾点数据.sbn",
+      "bytes": 956,
+      "sha256": "b6d70c39213aa426fdd82dbe5c17e40f2c185a83cde6d6789befe6eb1fd658da"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/6/西藏日喀则市吉隆县泥石流灾害区历史灾点数据/西藏日喀则市吉隆县泥石流灾害区历史灾点数据.sbx",
+      "bytes": 188,
+      "sha256": "963aadb08a90952a5e6457d94d1e5c18c34ea9da538df6952f5c31698d0253b0"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/6/西藏日喀则市吉隆县泥石流灾害区历史灾点数据/西藏日喀则市吉隆县泥石流灾害区历史灾点数据.shp",
+      "bytes": 294244,
+      "sha256": "c5c6264c71452109ee74abddcd0774ece904592a511f04ab55ae72afbf7524ea"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/6/西藏日喀则市吉隆县泥石流灾害区历史灾点数据/西藏日喀则市吉隆县泥石流灾害区历史灾点数据.shp.CZN.26552.33604.sr.lock",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/6/西藏日喀则市吉隆县泥石流灾害区历史灾点数据/西藏日喀则市吉隆县泥石流灾害区历史灾点数据.shp.CZN.29700.33604.sr.lock",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/6/西藏日喀则市吉隆县泥石流灾害区历史灾点数据/西藏日喀则市吉隆县泥石流灾害区历史灾点数据.shp.CZN.30008.33604.sr.lock",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/6/西藏日喀则市吉隆县泥石流灾害区历史灾点数据/西藏日喀则市吉隆县泥石流灾害区历史灾点数据.shp.CZN.4308.33604.sr.lock",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/6/西藏日喀则市吉隆县泥石流灾害区历史灾点数据/西藏日喀则市吉隆县泥石流灾害区历史灾点数据.shp.xml",
+      "bytes": 34590,
+      "sha256": "f1a9fdeee78947fca465235ffe8101a0a6225e7327f70df07c9457711ad79124"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/6/西藏日喀则市吉隆县泥石流灾害区历史灾点数据/西藏日喀则市吉隆县泥石流灾害区历史灾点数据.shx",
+      "bytes": 772,
+      "sha256": "d0e2a08e6eb116a8f721a017a6f9f019136e9324ed3c1900bfc022e5075653c8"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/7/DEM.tfw",
+      "bytes": 81,
+      "sha256": "5a3abc5a2ec97ca8f662558305229333c7b6d4a672f34416754622895e05831c"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/7/DEM.tif",
+      "bytes": 8437119,
+      "sha256": "7b9e8e53282b2e91d5302e616840c802eda80a963ce0777ddc6da2b65c6db9af"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/7/DEM.tif.aux.xml",
+      "bytes": 2326,
+      "sha256": "8f6c82061d45641e5733a5f7d920d3fd10e028203282021de13ad18f3a80b98b"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/7/DEM.tif.ovr",
+      "bytes": 2276161,
+      "sha256": "5adf265f23f2984c191bf64e2fbae9adc37bb31fc03edf278de737017d7ad1f6"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/7/DEM.tif.xml",
+      "bytes": 5786,
+      "sha256": "80557f3241126bc525a27e30f6f94f55ebc19f98b6676ebd0596606bd531e8be"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/8/西藏日喀则市吉隆县第七次人口普查数据/西藏日喀则市吉隆县第七次人口普查数据.cpg",
+      "bytes": 5,
+      "sha256": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/8/西藏日喀则市吉隆县第七次人口普查数据/西藏日喀则市吉隆县第七次人口普查数据.dbf",
+      "bytes": 1705,
+      "sha256": "c3155f4c30d0fb139d6915f114a73504060acb3503a594905840bcb57a0cd5cd"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/8/西藏日喀则市吉隆县第七次人口普查数据/西藏日喀则市吉隆县第七次人口普查数据.prj",
+      "bytes": 145,
+      "sha256": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/8/西藏日喀则市吉隆县第七次人口普查数据/西藏日喀则市吉隆县第七次人口普查数据.sbn",
+      "bytes": 132,
+      "sha256": "30f1a86798c7100d504d53aa13b881ad7a34671ce2067ed1c128cbe4e82a21bc"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/8/西藏日喀则市吉隆县第七次人口普查数据/西藏日喀则市吉隆县第七次人口普查数据.sbx",
+      "bytes": 116,
+      "sha256": "d25692a00bc81879f0f1ddcc1c722c75789eab5867555be5dc537673f15e40cc"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/8/西藏日喀则市吉隆县第七次人口普查数据/西藏日喀则市吉隆县第七次人口普查数据.shp",
+      "bytes": 50524,
+      "sha256": "7e287b8f118a97987539c1a7f35f0b93107c705ff7438fe1f2e9bba2e619b9e0"
+    },
+    {
+      "kind": "official_input",
+      "path": "data/raw/unpacked/8/西藏日喀则市吉隆县第七次人口普查数据/西藏日喀则市吉隆县第七次人口普查数据.shx",
+      "bytes": 108,
+      "sha256": "007647ad73e8167d57f42921936f6fb39125e183319603a8745a2e4263ebde29"
+    },
+    {
+      "kind": "external_input",
+      "path": "data/external/q2_forecast/ecmwf_source_pre_event_single_run.json",
+      "bytes": 2468,
+      "sha256": "81ac865ca6a5141a323d5df3fb84fec3917cbb7754fda61e92155fae8d65a23e"
+    },
+    {
+      "kind": "external_input",
+      "path": "data/external/q2_forecast/provenance.json",
+      "bytes": 800,
+      "sha256": "4454cbe85a3cfd3b3ee2a5d07ede196b986b75685014c3848f82ad208fbd7ac1"
+    },
+    {
+      "kind": "external_input",
+      "path": "data/external/q2_forecast/source_forecast_hourly.csv",
+      "bytes": 3249,
+      "sha256": "73f2f6292e4147f7f4fbfc885a5c7b50d12dd2ce43b53c8e0041981d0da467ff"
+    },
+    {
+      "kind": "external_input",
+      "path": "data/external/q2_satellite/ICIMOD_Sentinel1_2026_reported_measurement.json",
+      "bytes": 724,
+      "sha256": "3980dbb8f259b936fcf995cd9dad0ddc30067581cfbca710e41e0f980e93a678"
+    },
+    {
+      "kind": "processed_input",
+      "path": "data/processed/features_hourly.csv.gz",
+      "bytes": 18269514,
+      "sha256": "469d19ef698325323160d8fe46b67f630e6520a9760866b1e39cfe5579ba426c"
+    },
+    {
+      "kind": "processed_input",
+      "path": "data/processed/features_metadata.json",
+      "bytes": 2255,
+      "sha256": "53ae5e4d9b6052eeb9b4a30cbad31581e7d811ecce3d6a30b2baa3ad42f938b8"
+    },
+    {
+      "kind": "processed_input",
+      "path": "data/processed/features_schema_v17.marker",
+      "bytes": 24,
+      "sha256": "962ba4610a66fcab48154fda98cec9747a0979793e33808e9567d854e0a7fdab"
+    },
+    {
+      "kind": "processed_input",
+      "path": "data/processed/glacier_summary.json",
+      "bytes": 499,
+      "sha256": "fe8bd7f4d554ae3ab01fd2fb0fab3ba6363f09b92b8380fa1e5f501fa2fe84a3"
+    },
+    {
+      "kind": "processed_input",
+      "path": "data/processed/historic_gullies.gpkg",
+      "bytes": 393216,
+      "sha256": "54431c01a29db9f91d9ef56c9123a8b4ddb8caccf4cc29b5a77e1d071321f636"
+    },
+    {
+      "kind": "processed_input",
+      "path": "data/processed/obs_hourly.csv.gz",
+      "bytes": 9391045,
+      "sha256": "19698763258ff93ef2ed7243b5a54b74399b0d66c575cb4b61adc2e5d60ae5ac"
+    },
+    {
+      "kind": "processed_input",
+      "path": "data/processed/obs_schema_v17.marker",
+      "bytes": 29,
+      "sha256": "dc9f72b4ec67873bea7dc72b5d2587f0d93da5224fa577f0ff0f77142dfb5e3d"
+    },
+    {
+      "kind": "processed_input",
+      "path": "data/processed/q4_calibration/6027fef557af5a4ce8d0282496bae9f8979b39076475925759ba900ae7ed0e6c/provenance.json",
+      "bytes": 236,
+      "sha256": "6ccf1dd4c041fa080d11ac18d00cb74445605d919f2e1d60b043259ee13352c2"
+    },
+    {
+      "kind": "processed_input",
+      "path": "data/processed/q4_calibration/6027fef557af5a4ce8d0282496bae9f8979b39076475925759ba900ae7ed0e6c/training_trials.csv",
+      "bytes": 9320,
+      "sha256": "039651f710ac815b45828dc6aa6be295687087498054cf7b25c22dc0dbff9272"
+    },
+    {
+      "kind": "processed_input",
+      "path": "data/processed/temp_county_daily.csv.gz",
+      "bytes": 341636,
+      "sha256": "cde68b2f8c245d7817dd98080788ebef6a31563b62696a3e8c48f6e0d77fb42b"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/catalog.py",
+      "bytes": 1912,
+      "sha256": "74d3f8a639681baf17fa3bad83d1c0136e977e59ba0da7f2ba09c54ba1d78521"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/common.py",
+      "bytes": 12785,
+      "sha256": "90627c1e2612d650f30f8a57557e2bb806e05eb5145b0b7e0c360996da19b3e0"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/extra_official_sources.py",
+      "bytes": 10850,
+      "sha256": "ca5ffc5ccb48efbd4557c375e54b490ff31642422c6b7650d4456766ea551c4c"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/features.py",
+      "bytes": 6766,
+      "sha256": "f32d9a230f7f9eba61adbb7865a19a267c3b85aa6f77b8b1b39e69de5c263147"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/forecast_sensitivity.py",
+      "bytes": 3207,
+      "sha256": "1292f31fc6861fb8a335d54d8c76ca4151eec64d179f2132d381439c29264ad3"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/prepare_geo.py",
+      "bytes": 2537,
+      "sha256": "0a6e02001efec2d55ebbce9c883977426b056cf371327c72da96429b2a2add51"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/prepare_time.py",
+      "bytes": 9441,
+      "sha256": "b0ce89de4d8def6751f49bef812cf3bc88d1647a7f5a4f1c8e41c3e77a52894a"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/provenance.py",
+      "bytes": 4020,
+      "sha256": "1355654e7a16be0ad29de7dc4954676a450c0920095c6b4c3df4f1fb272d9aa5"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/publication_assets.py",
+      "bytes": 9635,
+      "sha256": "5a91f19d200cfcecacb39eb21fdfbb23b3ddf0496f61d3207c9ac6bbba2b2007"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/q1_event_signatures.py",
+      "bytes": 25804,
+      "sha256": "1a5911a28842fc4c47144fe73113dd67d6b50ddc3068d7e6e9abd96ff5500311"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/q2_external.py",
+      "bytes": 10778,
+      "sha256": "6482ff8a5f4d58ac82f31b73a1cd908bb7dedfb286b6108d03ae134fb2f4da10"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/q2_spatial_mechanism.py",
+      "bytes": 13357,
+      "sha256": "e38e10a91b7ef93b6a271ed2ceb491544b5734d2ae864df94341cfbbce61a8a0"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/q2_trigger_evaluation.py",
+      "bytes": 47355,
+      "sha256": "30586aae7eb884242d7a1f4145a976b3389a10a18b60073fb301c7f0d0e1d5bd"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/q34_joint_arrival.py",
+      "bytes": 8405,
+      "sha256": "1840a27185682c041cfff28e3d2292d197beb55a036d8aa0f03c1932efabe91d"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/q3_feature_bridge.py",
+      "bytes": 4989,
+      "sha256": "ae999ed5aab6992a03f0abd16ef3efdccc1e56d07af522b737b6dd4e78a37b22"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/q3_spatial_footprint.py",
+      "bytes": 5346,
+      "sha256": "3f36fa2a22a67f46c34887c9def25ff66076e8482812c87800014d944025f98b"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/q3_task_aligned.py",
+      "bytes": 56701,
+      "sha256": "e86acd024c65acac75e5be843b502fa66e62a0458cde99c2f457dd164b6dd92c"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/q3_time_risk.py",
+      "bytes": 6308,
+      "sha256": "809dfed96df430480e6504d321cd93b278eb96c73d3891ba67a036896d46fcde"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/q4_cascade_reconstruction.py",
+      "bytes": 39598,
+      "sha256": "d34f94c3c54fd24d84d6217b76c8d89551bc6e4298869d81756535ae10b6635e"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/q4_diagnostics.py",
+      "bytes": 6982,
+      "sha256": "f4a604719289b91dc20f108322a89865d9c3fd38f042a70d8dd90d5c315a918c"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/q4_flowpath.py",
+      "bytes": 11678,
+      "sha256": "d452cbd306a55e3d8333e9eadb5e387ea2bcb39e354087a37b877da6a32b641a"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/q4_grid_review.py",
+      "bytes": 3803,
+      "sha256": "1fe754ec93f10977aad8821842d1d9fae5201462a5000b11ebca2be95ac65320"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/q4_high_order.py",
+      "bytes": 3678,
+      "sha256": "98a454ad5983eb52392b844ed2a0f0a90c0f1295bef00533ff4e0b2cc62b2b47"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/q4_reconstructed_spatial.py",
+      "bytes": 11979,
+      "sha256": "1bb455cad4da9961f232798462f281fdf1ac5fe0db5c0d7f74b892e6b45f6c55"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/q4_solver.py",
+      "bytes": 45381,
+      "sha256": "dc6f41a091dc2fb95081cdde0a670f2d7bf1c58d945b98dfadc941603649da09"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/q4_terrain_reconstruction.py",
+      "bytes": 15621,
+      "sha256": "8f30d19d8dbc09abe97ee4ef48e2b777efd03a2bc4fd1f14e301c8bbfe22727b"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/q4_visuals.py",
+      "bytes": 22638,
+      "sha256": "5b876b29325253503dfccc22ecf3915867babcfb5535b0205114d4075e3330c9"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/question_completion.py",
+      "bytes": 15345,
+      "sha256": "0d4adc9de97767f19af4c81020d5a15e7118834ae1339bbfaaf1545864f38f25"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/redraw_catalog.py",
+      "bytes": 17478,
+      "sha256": "3ebafee5d9c5dc3102fb8eca69ba779808a893a984226f686f981c34f97226f9"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/redraw_export.py",
+      "bytes": 15244,
+      "sha256": "4225b90816c1f7944b95d5906110ad84ad66079a692716f5d0da5b2d630efd60"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/report.py",
+      "bytes": 3923,
+      "sha256": "d04d041f08e962c8dcfbda32d2b7f0b8af328ef156b9963efd79d5ec163ec01d"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/review_audit.py",
+      "bytes": 5796,
+      "sha256": "b27924b4aacd4c814c90a7026c8b4a13c23613e353cd957475c7ed74b98f5413"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/task_evidence.py",
+      "bytes": 13307,
+      "sha256": "12b61497e2070e5023624cf845930b6638d857c15536a215e6095b958bb96464"
+    },
+    {
+      "kind": "source",
+      "path": "src/mathorcup/warning_validation.py",
+      "bytes": 14303,
+      "sha256": "878b800ec8c2a87a5bd730c25ceda895441671b12f7371bdc94ef7e0bbca6486"
+    },
+    {
+      "kind": "script",
+      "path": "scripts/audit_provenance.py",
+      "bytes": 574,
+      "sha256": "5f488b450f72e77514e39a9f1d36c245ce45ef90e20c7695896422d0ea220ac1"
+    },
+    {
+      "kind": "script",
+      "path": "scripts/build_answer_pdf.py",
+      "bytes": 26240,
+      "sha256": "0d8cbf432e922ad3d37fa1dc91c3ad3132a24662eb048149d56f675cb9031afe"
+    },
+    {
+      "kind": "script",
+      "path": "scripts/build_release.py",
+      "bytes": 4087,
+      "sha256": "8438baef8e01a7017de046a9d571e622378535b476b1f9aa02ea80fc3845c100"
+    },
+    {
+      "kind": "script",
+      "path": "scripts/check_redraw_retention.py",
+      "bytes": 3238,
+      "sha256": "788886ac220f0f36c5f0778af412c4b6e6397f57c023a71d81e040ae9900e187"
+    },
+    {
+      "kind": "script",
+      "path": "scripts/compute_inlet_factorial.py",
+      "bytes": 1792,
+      "sha256": "14ee33d34f0ebef0408c7d175fbbd5bde8d4b6c87fbc10d08d9857171fec3f0c"
+    },
+    {
+      "kind": "script",
+      "path": "scripts/export_redraw_data.py",
+      "bytes": 4289,
+      "sha256": "15bde1d06ac9d1c7bd8fa61adfc9443786a7a472d79d98c697f38b98488baccd"
+    },
+    {
+      "kind": "script",
+      "path": "scripts/finalize_outputs.py",
+      "bytes": 1028,
+      "sha256": "65c4fa7a0db38d9f53666d60d2431718cd1c7ad137afc9f87f9934bf577004e9"
+    },
+    {
+      "kind": "script",
+      "path": "scripts/make_q4_figure_atlas.py",
+      "bytes": 4753,
+      "sha256": "9e4dae5e8649c86d6cef2616759ed64711db07347aa6914e53f29d5851b27fbd"
+    },
+    {
+      "kind": "script",
+      "path": "scripts/package_redraw_data.py",
+      "bytes": 1101,
+      "sha256": "214758ca1d04a8784ff9018dfd1696ed6a57e81447bfe4fcf19b4ae50951ac41"
+    },
+    {
+      "kind": "script",
+      "path": "scripts/replot_q4_1d_cached.py",
+      "bytes": 1389,
+      "sha256": "2fd7caa0ae4ee3af1d3aa60f6f16234c76714e7d0170445c007948efe0322f23"
+    },
+    {
+      "kind": "script",
+      "path": "scripts/replot_q4_figures.py",
+      "bytes": 2440,
+      "sha256": "a3ef2da8a4712a9d70159dbb6c6d5f1683f5d01b7698d596ae9d71dbada551d0"
+    },
+    {
+      "kind": "script",
+      "path": "scripts/replot_reconstruction.py",
+      "bytes": 2968,
+      "sha256": "cdce423ddf1d5d28335ce5589bbdd69382f44cbb140e27c0b71409441cec0806"
+    },
+    {
+      "kind": "script",
+      "path": "scripts/update_readme.py",
+      "bytes": 4934,
+      "sha256": "88c960e27691dbff5aa2a2c581c1131593ee8750ddecbe543a48c2249003c411"
+    },
+    {
+      "kind": "test",
+      "path": "tests/conftest.py",
+      "bytes": 102,
+      "sha256": "5857a9966ab5a0e89ac679a45b5705e10e9fc2f73cc07966da327e4a60a2a540"
+    },
+    {
+      "kind": "test",
+      "path": "tests/test_anomaly_and_q2.py",
+      "bytes": 803,
+      "sha256": "18fb311d39f705973399b2e783ec14e0b19254942dbc0e61855a2d69cb628aea"
+    },
+    {
+      "kind": "test",
+      "path": "tests/test_data_contract.py",
+      "bytes": 824,
+      "sha256": "96d432c7fa1eb7e7d2b7cf037faa2e116eac315b8b15d5a606430d012201f3b4"
+    },
+    {
+      "kind": "test",
+      "path": "tests/test_physics_and_spatial.py",
+      "bytes": 1660,
+      "sha256": "cc302efadfe819458d8e126ab6e00e16108704f34d77b906bce28cea32e84cfe"
+    },
+    {
+      "kind": "test",
+      "path": "tests/test_q3_and_joint.py",
+      "bytes": 1050,
+      "sha256": "122f0dbfc7f4351e36dfc3a2d5902e25ee7e402bed3adce5b95dc8d58a8b96d2"
+    },
+    {
+      "kind": "test",
+      "path": "tests/test_q3_v14_regressions.py",
+      "bytes": 1584,
+      "sha256": "86dc08e5a511a7c3acf222e47c4bb7d1646ec1cefd1b6d67988c3d5f13c6ca9d"
+    },
+    {
+      "kind": "test",
+      "path": "tests/test_q4_figures_regression.py",
+      "bytes": 2014,
+      "sha256": "cef82fbe14099861cceb743b703dc34db55ebc88759360adb386f238f77e91f5"
+    },
+    {
+      "kind": "test",
+      "path": "tests/test_q4_v12_visuals.py",
+      "bytes": 1573,
+      "sha256": "43fbc8c7b9cca19c1fdaebc79ddbff3ad7ac89eda067710bdb70df72ee9fbdd0"
+    },
+    {
+      "kind": "test",
+      "path": "tests/test_qc_and_features.py",
+      "bytes": 970,
+      "sha256": "08bb6ab4548f0350da667c8c517e2817532ff3db46ab86007c5b78304421d7d0"
+    },
+    {
+      "kind": "test",
+      "path": "tests/test_redraw_export.py",
+      "bytes": 2002,
+      "sha256": "2373c0a1d2c046da7f9c22d8f65150f5181eaffafc681b157eeab598a39e94fd"
+    },
+    {
+      "kind": "test",
+      "path": "tests/test_v16_task_contracts.py",
+      "bytes": 6033,
+      "sha256": "60208b0731e3f4dcb71a3533567fd21a6adab74dbda1e9cf87dc5e3436cd6746"
+    },
+    {
+      "kind": "test",
+      "path": "tests/test_v17_data_transfer_and_outputs.py",
+      "bytes": 6392,
+      "sha256": "74ec9bd7da10f22db7306e2b28af17ddbd28519da0e6b5852a8a4a0d7ca55fd9"
+    },
+    {
+      "kind": "test",
+      "path": "tests/test_v17_expanded_data.py",
+      "bytes": 3053,
+      "sha256": "c38265cfbddaeb85046dcdb50e3d2d84e0f6dd989b07db8a89628d58b6edb054"
+    },
+    {
+      "kind": "test",
+      "path": "tests/test_v20_correctness.py",
+      "bytes": 7041,
+      "sha256": "ee92607893d0a3cc773c79d8f0e91e5f3cf49053e589e3b47813ddb19574e093"
+    },
+    {
+      "kind": "test",
+      "path": "tests/test_v21_reconstruction.py",
+      "bytes": 4651,
+      "sha256": "a94450039cb9821557e3541b096cc1cc18745a70422d3a6dc1cd53d92aa4e72a"
+    },
+    {
+      "kind": "test",
+      "path": "tests/test_v22_review_fixes.py",
+      "bytes": 7861,
+      "sha256": "ba763569108d2581ac92a3d8077f2ae3e7a0de67cbe1ef71c61ea8a2aa256114"
+    },
+    {
+      "kind": "test",
+      "path": "tests/test_v23_initiation_contract.py",
+      "bytes": 9709,
+      "sha256": "4f7f7f11ff3046151df6216d80522486bb203df73659a8b637e65403b0994f63"
+    },
+    {
+      "kind": "configuration",
+      "path": "configs/base.yaml",
+      "bytes": 3379,
+      "sha256": "67bf70cc8f6bf2a5aa3db3bf7441fd79aa483c06b3a2d0405020d9ea8944fcfd"
+    },
+    {
+      "kind": "configuration",
+      "path": "configs/calibrated_q4.yaml",
+      "bytes": 565,
+      "sha256": "08c3dbbe5c982b55dc32ef86143aa533642a264fe32be2af29c81f476f5949aa"
+    },
+    {
+      "kind": "configuration",
+      "path": "configs/case_evidence.yaml",
+      "bytes": 2809,
+      "sha256": "9ee0779f2b4f7db518040e42f6377e187a69fcb1129d64767e355958c43e8457"
+    },
+    {
+      "kind": "configuration",
+      "path": "configs/review_baseline.yaml",
+      "bytes": 1119,
+      "sha256": "84c1fd89ad48122cb5a1222d7255f68c02937da9de4edad783a7297e16361206"
+    },
+    {
+      "kind": "source",
+      "path": "run.py",
+      "bytes": 8200,
+      "sha256": "93b79c741aa47643a9d95779d25e3a5cf44cc04d9ee7f945aa6fc8742cff991e"
+    },
+    {
+      "kind": "dependencies",
+      "path": "requirements.txt",
+      "bytes": 393,
+      "sha256": "df78cfb5098be75566c4fddce8047994c3d66e1d77da8b7de771a8e8ee70f55c"
+    },
+    {
+      "kind": "documentation",
+      "path": "README.md",
+      "bytes": 3810,
+      "sha256": "a689a25a9030d4aaef4734b4ba30a97e836ffaa192daed67adaa7db567d22d09"
+    },
+    {
+      "kind": "configuration",
+      "path": ".gitignore",
+      "bytes": 218,
+      "sha256": "b15bf1ec9c274eecc8091c4c2264e11f535fa70b197c4acd693b0ad9eb227dcd"
+    }
+  ],
+  "figure_count": 85,
+  "all_figures_have_numeric_plot_inputs": true,
+  "archived_forecast_raw_sha256_verified": true,
+  "observed_data_roles": [
+    "official measurements",
+    "actual archived forecast"
+  ],
+  "analysis_roles": [
+    "derived indicators",
+    "observed-day/year resampling",
+    "published event reconstruction constraints"
+  ],
+  "simulation_parameter_roles": [
+    "fitted effective parameters",
+    "declared sensitivity experiments",
+    "numerical settings"
+  ],
+  "production_synthetic_inlet_used": false,
+  "invented_disaster_count_used": false,
+  "case_constraint_sources": {
+    "case_study": {
+      "url": "https://jms.imde.ac.cn/en/article/doi/10.1007/s11629-026-1482-y",
+      "doi": "10.1007/s11629-026-1482-y",
+      "authors": "Li Hao et al.",
+      "year": 2026,
+      "role": "published_event_reconstruction"
+    },
+    "source_mapping": {
+      "url": "https://arxiv.org/abs/2609.04563",
+      "role": "published_post_event_source_mapping"
+    },
+    "port_photo": {
+      "url": "https://commons.wikimedia.org/wiki/File:Nepal_China_Border.jpg",
+      "role": "geotagged_site_photograph_area_reference"
+    },
+    "hydrometric_station": {
+      "url": "https://www.dhm.gov.np/hydrology/hms-Single/4913",
+      "role": "government_downstream_station_location_check"
+    },
+    "friction_model": {
+      "url": "https://ramms.ch/ramms-debrisflow/friction-parameters/",
+      "role": "model_equations_and_calibration_method"
+    }
+  },
+  "cascade_volume_residual": 1.8807290827186362e-15,
+  "Q2_Q3_shared_initiation_criterion": "Q2 statistical trigger assessment; conditional time density proportional to assessment intensity",
+  "initiation_parameters_site_measured": false,
+  "validated_complete_disaster_forecast": false,
+  "model_based_question_outputs_available": true,
+  "Q3_uses_Q4_outputs": false,
+  "shared_geometry_sha256": "29753a05f81c8d53974000eb01bfa1f2abcae67e0d893f026390b8449d0a3193"
+}

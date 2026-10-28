@@ -1,0 +1,144 @@
+{
+  "figure": "q1/Q1_07_county_2005_2025_summer_climate.png",
+  "title": "",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "吉隆及周边地区夏季气温变化",
+      "xlabel": "年份（2005–2025）",
+      "ylabel": "6–7月日均气温 (°C)",
+      "xlim": [
+        2004.0,
+        2026.0
+      ],
+      "ylim": [
+        3.5085182980557934,
+        7.613175408114664
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "吉隆县",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#205C92",
+          "linestyle": "-",
+          "marker": ".",
+          "linewidth": 1.5,
+          "alpha": null
+        },
+        {
+          "series_id": "L002",
+          "label": "聂拉木县",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#DA783F",
+          "linestyle": "-",
+          "marker": ".",
+          "linewidth": 1.5,
+          "alpha": null
+        },
+        {
+          "series_id": "L003",
+          "label": "萨嘎县",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#248F81",
+          "linestyle": "-",
+          "marker": ".",
+          "linewidth": 1.5,
+          "alpha": null
+        },
+        {
+          "series_id": "L004",
+          "label": "定日县",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#9276A5",
+          "linestyle": "-",
+          "marker": ".",
+          "linewidth": 1.5,
+          "alpha": null
+        },
+        {
+          "series_id": "L005",
+          "label": "昂仁县",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#C7AA41",
+          "linestyle": "-",
+          "marker": ".",
+          "linewidth": 1.5,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [],
+      "patches": []
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 21,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 105,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_curves_wide_01.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 21,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L001",
+        "y_L002",
+        "y_L003",
+        "y_L004",
+        "y_L005"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    }
+  ],
+  "decorative_colorbars": [],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

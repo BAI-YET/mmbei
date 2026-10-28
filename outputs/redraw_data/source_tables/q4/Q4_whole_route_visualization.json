@@ -1,0 +1,6 @@
+{
+  "source": "accepted 1D solver snapshots on the entire route",
+  "time_sampling": "linear interpolation between stored computed snapshots",
+  "spatial_scope": "source to port; colour is channel-section depth projected to map",
+  "inundation_extent_source": "Q4_reconstruction_2d_arrays.npz is the separate local 2D calculation"
+}

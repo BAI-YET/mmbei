@@ -1,0 +1,15 @@
+{
+  "unchanged": {
+    "src/mathorcup/q1_event_signatures.py": true,
+    "src/mathorcup/prepare_time.py": true,
+    "src/mathorcup/prepare_geo.py": true,
+    "src/mathorcup/features.py": true,
+    "src/mathorcup/q4_solver.py": true,
+    "src/mathorcup/q4_cascade_reconstruction.py": true,
+    "src/mathorcup/q4_high_order.py": true,
+    "src/mathorcup/q4_reconstructed_spatial.py": true
+  },
+  "new_Python_modules": [],
+  "Q4_arrival_and_peak_unchanged": true,
+  "primary_model_order": "Q1 -> Q2 -> Q3 -> Q4"
+}

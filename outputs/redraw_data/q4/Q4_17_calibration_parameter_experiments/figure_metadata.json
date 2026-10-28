@@ -1,0 +1,256 @@
+{
+  "figure": "q4/Q4_17_calibration_parameter_experiments.png",
+  "title": "同一输入下的标定参数试验",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "a  传播时间响应",
+      "xlabel": "库仑摩擦 μ",
+      "ylabel": "河道传播时间 (s)",
+      "xlim": [
+        0.00234457062815108,
+        0.00366714893121072
+      ],
+      "ylim": [
+        292.7770557738478,
+        351.9029905081194
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "ξ=2168.94",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#1f77b4",
+          "linestyle": "-",
+          "marker": "o",
+          "linewidth": 1.5,
+          "alpha": null
+        },
+        {
+          "series_id": "L002",
+          "label": "ξ=2711.18",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#ff7f0e",
+          "linestyle": "-",
+          "marker": "o",
+          "linewidth": 1.5,
+          "alpha": null
+        },
+        {
+          "series_id": "L003",
+          "label": "ξ=3253.42",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#2ca02c",
+          "linestyle": "-",
+          "marker": "o",
+          "linewidth": 1.5,
+          "alpha": null
+        },
+        {
+          "series_id": "L004",
+          "label": "_child3",
+          "x_space": "axes_fraction",
+          "y_space": "data",
+          "color": "#777",
+          "linestyle": "--",
+          "marker": "None",
+          "linewidth": 1.5,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [],
+      "patches": []
+    },
+    {
+      "axis": "A02",
+      "title": "b  峰值流量响应",
+      "xlabel": "库仑摩擦 μ",
+      "ylabel": "口岸峰值流量 (m³/s)",
+      "xlim": [
+        0.00234457062815108,
+        0.00366714893121072
+      ],
+      "ylim": [
+        148204.0853603147,
+        250656.94831617546
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "ξ=2168.94",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#1f77b4",
+          "linestyle": "-",
+          "marker": "o",
+          "linewidth": 1.5,
+          "alpha": null
+        },
+        {
+          "series_id": "L002",
+          "label": "ξ=2711.18",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#ff7f0e",
+          "linestyle": "-",
+          "marker": "o",
+          "linewidth": 1.5,
+          "alpha": null
+        },
+        {
+          "series_id": "L003",
+          "label": "ξ=3253.42",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#2ca02c",
+          "linestyle": "-",
+          "marker": "o",
+          "linewidth": 1.5,
+          "alpha": null
+        },
+        {
+          "series_id": "L004",
+          "label": "_child3",
+          "x_space": "axes_fraction",
+          "y_space": "data",
+          "color": "#777",
+          "linestyle": "--",
+          "marker": "None",
+          "linewidth": 1.5,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [],
+      "patches": []
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 17,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 9,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A02_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 16,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 9,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_curves_wide_01.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 3,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L001",
+        "y_L003"
+      ],
+      "axis": "A02",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A02_curves_wide_02.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 1,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L002"
+      ],
+      "axis": "A02",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A02_curves_wide_03.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L004"
+      ],
+      "axis": "A02",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    }
+  ],
+  "decorative_colorbars": [],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

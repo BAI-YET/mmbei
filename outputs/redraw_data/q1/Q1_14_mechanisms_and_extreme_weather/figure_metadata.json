@@ -1,0 +1,296 @@
+{
+  "figure": "q1/Q1_14_mechanisms_and_extreme_weather.png",
+  "title": "五项互补机制与极端天气识别",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "a  合并同机制后的五项因素",
+      "xlabel": "历史匹配关联评分",
+      "ylabel": "",
+      "xlim": [
+        0.0,
+        0.9335173517199523
+      ],
+      "ylim": [
+        -0.6400000000000001,
+        4.640000000000001
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [],
+      "rasters": [],
+      "collections": [],
+      "patches": [
+        {
+          "patch_id": "P001",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.12549019607843137,
+            0.3607843137254902,
+            0.5725490196078431,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P002",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.12549019607843137,
+            0.3607843137254902,
+            0.5725490196078431,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P003",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.12549019607843137,
+            0.3607843137254902,
+            0.5725490196078431,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P004",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.12549019607843137,
+            0.3607843137254902,
+            0.5725490196078431,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P005",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.12549019607843137,
+            0.3607843137254902,
+            0.5725490196078431,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        }
+      ]
+    },
+    {
+      "axis": "A02",
+      "title": "b  同季同小时历史百分位",
+      "xlabel": "事件前七日（北京时间）",
+      "ylabel": "",
+      "xlim": [
+        -0.5,
+        167.5
+      ],
+      "ylim": [
+        -0.5,
+        5.5
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [],
+      "rasters": [
+        {
+          "image_id": "I001",
+          "raster_id": "c305c224243d27833a64",
+          "shared_data": "shared_rasters/c305c224243d27833a64",
+          "shape": [
+            6,
+            168
+          ],
+          "extent": [
+            -0.5,
+            167.5,
+            -0.5,
+            5.5
+          ],
+          "origin": "lower",
+          "coordinates": "A02_I001_coordinates.csv",
+          "cmap": "YlOrRd",
+          "norm": "Normalize",
+          "vmin": 0.5,
+          "vmax": 1.0,
+          "alpha": null,
+          "interpolation": "auto",
+          "raw_coordinate_unit": "plot_axis_units",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": null,
+          "colorbar_label": "历史百分位",
+          "quantity": "历史百分位",
+          "value_unit": "历史百分位"
+        }
+      ],
+      "collections": [],
+      "patches": []
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 11,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_bars.csv",
+      "kind": "bars_histogram_bins_and_spans",
+      "rows": 5,
+      "fields": [
+        "patch_id",
+        "label",
+        "x",
+        "y",
+        "width",
+        "height",
+        "angle_degree",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": "height is bin count/density exactly used in original plot; y+height gives histogram top"
+    },
+    {
+      "file": "A01_patch_vertices.csv",
+      "kind": "patch_vertices",
+      "rows": 25,
+      "fields": [
+        "patch_id",
+        "vertex_order",
+        "path_code",
+        "x_data",
+        "y_data"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A02_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 13,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_I001_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 168,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "shared_rasters/c305c224243d27833a64/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 1008,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A02",
+      "note": ""
+    }
+  ],
+  "decorative_colorbars": [
+    {
+      "label": "历史百分位",
+      "ticks": [
+        0.5,
+        0.6000000000000001,
+        0.7000000000000001,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "vmin": 0.5,
+      "vmax": 1.0,
+      "norm": "Normalize"
+    }
+  ],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

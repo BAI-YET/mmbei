@@ -1,0 +1,16 @@
+group,feature,n_valid_august_hours,n_valid_historical_years
+MET,temp_20m,3720,5
+MET,wind_20m,3717,5
+MET,rh_20m,3720,5
+MET,vector_wind_shear,3693,5
+RADM,sw_down,3719,5
+RADM,net_radiation,3716,5
+SOIL,vwc_0p1,3720,5
+SOIL,vwc_1p6,3720,5
+SOIL,soilT_0p1,3720,5
+SOIL,soilT_1p6,3720,5
+FLUX,tau,2827,4
+FLUX,ustar,2905,4
+FLUX,tke,2905,4
+FLUX,sensible_heat,2827,4
+FLUX,latent_heat,2827,4

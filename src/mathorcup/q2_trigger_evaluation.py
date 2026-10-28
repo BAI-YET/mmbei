@@ -1,4 +1,4 @@
-"""Question 2 primary deliverable: physical-condition threshold model, temporal / spatial reliability.
+"""Q2: source stability, critical parameters and supporting climate diagnostics.
 
 The result is a reproducible *trigger-condition index*, not an empirically calibrated
 probability of a catastrophic event. Morphological labels from official data 6 are
@@ -284,6 +284,10 @@ def _plot_trigger_summary(ctx,h,lim,g,s,m,tau,spatial):
 
 def execute_q2_trigger(ctx):
     out=ctx.folder('q2');extra=q2_external_status(ctx)
+    if not ctx.cfg['q2']['initiation'].get('enabled',False):
+        for pattern in ['Q2_mechanical_*','Q2_source_stability_*','Q2_20_mechanical_*']:
+            for old in out.glob(pattern):
+                if old.is_file():old.unlink()
     h=pd.read_csv(ctx.processed/'features_hourly.csv.gz',parse_dates=['timestamp_raw']).set_index('timestamp_raw').sort_index()
     g=glacier_grid(ctx);static,mask,tau=static_ice_susceptibility(g)
     candidate_regions,candidate_masks=candidate_release_regions(g,static,mask)
@@ -301,7 +305,18 @@ def execute_q2_trigger(ctx):
                height=region.shape[0],width=region.shape[1],count=1,dtype='uint8',
                crs='EPSG:32645',transform=tf,nodata=255,compress='deflate') as ds:
             ds.write(np.where(mask,region.astype('uint8'),255).astype('uint8'),1)
-    z_src=float(np.nanmedian(np.where(mask,g['dem'],np.nan)))
+    # Static terrain is prepared in Q2 and inherited by Q3/Q4, not inferred
+    # backwards from a flow simulation. The mapped case source is a fixed
+    # spatial modelling assumption, not an independently available pre-event map.
+    import yaml
+    from .q4_terrain_reconstruction import prepare_reconstruction_geometry
+    evidence=yaml.safe_load((ctx.root/'configs/case_evidence.yaml').read_text())
+    route,_,_,_,geometry=prepare_reconstruction_geometry(ctx,evidence,output_question='q2')
+    with np.load(out/'Q2_reconstruction_sections.npz') as a:pixels=a['source_pixels_utm'].copy()
+    study_region=np.zeros(mask.shape,bool)
+    jj=np.abs(g['x'][None,:]-pixels[:,0,None]).argmin(axis=1)
+    ii=np.abs(g['y'][None,:]-pixels[:,1,None]).argmin(axis=1);study_region[ii,jj]=True
+    z_src=float(geometry['selected_source_mean_elevation_m'])
     d,lim=dynamic_conditions(h,baseline_years=ctx.cfg['historic_years'],
               source_z=z_src,station_z=ctx.cfg.get('station_elevation_m',4140))
     forecast,forecast_status=load_q2_forecast(ctx,ctx.cfg['snapshot_raw'])
@@ -339,7 +354,8 @@ def execute_q2_trigger(ctx):
     spatial=scale_reliability(static,mask,g)
     source_sensitivity=source_proxy_sensitivity(ctx,h,g,static,mask,lim)
     spatial.to_csv(out/'Q2_spatial_scale_reliability.csv',index=False)
-    risk=static*float(valid['trigger_condition_index'])
+    sequential=sequential_trigger_assessment(ctx,h,d,geometry)
+    risk=static*float(sequential['current_score'])
     _save_risk_tif(ctx,risk,g)
     response=[]
     # Time scales defined as different issuance frequencies on the same historical series,
@@ -351,7 +367,7 @@ def execute_q2_trigger(ctx):
                          'n_valid_records':int(filt.trigger_condition_index.notna().sum())})
     time_table=pd.DataFrame(response);time_table.to_csv(out/'Q2_temporal_scale_reliability.csv',index=False)
     _plot_trigger_summary(ctx,d,lim,g,static,mask,tau,spatial)
-    _plot_glacier_dynamics_and_candidate(ctx,g,static,mask,candidate_regions,candidate_masks)
+    _plot_glacier_dynamics_and_candidate(ctx,g,static,mask,candidate_regions,candidate_masks,study_region)
     current={'snapshot_bjt':str(snap),'rain_24h_mm':float(valid.rain_24h),
             'rain_condition_met':bool(valid.rain_condition_met) if pd.notna(valid.rain_condition_met) else None,
             'source_pdd7_Cday':float(valid.source_pdd7_lapse_Cd),
@@ -360,12 +376,17 @@ def execute_q2_trigger(ctx):
             'station_energy_gate':float(valid.energy_gate) if 'energy_gate' in valid else None,
             'spatial_index_max':float(np.nanmax(risk)),
             'spatial_index_mean':float(np.nanmean(risk))}
-    report={'task':'multi-source physical threshold condition assessment',
+    mechanics=(execute_source_stability_experiment(ctx,h,g,candidate_masks)
+               if ctx.cfg['q2']['initiation'].get('enabled',False) else None)
+    report={'task':'Q1-feature-informed statistical trigger assessment with a shared case source',
        'official_inputs':['MET/RADM/SOIL/FLUX','historic temperature','glacier mask/thickness/slope/velocity','historical gullies','DEM'],
        'external_satellite_evidence_used':extra['satellite_summary'],
        'external_forecast_status':forecast_status,'external_forecast_summary':forecast_summary,
        'thresholds':lim,'current':current,
-       'model':'conditional index = static glacier gravitational supply index x max(melt_gate, rainfall_gate, station_energy_support_gate when available)',
+       'model':'I(t)=R(t)*(a+(1-a)*A_Q1(t)); historical statistical critical levels; fixed terrain/material source assumption',
+       'sequential_model':sequential,
+       'mechanics':mechanics,
+       'climate_reference_model':'static source-condition index x multichannel climate-condition index; retained as supporting evidence',
        'static_weights':{'gravity_shear':.40,'ice_thickness':.25,'historic_speed':.20,'velocity_strain':.15},
        'not_failure_probability':True,
        'source_proxy_sensitivity':source_sensitivity,
@@ -377,7 +398,273 @@ def execute_q2_trigger(ctx):
     return report
 
 
-def _plot_glacier_dynamics_and_candidate(ctx,g,static,mask,regions,masks):
+def sequential_trigger_assessment(ctx,h,d,geometry):
+    """Q1 -> Q2 contract. One assessment index is inherited unchanged by Q3.
+
+    Q1 ranking supplies transparent design weights, not fitted causal effects.
+    The statistical critical level is an operational modelling definition,
+    not a measured universal material-failure threshold.
+    """
+    import hashlib
+    out=ctx.folder('q2');q1=ctx.folder('q1')/'Q1_answer_mechanism_top5.csv'
+    if not q1.exists():raise FileNotFoundError('Run Q1 before Q2: mechanism representatives are required')
+    selected=pd.read_csv(q1);features=selected.feature.tolist()
+    if not set(features).issubset(h.columns):raise ValueError('Selected Q1 factors missing from official features')
+    base=h.index.year.isin(ctx.cfg['historic_years'])&h.index.month.isin([5,6,7,8,9])
+    weights=selected.rarity_anomaly_score.to_numpy(float);weights/=weights.sum()
+    directions=np.sign(selected.event_value.to_numpy()-selected.reference_median.to_numpy());directions[directions==0]=1
+    components=pd.DataFrame(index=h.index);normalisation={}
+    keys=pd.MultiIndex.from_arrays([h.index.month,h.index.hour])
+    for feature,direction in zip(features,directions):
+        reference=h.loc[base,feature].dropna();group=reference.groupby([reference.index.month,reference.index.hour])
+        med=group.median();mad=group.apply(lambda v:1.4826*np.median(abs(v-np.median(v))))
+        floor=max(.05,float(np.median(abs(reference-reference.median()))*1.4826*.2))
+        centre=med.reindex(keys).to_numpy();scale=np.maximum(mad.reindex(keys).fillna(floor).to_numpy(),floor)
+        components[feature]=np.clip(direction*(h[feature].to_numpy()-centre)/scale,0,4)/4
+        normalisation[feature]={'direction':float(direction),'weight':float(weights[features.index(feature)]),'scale_floor':floor}
+    values=components.to_numpy();known=np.isfinite(values)
+    denominator=(known*weights[None,:]).sum(axis=1)
+    anomaly=np.divide(np.nansum(values*weights[None,:],axis=1),denominator,
+        out=np.full(len(h),np.nan),where=(known.sum(axis=1)>=int(np.ceil(.8*len(features))))&(denominator>0))
+    floor=float(ctx.cfg['q2']['q1_modulation_floor'])
+    if not 0<=floor<=1:raise ValueError('Q1 modulation floor must be in [0,1]')
+    score=d.trigger_condition_index*(floor+(1-floor)*anomaly)
+    reference=score.loc[base].dropna()
+    threshold=float(reference.quantile(ctx.cfg['q2']['assessment_quantile']))
+    monitor=float(reference.quantile(ctx.cfg['q2']['monitoring_quantile']))
+    if threshold<=0:raise ValueError('Statistical trigger reference must be positive')
+    result=pd.DataFrame({'Q1_selected_feature_anomaly':anomaly,'Q2_dynamic_water_heat':d.trigger_condition_index,
+        'assessment_score':score},index=h.index)
+    result.to_csv(out/'Q2_sequential_assessment_timeseries.csv.gz',index_label='time_bjt',compression='gzip')
+    components.to_csv(out/'Q2_Q1_feature_components.csv.gz',index_label='time_bjt',compression='gzip')
+    issue=pd.Timestamp(ctx.cfg['snapshot_raw']);current=result.loc[result.index<issue].iloc[-1]
+    contract={'model':'I=R*(a+(1-a)*A_Q1)','assessment_issue_bjt':str(issue),
+        'Q1_answer_sha256':hashlib.sha256(q1.read_bytes()).hexdigest(),
+        'Q1_features':features,'Q1_weights':dict(zip(features,weights)),
+        'Q1_definition':normalisation,'Q1_selection_role':'case-informed Q1 analysis; no claim of independent cross-event feature selection',
+        'q1_modulation_floor':floor,'critical_score':threshold,'monitoring_score':monitor,
+        'threshold_role':'historical statistical critical level, explicitly defined for this model',
+        'current_score':float(current.assessment_score),'current_Q1_anomaly':float(current.Q1_selected_feature_anomaly),
+        'current_dynamic_water_heat':float(current.Q2_dynamic_water_heat),'baseline_years':ctx.cfg['historic_years'],
+        'source_geometry_file':'Q2_reconstruction_geometry.json','source_sections_file':'Q2_reconstruction_sections.npz',
+        'source_route_file':'Q2_reconstruction_route.csv','source_geometry_sha256':geometry['geometry_contract_sha256'],
+        'source_to_port_km':geometry['length_m']/1000,'source_area_km2':geometry['projected_source_area_m2']/1e6,
+        'fixed_source_assumption':'case-mapped source, adequate material and connecting terrain; not a blind source-identification claim',
+        'score_is_calibrated_disaster_probability':False,'observations_end_before_issue':True}
+    write_json(out/'Q2_sequential_model_contract.json',contract)
+    return contract
+
+
+def mechanical_source_geometry(g,region,rho=900.0):
+    """Force balance of an effective coherent ice block, not a rock-fracture model.
+
+    Official H is vertical ice thickness. For a horizontal pixel area Ah,
+    basal area Ab=Ah/cos(theta), weight=rho*g*H*Ah. Integrate W*sin(theta)
+    and W*cos(theta) before dividing by total basal area. This avoids mixing
+    normal thickness with vertical thickness or counting a thin edge as a block.
+    The basal plane is approximated by the surface slope; its geometry is unmeasured.
+    """
+    valid=(np.asarray(region,bool) & np.isfinite(g['thickness']) &
+           (g['thickness']>0) & np.isfinite(g['slope']) &
+           (g['slope']>0) & (g['slope']<80) & np.isfinite(g['dem']))
+    if valid.sum()<10:raise ValueError('Too few valid source pixels for force balance')
+    theta=np.deg2rad(g['slope'][valid].astype(float))
+    ah=abs(float(g['transform'][1])*float(g['transform'][5]))
+    basal=ah/np.cos(theta);weight=rho*9.81*g['thickness'][valid].astype(float)*ah
+    return {'horizontal_area_m2':float(valid.sum()*ah),'basal_area_m2':float(basal.sum()),
+        'n_pixels':int(valid.sum()),'rho_kg_m3':float(rho),
+        'source_elevation_m':float(np.mean(g['dem'][valid])),
+        'mean_vertical_ice_thickness_m':float(np.mean(g['thickness'][valid])),
+        'driving_stress_kPa':float(np.sum(weight*np.sin(theta))/basal.sum()/1000),
+        'normal_stress_kPa':float(np.sum(weight*np.cos(theta))/basal.sum()/1000),
+        'effective_slope_deg':float(np.rad2deg(np.arctan2(np.sum(weight*np.sin(theta)),np.sum(weight*np.cos(theta))))),
+        'geometry_scope':'connected pre-event-data candidate, not the post-event mapped collapse outline',
+        'mechanism_scope':'effective basal sliding of an ice-bearing source; rock bridges, tensile fracture and entrainment are not resolved',
+        'basal_plane_assumption':'local surface slope; basal/discontinuity geometry not measured'}
+
+
+def mechanical_candidate_region(g,minimum_slope_deg=30.0,minimum_pixels=10):
+    """Geometric screening, not a fitted failure angle or scored ice inventory.
+
+    Retain coherent steep ice patches; select the patch with greatest integrated
+    downslope gravitational force. This avoids treating the largest flat ice
+    reservoir as the detachment block. Other source screens are explicit experiments.
+    """
+    mask=(g['glacier_mask'] & np.isfinite(g['thickness']) & (g['thickness']>0) &
+          np.isfinite(g['slope']) & (g['slope']>=minimum_slope_deg) & (g['slope']<80))
+    components,n=label(mask,structure=np.ones((3,3),int))
+    counts=np.bincount(components.ravel(),minlength=n+1)
+    force=np.where(mask,900*9.81*g['thickness']*np.sin(np.deg2rad(g['slope'])),0)
+    sums=np.bincount(components.ravel(),weights=force.ravel(),minlength=n+1)
+    sums[(counts<minimum_pixels)]=0;sums[0]=0
+    if not np.any(sums>0):raise ValueError('No connected steep source candidate under declared geometric screen')
+    region=components==int(np.argmax(sums))
+    return region
+
+
+def initiation_parameter_design(config):
+    """Space-filling, equal-design-weight scenarios, NOT an inferred posterior."""
+    from scipy.stats import qmc
+    keys=['cohesion_kPa','friction_angle_deg','storage_yield','drainage_hours',
+          'degree_day_factor_mm_Cday','infiltration_fraction','lapse_C_km']
+    unit=qmc.Sobol(len(keys),scramble=True,seed=int(config['seed'])).random_base2(int(config['scenario_power']))
+    columns={}
+    for i,key in enumerate(keys):
+        lo,hi=map(float,config[key])
+        if not (0<=lo<hi):raise ValueError('Invalid initiation range: '+key)
+        columns[key]=(np.exp(np.log(lo)+unit[:,i]*np.log(hi/lo))
+                      if key in ('storage_yield','drainage_hours') and lo>0
+                      else lo+(hi-lo)*unit[:,i])
+    d=pd.DataFrame(columns);d.insert(0,'scenario_id',np.arange(len(d)))
+    return d
+
+
+def advance_water_storage(storage_mm,input_mm_h,dt_h,drainage_h,capacity_mm=np.inf):
+    """Exact linear reservoir step for constant interval forcing.
+
+    Return storage, drained water and spill, all in mm. Capacity limits pressure
+    to normal overburden; excess water spills instead of producing negative stress.
+    This is a lumped drainage experiment, not a Richards infiltration solution.
+    """
+    s=np.asarray(storage_mm,float);q=np.asarray(input_mm_h,float);tau=np.asarray(drainage_h,float)
+    if dt_h<=0 or np.any(tau<=0) or np.any(s<0) or np.any(q<0):raise ValueError('Invalid reservoir inputs')
+    e=np.exp(-dt_h/tau);unbounded=s*e+q*tau*(-np.expm1(-dt_h/tau))
+    result=np.minimum(unbounded,capacity_mm)
+    spill=np.maximum(unbounded-result,0)
+    drained=s+q*dt_h-unbounded
+    return result,drained,spill
+
+
+def source_safety_factor(storage_mm,parameters,geometry):
+    p=parameters
+    pressure_kPa=np.minimum(np.asarray(storage_mm,float)/(1000*p.storage_yield.to_numpy())*9.81,
+                            geometry['normal_stress_kPa'])
+    return (p.cohesion_kPa.to_numpy()+np.maximum(geometry['normal_stress_kPa']-pressure_kPa,0)*
+            np.tan(np.deg2rad(p.friction_angle_deg.to_numpy())))/geometry['driving_stress_kPa']
+
+
+def critical_storage(parameters,geometry):
+    """Critical pore pressure and retained water. Infinite means water alone
+    cannot overcome cohesion. Zero means this assumed block is unstable dry.
+    """
+    c=parameters.cohesion_kPa.to_numpy();mu=np.tan(np.deg2rad(parameters.friction_angle_deg.to_numpy()))
+    pressure=geometry['normal_stress_kPa']-(geometry['driving_stress_kPa']-c)/mu
+    pressure=np.maximum(pressure,0)
+    pressure=np.where(c>geometry['driving_stress_kPa'],np.inf,pressure)
+    return pressure,pressure/9.81*1000*parameters.storage_yield.to_numpy()
+
+
+def source_history_states(h,issue,parameters,geometry,station_z=4140,spinup_days=30,consistency_days=7,step_h=1):
+    """Use observations STRICTLY before issuance; reject inconsistent scenarios.
+
+    A scenario predicting failure during the known-surviving last week is
+    incompatible with this model and source hypothesis, not a new observed event.
+    Missing forcing or clock gaps fail explicitly; no zero-rain imputation.
+    """
+    issue=pd.Timestamp(issue);begin=issue-pd.Timedelta(days=spinup_days)
+    hours=pd.date_range(begin,issue-pd.Timedelta(hours=1),freq='h')
+    observed=h.reindex(hours)[['temp_2m','precip_mm']]
+    if not np.isfinite(observed.to_numpy(float)).all():raise ValueError('Incomplete initiation spin-up forcing')
+    if step_h not in (1,3,6) or len(observed)%step_h:raise ValueError('Incompatible history time step')
+    n=len(parameters);s=np.zeros(n);minimum=np.full(n,np.inf);curve=[]
+    p=parameters;capacity=geometry['normal_stress_kPa']/9.81*1000*p.storage_yield.to_numpy()
+    source_temperature=(observed.temp_2m.to_numpy()[:,None] -
+        (geometry['source_elevation_m']-station_z)/1000*p.lapse_C_km.to_numpy()[None,:])
+    rain=observed.precip_mm.clip(lower=0).to_numpy()[:,None]*(source_temperature>0)
+    melt=np.maximum(source_temperature,0)*p.degree_day_factor_mm_Cday.to_numpy()[None,:]/24
+    liquid=(rain+melt)*p.infiltration_fraction.to_numpy()[None,:]
+    for k in range(0,len(hours),step_h):
+        # Average rates preserve the input integral when coarsening; do not subsample.
+        s,_,_=advance_water_storage(s,liquid[k:k+step_h].mean(axis=0),step_h,p.drainage_hours.to_numpy(),capacity)
+        fs=source_safety_factor(s,p,geometry)
+        end=hours[k+step_h-1]+pd.Timedelta(hours=1)
+        if end>issue-pd.Timedelta(days=consistency_days):minimum=np.minimum(minimum,fs)
+        curve.append((end,fs.copy(),s.copy()))
+    return s,minimum,curve
+
+
+def execute_source_stability_experiment(ctx,h,g,candidate_masks):
+    """One mechanics contract, consumed unchanged by Q3."""
+    cfg=ctx.cfg['q2']['initiation'];out=ctx.folder('q2');issue=pd.Timestamp(ctx.cfg['snapshot_raw'])
+    region=mechanical_candidate_region(g,cfg['minimum_source_slope_deg'],cfg['minimum_source_pixels'])
+    geometry=mechanical_source_geometry(g,region,cfg['ice_density_kg_m3'])
+    ii,jj=np.where(region)
+    geometry['centroid_utm_x']=float(np.mean(g['x'][jj]));geometry['centroid_utm_y']=float(np.mean(g['y'][ii]))
+    geometry['source_selection']='connected steep patch with greatest integrated downslope force; no event-time fit'
+    with rasterio.open(out/'Q2_mechanical_source_region_30m.tif','w',driver='GTiff',height=region.shape[0],width=region.shape[1],
+        count=1,dtype='uint8',crs='EPSG:32645',transform=Affine.from_gdal(*g['transform']),nodata=255,compress='deflate') as ds:
+        ds.write(np.where(g['glacier_mask'],region.astype('uint8'),255).astype('uint8'),1)
+    parameters=initiation_parameter_design(cfg)
+    s,minimum,curve=source_history_states(h,issue,parameters,geometry,ctx.cfg['station_elevation_m'],
+        cfg['spinup_days'],cfg['consistency_days'])
+    pressure,limit=critical_storage(parameters,geometry)
+    fs=source_safety_factor(s,parameters,geometry)
+    accepted=(minimum>1)&(fs>1)
+    if not accepted.any():raise ValueError('No initiation scenario is consistent with source survival; inspect assumptions, do not retune to event time')
+    table=parameters.copy();table['storage_at_issue_mm']=s;table['Fs_at_issue']=fs
+    table['minimum_Fs_during_consistency_window']=minimum;table['survival_consistent']=accepted
+    table['critical_pressure_kPa']=np.where(np.isfinite(pressure),pressure,np.nan)
+    table['water_only_failure_possible']=np.isfinite(limit)
+    table['critical_storage_mm']=np.where(np.isfinite(limit),limit,np.nan)
+    table['additional_storage_to_failure_mm']=np.maximum(table.critical_storage_mm-s,0)
+    tau=parameters.drainage_hours.to_numpy();duration=float(ctx.cfg['q3']['primary_horizon_hours'])
+    required=(limit-s*np.exp(-duration/tau))/(tau*(-np.expm1(-duration/tau)))
+    table['constant_effective_liquid_input_critical_mm_h']=np.where(np.isfinite(required),np.maximum(required,0),np.nan)
+    table.to_csv(out/'Q2_mechanical_parameter_experiments.csv',index=False)
+    curves=pd.DataFrame([{'time_bjt':t,'Fs_q025':np.quantile(f[accepted],.025),'Fs_median':np.median(f[accepted]),
+        'Fs_q975':np.quantile(f[accepted],.975),'storage_median_mm':np.median(w[accepted])} for t,f,w in curve])
+    curves.to_csv(out/'Q2_source_stability_history.csv',index=False)
+    spatial=[]
+    for screen in cfg['source_slope_experiments_deg']:
+        alternative=mechanical_candidate_region(g,screen,cfg['minimum_source_pixels'])
+        geo=mechanical_source_geometry(g,alternative,cfg['ice_density_kg_m3']);pc,sc=critical_storage(parameters,geo)
+        other_s,other_min,_=source_history_states(h,issue,parameters,geo,ctx.cfg['station_elevation_m'],cfg['spinup_days'],cfg['consistency_days'])
+        spatial.append({'minimum_screen_slope_deg':screen,**{k:geo[k] for k in ['horizontal_area_m2','driving_stress_kPa','normal_stress_kPa','source_elevation_m','effective_slope_deg']},
+            'finite_critical_pressure_median_kPa':float(np.median(pc[np.isfinite(pc)])),
+            'dry_unstable_scenario_fraction':float((pc<=0).mean()),'n_survival_consistent':int((other_min>1).sum())})
+    pd.DataFrame(spatial).to_csv(out/'Q2_mechanical_source_geometry_experiment.csv',index=False)
+    temporal=[]
+    for step in (1,3,6):
+        coarse,_,_=source_history_states(h,issue,parameters,geometry,ctx.cfg['station_elevation_m'],cfg['spinup_days'],cfg['consistency_days'],step)
+        alternate=source_safety_factor(coarse,parameters,geometry)
+        temporal.append({'forcing_aggregation_hours':step,'storage_abs_error_median_mm':float(np.median(abs(coarse-s))),
+            'Fs_abs_error_q95':float(np.quantile(abs(alternate-fs),.95)),
+            'at_issue_stability_disagreement_fraction':float(((alternate<=1)!=(fs<=1)).mean())})
+    pd.DataFrame(temporal).to_csv(out/'Q2_mechanical_temporal_experiment.csv',index=False)
+    result={'criterion':'first passage Fs<=1','geometry':geometry,
+        'parameter_experiment_file':'Q2_mechanical_parameter_experiments.csv',
+        'n_design_scenarios':len(table),'n_survival_consistent':int(accepted.sum()),
+        'scenario_weights':'equal within declared design after pre-issue survival consistency; not calibrated probability',
+        'parameter_ranges':cfg,'critical_equation':'u_crit=sigma_n-(tau_d-c)/tan(phi); S_crit=1000*Sy*u_crit/(rho_water*g)',
+        'units':'stress kPa; retained water mm; pressure head m; time h',
+        'forcing_equation':'q=eta*(rain_if_source_T_positive+DDF*max(source_T,0)/24)',
+        'storage_equation':'dS/dt=q-S/tau; overflow at u=sigma_n',
+        'energy_role':'station energy retained as independent thermal evidence; not added again to temperature-index melt',
+        'source_strength_parameters_measured':False,'pore_pressure_measured':False,
+        'event_time_used_to_fit_parameters':False,'post_event_source_outline_used':False,
+        'parameter_evidence':'DDF is a temperature-index melt surrogate; strength, effective storage and drainage ranges are declared numerical experiments, not site measurements',
+        'equation_references':['https://www.cambridge.org/core/journals/annals-of-glaciology/article/contribution-of-discontinuous-rockmass-failure-to-glacier-erosion/76A97583C001406D3F6F81015EE22BE0',
+            'https://tc.copernicus.org/articles/17/211/2023/','https://tc.copernicus.org/articles/15/2295/2021/'],
+        'identification':'Mechanically defined conditional initiation experiment; available observations do not identify a unique local failure strength or true event probability.',
+        'spatial_experiments':spatial,'temporal_experiments':temporal}
+    old_region=candidate_masks[min(candidate_masks,key=lambda x:abs(x-.85))]
+    result['inventory_candidate_comparison']=mechanical_source_geometry(g,old_region,cfg['ice_density_kg_m3'])
+    write_json(out/'Q2_source_stability_contract.json',result)
+    fig,axs=plt.subplots(1,2,figsize=(12,4.6),layout='constrained')
+    valid=table.loc[table.survival_consistent & table.water_only_failure_possible]
+    im=axs[0].scatter(valid.friction_angle_deg,valid.cohesion_kPa,c=valid.critical_pressure_kPa,s=12,cmap='viridis')
+    axs[0].set(xlabel='有效静态摩擦角 (°)',ylabel='有效黏聚力 (kPa)',title='a  条件临界孔压；每点为公开参数试验')
+    fig.colorbar(im,ax=axs[0],label='临界孔压 (kPa)')
+    axs[1].plot(curves.time_bjt,curves.Fs_median,color=COLORS[0])
+    axs[1].fill_between(curves.time_bjt,curves.Fs_q025,curves.Fs_q975,color=COLORS[0],alpha=.18)
+    axs[1].axhline(1,color=COLORS[1],ls='--',label='极限平衡 Fs=1')
+    axs[1].set(xlabel='北京时间',ylabel='源区稳定系数 Fs',title='b  灾前条件一致的参数集合；非观测置信带')
+    axs[1].legend(frameon=False,fontsize=8);fig.suptitle('源区稳定性判据与关键参数临界条件')
+    savefig(fig,out/'Q2_20_mechanical_critical_conditions.png')
+    return result
+
+
+def _plot_glacier_dynamics_and_candidate(ctx,g,static,mask,regions,masks,study_region=None):
     out=ctx.folder('q2')
     strain=velocity_strain_proxy(g)
     fig,axes=plt.subplots(1,3,figsize=(12.2,4.5),sharex=True,sharey=True,layout='constrained')
@@ -392,6 +679,13 @@ def _plot_glacier_dynamics_and_candidate(ctx,g,static,mask,regions,masks):
     if len(regions):
         k=min(masks,key=lambda x:abs(x-.85));region=masks[k]
         axes[2].contour(region.astype(int),levels=[.5],colors=['#163C64'],linewidths=1.6)
+        axes[2].plot([],[],color='#163C64',lw=1.6,label='原物源储量候选')
+    cfg=ctx.cfg['q2']['initiation']
+    steep=(mechanical_candidate_region(g,cfg['minimum_source_slope_deg'],cfg['minimum_source_pixels'])
+           if study_region is None else study_region)
+    axes[2].contour(steep.astype(int),levels=[.5],colors=['#DA783F'],linewidths=1.6)
+    axes[2].plot([],[],color='#DA783F',lw=1.6,label='统一建模源区' if study_region is not None else '陡坡起动候选')
+    axes[2].legend(frameon=False,fontsize=7,loc='lower left')
     axes[0].set_ylabel('栅格行')
     fig.suptitle('冰川历史运动与候选失稳区空间特征')
     savefig(fig,out/'Q2_13_glacier_velocity_and_release_candidates.png')

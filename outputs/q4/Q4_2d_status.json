@@ -1,0 +1,75 @@
+{
+  "status": "SENSITIVITY_ONE_WAY_COUPLED_SCENARIO",
+  "mass": {
+    "input_cumulative_m3": 4932497.928996127,
+    "signed_boundary_outflow_m3": 0.0,
+    "stored_final_m3": 4932497.928996117,
+    "relative_mass_error": 2.076949340525168e-15,
+    "clipped_negative_m3": 0.0,
+    "n_steps": 4315,
+    "peak_depth_m": 47.928247527014136,
+    "wet_area_h_gt_0p2_km2": 0.3456,
+    "max_dynamic_pressure_kPa": 1000.620377959068,
+    "max_wet_cell_velocity_m_s": 33.34367136286165,
+    "dynamic_pressure_coefficient": 0.5,
+    "assumed_density_kg_m3_for_pressure": 1800.0
+  },
+  "inlet": {
+    "nominal_rc": [
+      8,
+      39
+    ],
+    "snapped_rc": [
+      4,
+      36
+    ],
+    "cross_section_offset_cells": -5,
+    "cells": [
+      [
+        4,
+        35
+      ],
+      [
+        5,
+        35
+      ],
+      [
+        4,
+        36
+      ]
+    ],
+    "weights": [
+      0.4301967523000855,
+      0.3589717819532115,
+      0.21083146574670303
+    ],
+    "elevation_nominal_m": 2378.030517578125,
+    "elevation_snapped_m": 1994.06494140625,
+    "flow_direction_xy": [
+      -0.8628562094617419,
+      -0.5054494651231859
+    ],
+    "mode": "valley_cross_section",
+    "search_halfwidth_m": 300.0
+  },
+  "first_inlet_s": 362.2934978893318,
+  "chosen_frames_s": [
+    374.2934978893318,
+    390.2934978893318,
+    410.2934978893318,
+    440.2934978893318,
+    480.2934978893318,
+    540.2934978893318,
+    640.2934978893318,
+    780.2934978893318,
+    980.2934978893318,
+    1260.2934978893318
+  ],
+  "inlet_boundary_condition": "valley_cross_section (not source-cell 3x3)",
+  "1d_inflow_reached_coupling": true,
+  "primary_1d_coupled": false,
+  "coupled_1d_volume_m3": 80000000.0,
+  "verified_route": false,
+  "assumptions": "shallow effective continuum, stated DEM inlet; input momentum from 1D only if coupled",
+  "inflow_source": "prespecified upper-volume 1D sensitivity hydrograph"
+}

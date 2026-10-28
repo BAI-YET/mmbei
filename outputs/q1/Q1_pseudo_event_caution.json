@@ -1,0 +1,7 @@
+{
+  "historical_control_windows": 122,
+  "event_selected_feature_score": 1.6608186783544323,
+  "fraction_of_control_windows_at_least_as_high": 0.040983606557377046,
+  "valid_hypothesis_test_pvalue": false,
+  "reason": "Features selected on focal event; pseudo windows overlap and are temporally dependent."
+}

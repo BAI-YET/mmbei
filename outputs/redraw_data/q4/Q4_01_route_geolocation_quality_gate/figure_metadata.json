@@ -1,0 +1,317 @@
+{
+  "figure": "q4/Q4_01_route_geolocation_quality_gate.png",
+  "title": "冰崩—泥石流传播路径及地形纵剖面",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "传播路径空间分布",
+      "xlabel": "UTM45N 东向坐标 (m)",
+      "ylabel": "UTM45N 北向坐标 (m)",
+      "xlim": [
+        337719.38078397507,
+        360039.38078397507
+      ],
+      "ylim": [
+        3125879.464285714,
+        3133199.464285714
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "未经验证的候选路径",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#C75041",
+          "linestyle": "--",
+          "marker": "None",
+          "linewidth": 1.7,
+          "alpha": null
+        }
+      ],
+      "rasters": [
+        {
+          "image_id": "I001",
+          "raster_id": "21e19385de0ec01bb151",
+          "shared_data": "shared_rasters/21e19385de0ec01bb151",
+          "shape": [
+            122,
+            372
+          ],
+          "extent": [
+            337719.38078397507,
+            360039.38078397507,
+            3125879.464285714,
+            3133199.464285714
+          ],
+          "origin": "upper",
+          "coordinates": "A01_I001_coordinates.csv",
+          "cmap": "terrain",
+          "norm": "Normalize",
+          "vmin": 2000.177001953125,
+          "vmax": 6366.244140625,
+          "alpha": null,
+          "interpolation": "auto",
+          "raw_coordinate_unit": "m",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": "EPSG:32645",
+          "colorbar_label": "高程 (m)",
+          "GeoTIFF": "A01_I001_georeferenced.tif",
+          "quantity": "地形高程",
+          "value_unit": "m",
+          "GeoTIFF_display": "A01_I001_georeferenced_display.tif"
+        }
+      ],
+      "collections": [
+        {
+          "collection_id": "C001",
+          "type": "PathCollection",
+          "label": "_child2",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": null
+        }
+      ],
+      "patches": []
+    },
+    {
+      "axis": "A02",
+      "title": "传播路径地形纵剖面",
+      "xlabel": "候选路径弧长 (km)",
+      "ylabel": "高程 (m)",
+      "xlim": [
+        -1.1120651506262034,
+        23.35336816315027
+      ],
+      "ylim": [
+        -262.2254609717265,
+        5506.734680406255
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_child0",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#205C92",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 2.0,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [
+        {
+          "collection_id": "C001",
+          "type": "FillBetweenPolyCollection",
+          "label": "_child1",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": 0.15
+        }
+      ],
+      "patches": []
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 13,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 305,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_C001_scatter.csv",
+      "kind": "scatter_points",
+      "rows": 2,
+      "fields": [
+        "point_order",
+        "x",
+        "y",
+        "color_value",
+        "marker_size_pt2",
+        "red",
+        "green",
+        "blue",
+        "alpha"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I001_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 372,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I001_georeferenced.tif",
+      "kind": "georeferenced_full_raster",
+      "rows": 45384,
+      "fields": [
+        "raster_values"
+      ],
+      "axis": "A01",
+      "note": "original numeric values; display mask is a separate file"
+    },
+    {
+      "file": "shared_rasters/21e19385de0ec01bb151/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 45384,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A02_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 15,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 372,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_C001_paths.csv",
+      "kind": "contours_polygons_and_intervals",
+      "rows": 747,
+      "fields": [
+        "path_id",
+        "vertex_order",
+        "path_code",
+        "x",
+        "y"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_C001_intervals.csv",
+      "kind": "interval_band_lower_upper",
+      "rows": 372,
+      "fields": [
+        "path_id",
+        "x",
+        "y_lower",
+        "y_upper",
+        "x_datetime"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_curves_wide_01.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 372,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L001"
+      ],
+      "axis": "A02",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    }
+  ],
+  "decorative_colorbars": [
+    {
+      "label": "高程 (m)",
+      "ticks": [
+        2000.0,
+        2500.0,
+        3000.0,
+        3500.0,
+        4000.0,
+        4500.0,
+        5000.0,
+        5500.0,
+        6000.0,
+        6500.0
+      ],
+      "vmin": 2000.177001953125,
+      "vmax": 6366.244140625,
+      "norm": "Normalize"
+    }
+  ],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

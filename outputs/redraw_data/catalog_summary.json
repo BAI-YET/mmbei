@@ -1,0 +1,11 @@
+{
+  "figures": 85,
+  "panels": 199,
+  "plot_datasets": 1012,
+  "per_figure_files": 1164,
+  "unique_shared_rasters": 93,
+  "raster_layers": 125,
+  "warnings": [],
+  "retained_original_results": true,
+  "source_tables": 166
+}

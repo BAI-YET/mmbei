@@ -1,0 +1,186 @@
+{
+  "figure": "q4/Q4_03_1d_hydrograph_and_mass_conservation.png",
+  "title": "",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "耦合断面流量过程",
+      "xlabel": "模拟时间 (min)",
+      "ylabel": "体积流量 (m³/s)",
+      "xlim": [
+        -1.5,
+        31.5
+      ],
+      "ylim": [
+        -0.05500000000000001,
+        0.05500000000000001
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "二维耦合断面处",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#205C92",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.6,
+          "alpha": null
+        },
+        {
+          "series_id": "L002",
+          "label": "下游出口",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#DA783F",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.6,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [],
+      "patches": []
+    },
+    {
+      "axis": "A02",
+      "title": "流体体积收支变化",
+      "xlabel": "模拟时间 (min)",
+      "ylabel": "累计体积 (m³)",
+      "xlim": [
+        -1.5,
+        31.5
+      ],
+      "ylim": [
+        -2500000.000000003,
+        52500000.00000005
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "累计释放量",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#205C92",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.5,
+          "alpha": null
+        },
+        {
+          "series_id": "L002",
+          "label": "域内量 + 累计出流",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#248F81",
+          "linestyle": "--",
+          "marker": "None",
+          "linewidth": 1.5,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [],
+      "patches": []
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 16,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 7634,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A02_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 17,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 7634,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_curves_wide_01.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 3817,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L001",
+        "y_L002"
+      ],
+      "axis": "A02",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    }
+  ],
+  "decorative_colorbars": [],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

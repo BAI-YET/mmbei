@@ -1,0 +1,7 @@
+feature,reason,n
+bulk_richardson,event_window_insufficient_valid_hours,
+precip_mm,undefined robust variance/score,155.0
+albedo,event_window_insufficient_valid_hours,
+soil_freeze_depth_layers,binary_or_discrete_diagnostic,
+bowen_ratio,event_window_insufficient_valid_hours,
+rain_24h,undefined robust variance/score,155.0

@@ -1,0 +1,138 @@
+{
+  "figure": "q1/Q1_05_reference_year_sensitivity.png",
+  "title": "",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "关键气象特征排序的年份敏感性",
+      "xlabel": "",
+      "ylabel": "",
+      "xlim": [
+        -0.5,
+        4.5
+      ],
+      "ylim": [
+        4.5,
+        -0.5
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": true,
+      "lines": [],
+      "rasters": [
+        {
+          "image_id": "I001",
+          "raster_id": "9e341295d5bcd78e7155",
+          "shared_data": "shared_rasters/9e341295d5bcd78e7155",
+          "shape": [
+            5,
+            5
+          ],
+          "extent": [
+            -0.5,
+            4.5,
+            4.5,
+            -0.5
+          ],
+          "origin": "upper",
+          "coordinates": "A01_I001_coordinates.csv",
+          "cmap": "YlGnBu_r",
+          "norm": "Normalize",
+          "vmin": 1.0,
+          "vmax": 17.0,
+          "alpha": null,
+          "interpolation": "auto",
+          "raw_coordinate_unit": "plot_axis_units",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": null,
+          "colorbar_label": "名次",
+          "quantity": "因素排序名次",
+          "value_unit": "名次"
+        }
+      ],
+      "collections": [],
+      "patches": []
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 10,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I001_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 5,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "shared_rasters/9e341295d5bcd78e7155/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 25,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_annotations.csv",
+      "kind": "numeric_annotations_and_labels",
+      "rows": 25,
+      "fields": [
+        "text_id",
+        "x",
+        "y",
+        "text",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": ""
+    }
+  ],
+  "decorative_colorbars": [
+    {
+      "label": "名次",
+      "ticks": [
+        0.0,
+        2.5,
+        5.0,
+        7.5,
+        10.0,
+        12.5,
+        15.0,
+        17.5
+      ],
+      "vmin": 1.0,
+      "vmax": 17.0,
+      "norm": "Normalize"
+    }
+  ],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

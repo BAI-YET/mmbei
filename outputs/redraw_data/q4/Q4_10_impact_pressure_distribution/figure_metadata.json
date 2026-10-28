@@ -1,0 +1,196 @@
+{
+  "figure": "q4/Q4_10_impact_pressure_distribution.png",
+  "title": "二维流动峰值动压分布",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "",
+      "xlabel": "UTM 东向坐标 (m)",
+      "ylabel": "UTM 北向坐标 (m)",
+      "xlim": [
+        340609.38078397507,
+        343489.38078397507
+      ],
+      "ylim": [
+        3128756.3149458314,
+        3131036.3149458314
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [],
+      "rasters": [
+        {
+          "image_id": "I001",
+          "raster_id": "21039e094bc60ab6111c",
+          "shared_data": "shared_rasters/21039e094bc60ab6111c",
+          "shape": [
+            38,
+            48
+          ],
+          "extent": [
+            340609.38078397507,
+            343489.38078397507,
+            3128756.3149458314,
+            3131036.3149458314
+          ],
+          "origin": "upper",
+          "coordinates": "A01_I001_coordinates.csv",
+          "cmap": "Greys",
+          "norm": "Normalize",
+          "vmin": 0.0,
+          "vmax": 1.0,
+          "alpha": 0.8,
+          "interpolation": "auto",
+          "raw_coordinate_unit": "m",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": "EPSG:32645",
+          "GeoTIFF": "A01_I001_georeferenced.tif",
+          "quantity": "地形阴影底图",
+          "value_unit": "无量纲",
+          "GeoTIFF_display": "A01_I001_georeferenced_display.tif"
+        },
+        {
+          "image_id": "I002",
+          "raster_id": "63af190b26cb100599d8",
+          "shared_data": "shared_rasters/63af190b26cb100599d8",
+          "shape": [
+            38,
+            48
+          ],
+          "extent": [
+            340609.38078397507,
+            343489.38078397507,
+            3128756.3149458314,
+            3131036.3149458314
+          ],
+          "origin": "upper",
+          "coordinates": "A01_I002_coordinates.csv",
+          "cmap": "magma",
+          "norm": "Normalize",
+          "vmin": 0.0,
+          "vmax": 953.0950947279161,
+          "alpha": 0.84,
+          "interpolation": "auto",
+          "raw_coordinate_unit": "m",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": "EPSG:32645",
+          "colorbar_label": "峰值动压代理 (kPa)",
+          "GeoTIFF": "A01_I002_georeferenced.tif",
+          "quantity": "全时段峰值动压代理",
+          "value_unit": "kPa",
+          "GeoTIFF_display": "A01_I002_georeferenced_display.tif"
+        }
+      ],
+      "collections": [],
+      "patches": []
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 13,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I001_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 48,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I001_georeferenced.tif",
+      "kind": "georeferenced_full_raster",
+      "rows": 1824,
+      "fields": [
+        "raster_values"
+      ],
+      "axis": "A01",
+      "note": "original numeric values; display mask is a separate file"
+    },
+    {
+      "file": "shared_rasters/21039e094bc60ab6111c/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 1824,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I002_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 48,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I002_georeferenced.tif",
+      "kind": "georeferenced_full_raster",
+      "rows": 1824,
+      "fields": [
+        "raster_values"
+      ],
+      "axis": "A01",
+      "note": "original numeric values; display mask is a separate file"
+    },
+    {
+      "file": "shared_rasters/63af190b26cb100599d8/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 1824,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A01",
+      "note": ""
+    }
+  ],
+  "decorative_colorbars": [
+    {
+      "label": "峰值动压代理 (kPa)",
+      "ticks": [
+        0.0,
+        200.0,
+        400.0,
+        600.0,
+        800.0,
+        1000.0
+      ],
+      "vmin": 0.0,
+      "vmax": 953.0950947279161,
+      "norm": "Normalize"
+    }
+  ],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

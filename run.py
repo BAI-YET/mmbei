@@ -27,10 +27,18 @@ def main():
     p.add_argument('--allow-provisional-q4',action='store_true',help='legacy alias: run a physical scenario on the candidate DEM corridor')
     p.add_argument('--strict-route',action='store_true',help='require a checked route for the reference propagation calculation')
     p.add_argument('--refit-q4',action='store_true',help='repeat Q4 calibration experiments instead of reusing matching fitted parameters')
+    p.add_argument('--reference-experiments',action='store_true',help='also reproduce retained weather-index and single-stage Q4 reference experiments')
     args=p.parse_args();ctx=Context(ROOT,args.config);configure_plotting()
     ctx.cfg['refit_q4']=args.refit_q4
+    ctx.cfg['reference_experiments']=args.reference_experiments
     if args.stage in ('all','q4'):
         validate_route_policy(ctx,args.strict_route,args.allow_provisional_q4)
+    required={'q2':['q1/Q1_answer_mechanism_top5.csv'],
+              'q3':['q2/Q2_sequential_model_contract.json'],
+              'q4':['q2/Q2_reconstruction_geometry.json','q3/Q3_primary_competition_answer.json']}
+    for dependency in required.get(args.stage,[]):
+        if not (ctx.out/dependency).exists():
+            raise FileNotFoundError('Run preceding questions first; missing '+dependency)
     # Each recomputed stage owns its output directory: never mix old and new figures.
     import shutil
     stages=['q1','q2','q3','q4','joint'] if args.stage=='all' else ([args.stage] if args.stage in ('q1','q2','q3','q4') else [])
@@ -83,23 +91,32 @@ def main():
     if args.stage in ('all','q3'):
         from mathorcup.q3_task_aligned import execute_q3_aligned
         execute_q3_aligned(ctx)
-        from mathorcup.q3_feature_bridge import execute_q3_feature_bridge
-        execute_q3_feature_bridge(ctx)
+        if args.reference_experiments:
+            from mathorcup.q3_feature_bridge import execute_q3_feature_bridge
+            execute_q3_feature_bridge(ctx)
         from mathorcup.question_completion import complete_q3
         complete_q3(ctx)
+        if args.stage=='q3':
+            from mathorcup.q4_reconstructed_spatial import replot_warning_range_from_saved
+            replot_warning_range_from_saved(ctx)
+            if args.reference_experiments and (ctx.folder('q4')/'Q4_route_profile.csv').exists():
+                from mathorcup.q3_spatial_footprint import execute_q3_spatial
+                execute_q3_spatial(ctx)
     if args.stage in ('all','q4'):
-        from mathorcup.q4_flowpath import execute_q4_path
-        from mathorcup.q4_solver import execute_q4_solver
-        route=execute_q4_path(ctx,allow_provisional=not args.strict_route)
-        execute_q4_solver(ctx,route)
-        from mathorcup.q4_grid_review import execute_q4_grid_review
-        execute_q4_grid_review(ctx,route)
+        if args.reference_experiments:
+            from mathorcup.q4_flowpath import execute_q4_path
+            from mathorcup.q4_solver import execute_q4_solver
+            route=execute_q4_path(ctx,allow_provisional=not args.strict_route)
+            execute_q4_solver(ctx,route)
+            from mathorcup.q4_grid_review import execute_q4_grid_review
+            execute_q4_grid_review(ctx,route)
         from mathorcup.q4_cascade_reconstruction import execute_cascade_reconstruction
         upper,lower,reconstruction=execute_cascade_reconstruction(ctx)
         from mathorcup.q4_diagnostics import plot_review_diagnostics
         plot_review_diagnostics(ctx,upper,lower,reconstruction)
-        from mathorcup.q3_spatial_footprint import execute_q3_spatial
-        execute_q3_spatial(ctx)
+        if args.reference_experiments:
+            from mathorcup.q3_spatial_footprint import execute_q3_spatial
+            execute_q3_spatial(ctx)
         if args.stage=='q4':
             from mathorcup.publication_assets import make_publication_assets
             make_publication_assets(ctx)

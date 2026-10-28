@@ -1,0 +1,747 @@
+{
+  "figure": "q4/Q4_07_parameter_sensitivity.png",
+  "title": "泥石流动力学参数敏感性分析",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "a  最大传播距离",
+      "xlabel": "参数相对基线变化 (%)",
+      "ylabel": "最大传播距离 (km)",
+      "xlim": [
+        -53.66666666666667,
+        247.0
+      ],
+      "ylim": [
+        8.403,
+        22.857
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "库仑摩擦 μ",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#205C92",
+          "linestyle": "-",
+          "marker": "o",
+          "linewidth": 1.7,
+          "alpha": null
+        },
+        {
+          "series_id": "L002",
+          "label": "湍流阻力 ξ",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#DA783F",
+          "linestyle": "-",
+          "marker": "o",
+          "linewidth": 1.7,
+          "alpha": null
+        },
+        {
+          "series_id": "L003",
+          "label": "初始释放方量 V",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#248F81",
+          "linestyle": "-",
+          "marker": "o",
+          "linewidth": 1.7,
+          "alpha": null
+        },
+        {
+          "series_id": "L004",
+          "label": "沟道等效宽度 W",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#9276A5",
+          "linestyle": "-",
+          "marker": "o",
+          "linewidth": 1.7,
+          "alpha": null
+        },
+        {
+          "series_id": "L005",
+          "label": "释放历时 T",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#C7AA41",
+          "linestyle": "-",
+          "marker": "o",
+          "linewidth": 1.7,
+          "alpha": null
+        },
+        {
+          "series_id": "L006",
+          "label": "初始速度 u0",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#587A89",
+          "linestyle": "-",
+          "marker": "o",
+          "linewidth": 1.7,
+          "alpha": null
+        },
+        {
+          "series_id": "L007",
+          "label": "下游断面距离",
+          "x_space": "axes_fraction",
+          "y_space": "data",
+          "color": "#333333",
+          "linestyle": "--",
+          "marker": "None",
+          "linewidth": 1.2,
+          "alpha": null
+        },
+        {
+          "series_id": "L008",
+          "label": "_child7",
+          "x_space": "data",
+          "y_space": "axes_fraction",
+          "color": "#8C919A",
+          "linestyle": ":",
+          "marker": "None",
+          "linewidth": 1.0,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [],
+      "patches": []
+    },
+    {
+      "axis": "A02",
+      "title": "b  最大流深",
+      "xlabel": "参数相对基线变化 (%)",
+      "ylabel": "全时段最大等效流深 (m)",
+      "xlim": [
+        -53.66666666666667,
+        247.0
+      ],
+      "ylim": [
+        117.71617420398385,
+        210.89539088776885
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "库仑摩擦 μ",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#205C92",
+          "linestyle": "-",
+          "marker": "o",
+          "linewidth": 1.7,
+          "alpha": null
+        },
+        {
+          "series_id": "L002",
+          "label": "湍流阻力 ξ",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#DA783F",
+          "linestyle": "-",
+          "marker": "o",
+          "linewidth": 1.7,
+          "alpha": null
+        },
+        {
+          "series_id": "L003",
+          "label": "初始释放方量 V",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#248F81",
+          "linestyle": "-",
+          "marker": "o",
+          "linewidth": 1.7,
+          "alpha": null
+        },
+        {
+          "series_id": "L004",
+          "label": "沟道等效宽度 W",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#9276A5",
+          "linestyle": "-",
+          "marker": "o",
+          "linewidth": 1.7,
+          "alpha": null
+        },
+        {
+          "series_id": "L005",
+          "label": "释放历时 T",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#C7AA41",
+          "linestyle": "-",
+          "marker": "o",
+          "linewidth": 1.7,
+          "alpha": null
+        },
+        {
+          "series_id": "L006",
+          "label": "初始速度 u0",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#587A89",
+          "linestyle": "-",
+          "marker": "o",
+          "linewidth": 1.7,
+          "alpha": null
+        },
+        {
+          "series_id": "L007",
+          "label": "_child6",
+          "x_space": "data",
+          "y_space": "axes_fraction",
+          "color": "#8C919A",
+          "linestyle": ":",
+          "marker": "None",
+          "linewidth": 1.0,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [],
+      "patches": []
+    },
+    {
+      "axis": "A03",
+      "title": "c  下游首次到达时间",
+      "xlabel": "参数相对基线变化 (%)",
+      "ylabel": "下游首次到达时间 (min)",
+      "xlim": [
+        -53.66666666666667,
+        247.0
+      ],
+      "ylim": [
+        6.355659182172554,
+        25.16549439137869
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_child12",
+          "x_space": "data",
+          "y_space": "axes_fraction",
+          "color": "#8C919A",
+          "linestyle": ":",
+          "marker": "None",
+          "linewidth": 1.0,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [
+        {
+          "collection_id": "C001",
+          "type": "PathCollection",
+          "label": "_child0",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": null,
+          "marker_role": "actual_arrival_time",
+          "varied_parameter": "mu"
+        },
+        {
+          "collection_id": "C002",
+          "type": "PathCollection",
+          "label": "_child1",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": null,
+          "marker_role": "symbolic_nonarrival",
+          "varied_parameter": "mu"
+        },
+        {
+          "collection_id": "C003",
+          "type": "PathCollection",
+          "label": "_child2",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": null,
+          "marker_role": "actual_arrival_time",
+          "varied_parameter": "xi"
+        },
+        {
+          "collection_id": "C004",
+          "type": "PathCollection",
+          "label": "_child3",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": null,
+          "marker_role": "symbolic_nonarrival",
+          "varied_parameter": "xi"
+        },
+        {
+          "collection_id": "C005",
+          "type": "PathCollection",
+          "label": "_child4",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": null,
+          "marker_role": "actual_arrival_time",
+          "varied_parameter": "volume"
+        },
+        {
+          "collection_id": "C006",
+          "type": "PathCollection",
+          "label": "_child5",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": null,
+          "marker_role": "symbolic_nonarrival",
+          "varied_parameter": "volume"
+        },
+        {
+          "collection_id": "C007",
+          "type": "PathCollection",
+          "label": "_child6",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": null,
+          "marker_role": "actual_arrival_time",
+          "varied_parameter": "width"
+        },
+        {
+          "collection_id": "C008",
+          "type": "PathCollection",
+          "label": "_child7",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": null,
+          "marker_role": "symbolic_nonarrival",
+          "varied_parameter": "width"
+        },
+        {
+          "collection_id": "C009",
+          "type": "PathCollection",
+          "label": "_child8",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": null,
+          "marker_role": "actual_arrival_time",
+          "varied_parameter": "duration"
+        },
+        {
+          "collection_id": "C010",
+          "type": "PathCollection",
+          "label": "_child9",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": null,
+          "marker_role": "symbolic_nonarrival",
+          "varied_parameter": "duration"
+        },
+        {
+          "collection_id": "C011",
+          "type": "PathCollection",
+          "label": "_child10",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": null,
+          "marker_role": "actual_arrival_time",
+          "varied_parameter": "initial_velocity_m_s"
+        },
+        {
+          "collection_id": "C012",
+          "type": "PathCollection",
+          "label": "_child11",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": null,
+          "marker_role": "symbolic_nonarrival",
+          "varied_parameter": "initial_velocity_m_s"
+        }
+      ],
+      "patches": []
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 17,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 22,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A02_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 15,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 20,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A03_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 18,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A03_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 2,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A03_C001_scatter.csv",
+      "kind": "scatter_points",
+      "rows": 0,
+      "fields": [
+        "point_order",
+        "x",
+        "y",
+        "color_value",
+        "marker_size_pt2",
+        "red",
+        "green",
+        "blue",
+        "alpha"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A03_C002_scatter.csv",
+      "kind": "scatter_points",
+      "rows": 3,
+      "fields": [
+        "point_order",
+        "x",
+        "y",
+        "color_value",
+        "marker_size_pt2",
+        "red",
+        "green",
+        "blue",
+        "alpha"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A03_C003_scatter.csv",
+      "kind": "scatter_points",
+      "rows": 0,
+      "fields": [
+        "point_order",
+        "x",
+        "y",
+        "color_value",
+        "marker_size_pt2",
+        "red",
+        "green",
+        "blue",
+        "alpha"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A03_C004_scatter.csv",
+      "kind": "scatter_points",
+      "rows": 3,
+      "fields": [
+        "point_order",
+        "x",
+        "y",
+        "color_value",
+        "marker_size_pt2",
+        "red",
+        "green",
+        "blue",
+        "alpha"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A03_C005_scatter.csv",
+      "kind": "scatter_points",
+      "rows": 1,
+      "fields": [
+        "point_order",
+        "x",
+        "y",
+        "color_value",
+        "marker_size_pt2",
+        "red",
+        "green",
+        "blue",
+        "alpha"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A03_C006_scatter.csv",
+      "kind": "scatter_points",
+      "rows": 2,
+      "fields": [
+        "point_order",
+        "x",
+        "y",
+        "color_value",
+        "marker_size_pt2",
+        "red",
+        "green",
+        "blue",
+        "alpha"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A03_C007_scatter.csv",
+      "kind": "scatter_points",
+      "rows": 1,
+      "fields": [
+        "point_order",
+        "x",
+        "y",
+        "color_value",
+        "marker_size_pt2",
+        "red",
+        "green",
+        "blue",
+        "alpha"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A03_C008_scatter.csv",
+      "kind": "scatter_points",
+      "rows": 2,
+      "fields": [
+        "point_order",
+        "x",
+        "y",
+        "color_value",
+        "marker_size_pt2",
+        "red",
+        "green",
+        "blue",
+        "alpha"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A03_C009_scatter.csv",
+      "kind": "scatter_points",
+      "rows": 0,
+      "fields": [
+        "point_order",
+        "x",
+        "y",
+        "color_value",
+        "marker_size_pt2",
+        "red",
+        "green",
+        "blue",
+        "alpha"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A03_C010_scatter.csv",
+      "kind": "scatter_points",
+      "rows": 3,
+      "fields": [
+        "point_order",
+        "x",
+        "y",
+        "color_value",
+        "marker_size_pt2",
+        "red",
+        "green",
+        "blue",
+        "alpha"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A03_C011_scatter.csv",
+      "kind": "scatter_points",
+      "rows": 0,
+      "fields": [
+        "point_order",
+        "x",
+        "y",
+        "color_value",
+        "marker_size_pt2",
+        "red",
+        "green",
+        "blue",
+        "alpha"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A03_C012_scatter.csv",
+      "kind": "scatter_points",
+      "rows": 3,
+      "fields": [
+        "point_order",
+        "x",
+        "y",
+        "color_value",
+        "marker_size_pt2",
+        "red",
+        "green",
+        "blue",
+        "alpha"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A03_curves_wide_01.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L001"
+      ],
+      "axis": "A03",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    }
+  ],
+  "decorative_colorbars": [],
+  "warnings": [],
+  "arrival_marker_note": "symbolic_nonarrival的y只供重现叉号位置；真实到达时间见actual_arrival_time_min，保持空值",
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

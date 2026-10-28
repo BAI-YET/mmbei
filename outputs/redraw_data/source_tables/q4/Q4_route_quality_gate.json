@@ -1,0 +1,25 @@
+{
+  "route_status": "PROVISIONAL_UNVERIFIED_TOPOGRAPHIC_COST_PATH",
+  "q2_source_candidate_ice_region": {
+    "lon": 85.53789733396593,
+    "lat": 28.28643035286796,
+    "x": 356615.65934065933,
+    "y": 3129799.464285714,
+    "candidate_inventory_ice_volume_m3": 66060900.0,
+    "candidate_patch_area_km2": 0.6552,
+    "identification": "Q2 top-15% physical ice component centroid; candidate not observed rupture"
+  },
+  "destination_lonlat_provisional": [
+    85.38,
+    28.28
+  ],
+  "routing_method": "directed topographic path with uphill penalty (UNVERIFIED)",
+  "path_length_km": 22.241303012524067,
+  "path_start_elevation_m": 5244.509219434529,
+  "path_end_elevation_m": 1801.0174220873148,
+  "net_fall_m": 3443.491797347214,
+  "cumulative_uphill_m": 322.7596637865304,
+  "license_to_claim_physical_reconstruction": false,
+  "observed_2026_event_route_verified": false,
+  "note": "Source point taken as official glacier mask centroid; candidate corridor calculated from official DEM with an uphill penalty. Appropriate as competition working hypothesis, subject to remote-sensing refinement."
+}

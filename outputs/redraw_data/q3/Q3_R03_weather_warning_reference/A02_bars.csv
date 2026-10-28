@@ -1,0 +1,5 @@
+﻿patch_id,label,x,y,width,height,angle_degree,x_space,y_space
+P001,_nolegend_,-0.4,0,0.8,62,0.0,artist_transform,artist_transform
+P002,_nolegend_,0.6,0,0.8,21,0.0,artist_transform,artist_transform
+P003,_nolegend_,1.6,0,0.8,8,0.0,artist_transform,artist_transform
+P004,_nolegend_,2.6,0,0.8,60,0.0,artist_transform,artist_transform

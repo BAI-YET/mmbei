@@ -1,0 +1,4 @@
+temporal_resolution_h,fraction_of_time_trigger_index_ge_0p5,fraction_of_time_rain_gate_positive,n_valid_records
+1,0.44583333333333336,0.0763888888888889,720
+6,0.45,0.075,120
+24,0.4666666666666667,0.06666666666666667,30

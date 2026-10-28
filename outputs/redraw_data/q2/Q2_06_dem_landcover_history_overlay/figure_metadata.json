@@ -1,0 +1,348 @@
+{
+  "figure": "q2/Q2_06_dem_landcover_history_overlay.png",
+  "title": "",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "地形高程与历史灾点空间分布",
+      "xlabel": "经度 (°E)",
+      "ylabel": "纬度 (°N)",
+      "xlim": [
+        84.36541622371979,
+        86.24364294142865
+      ],
+      "ylim": [
+        28.24553450979829,
+        29.375520339422735
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [],
+      "rasters": [
+        {
+          "image_id": "I001",
+          "raster_id": "4a4758e1ae5c8ef3094d",
+          "shared_data": "shared_rasters/4a4758e1ae5c8ef3094d",
+          "shape": [
+            287,
+            454
+          ],
+          "extent": [
+            85.18975577464204,
+            85.69414381661034,
+            28.24553450979829,
+            28.564382284579324
+          ],
+          "origin": "upper",
+          "coordinates": "A01_I001_coordinates.csv",
+          "cmap": "terrain",
+          "norm": "Normalize",
+          "vmin": 2711.207763671875,
+          "vmax": 6248.28076171875,
+          "alpha": null,
+          "interpolation": "auto",
+          "raw_coordinate_unit": "degrees",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": "EPSG:4326",
+          "GeoTIFF": "A01_I001_georeferenced.tif",
+          "quantity": "地形高程",
+          "value_unit": "m",
+          "GeoTIFF_display": "A01_I001_georeferenced_display.tif"
+        }
+      ],
+      "collections": [
+        {
+          "collection_id": "C001",
+          "type": "LineCollection",
+          "label": "_child1",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": null
+        },
+        {
+          "collection_id": "C002",
+          "type": "PathCollection",
+          "label": "_child2",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": 0.8
+        }
+      ],
+      "patches": []
+    },
+    {
+      "axis": "A02",
+      "title": "土地覆盖类型及行政边界分布",
+      "xlabel": "经度 (°E)",
+      "ylabel": "纬度 (°N)",
+      "xlim": [
+        84.36541622371979,
+        86.24364294142865
+      ],
+      "ylim": [
+        28.24553450979829,
+        29.375520339422735
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [],
+      "rasters": [
+        {
+          "image_id": "I001",
+          "raster_id": "3b3a137ee26b4efec45c",
+          "shared_data": "shared_rasters/3b3a137ee26b4efec45c",
+          "shape": [
+            287,
+            454
+          ],
+          "extent": [
+            85.18975577464204,
+            85.69414381661034,
+            28.24553450979829,
+            28.564382284579324
+          ],
+          "origin": "upper",
+          "coordinates": "A02_I001_coordinates.csv",
+          "cmap": "tab20",
+          "norm": "Normalize",
+          "vmin": 1.0,
+          "vmax": 10.0,
+          "alpha": null,
+          "interpolation": "nearest",
+          "raw_coordinate_unit": "degrees",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": "EPSG:4326",
+          "colorbar_label": "官方土地覆盖类别码（此处不臆测类别名称）",
+          "GeoTIFF": "A02_I001_georeferenced.tif",
+          "quantity": "土地覆盖类别码",
+          "value_unit": "整数类别；类别名称未核实",
+          "GeoTIFF_display": "A02_I001_georeferenced_display.tif"
+        }
+      ],
+      "collections": [
+        {
+          "collection_id": "C001",
+          "type": "LineCollection",
+          "label": "_child1",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": null
+        },
+        {
+          "collection_id": "C002",
+          "type": "PathCollection",
+          "label": "_child2",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": 0.8
+        }
+      ],
+      "patches": []
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 16,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_C001_paths.csv",
+      "kind": "contours_polygons_and_intervals",
+      "rows": 3148,
+      "fields": [
+        "path_id",
+        "vertex_order",
+        "path_code",
+        "x",
+        "y"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_C002_scatter.csv",
+      "kind": "scatter_points",
+      "rows": 84,
+      "fields": [
+        "point_order",
+        "x",
+        "y",
+        "color_value",
+        "marker_size_pt2",
+        "red",
+        "green",
+        "blue",
+        "alpha"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I001_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 454,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I001_georeferenced.tif",
+      "kind": "georeferenced_full_raster",
+      "rows": 130298,
+      "fields": [
+        "raster_values"
+      ],
+      "axis": "A01",
+      "note": "original numeric values; display mask is a separate file"
+    },
+    {
+      "file": "shared_rasters/4a4758e1ae5c8ef3094d/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 130298,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A02_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 13,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_C001_paths.csv",
+      "kind": "contours_polygons_and_intervals",
+      "rows": 3148,
+      "fields": [
+        "path_id",
+        "vertex_order",
+        "path_code",
+        "x",
+        "y"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_C002_scatter.csv",
+      "kind": "scatter_points",
+      "rows": 84,
+      "fields": [
+        "point_order",
+        "x",
+        "y",
+        "color_value",
+        "marker_size_pt2",
+        "red",
+        "green",
+        "blue",
+        "alpha"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_I001_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 454,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_I001_georeferenced.tif",
+      "kind": "georeferenced_full_raster",
+      "rows": 130298,
+      "fields": [
+        "raster_values"
+      ],
+      "axis": "A02",
+      "note": "original numeric values; display mask is a separate file"
+    },
+    {
+      "file": "shared_rasters/3b3a137ee26b4efec45c/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 130298,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A02",
+      "note": ""
+    }
+  ],
+  "decorative_colorbars": [
+    {
+      "label": "官方土地覆盖类别码（此处不臆测类别名称）",
+      "ticks": [
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.0,
+        10.0
+      ],
+      "vmin": 1.0,
+      "vmax": 10.0,
+      "norm": "Normalize"
+    }
+  ],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

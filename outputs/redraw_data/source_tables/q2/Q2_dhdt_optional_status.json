@@ -1,0 +1,10 @@
+{
+  "status": "USED_OFFICIAL_FOUR_EPOCH_TILES",
+  "epochs_found": [
+    "2000-01-01_2005-01-01",
+    "2005-01-01_2010-01-01",
+    "2010-01-01_2015-01-01",
+    "2015-01-01_2020-01-01"
+  ],
+  "each_epoch_is_longterm_change_not_2026_instantaneous_ice_acceleration": true
+}

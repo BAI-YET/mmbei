@@ -1,0 +1,7 @@
+{
+  "stress_formula": "rho_ice*g*H*sin(theta)",
+  "ice_density_assumed_kg_m3": 900,
+  "glacier_velocity_time": "2014-2024 climatological velocity, NOT live 2026",
+  "stress_is_failure_probability": false,
+  "released_fraction_identified_from_data": false
+}

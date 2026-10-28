@@ -1,0 +1,238 @@
+{
+  "figure": "q2/Q2_14_landcover_2020_2023_comparison.png",
+  "title": "2020年与2023年土地覆盖对比",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "2020年土地覆盖",
+      "xlabel": "",
+      "ylabel": "",
+      "xlim": [
+        -0.5,
+        453.5
+      ],
+      "ylim": [
+        286.5,
+        -0.5
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": true,
+      "lines": [],
+      "rasters": [
+        {
+          "image_id": "I001",
+          "raster_id": "750c75a492e76bde2b68",
+          "shared_data": "shared_rasters/750c75a492e76bde2b68",
+          "shape": [
+            287,
+            454
+          ],
+          "extent": [
+            -0.5,
+            453.5,
+            286.5,
+            -0.5
+          ],
+          "origin": "upper",
+          "coordinates": "A01_I001_coordinates.csv",
+          "cmap": "tab20",
+          "norm": "Normalize",
+          "vmin": 1.0,
+          "vmax": 10.0,
+          "alpha": null,
+          "interpolation": "nearest",
+          "raw_coordinate_unit": "plot_axis_units",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": null,
+          "quantity": "土地覆盖类别码",
+          "value_unit": "整数类别；0为无效覆盖",
+          "GeoTIFF_native": "A01_I001_native_GIS.tif",
+          "GIS_crs_native": "EPSG:4326",
+          "GIS_native_transform": [
+            0.0011109868765821537,
+            0.0,
+            85.18975577464204,
+            0.0,
+            -0.001110967856379909,
+            28.564382284579324
+          ],
+          "GIS_note": "坐标来自实际建模栅格，原图像素坐标保留在coordinates.csv",
+          "GeoTIFF_native_display": "A01_I001_native_GIS_display.tif"
+        }
+      ],
+      "collections": [],
+      "patches": []
+    },
+    {
+      "axis": "A02",
+      "title": "2023年土地覆盖",
+      "xlabel": "",
+      "ylabel": "",
+      "xlim": [
+        -0.5,
+        453.5
+      ],
+      "ylim": [
+        286.5,
+        -0.5
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": true,
+      "lines": [],
+      "rasters": [
+        {
+          "image_id": "I001",
+          "raster_id": "3b3a137ee26b4efec45c",
+          "shared_data": "shared_rasters/3b3a137ee26b4efec45c",
+          "shape": [
+            287,
+            454
+          ],
+          "extent": [
+            -0.5,
+            453.5,
+            286.5,
+            -0.5
+          ],
+          "origin": "upper",
+          "coordinates": "A02_I001_coordinates.csv",
+          "cmap": "tab20",
+          "norm": "Normalize",
+          "vmin": 1.0,
+          "vmax": 10.0,
+          "alpha": null,
+          "interpolation": "nearest",
+          "raw_coordinate_unit": "plot_axis_units",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": null,
+          "colorbar_label": "官方土地覆盖类别码",
+          "quantity": "土地覆盖类别码",
+          "value_unit": "整数类别；0为无效覆盖",
+          "GeoTIFF_native": "A02_I001_native_GIS.tif",
+          "GIS_crs_native": "EPSG:4326",
+          "GIS_native_transform": [
+            0.0011109868765821537,
+            0.0,
+            85.18975577464204,
+            0.0,
+            -0.001110967856379909,
+            28.564382284579324
+          ],
+          "GIS_note": "坐标来自实际建模栅格，原图像素坐标保留在coordinates.csv",
+          "GeoTIFF_native_display": "A02_I001_native_GIS_display.tif"
+        }
+      ],
+      "collections": [],
+      "patches": []
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 0,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I001_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 454,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "shared_rasters/750c75a492e76bde2b68/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 130298,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A02_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 0,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_I001_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 454,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "shared_rasters/3b3a137ee26b4efec45c/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 130298,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A02",
+      "note": ""
+    }
+  ],
+  "decorative_colorbars": [
+    {
+      "label": "官方土地覆盖类别码",
+      "ticks": [
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.0,
+        10.0
+      ],
+      "vmin": 1.0,
+      "vmax": 10.0,
+      "norm": "Normalize"
+    }
+  ],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

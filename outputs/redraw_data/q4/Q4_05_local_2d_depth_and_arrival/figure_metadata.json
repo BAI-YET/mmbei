@@ -1,0 +1,574 @@
+{
+  "figure": "q4/Q4_05_local_2d_depth_and_arrival.png",
+  "title": "泥石流二维最大流深与到达时间",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "最大流深",
+      "xlabel": "UTM45N 东向坐标 (km)",
+      "ylabel": "UTM45N 北向坐标 (km)",
+      "xlim": [
+        340609.38078397507,
+        343489.38078397507
+      ],
+      "ylim": [
+        3128756.3149458314,
+        3131036.3149458314
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_child2",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#2F6477",
+          "linestyle": "None",
+          "marker": "^",
+          "linewidth": 1.5,
+          "alpha": null
+        }
+      ],
+      "rasters": [
+        {
+          "image_id": "I001",
+          "raster_id": "9cc1c0251b25929c5a6a",
+          "shared_data": "shared_rasters/9cc1c0251b25929c5a6a",
+          "shape": [
+            38,
+            48
+          ],
+          "extent": [
+            340609.38078397507,
+            343489.38078397507,
+            3128756.3149458314,
+            3131036.3149458314
+          ],
+          "origin": "upper",
+          "coordinates": "A01_I001_coordinates.csv",
+          "cmap": "Greys_r",
+          "norm": "Normalize",
+          "vmin": 1785.6544580078125,
+          "vmax": 2906.7533056640623,
+          "alpha": 0.52,
+          "interpolation": "bilinear",
+          "raw_coordinate_unit": "m",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": "EPSG:32645",
+          "GeoTIFF": "A01_I001_georeferenced.tif",
+          "quantity": "地形高程底图",
+          "value_unit": "m",
+          "GeoTIFF_display": "A01_I001_georeferenced_display.tif"
+        },
+        {
+          "image_id": "I002",
+          "raster_id": "581c765544de01cd7678",
+          "shared_data": "shared_rasters/581c765544de01cd7678",
+          "shape": [
+            38,
+            48
+          ],
+          "extent": [
+            340609.38078397507,
+            343489.38078397507,
+            3128756.3149458314,
+            3131036.3149458314
+          ],
+          "origin": "upper",
+          "coordinates": "A01_I002_coordinates.csv",
+          "cmap": "gray",
+          "norm": "Normalize",
+          "vmin": 0.75,
+          "vmax": 1.0,
+          "alpha": 0.43,
+          "interpolation": "bilinear",
+          "raw_coordinate_unit": "m",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": "EPSG:32645",
+          "GeoTIFF": "A01_I002_georeferenced.tif",
+          "quantity": "地形阴影底图",
+          "value_unit": "无量纲",
+          "GeoTIFF_display": "A01_I002_georeferenced_display.tif"
+        },
+        {
+          "image_id": "I003",
+          "raster_id": "68f15d8314fd9c3c86a5",
+          "shared_data": "shared_rasters/68f15d8314fd9c3c86a5",
+          "shape": [
+            38,
+            48
+          ],
+          "extent": [
+            340609.38078397507,
+            343489.38078397507,
+            3128756.3149458314,
+            3131036.3149458314
+          ],
+          "origin": "upper",
+          "coordinates": "A01_I003_coordinates.csv",
+          "cmap": "inferno",
+          "norm": "LogNorm",
+          "vmin": 0.2,
+          "vmax": 47.746065935730236,
+          "alpha": 0.91,
+          "interpolation": "nearest",
+          "raw_coordinate_unit": "m",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": "EPSG:32645",
+          "colorbar_label": "最大流深 (m，按对数色标)",
+          "GeoTIFF": "A01_I003_georeferenced.tif",
+          "quantity": "全时段最大流深",
+          "value_unit": "m",
+          "GeoTIFF_display": "A01_I003_georeferenced_display.tif"
+        }
+      ],
+      "collections": [],
+      "patches": []
+    },
+    {
+      "axis": "A02",
+      "title": "首次淹没时间",
+      "xlabel": "UTM45N 东向坐标 (km)",
+      "ylabel": "UTM45N 北向坐标 (km)",
+      "xlim": [
+        340609.38078397507,
+        343489.38078397507
+      ],
+      "ylim": [
+        3128756.3149458314,
+        3131036.3149458314
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_child2",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#2F6477",
+          "linestyle": "None",
+          "marker": "^",
+          "linewidth": 1.5,
+          "alpha": null
+        }
+      ],
+      "rasters": [
+        {
+          "image_id": "I001",
+          "raster_id": "9cc1c0251b25929c5a6a",
+          "shared_data": "shared_rasters/9cc1c0251b25929c5a6a",
+          "shape": [
+            38,
+            48
+          ],
+          "extent": [
+            340609.38078397507,
+            343489.38078397507,
+            3128756.3149458314,
+            3131036.3149458314
+          ],
+          "origin": "upper",
+          "coordinates": "A02_I001_coordinates.csv",
+          "cmap": "Greys_r",
+          "norm": "Normalize",
+          "vmin": 1785.6544580078125,
+          "vmax": 2906.7533056640623,
+          "alpha": 0.52,
+          "interpolation": "bilinear",
+          "raw_coordinate_unit": "m",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": "EPSG:32645",
+          "GeoTIFF": "A02_I001_georeferenced.tif",
+          "quantity": "地形高程底图",
+          "value_unit": "m",
+          "GeoTIFF_display": "A02_I001_georeferenced_display.tif"
+        },
+        {
+          "image_id": "I002",
+          "raster_id": "581c765544de01cd7678",
+          "shared_data": "shared_rasters/581c765544de01cd7678",
+          "shape": [
+            38,
+            48
+          ],
+          "extent": [
+            340609.38078397507,
+            343489.38078397507,
+            3128756.3149458314,
+            3131036.3149458314
+          ],
+          "origin": "upper",
+          "coordinates": "A02_I002_coordinates.csv",
+          "cmap": "gray",
+          "norm": "Normalize",
+          "vmin": 0.75,
+          "vmax": 1.0,
+          "alpha": 0.43,
+          "interpolation": "bilinear",
+          "raw_coordinate_unit": "m",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": "EPSG:32645",
+          "GeoTIFF": "A02_I002_georeferenced.tif",
+          "quantity": "地形阴影底图",
+          "value_unit": "无量纲",
+          "GeoTIFF_display": "A02_I002_georeferenced_display.tif"
+        },
+        {
+          "image_id": "I003",
+          "raster_id": "b5600d25eef713ec1361",
+          "shared_data": "shared_rasters/b5600d25eef713ec1361",
+          "shape": [
+            38,
+            48
+          ],
+          "extent": [
+            340609.38078397507,
+            343489.38078397507,
+            3128756.3149458314,
+            3131036.3149458314
+          ],
+          "origin": "upper",
+          "coordinates": "A02_I003_coordinates.csv",
+          "cmap": "cividis",
+          "norm": "Normalize",
+          "vmin": 6.061856941313372,
+          "vmax": 29.18463173631824,
+          "alpha": 0.87,
+          "interpolation": "nearest",
+          "raw_coordinate_unit": "m",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": "EPSG:32645",
+          "colorbar_label": "相对源区释放的分钟数 (min)",
+          "GeoTIFF": "A02_I003_georeferenced.tif",
+          "quantity": "首次达到湿润阈值的时间",
+          "value_unit": "min，相对源区释放",
+          "GeoTIFF_display": "A02_I003_georeferenced_display.tif"
+        }
+      ],
+      "collections": [],
+      "patches": []
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 14,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 1,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I001_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 48,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I001_georeferenced.tif",
+      "kind": "georeferenced_full_raster",
+      "rows": 1824,
+      "fields": [
+        "raster_values"
+      ],
+      "axis": "A01",
+      "note": "original numeric values; display mask is a separate file"
+    },
+    {
+      "file": "shared_rasters/9cc1c0251b25929c5a6a/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 1824,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I002_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 48,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I002_georeferenced.tif",
+      "kind": "georeferenced_full_raster",
+      "rows": 1824,
+      "fields": [
+        "raster_values"
+      ],
+      "axis": "A01",
+      "note": "original numeric values; display mask is a separate file"
+    },
+    {
+      "file": "shared_rasters/581c765544de01cd7678/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 1824,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I003_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 48,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I003_georeferenced.tif",
+      "kind": "georeferenced_full_raster",
+      "rows": 1824,
+      "fields": [
+        "raster_values"
+      ],
+      "axis": "A01",
+      "note": "original numeric values; display mask is a separate file"
+    },
+    {
+      "file": "shared_rasters/68f15d8314fd9c3c86a5/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 1824,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A02_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 14,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 1,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_I001_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 48,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_I001_georeferenced.tif",
+      "kind": "georeferenced_full_raster",
+      "rows": 1824,
+      "fields": [
+        "raster_values"
+      ],
+      "axis": "A02",
+      "note": "original numeric values; display mask is a separate file"
+    },
+    {
+      "file": "shared_rasters/9cc1c0251b25929c5a6a/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 1824,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_I002_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 48,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_I002_georeferenced.tif",
+      "kind": "georeferenced_full_raster",
+      "rows": 1824,
+      "fields": [
+        "raster_values"
+      ],
+      "axis": "A02",
+      "note": "original numeric values; display mask is a separate file"
+    },
+    {
+      "file": "shared_rasters/581c765544de01cd7678/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 1824,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_I003_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 48,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_I003_georeferenced.tif",
+      "kind": "georeferenced_full_raster",
+      "rows": 1824,
+      "fields": [
+        "raster_values"
+      ],
+      "axis": "A02",
+      "note": "original numeric values; display mask is a separate file"
+    },
+    {
+      "file": "shared_rasters/b5600d25eef713ec1361/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 1824,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_curves_wide_01.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 1,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L001"
+      ],
+      "axis": "A02",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    }
+  ],
+  "decorative_colorbars": [
+    {
+      "label": "最大流深 (m，按对数色标)",
+      "ticks": [
+        0.01,
+        0.1,
+        1.0,
+        10.0,
+        100.0,
+        1000.0
+      ],
+      "vmin": 0.2,
+      "vmax": 47.746065935730236,
+      "norm": "LogNorm"
+    },
+    {
+      "label": "相对源区释放的分钟数 (min)",
+      "ticks": [
+        5.0,
+        10.0,
+        15.0,
+        20.0,
+        25.0,
+        30.0
+      ],
+      "vmin": 6.061856941313372,
+      "vmax": 29.18463173631824,
+      "norm": "Normalize"
+    }
+  ],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

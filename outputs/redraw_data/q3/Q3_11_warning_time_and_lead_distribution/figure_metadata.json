@@ -1,0 +1,366 @@
+{
+  "figure": "q3/Q3_11_warning_time_and_lead_distribution.png",
+  "title": "",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "a  前问结果进入后问",
+      "xlabel": "由Q1关联评分归一化的设计权重",
+      "ylabel": "",
+      "xlim": [
+        0.0,
+        0.25668233788212486
+      ],
+      "ylim": [
+        -0.6400000000000001,
+        4.640000000000001
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [],
+      "rasters": [],
+      "collections": [],
+      "patches": [
+        {
+          "patch_id": "P001",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.12549019607843137,
+            0.3607843137254902,
+            0.5725490196078431,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P002",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.12549019607843137,
+            0.3607843137254902,
+            0.5725490196078431,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P003",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.12549019607843137,
+            0.3607843137254902,
+            0.5725490196078431,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P004",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.12549019607843137,
+            0.3607843137254902,
+            0.5725490196078431,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P005",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.12549019607843137,
+            0.3607843137254902,
+            0.5725490196078431,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        }
+      ]
+    },
+    {
+      "axis": "A02",
+      "title": "b  发布前最新观测的贡献",
+      "xlabel": "当前异常调制项的加权分量",
+      "ylabel": "",
+      "xlim": [
+        0.0,
+        0.12569588505358095
+      ],
+      "ylim": [
+        -0.6400000000000001,
+        4.640000000000001
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [],
+      "rasters": [],
+      "collections": [],
+      "patches": [
+        {
+          "patch_id": "P001",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.1411764705882353,
+            0.5607843137254902,
+            0.5058823529411764,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P002",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.1411764705882353,
+            0.5607843137254902,
+            0.5058823529411764,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P003",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.1411764705882353,
+            0.5607843137254902,
+            0.5058823529411764,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P004",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.1411764705882353,
+            0.5607843137254902,
+            0.5058823529411764,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P005",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.1411764705882353,
+            0.5607843137254902,
+            0.5058823529411764,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        }
+      ]
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 12,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_bars.csv",
+      "kind": "bars_histogram_bins_and_spans",
+      "rows": 5,
+      "fields": [
+        "patch_id",
+        "label",
+        "x",
+        "y",
+        "width",
+        "height",
+        "angle_degree",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": "height is bin count/density exactly used in original plot; y+height gives histogram top"
+    },
+    {
+      "file": "A01_patch_vertices.csv",
+      "kind": "patch_vertices",
+      "rows": 25,
+      "fields": [
+        "patch_id",
+        "vertex_order",
+        "path_code",
+        "x_data",
+        "y_data"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A02_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 13,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_bars.csv",
+      "kind": "bars_histogram_bins_and_spans",
+      "rows": 5,
+      "fields": [
+        "patch_id",
+        "label",
+        "x",
+        "y",
+        "width",
+        "height",
+        "angle_degree",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A02",
+      "note": "height is bin count/density exactly used in original plot; y+height gives histogram top"
+    },
+    {
+      "file": "A02_patch_vertices.csv",
+      "kind": "patch_vertices",
+      "rows": 25,
+      "fields": [
+        "patch_id",
+        "vertex_order",
+        "path_code",
+        "x_data",
+        "y_data"
+      ],
+      "axis": "A02",
+      "note": ""
+    }
+  ],
+  "decorative_colorbars": [],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

@@ -1,0 +1,4 @@
+resolution_m,runout_km,arrival_min,max_depth_m,max_wet_velocity_m_s,mass_relative_error,topography_information
+30.0,14.7,,167.84744630730256,84.80060204615125,4.023313522338874e-15,same interpolated path; no new DEM information
+60.0,14.52,,168.60517730027695,74.71967383239581,1.6391277313232409e-15,same interpolated path; no new DEM information
+120.0,14.28,,151.6863901454025,65.0,0.0,same interpolated path; no new DEM information

@@ -1,0 +1,437 @@
+{
+  "figure": "q2/Q2_07_glacier_historic_thinning_optional.png",
+  "title": "冰川历史高程变化空间分布",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "2000–2005",
+      "xlabel": "",
+      "ylabel": "",
+      "xlim": [
+        -0.5,
+        144.5
+      ],
+      "ylim": [
+        137.5,
+        -0.5
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": true,
+      "lines": [],
+      "rasters": [
+        {
+          "image_id": "I001",
+          "raster_id": "66d090fc59918f830140",
+          "shared_data": "shared_rasters/66d090fc59918f830140",
+          "shape": [
+            138,
+            145
+          ],
+          "extent": [
+            -0.5,
+            144.5,
+            137.5,
+            -0.5
+          ],
+          "origin": "upper",
+          "coordinates": "A01_I001_coordinates.csv",
+          "cmap": "RdBu",
+          "norm": "Normalize",
+          "vmin": -2.2688000202178955,
+          "vmax": 2.2688000202178955,
+          "alpha": null,
+          "interpolation": "auto",
+          "raw_coordinate_unit": "plot_axis_units",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": null,
+          "quantity": "五年期冰川高程变化率",
+          "value_unit": "m/a",
+          "GeoTIFF_native": "A01_I001_native_GIS.tif",
+          "GIS_crs_native": "EPSG:32645",
+          "GIS_native_transform": [
+            30.0,
+            0.0,
+            353442.5,
+            0.0,
+            -30.0,
+            3132057.5
+          ],
+          "GIS_note": "坐标来自实际建模栅格，原图像素坐标保留在coordinates.csv",
+          "GeoTIFF_native_display": "A01_I001_native_GIS_display.tif"
+        }
+      ],
+      "collections": [],
+      "patches": []
+    },
+    {
+      "axis": "A02",
+      "title": "2005–2010",
+      "xlabel": "",
+      "ylabel": "",
+      "xlim": [
+        -0.5,
+        144.5
+      ],
+      "ylim": [
+        137.5,
+        -0.5
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": true,
+      "lines": [],
+      "rasters": [
+        {
+          "image_id": "I001",
+          "raster_id": "65dad24c4feffc50a2f5",
+          "shared_data": "shared_rasters/65dad24c4feffc50a2f5",
+          "shape": [
+            138,
+            145
+          ],
+          "extent": [
+            -0.5,
+            144.5,
+            137.5,
+            -0.5
+          ],
+          "origin": "upper",
+          "coordinates": "A02_I001_coordinates.csv",
+          "cmap": "RdBu",
+          "norm": "Normalize",
+          "vmin": -2.2688000202178955,
+          "vmax": 2.2688000202178955,
+          "alpha": null,
+          "interpolation": "auto",
+          "raw_coordinate_unit": "plot_axis_units",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": null,
+          "quantity": "五年期冰川高程变化率",
+          "value_unit": "m/a",
+          "GeoTIFF_native": "A02_I001_native_GIS.tif",
+          "GIS_crs_native": "EPSG:32645",
+          "GIS_native_transform": [
+            30.0,
+            0.0,
+            353442.5,
+            0.0,
+            -30.0,
+            3132057.5
+          ],
+          "GIS_note": "坐标来自实际建模栅格，原图像素坐标保留在coordinates.csv",
+          "GeoTIFF_native_display": "A02_I001_native_GIS_display.tif"
+        }
+      ],
+      "collections": [],
+      "patches": []
+    },
+    {
+      "axis": "A03",
+      "title": "2010–2015",
+      "xlabel": "",
+      "ylabel": "",
+      "xlim": [
+        -0.5,
+        144.5
+      ],
+      "ylim": [
+        137.5,
+        -0.5
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": true,
+      "lines": [],
+      "rasters": [
+        {
+          "image_id": "I001",
+          "raster_id": "13b88781f0284ab9040e",
+          "shared_data": "shared_rasters/13b88781f0284ab9040e",
+          "shape": [
+            138,
+            145
+          ],
+          "extent": [
+            -0.5,
+            144.5,
+            137.5,
+            -0.5
+          ],
+          "origin": "upper",
+          "coordinates": "A03_I001_coordinates.csv",
+          "cmap": "RdBu",
+          "norm": "Normalize",
+          "vmin": -2.2688000202178955,
+          "vmax": 2.2688000202178955,
+          "alpha": null,
+          "interpolation": "auto",
+          "raw_coordinate_unit": "plot_axis_units",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": null,
+          "quantity": "五年期冰川高程变化率",
+          "value_unit": "m/a",
+          "GeoTIFF_native": "A03_I001_native_GIS.tif",
+          "GIS_crs_native": "EPSG:32645",
+          "GIS_native_transform": [
+            30.0,
+            0.0,
+            353442.5,
+            0.0,
+            -30.0,
+            3132057.5
+          ],
+          "GIS_note": "坐标来自实际建模栅格，原图像素坐标保留在coordinates.csv",
+          "GeoTIFF_native_display": "A03_I001_native_GIS_display.tif"
+        }
+      ],
+      "collections": [],
+      "patches": []
+    },
+    {
+      "axis": "A04",
+      "title": "2015–2020",
+      "xlabel": "",
+      "ylabel": "",
+      "xlim": [
+        -0.5,
+        144.5
+      ],
+      "ylim": [
+        137.5,
+        -0.5
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": true,
+      "lines": [],
+      "rasters": [
+        {
+          "image_id": "I001",
+          "raster_id": "427b2e12eb41fe56a8b4",
+          "shared_data": "shared_rasters/427b2e12eb41fe56a8b4",
+          "shape": [
+            138,
+            145
+          ],
+          "extent": [
+            -0.5,
+            144.5,
+            137.5,
+            -0.5
+          ],
+          "origin": "upper",
+          "coordinates": "A04_I001_coordinates.csv",
+          "cmap": "RdBu",
+          "norm": "Normalize",
+          "vmin": -2.2688000202178955,
+          "vmax": 2.2688000202178955,
+          "alpha": null,
+          "interpolation": "auto",
+          "raw_coordinate_unit": "plot_axis_units",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": null,
+          "colorbar_label": "高程变化率 (m/a)",
+          "quantity": "五年期冰川高程变化率",
+          "value_unit": "m/a",
+          "GeoTIFF_native": "A04_I001_native_GIS.tif",
+          "GIS_crs_native": "EPSG:32645",
+          "GIS_native_transform": [
+            30.0,
+            0.0,
+            353442.5,
+            0.0,
+            -30.0,
+            3132057.5
+          ],
+          "GIS_note": "坐标来自实际建模栅格，原图像素坐标保留在coordinates.csv",
+          "GeoTIFF_native_display": "A04_I001_native_GIS_display.tif"
+        }
+      ],
+      "collections": [],
+      "patches": []
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 0,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I001_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 145,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "shared_rasters/66d090fc59918f830140/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 20010,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A02_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 0,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_I001_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 145,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "shared_rasters/65dad24c4feffc50a2f5/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 20010,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A03_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 0,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A03_I001_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 145,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "shared_rasters/13b88781f0284ab9040e/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 20010,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A04_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 0,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A04",
+      "note": ""
+    },
+    {
+      "file": "A04_I001_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 145,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A04",
+      "note": ""
+    },
+    {
+      "file": "shared_rasters/427b2e12eb41fe56a8b4/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 20010,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A04",
+      "note": ""
+    }
+  ],
+  "decorative_colorbars": [
+    {
+      "label": "高程变化率 (m/a)",
+      "ticks": [
+        -3.0,
+        -2.0,
+        -1.0,
+        0.0,
+        1.0,
+        2.0,
+        3.0
+      ],
+      "vmin": -2.2688000202178955,
+      "vmax": 2.2688000202178955,
+      "norm": "Normalize"
+    }
+  ],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

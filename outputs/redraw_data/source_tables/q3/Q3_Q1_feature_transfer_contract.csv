@@ -1,0 +1,6 @@
+feature,physical_group,available_in_Q3,included_as_anomaly_component,reason,used_by_primary_forward_model
+vpd,atmospheric_moisture,True,True,unique physical group,True
+temp_10m,air_temperature,True,True,unique physical group,True
+temp_20m,air_temperature,True,False,missing or redundant physical group,False
+energy_balance_residual,energy_balance_residual,True,True,unique physical group,True
+temp_2m,air_temperature,True,False,missing or redundant physical group,False

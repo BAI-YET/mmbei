@@ -1,0 +1,1257 @@
+{
+  "figure": "q2/Q2_16_all_predictor_distributions.png",
+  "title": "",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "全部五项历史沟谷判别变量的类别分布",
+      "xlabel": "",
+      "ylabel": "标准化变量（用于对比，不是失稳阈值）",
+      "xlim": [
+        -0.5,
+        13.3
+      ],
+      "ylim": [
+        -2.9995902550617175,
+        3.832001855951443
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L002",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L003",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L004",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L005",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "C1",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L006",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L007",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L008",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L009",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L010",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "C1",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L011",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L012",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L013",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L014",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L015",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "C1",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L016",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L017",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L018",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L019",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L020",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "C1",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L021",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L022",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L023",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L024",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L025",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "C1",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L027",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L028",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L029",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L030",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L031",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "C1",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L032",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L033",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L034",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L035",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L036",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "C1",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L037",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L038",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L039",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L040",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L041",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "C1",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L042",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L043",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L044",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L045",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L046",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "C1",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L047",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L048",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L049",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L050",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "black",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L051",
+          "label": "_nolegend_",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "C1",
+          "linestyle": "-",
+          "marker": "",
+          "linewidth": 1.0,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [],
+      "patches": [
+        {
+          "patch_id": "P001",
+          "label": "",
+          "type": "PathPatch",
+          "facecolor": [
+            0.12549019607843137,
+            0.3607843137254902,
+            0.5725490196078431,
+            0.65
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.65
+          ],
+          "alpha": 0.65,
+          "hatch": null,
+          "x_space": "data",
+          "y_space": "data"
+        },
+        {
+          "patch_id": "P002",
+          "label": "",
+          "type": "PathPatch",
+          "facecolor": [
+            0.12549019607843137,
+            0.3607843137254902,
+            0.5725490196078431,
+            0.65
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.65
+          ],
+          "alpha": 0.65,
+          "hatch": null,
+          "x_space": "data",
+          "y_space": "data"
+        },
+        {
+          "patch_id": "P003",
+          "label": "",
+          "type": "PathPatch",
+          "facecolor": [
+            0.12549019607843137,
+            0.3607843137254902,
+            0.5725490196078431,
+            0.65
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.65
+          ],
+          "alpha": 0.65,
+          "hatch": null,
+          "x_space": "data",
+          "y_space": "data"
+        },
+        {
+          "patch_id": "P004",
+          "label": "",
+          "type": "PathPatch",
+          "facecolor": [
+            0.12549019607843137,
+            0.3607843137254902,
+            0.5725490196078431,
+            0.65
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.65
+          ],
+          "alpha": 0.65,
+          "hatch": null,
+          "x_space": "data",
+          "y_space": "data"
+        },
+        {
+          "patch_id": "P005",
+          "label": "",
+          "type": "PathPatch",
+          "facecolor": [
+            0.12549019607843137,
+            0.3607843137254902,
+            0.5725490196078431,
+            0.65
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.65
+          ],
+          "alpha": 0.65,
+          "hatch": null,
+          "x_space": "data",
+          "y_space": "data"
+        },
+        {
+          "patch_id": "P006",
+          "label": "",
+          "type": "PathPatch",
+          "facecolor": [
+            0.8549019607843137,
+            0.47058823529411764,
+            0.24705882352941178,
+            0.65
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.65
+          ],
+          "alpha": 0.65,
+          "hatch": null,
+          "x_space": "data",
+          "y_space": "data"
+        },
+        {
+          "patch_id": "P007",
+          "label": "",
+          "type": "PathPatch",
+          "facecolor": [
+            0.8549019607843137,
+            0.47058823529411764,
+            0.24705882352941178,
+            0.65
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.65
+          ],
+          "alpha": 0.65,
+          "hatch": null,
+          "x_space": "data",
+          "y_space": "data"
+        },
+        {
+          "patch_id": "P008",
+          "label": "",
+          "type": "PathPatch",
+          "facecolor": [
+            0.8549019607843137,
+            0.47058823529411764,
+            0.24705882352941178,
+            0.65
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.65
+          ],
+          "alpha": 0.65,
+          "hatch": null,
+          "x_space": "data",
+          "y_space": "data"
+        },
+        {
+          "patch_id": "P009",
+          "label": "",
+          "type": "PathPatch",
+          "facecolor": [
+            0.8549019607843137,
+            0.47058823529411764,
+            0.24705882352941178,
+            0.65
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.65
+          ],
+          "alpha": 0.65,
+          "hatch": null,
+          "x_space": "data",
+          "y_space": "data"
+        },
+        {
+          "patch_id": "P010",
+          "label": "",
+          "type": "PathPatch",
+          "facecolor": [
+            0.8549019607843137,
+            0.47058823529411764,
+            0.24705882352941178,
+            0.65
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.65
+          ],
+          "alpha": 0.65,
+          "hatch": null,
+          "x_space": "data",
+          "y_space": "data"
+        }
+      ]
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 13,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 100,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_patch_vertices.csv",
+      "kind": "patch_vertices",
+      "rows": 60,
+      "fields": [
+        "patch_id",
+        "vertex_order",
+        "path_code",
+        "x_data",
+        "y_data"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_curves_wide_01.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L001",
+        "y_L002"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_02.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L003",
+        "y_L004"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_03.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L005"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_04.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L006",
+        "y_L007"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_05.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L008",
+        "y_L009"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_06.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L010"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_07.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L011",
+        "y_L012"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_08.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L013",
+        "y_L014"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_09.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L015"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_10.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L016",
+        "y_L017"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_11.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L018",
+        "y_L019"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_12.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L020"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_13.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L021",
+        "y_L022"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_14.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L023",
+        "y_L024"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_15.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L025"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_16.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L027",
+        "y_L028"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_17.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L029",
+        "y_L030"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_18.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L031"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_19.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L032",
+        "y_L033"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_20.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L034",
+        "y_L035"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_21.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L036"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_22.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L037",
+        "y_L038"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_23.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L039",
+        "y_L040"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_24.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L041"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_25.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L042",
+        "y_L043"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_26.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L044",
+        "y_L045"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_27.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L046"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_28.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L047",
+        "y_L048"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_29.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L049",
+        "y_L050"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_30.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L051"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    }
+  ],
+  "decorative_colorbars": [],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

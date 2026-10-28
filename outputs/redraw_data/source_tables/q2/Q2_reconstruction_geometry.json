@@ -1,0 +1,47 @@
+{
+  "method": "priority-flood D8 drainage trace, clipped at nearest port-area river cell",
+  "source_lonlat": {
+    "value": [
+      85.53,
+      28.289
+    ],
+    "reference": "source_mapping"
+  },
+  "port_area_reference": {
+    "value": [
+      85.378056,
+      28.278667
+    ],
+    "reference": "port_photo"
+  },
+  "port_snap_distance_m": 73.53352625661337,
+  "length_m": 23715.0,
+  "drop_m": 3427.2787480493166,
+  "raw_uphill_sum_m": 465.3562766034529,
+  "drainage_fill_max_m": 109.507568359375,
+  "raw_DEM_used_for_dynamics": true,
+  "confluence_index": 563,
+  "confluence_distance_m": 8445.0,
+  "downstream_reach_length_m": 15270.0,
+  "source_pixels": 844,
+  "source_pixel_area_m2": 900.0,
+  "route_source_origin_utm_xy": [
+    356277.5,
+    3129852.5
+  ],
+  "source_origin_rule": "actual source pixel nearest centroid of upper elevation decile",
+  "release_projection_method": "nearest point on actual route in metric UTM-x/UTM-y/elevation space",
+  "selected_source_mean_elevation_m": 5132.0390625,
+  "assigned_release_mean_bed_elevation_m": 5116.195236491512,
+  "release_projection_mean_abs_elevation_error_m": 29.26058287357299,
+  "projected_source_area_m2": 759600.0,
+  "section_reference_relief_m": 20,
+  "cross_section_model": "trapezoid fitted to connected DEM widths at 20 m and 60 m relative height",
+  "bank_side_slope_median": 1.6111177813260067,
+  "width_min_m": 30.0,
+  "width_median_m": 63.049998273531116,
+  "numerical_dx_m": 15,
+  "DEM_sampling_m": 30.0,
+  "geometry_contract_sha256": "29753a05f81c8d53974000eb01bfa1f2abcae67e0d893f026390b8449d0a3193",
+  "geometry_role": "fixed case-source assumption and static terrain, before time forecast or flow simulation"
+}

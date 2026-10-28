@@ -138,14 +138,53 @@ def complete_q2(ctx):
     return report
 
 
-def complete_q3(ctx):
-    out=ctx.folder('q3');report=json.loads((out/'Q3_primary_competition_answer.json').read_text())
+def complete_q3(ctx,report=None):
+    out=ctx.folder('q3')
+    if report is None:report=json.loads((out/'Q3_primary_competition_answer.json').read_text())
+    if report.get('model_family')=='Q2_conditioned_event_time':
+        answer={k:report[k] for k in ['forecast_target','conditional_95pct_interval_times_bjt',
+            'operational_warning_time_bjt','operational_warning_lead_h','case_reference_coverage',
+            'spatial_distance_range_km','inherited_Q1_features']}
+        write_json(out/'Q3_warning_lead_answer.json',answer)
+        contract=json.loads((ctx.folder('q2')/'Q2_sequential_model_contract.json').read_text())
+        components=pd.read_csv(ctx.folder('q2')/'Q2_Q1_feature_components.csv.gz',parse_dates=['time_bjt']).set_index('time_bjt')
+        current=components.loc[components.index<pd.Timestamp(report['prediction_issue_bjt'])].iloc[-1]
+        fig,axs=plt.subplots(1,2,figsize=(11.4,4.4),layout='constrained')
+        features=contract['Q1_features'];weights=np.array([contract['Q1_weights'][f] for f in features])
+        axs[0].barh([LABELS.get(f,f) for f in features],weights,color=COLORS[0])
+        axs[0].set(xlabel='由Q1关联评分归一化的设计权重',title='a  前问结果进入后问')
+        axs[1].barh([LABELS.get(f,f) for f in features],weights*current[features].to_numpy(float),color=COLORS[2])
+        axs[1].set(xlabel='当前异常调制项的加权分量',title='b  发布前最新观测的贡献')
+        savefig(fig,out/'Q3_11_warning_time_and_lead_distribution.png')
+        return answer
+    if report.get('model_family')=='mechanical_source_stability':
+        fraction=report['model_failure_scenario_fraction'];validation=report['mechanics_forcing_validation']
+        answer={'prediction_target':report['forecast_target'],'warning_time_bjt':report['operational_warning_time_bjt'],
+            'lead_h_to_task_impact_reference':report['operational_warning_lead_h'],
+            'trigger_interval_bjt':report['conditional_95pct_interval_times_bjt'],
+            'model_failure_scenario_fraction':fraction,'empirical_disaster_PICP':None,
+            'model_forcing_experiment':validation,
+            'reference_clock':'task impact clock is not a measured source-onset time'}
+        write_json(out/'Q3_warning_lead_answer.json',answer)
+        fig,axs=plt.subplots(1,2,figsize=(11,4.3),layout='constrained')
+        axs[0].bar(['未来时域内失稳','未来时域内未失稳'],[fraction,1-fraction],color=COLORS[:2])
+        axs[0].axhline(report['forecast_warning_probability_threshold'],color='#777',ls='--',label='预设情景比例阈值')
+        axs[0].set(ylabel='声明参数与天气集合中的比例',ylim=(0,1),title='a  发布时刻的预警判断');axs[0].legend(frameon=False,fontsize=8)
+        rows=pd.read_csv(out/'Q3_mechanics_forcing_backtest.csv')
+        if len(rows):
+            good=rows.n_model_reference_crossings>0
+            coverage=rows.loc[good,'n_model_reference_times_covered']/rows.loc[good,'n_model_reference_crossings']
+            axs[1].hist(coverage,bins=np.linspace(0,1,11),color=COLORS[2],edgecolor='white')
+        axs[1].set(xlabel='各发布日的模型参照时间覆盖率',ylabel='发布日数',title='b  天气驱动检验；无真实起动时刻分母')
+        fig.suptitle('预警判断与对应验证口径')
+        savefig(fig,out/'Q3_11_warning_time_and_lead_distribution.png')
+        return answer
     data=pd.read_csv(out/'Q3_proxy_backtest_2025.csv');threshold=report['forecast_warning_probability_threshold']
     hit=data.true_crossed.astype(bool)&data.forecast_cross_probability.ge(threshold)
     new=hit&~data.already_above_at_issue.astype(bool)
     leads=data.loc[new,'first_true_cross_h'].dropna()
     summary=report['proxy_backtest']['new_onset_warning_lead_distribution']
-    write_json(out/'Q3_warning_lead_answer.json',{'historical_new_onset_lead':summary,
+    write_json(out/'Q3_weather_reference_warning_lead_answer.json',{'historical_new_onset_lead':summary,
       'current_warning_time_bjt':report['operational_warning_time_bjt'],
       'current_reference_lead_h':report['operational_warning_lead_h'],
       'current_condition_probability':report['predicted_condition_cross_probability'],
@@ -162,4 +201,4 @@ def complete_q3(ctx):
     axs[1].axhline(threshold,color='#777',ls='--',label='预设预报预警阈值')
     axs[1].set(ylabel='轨迹频率',ylim=(0,1),title='b  本次发布的前瞻预警判断');axs[1].legend(frameon=False,fontsize=8)
     fig.suptitle('预警发布时间、提前量与检验分布')
-    savefig(fig,out/'Q3_11_warning_time_and_lead_distribution.png')
+    savefig(fig,out/'Q3_R11_weather_warning_lead_reference.png')

@@ -1,0 +1,264 @@
+{
+  "figure": "q4/Q4_08_volume_friction_phase_diagram.png",
+  "title": "物源体积与摩擦系数对传播的影响",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "最大传播距离 (km)",
+      "xlabel": "释放量 (百万 m³)",
+      "ylabel": "库仑摩擦系数 μ",
+      "xlim": [
+        -0.5,
+        2.5
+      ],
+      "ylim": [
+        -0.5,
+        2.5
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [],
+      "rasters": [
+        {
+          "image_id": "I001",
+          "raster_id": "f716c8ae4e5e4cc0cbe4",
+          "shared_data": "shared_rasters/f716c8ae4e5e4cc0cbe4",
+          "shape": [
+            3,
+            3
+          ],
+          "extent": [
+            -0.5,
+            2.5,
+            -0.5,
+            2.5
+          ],
+          "origin": "lower",
+          "coordinates": "A01_I001_coordinates.csv",
+          "cmap": "viridis",
+          "norm": "Normalize",
+          "vmin": 0.0,
+          "vmax": 22.241303012524067,
+          "alpha": null,
+          "interpolation": "auto",
+          "raw_coordinate_unit": "plot_axis_units",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": null,
+          "colorbar_label": "km",
+          "quantity": "最大传播距离",
+          "value_unit": "km"
+        }
+      ],
+      "collections": [],
+      "patches": []
+    },
+    {
+      "axis": "A02",
+      "title": "下游首次到达 (min)",
+      "xlabel": "释放量 (百万 m³)",
+      "ylabel": "库仑摩擦系数 μ",
+      "xlim": [
+        -0.5,
+        2.5
+      ],
+      "ylim": [
+        -0.5,
+        2.5
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [],
+      "rasters": [
+        {
+          "image_id": "I001",
+          "raster_id": "b68b688ca20e533f4fc7",
+          "shared_data": "shared_rasters/b68b688ca20e533f4fc7",
+          "shape": [
+            3,
+            3
+          ],
+          "extent": [
+            -0.5,
+            2.5,
+            -0.5,
+            2.5
+          ],
+          "origin": "lower",
+          "coordinates": "A02_I001_coordinates.csv",
+          "cmap": "plasma",
+          "norm": "Normalize",
+          "vmin": 5.421805589726683,
+          "vmax": 7.210651691681924,
+          "alpha": null,
+          "interpolation": "auto",
+          "raw_coordinate_unit": "plot_axis_units",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": null,
+          "colorbar_label": "min",
+          "quantity": "下游首达时间",
+          "value_unit": "min；空值=未到达"
+        }
+      ],
+      "collections": [],
+      "patches": []
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 6,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I001_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 3,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "shared_rasters/f716c8ae4e5e4cc0cbe4/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 9,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_annotations.csv",
+      "kind": "numeric_annotations_and_labels",
+      "rows": 9,
+      "fields": [
+        "text_id",
+        "x",
+        "y",
+        "text",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A02_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 6,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_I001_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 3,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "shared_rasters/b68b688ca20e533f4fc7/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 9,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_annotations.csv",
+      "kind": "numeric_annotations_and_labels",
+      "rows": 9,
+      "fields": [
+        "text_id",
+        "x",
+        "y",
+        "text",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A02",
+      "note": ""
+    }
+  ],
+  "decorative_colorbars": [
+    {
+      "label": "km",
+      "ticks": [
+        0.0,
+        2.5,
+        5.0,
+        7.5,
+        10.0,
+        12.5,
+        15.0,
+        17.5,
+        20.0,
+        22.5
+      ],
+      "vmin": 0.0,
+      "vmax": 22.241303012524067,
+      "norm": "Normalize"
+    },
+    {
+      "label": "min",
+      "ticks": [
+        5.4,
+        5.6000000000000005,
+        5.800000000000001,
+        6.0,
+        6.2,
+        6.4,
+        6.6000000000000005,
+        6.800000000000001,
+        7.0,
+        7.2,
+        7.4
+      ],
+      "vmin": 5.421805589726683,
+      "vmax": 7.210651691681924,
+      "norm": "Normalize"
+    }
+  ],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

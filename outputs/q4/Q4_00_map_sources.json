@@ -1,0 +1,11 @@
+{
+  "actual_geodata": [
+    "TPDC DEM dataset #7",
+    "TPDC glacier dataset #4",
+    "TPDC historical gullies dataset #6"
+  ],
+  "independent_reference": "https://www.usgs.gov/media/images/2026-nepal-debris-avalanche-and-flash-flood-map",
+  "route_line_is_observed": false,
+  "real_georeferenced_topography_not_artificial_satellite_rgb": true,
+  "local_map_resolution_m": 60
+}

@@ -1,0 +1,22 @@
+{
+  "status": "REACHABILITY_GATED_SCENARIO_SPATIAL_RANGE",
+  "route_length_km": 22.241303012524067,
+  "mapped_polyline_length_km": 21.974138496823628,
+  "primary_reached_distance_km": 14.52,
+  "sensitivity_runout_range_km": [
+    9.06,
+    22.2
+  ],
+  "local_2d_inundation_area_km2": 0.0,
+  "upstream_assumed_corridor_width_m": 150.0,
+  "combined_warning_envelope_area_km2": 2.1563075871118587,
+  "parameter_envelope_area_km2": 3.2906622533100705,
+  "local_2d_east_west_extent_m": null,
+  "local_2d_north_south_extent_m": null,
+  "2d_included_only_if_primary_1d_inflow": false,
+  "standalone_2d_excluded": true,
+  "impact_geometry": "/workspace/scratch/99da163004d1/project_v2_3_1/MathorCup_B_v2/outputs/q3/Q3_flow_connected_warning_footprint.gpkg",
+  "verified_disaster_boundary": false,
+  "pre_event_dem_provenance_verified": false,
+  "geometry_interpretation": "retrospective DEM scenario; reachable 1D corridor + physically coupled 2D only; potential envelope separately identified"
+}

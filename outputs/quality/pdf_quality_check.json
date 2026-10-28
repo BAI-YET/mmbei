@@ -1,0 +1,15 @@
+{
+  "page_count": 10,
+  "planned_page_count": 10,
+  "all_pages_rendered_with_poppler": true,
+  "all_pages_visually_reviewed": true,
+  "CJK_fonts_embedded": true,
+  "no_orphan_overflow_pages": true,
+  "pdf_sha256": "7c2cc5c489f7f0e8aa7c9073c447c710eee8b0577a44a39fbaafcda89b57dfef",
+  "embedded_report_figures": 7,
+  "active_project_png_figures": 85,
+  "revision_scope": "PDF answer report and its generator only",
+  "model_config_data_and_result_files_checked_unchanged": 1962,
+  "defensive_writing_phrases_found": [],
+  "test_result_role": "existing implementation checks retained; report revised from current outputs"
+}

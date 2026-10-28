@@ -1,0 +1,70 @@
+{
+  "model": "I=R*(a+(1-a)*A_Q1)",
+  "assessment_issue_bjt": "2026-08-26 09:00:00",
+  "Q1_answer_sha256": "4d9a0f983e27179472a91a6703b2ee628e95ae62e2c38d095a0f7862b68971da",
+  "Q1_features": [
+    "vpd",
+    "temp_10m",
+    "energy_balance_residual",
+    "sw_down",
+    "vwc_gradient"
+  ],
+  "Q1_weights": {
+    "vpd": 0.24445936941154747,
+    "temp_10m": 0.21685013352132584,
+    "energy_balance_residual": 0.21002224787831925,
+    "sw_down": 0.1657646011543225,
+    "vwc_gradient": 0.16290364803448493
+  },
+  "Q1_definition": {
+    "vpd": {
+      "direction": 1.0,
+      "weight": 0.24445936941154747,
+      "scale_floor": 0.6927813219600001
+    },
+    "temp_10m": {
+      "direction": 1.0,
+      "weight": 0.21685013352132584,
+      "scale_floor": 0.7531607999999997
+    },
+    "energy_balance_residual": {
+      "direction": 1.0,
+      "weight": 0.21002224787831925,
+      "scale_floor": 18.57272456886
+    },
+    "sw_down": {
+      "direction": 1.0,
+      "weight": 0.1657646011543225,
+      "scale_floor": 9.4340595636
+    },
+    "vwc_gradient": {
+      "direction": 1.0,
+      "weight": 0.16290364803448493,
+      "scale_floor": 0.05
+    }
+  },
+  "Q1_selection_role": "case-informed Q1 analysis; no claim of independent cross-event feature selection",
+  "q1_modulation_floor": 0.5,
+  "critical_score": 0.320446031547102,
+  "monitoring_score": 0.22721818384525633,
+  "threshold_role": "historical statistical critical level, explicitly defined for this model",
+  "current_score": 0.38297248421323515,
+  "current_Q1_anomaly": 0.2301185468604463,
+  "current_dynamic_water_heat": 0.6226594748785336,
+  "baseline_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "source_geometry_file": "Q2_reconstruction_geometry.json",
+  "source_sections_file": "Q2_reconstruction_sections.npz",
+  "source_route_file": "Q2_reconstruction_route.csv",
+  "source_geometry_sha256": "29753a05f81c8d53974000eb01bfa1f2abcae67e0d893f026390b8449d0a3193",
+  "source_to_port_km": 23.715,
+  "source_area_km2": 0.7596,
+  "fixed_source_assumption": "case-mapped source, adequate material and connecting terrain; not a blind source-identification claim",
+  "score_is_calibrated_disaster_probability": false,
+  "observations_end_before_issue": true
+}

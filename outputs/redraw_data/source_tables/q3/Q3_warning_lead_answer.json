@@ -1,0 +1,30 @@
+{
+  "forecast_target": "mudslide event time conditional on the identified case source and occurrence within the forecast horizon",
+  "conditional_95pct_interval_times_bjt": [
+    "2026-08-26 09:04:00",
+    "2026-08-26 14:44:00"
+  ],
+  "operational_warning_time_bjt": "2026-08-26 09:00:00",
+  "operational_warning_lead_h": 1.5,
+  "case_reference_coverage": {
+    "n_references": 1,
+    "n_covered": 1,
+    "coverage": 1.0,
+    "binomial_95_interval": [
+      0.025,
+      1.0
+    ],
+    "scope": "one competition-reported reference under the adopted event clock, not multi-disaster generalization"
+  },
+  "spatial_distance_range_km": [
+    0.0,
+    23.715
+  ],
+  "inherited_Q1_features": [
+    "vpd",
+    "temp_10m",
+    "energy_balance_residual",
+    "sw_down",
+    "vwc_gradient"
+  ]
+}

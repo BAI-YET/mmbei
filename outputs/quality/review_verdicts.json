@@ -1,0 +1,109 @@
+{
+  "release": "v2.3.1",
+  "review_basis": "question-ordered mathematical model with explicit simplifications and existing verified solvers",
+  "reference_commit": "2f5db9abb29d2834aebef432fd289c89cb058936",
+  "findings": [
+    {
+      "id": 1,
+      "finding": "Q3预测对象",
+      "judgement": "成立：属于预测对象与验证含义",
+      "evidence": "Q3承接Q2评估强度，显式假设发生条件下的事件时间密度与评估强度成正比；预警仍依据统计临界线。",
+      "action": "区间为模型条件预测区间，覆盖率以题面事件参照单例1个为分母；单例结果与多事件泛化验证分列。"
+    },
+    {
+      "id": 2,
+      "finding": "Q2临界条件与能量通道",
+      "judgement": "部分成立：历史分位定义合理，能量衔接确有遗漏",
+      "evidence": "在明确的统计模型中定义历史临界水平；Q1五项机制代表给出调制项，Q2水热/能量门控形成评估强度。",
+      "action": "不把分位数改称实测材料强度。失败的Fs假设退出主流程；Q2统一准备源区和地形供Q3、Q4继承。"
+    },
+    {
+      "id": 3,
+      "finding": "Q4时间拟合",
+      "judgement": "成立：旧版数值偏差与单侧时间约束均已复算",
+      "evidence": "旧版汇入口至口岸261.71s；本次304.94s，文献约350s。",
+      "action": "将上游时间改为双侧标定约束，统一源区释放时钟，分别导出前锋、洪峰、5%与50%累计量时间。文献参照保留为近似重建值。"
+    },
+    {
+      "id": 4,
+      "finding": "Q4网格敏感性",
+      "judgement": "成立：体积守恒与分辨率响应是两项不同检查",
+      "evidence": "本次两档较细网格峰值差2.41%，到达时间差1.19%。",
+      "action": "下游改用静水重构MUSCL-HLL与SSP-RK2；网格试验保持同一入流、参数及两端位置，分别报告各量变化。"
+    },
+    {
+      "id": 5,
+      "finding": "Q4局部二维范围",
+      "judgement": "事实正确，局部单向嵌套本身是合理实现",
+      "evidence": "一维覆盖源区至口岸，二维覆盖口岸邻域；输入为上游实际到达局部断面的累计通量。",
+      "action": "新增全程一维过程的地图投影，并与局部二维湿区分列，记录各计算域及对应体积收支。"
+    },
+    {
+      "id": 6,
+      "finding": "Q4参数测量约束",
+      "judgement": "事实正确，标定参数不等于程序错误",
+      "evidence": "本次有效断面尺度3.0000，边界状态见参数诊断。",
+      "action": "保留观测、文献重建、标定参数、数值设置的角色；自动记录搜索上下界与是否触界，不用改写观测或强行消除残差。"
+    },
+    {
+      "id": 7,
+      "finding": "Q2源区气象代表性",
+      "judgement": "成立：属于空间代理与资料可用性约定",
+      "evidence": "站点、冰川代表高程与预报格点的空间尺度不同，运行时延按已有资料声明检查。",
+      "action": "增加冰川高程q10/q50/q90与三档递减率的九组合重算；保留实际格点偏移和预报来源。"
+    },
+    {
+      "id": 8,
+      "finding": "Q1异常与因果",
+      "judgement": "判断合理；当前异常排序方法可保留",
+      "evidence": "题面要求关联性排序，单次事件与历史匹配可定义异常关联；该评分本身没有估计因果效应。",
+      "action": "保持全部候选、原始前五、机制代表项和年份敏感性共同输出；用异常关联说明评分含义。"
+    },
+    {
+      "id": 9,
+      "finding": "strict-route保护",
+      "judgement": "成立：是真实的程序控制缺口",
+      "evidence": "旧入口在常规路径分支后仍能进入级联重建。",
+      "action": "在清理旧图前校验，所有级联入口执行同一检查；严格模式实际使用核验路径，冲突命令参数直接拒绝。"
+    },
+    {
+      "id": 10,
+      "finding": "代码副本不一致",
+      "judgement": "在本次最新交付包中未复现",
+      "evidence": "压缩包只有一个代码根目录；61/61个Python文件与基准GitHub版本逐一相同。",
+      "action": "继续使用唯一源码根目录，结果清单记录输入、源码、参数、图表及版本的校验摘要。"
+    },
+    {
+      "id": 11,
+      "finding": "另查出：源区释放投影",
+      "judgement": "成立：原PCA平移改变了初始释放势能",
+      "evidence": "旧版释放平均床高4690.3m，真实像元均值5132.0m；修正后释放平均床高5116.2m，逐像元投影平均绝对高程差29.3m。",
+      "action": "改为源区上部真实像元起始的地形路径和UTM三维最近点投影；逐像元导出高程差，并用修正后的释放位置重新标定与求解。"
+    }
+  ],
+  "q4_time_and_peak_diagnostics": "q4/Q4_calibration_residuals.csv",
+  "q4_resolution_diagnostics": {
+    "fixed_inlet_and_parameters": true,
+    "physical_endpoints_held_fixed": true,
+    "comparison": "two finest tested grids; sensitivity, not a claim of asymptotic convergence",
+    "fine_dx_m": 3.75,
+    "primary_dx_m": 7.5,
+    "peak_discharge_relative_change": 0.024092092803422505,
+    "arrival_relative_change": 0.011900286953214212,
+    "maximum_depth_relative_change": 0.13176275114408764,
+    "maximum_mass_error": 1.241763432820638e-15,
+    "mass_conservation_and_resolution_reported_separately": true
+  },
+  "forecast_target": "mudslide event time conditional on the identified case source and occurrence within the forecast horizon",
+  "historical_validation_target": "retained weather-condition validation; Q3 conditional time evaluated against the single competition reference separately",
+  "single_task_reference_hit": {
+    "n_references": 1,
+    "n_covered": 1,
+    "coverage": 1.0,
+    "binomial_95_interval": [
+      0.025,
+      1.0
+    ],
+    "scope": "one competition-reported reference under the adopted event clock, not multi-disaster generalization"
+  }
+}

@@ -1,0 +1,292 @@
+{
+  "figure": "q4/Q4_00B_local_true_DEM_detail.png",
+  "title": "下游二维计算区域地形图",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "",
+      "xlabel": "UTM45N 东向坐标 (km)",
+      "ylabel": "UTM45N 北向坐标 (km)",
+      "xlim": [
+        340609.38078397507,
+        343429.38078397507
+      ],
+      "ylim": [
+        3128713.8885389604,
+        3130993.8885389604
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_child2",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#C87551",
+          "linestyle": "--",
+          "marker": "None",
+          "linewidth": 2.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L002",
+          "label": "_child5",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#293845",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 3.0,
+          "alpha": null
+        }
+      ],
+      "rasters": [
+        {
+          "image_id": "I001",
+          "raster_id": "7865c67b13c702d2c25c",
+          "shared_data": "shared_rasters/7865c67b13c702d2c25c",
+          "shape": [
+            38,
+            47
+          ],
+          "extent": [
+            340609.38078397507,
+            343429.38078397507,
+            3128713.8885389604,
+            3130993.8885389604
+          ],
+          "origin": "upper",
+          "coordinates": "A01_I001_coordinates.csv",
+          "cmap": "terrain",
+          "norm": "Normalize",
+          "vmin": 1781.6595458984375,
+          "vmax": 2902.46240234375,
+          "alpha": 0.92,
+          "interpolation": "bilinear",
+          "raw_coordinate_unit": "m",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": "EPSG:32645",
+          "GeoTIFF": "A01_I001_georeferenced.tif",
+          "quantity": "地形高程",
+          "value_unit": "m",
+          "GeoTIFF_display": "A01_I001_georeferenced_display.tif"
+        },
+        {
+          "image_id": "I002",
+          "raster_id": "3e0c1bbd710b0f9825ea",
+          "shared_data": "shared_rasters/3e0c1bbd710b0f9825ea",
+          "shape": [
+            38,
+            47
+          ],
+          "extent": [
+            340609.38078397507,
+            343429.38078397507,
+            3128713.8885389604,
+            3130993.8885389604
+          ],
+          "origin": "upper",
+          "coordinates": "A01_I002_coordinates.csv",
+          "cmap": "gray",
+          "norm": "Normalize",
+          "vmin": 0.75,
+          "vmax": 1.0,
+          "alpha": 0.28,
+          "interpolation": "bilinear",
+          "raw_coordinate_unit": "m",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": "EPSG:32645",
+          "GeoTIFF": "A01_I002_georeferenced.tif",
+          "quantity": "地形阴影底图",
+          "value_unit": "无量纲",
+          "GeoTIFF_display": "A01_I002_georeferenced_display.tif"
+        }
+      ],
+      "collections": [
+        {
+          "collection_id": "C001",
+          "type": "PathCollection",
+          "label": "_child3",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": null
+        }
+      ],
+      "patches": []
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 13,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 374,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_C001_scatter.csv",
+      "kind": "scatter_points",
+      "rows": 2,
+      "fields": [
+        "point_order",
+        "x",
+        "y",
+        "color_value",
+        "marker_size_pt2",
+        "red",
+        "green",
+        "blue",
+        "alpha"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I001_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 47,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I001_georeferenced.tif",
+      "kind": "georeferenced_full_raster",
+      "rows": 1786,
+      "fields": [
+        "raster_values"
+      ],
+      "axis": "A01",
+      "note": "original numeric values; display mask is a separate file"
+    },
+    {
+      "file": "shared_rasters/7865c67b13c702d2c25c/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 1786,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I002_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 47,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I002_georeferenced.tif",
+      "kind": "georeferenced_full_raster",
+      "rows": 1786,
+      "fields": [
+        "raster_values"
+      ],
+      "axis": "A01",
+      "note": "original numeric values; display mask is a separate file"
+    },
+    {
+      "file": "shared_rasters/3e0c1bbd710b0f9825ea/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 1786,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_annotations.csv",
+      "kind": "numeric_annotations_and_labels",
+      "rows": 2,
+      "fields": [
+        "text_id",
+        "x",
+        "y",
+        "text",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_curves_wide_01.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 372,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L001"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_02.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L002"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    }
+  ],
+  "decorative_colorbars": [],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

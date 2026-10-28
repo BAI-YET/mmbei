@@ -15,11 +15,11 @@ def build_review_verdict(ctx):
     geometry=read('q4/Q4_reconstruction_geometry.json')
     rows=[
       (1,'Q3预测对象','成立：属于预测对象与验证含义',
-       '主模型输出条件首次超限时间，历史检验目标也为气象条件；本次题面时刻单例命中另列。',
-       '统一图题、字段和中位时刻的离散支持；当前天气驱动回放与历史相似日检验分别登记，保留无超限的零概率输出。'),
+       'Q3承接Q2评估强度，显式假设发生条件下的事件时间密度与评估强度成正比；预警仍依据统计临界线。',
+       '区间为模型条件预测区间，覆盖率以题面事件参照单例1个为分母；单例结果与多事件泛化验证分列。'),
       (2,'Q2临界条件与能量通道','部分成立：历史分位定义合理，能量衔接确有遗漏',
-       'q90是明确的历史参考阈值；静态权重是声明的指数设计参数。',
-       '把实测正能量余量纳入主动态指数，补算静态权重与高程递减率敏感性；未来能量只取实测历史贡献的下界。'),
+       '在明确的统计模型中定义历史临界水平；Q1五项机制代表给出调制项，Q2水热/能量门控形成评估强度。',
+       '不把分位数改称实测材料强度。失败的Fs假设退出主流程；Q2统一准备源区和地形供Q3、Q4继承。'),
       (3,'Q4时间拟合','成立：旧版数值偏差与单侧时间约束均已复算',
        f"旧版汇入口至口岸{baseline['Q4_confluence_to_port_s']:.2f}s；本次{q4['downstream_transit_s']:.2f}s，文献约350s。",
        '将上游时间改为双侧标定约束，统一源区释放时钟，分别导出前锋、洪峰、5%与50%累计量时间。文献参照保留为近似重建值。'),
@@ -48,11 +48,11 @@ def build_review_verdict(ctx):
         f"旧版释放平均床高{baseline['Q4_release_assigned_mean_bed_m']:.1f}m，真实像元均值{baseline['Q4_selected_source_pixels_mean_elevation_m']:.1f}m；修正后释放平均床高{geometry['assigned_release_mean_bed_elevation_m']:.1f}m，逐像元投影平均绝对高程差{geometry['release_projection_mean_abs_elevation_error_m']:.1f}m。",
         '改为源区上部真实像元起始的地形路径和UTM三维最近点投影；逐像元导出高程差，并用修正后的释放位置重新标定与求解。')]
     verdict=[dict(zip(['id','finding','judgement','evidence','action'],r)) for r in rows]
-    result={'release':'v2.2','review_basis':'official question, delivered source, input data and rerun experiments',
+    result={'release':'v2.3.1','review_basis':'question-ordered mathematical model with explicit simplifications and existing verified solvers',
         'reference_commit':baseline['baseline_github_commit'],'findings':verdict,
         'q4_time_and_peak_diagnostics':'q4/Q4_calibration_residuals.csv',
         'q4_resolution_diagnostics':grid,'forecast_target':q3['forecast_target'],
-        'historical_validation_target':'meteorological condition exceedance',
+        'historical_validation_target':'retained weather-condition validation; Q3 conditional time evaluated against the single competition reference separately',
         'single_task_reference_hit':q3['single_task_reference_hit']}
     write_json(ctx.folder('quality')/'review_verdicts.json',result)
     return result

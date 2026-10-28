@@ -1,0 +1,28 @@
+{
+  "status": "ACTUAL_ARCHIVED_RUN_PROPAGATED_THROUGH_Q2",
+  "n_future_hours": 41,
+  "model_surface_elevation_m": 5038.0,
+  "model_grid_lonlat": [
+    85.61225,
+    28.295254
+  ],
+  "requested_source_lonlat": [
+    85.52723,
+    28.2877
+  ],
+  "model_grid_offset_km": 8.38202672866548,
+  "valid_count_by_variable": {
+    "temperature_2m": 41,
+    "precipitation": 41,
+    "shortwave_radiation": 41,
+    "freezing_level_height": 0
+  },
+  "freezing_height_above_source_n": null,
+  "precip_future_24h_mm": 10.7,
+  "first6h_max_condition_index": 0.5817842424503689,
+  "temperature_adjustment": "source T = grid T - lapse*(source elevation-model surface elevation)",
+  "spatial_proxy_limitation": "past rain/thermal memory from distant station, future source grid; no site-calibrated correction",
+  "availability_at_issue": "run init + assumed 6h publication latency; actual historic dissemination not independently observed",
+  "used_for_current_issue_sensitivity": true,
+  "energy_forecast_rule": "nonnegative seven-day energy memory lower bound from pre-issue measured contributions; future contributions unknown"
+}

@@ -1,0 +1,50 @@
+{
+  "L2_Logistic_4geo_summary": {
+    "auc_oof": 0.6358479863868406,
+    "balanced_accuracy_oof": 0.6228020419739081,
+    "macro_f1_oof": 0.6111111111111112,
+    "brier_oof": 0.28998814709602233,
+    "n": 84,
+    "n_spatial_blocks": 4
+  },
+  "L2_Logistic_4geomorph_summary": {
+    "auc_oof": 0.7129892229154849,
+    "balanced_accuracy_oof": 0.7180941576857629,
+    "macro_f1_oof": 0.7083333333333333,
+    "brier_oof": 0.23905380370553486,
+    "n": 84,
+    "n_spatial_blocks": 4
+  },
+  "Single_elevation_drop_summary": {
+    "auc_oof": 0.6715825297787861,
+    "balanced_accuracy_oof": 0.6310266591038003,
+    "macro_f1_oof": 0.6309000708717222,
+    "brier_oof": 0.25150939163685493,
+    "n": 84,
+    "n_spatial_blocks": 4
+  },
+  "Single_mouth_elevation_summary": {
+    "auc_oof": 0.2844583096993761,
+    "balanced_accuracy_oof": 0.345150311968236,
+    "macro_f1_oof": 0.34514528703047487,
+    "brier_oof": 0.36721053195134995,
+    "n": 84,
+    "n_spatial_blocks": 4
+  },
+  "majority_baseline_summary": {
+    "auc_oof": 0.5,
+    "balanced_accuracy_oof": 0.5,
+    "note": "majority class prediction has no discrimination; constant-score ROC-AUC=0.5"
+  },
+  "classification_task": "P(ice-related type | known historical debris-flow gully), NOT event occurrence hazard",
+  "n_true_ice_related": 43,
+  "n_true_rainfall": 41,
+  "excluding_lake_sensitivity": {
+    "auc_oof": 0.6168947055324212,
+    "balanced_accuracy_oof": 0.6219512195121951,
+    "macro_f1_oof": 0.6122044241037377,
+    "brier_oof": 0.2963814747343673,
+    "n": 82,
+    "n_spatial_blocks": 4
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "figure_count": 85,
+  "resolved_plot_datasets": 1012,
+  "all_numeric_raster_cells_roundtrip_exact": true,
+  "Q1_all_56_factor_values_present": true,
+  "Q1_complete_factor_count": 56,
+  "full_unclipped_dynamic_pressure_retained": true,
+  "nonarrival_not_converted_to_time": true,
+  "missing_references": 0
+}

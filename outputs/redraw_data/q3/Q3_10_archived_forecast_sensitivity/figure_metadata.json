@@ -1,0 +1,173 @@
+{
+  "figure": "q3/Q3_10_archived_forecast_sensitivity.png",
+  "title": "",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "参考实验：归档天气对气象指数的影响",
+      "xlabel": "距09:00发布时刻 (h)",
+      "ylabel": "气象触发条件指数",
+      "xlim": [
+        0.22499999999999998,
+        6.275
+      ],
+      "ylim": [
+        0.06367841996472358,
+        0.6055859382821029
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "历史相似日基准",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#205C92",
+          "linestyle": "-",
+          "marker": "o",
+          "linewidth": 1.5,
+          "alpha": null
+        },
+        {
+          "series_id": "L002",
+          "label": "Q2真实历史天气预报驱动",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#DA783F",
+          "linestyle": "-",
+          "marker": "s",
+          "linewidth": 1.5,
+          "alpha": null
+        },
+        {
+          "series_id": "L003",
+          "label": "气象先兆阈值",
+          "x_space": "axes_fraction",
+          "y_space": "data",
+          "color": "#777",
+          "linestyle": "--",
+          "marker": "None",
+          "linewidth": 1.5,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [
+        {
+          "collection_id": "C001",
+          "type": "FillBetweenPolyCollection",
+          "label": "_child2",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": 0.18
+        }
+      ],
+      "patches": []
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 16,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 26,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_C001_paths.csv",
+      "kind": "contours_polygons_and_intervals",
+      "rows": 27,
+      "fields": [
+        "path_id",
+        "vertex_order",
+        "path_code",
+        "x",
+        "y"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_C001_intervals.csv",
+      "kind": "interval_band_lower_upper",
+      "rows": 12,
+      "fields": [
+        "path_id",
+        "x",
+        "y_lower",
+        "y_upper",
+        "x_datetime"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_curves_wide_01.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 12,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L001",
+        "y_L002"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A01_curves_wide_02.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L003"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    }
+  ],
+  "decorative_colorbars": [],
+  "warnings": [],
+  "interval_note": "联合气象条件得分集合2.5%-97.5%分位范围；不是灾害时间区间",
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

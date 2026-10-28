@@ -1,0 +1,21 @@
+{
+  "Q1_features_list": [
+    "vpd",
+    "temp_10m",
+    "temp_20m",
+    "energy_balance_residual",
+    "temp_2m"
+  ],
+  "baseline_Q3_features": [
+    "temp_2m",
+    "sw_down",
+    "vpd_2m"
+  ],
+  "n_Q1_physical_features_calculable": 5,
+  "n_reference_hour_pairs": 14950,
+  "mean_difference_extended_minus_original": 0.061310150129298906,
+  "event_ordinary_Q3_precursor": 0.3958614573068357,
+  "event_extended_precursor": 0.43163202151362356,
+  "not_independent_disaster_validation": true,
+  "warning": "Q1 feature selection used 2026 event; sensitivity is descriptive not 2025 blind model selection."
+}

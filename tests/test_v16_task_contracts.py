@@ -83,8 +83,13 @@ def test_q3_consumes_q2_physics_and_outputs_real_spatial_polygon():
     assert report['external_Q3_download'] is False
     assert report['empirical_disaster_time_PICP'] is None
     low,high=report['conditional_95pct_interval_h_from_issue']
-    assert 0<=low<high<=ctx.cfg['q3']['primary_horizon_hours']
-    gis=ROOT/'outputs/q3/Q3_flow_connected_warning_footprint.gpkg'
+    if low is None:
+        assert high is None
+        assert report['model_failure_scenario_fraction']==0
+        assert report['model_no_failure_scenario_fraction']==1
+    else:
+        assert 0<=low<high<=ctx.cfg['q3']['primary_horizon_hours']
+    gis=ROOT/'outputs/q3/Q3_reconstructed_warning_range.gpkg'
     assert gis.exists() and gis.stat().st_size>1000
     import geopandas as gpd
     g=gpd.read_file(gis)
@@ -113,6 +118,7 @@ def test_report_status_matches_v17_current_output():
     fn=ROOT/'outputs/SUMMARY_STATUS.json'
     if not fn.exists():pytest.skip('report not built')
     s=json.loads(fn.read_text())
-    assert s['version'] in ('v2.0','v2.1')
+    assert s['version']=='v2.3.1'
     assert s['extra_data_only_question_2'] is True
-    assert s['Q3_disaster_event_PICP'] is None
+    assert s['Q3_empirical_disaster_PICP'] is None
+    assert s['Q3_validated_complete_event_forecast'] is False

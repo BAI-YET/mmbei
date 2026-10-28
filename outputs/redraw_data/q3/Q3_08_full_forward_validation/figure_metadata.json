@@ -1,0 +1,382 @@
+{
+  "figure": "q3/Q3_08_full_forward_validation.png",
+  "title": "参考实验：气象条件完整历史检验",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "",
+      "xlabel": "",
+      "ylabel": "超限概率 / 状态",
+      "xlim": [
+        20202.825,
+        20368.925
+      ],
+      "ylim": [
+        -0.05,
+        1.12
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": true,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "6h内气象超限概率",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#205C92",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.5,
+          "alpha": null
+        },
+        {
+          "series_id": "L002",
+          "label": "_child2",
+          "x_space": "axes_fraction",
+          "y_space": "data",
+          "color": "#777",
+          "linestyle": "--",
+          "marker": "None",
+          "linewidth": 1.0,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [
+        {
+          "collection_id": "C001",
+          "type": "PathCollection",
+          "label": "实际是否超限",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": 0.65
+        }
+      ],
+      "patches": []
+    },
+    {
+      "axis": "A02",
+      "title": "",
+      "xlabel": "",
+      "ylabel": "距发布时刻 (h)",
+      "xlim": [
+        20202.825,
+        20368.925
+      ],
+      "ylim": [
+        0.0,
+        6.3
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": true,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [],
+      "rasters": [],
+      "collections": [
+        {
+          "collection_id": "C001",
+          "type": "FillBetweenPolyCollection",
+          "label": "名义95%气象时间区间",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": 0.28
+        },
+        {
+          "collection_id": "C002",
+          "type": "PathCollection",
+          "label": "实际首个超限时刻",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": null
+        }
+      ],
+      "patches": []
+    },
+    {
+      "axis": "A03",
+      "title": "",
+      "xlabel": "2025年完整独立检验期（北京时间）",
+      "ylabel": "累计气象区间覆盖率",
+      "xlim": [
+        20202.825,
+        20368.925
+      ],
+      "ylim": [
+        0.0,
+        1.05
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": true,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "q1_only",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#205C92",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.4,
+          "alpha": null
+        },
+        {
+          "series_id": "L002",
+          "label": "q2_only",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#DA783F",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.4,
+          "alpha": null
+        },
+        {
+          "series_id": "L003",
+          "label": "q1q2",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#248F81",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.4,
+          "alpha": null
+        },
+        {
+          "series_id": "L004",
+          "label": "_child3",
+          "x_space": "axes_fraction",
+          "y_space": "data",
+          "color": "#777",
+          "linestyle": "--",
+          "marker": "None",
+          "linewidth": 1.0,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [],
+      "patches": []
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 8,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 153,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_C001_scatter.csv",
+      "kind": "scatter_points",
+      "rows": 151,
+      "fields": [
+        "point_order",
+        "x",
+        "y",
+        "color_value",
+        "marker_size_pt2",
+        "red",
+        "green",
+        "blue",
+        "alpha"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A02_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 8,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_C001_paths.csv",
+      "kind": "contours_polygons_and_intervals",
+      "rows": 305,
+      "fields": [
+        "path_id",
+        "vertex_order",
+        "path_code",
+        "x",
+        "y"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_C001_intervals.csv",
+      "kind": "interval_band_lower_upper",
+      "rows": 151,
+      "fields": [
+        "path_id",
+        "x",
+        "y_lower",
+        "y_upper",
+        "x_datetime"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_C002_scatter.csv",
+      "kind": "scatter_points",
+      "rows": 70,
+      "fields": [
+        "point_order",
+        "x",
+        "y",
+        "color_value",
+        "marker_size_pt2",
+        "red",
+        "green",
+        "blue",
+        "alpha"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A03_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 13,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A03_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 221,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A03_curves_wide_01.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 110,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L001"
+      ],
+      "axis": "A03",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A03_curves_wide_02.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 39,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L002"
+      ],
+      "axis": "A03",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A03_curves_wide_03.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 70,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L003"
+      ],
+      "axis": "A03",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A03_curves_wide_04.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L004"
+      ],
+      "axis": "A03",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    }
+  ],
+  "decorative_colorbars": [],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

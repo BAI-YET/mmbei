@@ -1,0 +1,23 @@
+{
+  "baseline_github_commit": "2f5db9abb29d2834aebef432fd289c89cb058936",
+  "archive_sha256": "7cb3b014e2bd19113c6626dc2738cfc2302bda3bed9a8ba2f2d0398a62bb1d28",
+  "baseline_python_file_count": 61,
+  "remote_python_files_matched": 61,
+  "remote_python_files_checked": 61,
+  "duplicate_archive_paths": false,
+  "Q4_source_to_confluence_s": 80.78997657366371,
+  "Q4_confluence_to_port_s": 261.7097562934174,
+  "Q4_source_to_port_s": 342.4997328670811,
+  "Q4_peak_discharge_m3_s": 200558.59588387157,
+  "Q4_grid_csv": "dx_m,arrival_s,peak_discharge_m3_s,peak_depth_m,mass_error\n7.5,323.13318860453734,260256.08910166973,49.38078542992456,1.034802860683865e-15\n15.0,342.4997328670811,200558.59588387157,54.07307340066165,8.27842288547092e-16\n30.0,371.1782905542311,142756.8469118208,50.12810748676471,4.13921144273546e-16\n",
+  "Q3_proxy_interval_coverage": 0.9625,
+  "baseline_tests": {
+    "passed": 70,
+    "failed": 0,
+    "duration_s": 9.16
+  },
+  "review_summary_sha256": "821cefe664c3192f862c32f6e029e8002406e40fa35a33209c991a7330db8819",
+  "Q4_release_assigned_mean_bed_m": 4690.316528630122,
+  "Q4_selected_source_pixels_mean_elevation_m": 5132.0390625,
+  "Q4_release_mean_gravity_head_bias_m": -441.72253386987813
+}

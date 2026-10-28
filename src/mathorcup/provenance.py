@@ -14,6 +14,7 @@ def audit_project(ctx):
                       ('configuration',ctx.root/'configs')]:
         for p in sorted(base.rglob('*')):
             if not p.is_file() or '__pycache__' in p.parts:continue
+            if any(part.startswith('.') for part in p.relative_to(ctx.root).parts):continue
             with p.open('rb') as stream:digest=hashlib.file_digest(stream,'sha256').hexdigest()
             records.append({'kind':kind,'path':str(p.relative_to(ctx.root)),
                'bytes':p.stat().st_size,'sha256':digest})
@@ -42,12 +43,17 @@ def audit_project(ctx):
     assert cascade['cascade_volume_residual']<1e-8
     for r in spatial['grid_experiments']:
         assert abs(r['input_m3']-r['expected_input_from_1d_m3'])<=max(1.,r['input_m3']*1e-10)
-    summary={'version':'v2.2','files':records,'figure_count':len(figures),
+    summary={'version':'v2.3.1','files':records,'figure_count':len(figures),
        'all_figures_have_numeric_plot_inputs':True,'archived_forecast_raw_sha256_verified':forecast_verified,
        'observed_data_roles':['official measurements','actual archived forecast'],
        'analysis_roles':['derived indicators','observed-day/year resampling','published event reconstruction constraints'],
        'simulation_parameter_roles':['fitted effective parameters','declared sensitivity experiments','numerical settings'],
        'production_synthetic_inlet_used':False,'invented_disaster_count_used':False,
-       'case_constraint_sources':evidence['references'],'cascade_volume_residual':cascade['cascade_volume_residual']}
+       'case_constraint_sources':evidence['references'],'cascade_volume_residual':cascade['cascade_volume_residual'],
+       'Q2_Q3_shared_initiation_criterion':q3.get('criterion'),
+       'initiation_parameters_site_measured':False,
+       'validated_complete_disaster_forecast':False,
+       'model_based_question_outputs_available':True,'Q3_uses_Q4_outputs':False,
+       'shared_geometry_sha256':q3.get('source_geometry_sha256')}
     write_json(ctx.folder('quality')/'reproducibility_manifest.json',summary)
     return summary

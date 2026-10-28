@@ -1,0 +1,54 @@
+{
+  "predefined": 62,
+  "eligible": 56,
+  "excluded": [
+    {
+      "feature": "bulk_richardson",
+      "label": "总体Richardson数",
+      "status": "event_window_insufficient_valid_hours"
+    },
+    {
+      "feature": "precip_mm",
+      "label": "小时降水",
+      "status": "undefined robust variance/score"
+    },
+    {
+      "feature": "albedo",
+      "label": "反照率",
+      "status": "event_window_insufficient_valid_hours"
+    },
+    {
+      "feature": "soil_freeze_depth_layers",
+      "label": "土壤冻结层数",
+      "status": "binary_prevalence_diagnostic"
+    },
+    {
+      "feature": "bowen_ratio",
+      "label": "Bowen比",
+      "status": "event_window_insufficient_valid_hours"
+    },
+    {
+      "feature": "rain_24h",
+      "label": "24h累计降水",
+      "status": "undefined robust variance/score"
+    }
+  ],
+  "raw_top5": [
+    "vpd",
+    "temp_10m",
+    "temp_20m",
+    "energy_balance_residual",
+    "temp_2m"
+  ],
+  "mechanism_representatives": [
+    "vpd",
+    "temp_10m",
+    "energy_balance_residual",
+    "sw_down",
+    "vwc_gradient"
+  ],
+  "bootstrap_unit": "whole reference year; focal event held fixed; descriptive stability only",
+  "bootstrap_repeats": 600,
+  "association_estimand": "focal pre-event window vs calendar/hour-matched historical windows",
+  "multi_event_predictive_importance_identified": false
+}

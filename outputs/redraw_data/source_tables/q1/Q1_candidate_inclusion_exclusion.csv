@@ -1,0 +1,63 @@
+﻿feature,label,status
+temp_1m,1 m 气温,ranked
+temp_2m,2 m 气温,ranked
+temp_4m,4 m 气温,ranked
+temp_10m,10 m 气温,ranked
+temp_20m,20 m 气温,ranked
+temp_gradient,气温垂向梯度,ranked
+wind_1m,1 m 风速,ranked
+wind_2m,2 m 风速,ranked
+wind_4m,4 m 风速,ranked
+wind_10m,10 m 风速,ranked
+wind_20m,20 m 风速,ranked
+wind_gradient,风速垂向梯度,ranked
+vector_shear_2_20m,2–20 m矢量风切变,ranked
+bulk_richardson,总体Richardson数,event_window_insufficient_valid_hours
+rh_1m,1 m 相对湿度,ranked
+rh_2m,2 m 相对湿度,ranked
+rh_4m,4 m 相对湿度,ranked
+rh_10m,10 m 相对湿度,ranked
+rh_20m,20 m 相对湿度,ranked
+humidity_gradient,空气湿度垂向梯度,ranked
+pressure,气压,ranked
+precip_mm,小时降水,undefined robust variance/score
+sw_down,向下短波辐射,ranked
+sw_up,向上短波辐射,ranked
+lw_down,向下长波辐射,ranked
+lw_up,向上长波辐射,ranked
+net_shortwave,净短波辐射,ranked
+net_longwave,净长波辐射,ranked
+net_radiation,净辐射,ranked
+albedo,反照率,event_window_insufficient_valid_hours
+soilT_0p1,浅层土壤温度,ranked
+soilT_0p2,0.2 m土壤温度,ranked
+soilT_0p4,0.4 m土壤温度,ranked
+soilT_0p8,0.8 m土壤温度,ranked
+soilT_1p6,1.6 m土壤温度,ranked
+soil_temp_gradient,土壤温度垂向梯度,ranked
+soil_freeze_depth_layers,土壤冻结层数,binary_prevalence_diagnostic
+vwc_0p1,表层含水率,ranked
+vwc_0p2,0.2 m含水率,ranked
+vwc_0p4,0.4 m含水率,ranked
+vwc_0p8,深层含水率,ranked
+vwc_1p6,1.6 m含水率,ranked
+vwc_gradient,土壤水分梯度,ranked
+soil_heat,0.1 m土壤热通量,ranked
+soil_heat_0p2,0.2 m土壤热通量,ranked
+soil_heat_gradient,土壤热通量梯度,ranked
+sensible_heat,感热通量,ranked
+latent_heat,潜热通量,ranked
+tke,湍流动能,ranked
+ustar,摩擦速度,ranked
+tau,动量通量TAU,ranked
+tstar,湍流温度尺度TSTAR,ranked
+sonic_temp,声温,ranked
+flux_uz,湍流垂直速度,ranked
+vpd_2m,2米气象VPD,ranked
+vpd,通量塔VPD,ranked
+vapour_pressure,水汽分压,ranked
+water_vapour_density,水汽密度,ranked
+bowen_ratio,Bowen比,event_window_insufficient_valid_hours
+energy_balance_residual,地表能量收支余量,ranked
+pdd_7d,7日正积温,ranked
+rain_24h,24h累计降水,undefined robust variance/score

@@ -152,3 +152,17 @@ def reconstruct_warning_range(ctx,lower,report,two,transform):
     ax.text(.02,.98,f"源区至口岸 {result['source_to_port_corridor_km']:.2f} km\n模型警戒包络 {result['warning_envelope_km2']:.2f} km²",transform=ax.transAxes,
       va='top',bbox=dict(fc='white',ec='#cccccc',alpha=.9),fontsize=10)
     savefig(fig,out/'Q3_12_reconstructed_spatial_warning.png')
+
+
+def replot_warning_range_from_saved(ctx):
+    """Q3-only runs can restore Q4-derived spatial answers without rerunning flow."""
+    import json
+    from rasterio.transform import Affine
+    path=ctx.folder('q4')/'Q4_reconstruction_2d_arrays.npz'
+    report_path=ctx.folder('q4')/'Q4_cascade_reconstruction.json'
+    if not path.exists() or not report_path.exists():return None
+    with np.load(path) as arrays:
+        two={'max_depth':arrays['depth_m'].copy()};transform=Affine(*arrays['transform'][:6])
+    report=json.loads(report_path.read_text())
+    reconstruct_warning_range(ctx,None,report,two,transform)
+    return ctx.folder('q3')/'Q3_reconstructed_spatial_answer.json'

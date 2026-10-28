@@ -1,0 +1,3 @@
+﻿point_order,x,y,color_value,marker_size_pt2,red,green,blue,alpha,varied_parameter,parameter_cn,marker_role,actual_arrival_time_min
+0,-40.0,24.31050188186932,,64,0.1411764705882353,0.5607843137254902,0.5058823529411764,1.0,volume,初始释放方量 V,symbolic_nonarrival,
+1,0.0,24.31050188186932,,64,0.1411764705882353,0.5607843137254902,0.5058823529411764,1.0,volume,初始释放方量 V,symbolic_nonarrival,

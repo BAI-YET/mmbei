@@ -1,0 +1,14 @@
+{
+  "product": "Sentinel-1 InSAR LOS deformation, ICIMOD published synthesis",
+  "source_url": "https://www.icimod.org/press-releases/second-major-himalayan-flood-in-seven-weeks-raises-new-questions-about-mountain-risk/",
+  "measurement_period_start": "2026-07-07",
+  "measurement_period_end": "2026-08-24",
+  "los_max_displacement_m": 0.4,
+  "duration_days": 48,
+  "average_los_motion_proxy_mm_day": 8.333,
+  "quantity": "maximum line-of-sight deformation in affected northern slope, not vertical fall or a grid",
+  "research_role": "retrospective external Q2 corroboration only; published after disaster",
+  "publication_date": "2026-10-13",
+  "available_at_2026_issue": false,
+  "cannot_create_pixel_displacement": true
+}

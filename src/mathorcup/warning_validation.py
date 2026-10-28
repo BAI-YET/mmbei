@@ -194,7 +194,7 @@ def complete_q3_validation(ctx,h):
 
 def plot_warning_process(ctx):
     out=ctx.folder('q3');s=pd.read_csv(out/'Q3_warning_state_hourly.csv',parse_dates=['decision_time_bjt'])
-    info=__import__('json').loads((out/'Q3_primary_competition_answer.json').read_text())
+    info=__import__('json').loads((out/'Q3_weather_reference_assessment.json').read_text())
     fig,axs=plt.subplots(2,1,figsize=(11.6,6),sharex=True,layout='constrained')
     t=s.decision_time_bjt;th=info['warning_tiers']['yellow']['threshold']
     axs[0].plot(t,s.condition_score,color=COLORS[0]);axs[0].axhline(th,color=COLORS[1],ls='--',label='黄色条件阈值')

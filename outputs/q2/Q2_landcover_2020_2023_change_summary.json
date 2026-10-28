@@ -1,0 +1,10 @@
+{
+  "study_DEM_covered_fraction": 0.6393958464443046,
+  "four_epoch_common_valid_fraction": 0.6389276888363598,
+  "changed_fraction_among_valid_cells": 0.06845563416655656,
+  "source_glacier_has_landcover_coverage": false,
+  "landcover_not_extrapolated_into_nepal_source": true,
+  "classification_code_semantics_unverified": true,
+  "cell_area_m2_at_study_centre_approx": 13404.284863710403,
+  "area_method": "WGS84 geodesic central-pixel approximation"
+}

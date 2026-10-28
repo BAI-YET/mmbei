@@ -1,0 +1,51 @@
+{
+  "analysis": "historical matched magnitude+empirical rarity, NOT supervised disaster importance",
+  "source_clock_verified": true,
+  "snapshot_raw": "2026-08-26 09:00:00",
+  "primary_window_h": 24,
+  "baseline_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "n_candidate_predefined": 62,
+  "n_features": 56,
+  "top5": [
+    {
+      "feature": "vpd",
+      "name": "通量塔VPD",
+      "z_mad": 2.3796688223798745
+    },
+    {
+      "feature": "temp_10m",
+      "name": "10 m 气温",
+      "z_mad": 1.9200815574528638
+    },
+    {
+      "feature": "temp_20m",
+      "name": "20 m 气温",
+      "z_mad": 1.8514517282698908
+    },
+    {
+      "feature": "energy_balance_residual",
+      "name": "地表能量收支余量",
+      "z_mad": 1.7235776815050587
+    },
+    {
+      "feature": "temp_2m",
+      "name": "2 m 气温",
+      "z_mad": 1.7923028264036602
+    }
+  ],
+  "mechanism_representatives": [
+    "vpd",
+    "temp_10m",
+    "energy_balance_residual",
+    "sw_down",
+    "vwc_gradient"
+  ],
+  "top5_policy": "literal first five of all-factor ranking; mechanism representatives are a separate explanatory result",
+  "caveat": "Only one confirmed disaster; this is physical association and rarity, not causal identification."
+}

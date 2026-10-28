@@ -20,8 +20,31 @@ q2:
   sensitivity_remove_lake: true
   glacier_rho_kg_m3: 900
   lapse_rates_C_per_km: [5.0, 6.5, 8.0]
+  q1_modulation_floor: 0.5
+  assessment_quantile: 0.85
+  monitoring_quantile: 0.75
+  initiation:
+    enabled: false  # Retained experiment; not required by the sequential answer.
+    # Numerical experiment ranges; none are claimed to be measured at the source.
+    # The model is an effective basal-sliding surrogate, not a fracture solver.
+    scenario_power: 10
+    seed: 20261028
+    minimum_source_slope_deg: 30.0
+    source_slope_experiments_deg: [25.0, 30.0, 35.0]
+    minimum_source_pixels: 10
+    ice_density_kg_m3: 900.0
+    cohesion_kPa: [0.0, 250.0]
+    friction_angle_deg: [20.0, 45.0]
+    storage_yield: [0.001, 0.05]
+    drainage_hours: [6.0, 72.0]
+    degree_day_factor_mm_Cday: [3.0, 9.0]
+    infiltration_fraction: [0.25, 1.0]
+    lapse_C_km: [5.0, 8.0]
+    spinup_days: 30
+    consistency_days: 7
 q3:
-  # 竞赛主任务：短时气象先兆预报，1/2小时分辨率可覆盖10:30题面事件时间
+  # Same mechanical initiation criterion as Q2; subhourly bins are numerical,
+  # while the forcing remains hourly. Scenario weights are not calibrated risks.
   primary_horizon_hours: 6
   step_hours: 0.5
   official_event_time_same_clock_assumption: '2026-08-26 10:30:00'
@@ -30,6 +53,8 @@ q3:
   samples: 1200
   random_seed: 20261023
   scenario_only: true
+  mechanics_backtest_issues_per_year: 36
+  mechanics_backtest_years: [2024, 2025]
 q4:
   # 官方冰川数据能得到冰川面但不能自动识别2026年真正崩塌点
   route_verified: false

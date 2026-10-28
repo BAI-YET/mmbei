@@ -1,0 +1,18 @@
+{
+  "historical_new_onset_lead": {
+    "n": 24,
+    "minimum_h": 0.5,
+    "q25_h": 0.5,
+    "median_h": 3.75,
+    "q75_h": 4.5,
+    "maximum_h": 6.0
+  },
+  "current_warning_time_bjt": "2026-08-25 18:00:00",
+  "current_reference_lead_h": 16.5,
+  "current_condition_probability": 0.9016666666666666,
+  "current_no_cross_probability": 0.09833333333333338,
+  "forecast_alert_threshold": 0.25,
+  "denominator": "correctly alerted new meteorological threshold passages in 2025",
+  "monitoring_alarm_first_bjt": "2026-08-24 20:00:00",
+  "monitoring_alarm_active_at_issue": true
+}

@@ -1,0 +1,5 @@
+feature,n_valid_hours,n_above_historical_same_hour_q95,fraction_of_valid_hours
+temp_2m,168,13,0.07738095238095238
+precip_mm,168,52,0.30952380952380953
+sw_down,168,5,0.02976190476190476
+wind_20m,168,1,0.005952380952380952

@@ -1,0 +1,5 @@
+﻿series_id,series_label,point_order,x,y,x_datetime,y_datetime,x_space,y_space
+L001,赛题参考时刻,0,1.5,0.0,,,data,axes_fraction
+L001,赛题参考时刻,1,1.5,1.0,,,data,axes_fraction
+L002,模型中位时间,0,0.5,0.0,,,data,axes_fraction
+L002,模型中位时间,1,0.5,1.0,,,data,axes_fraction

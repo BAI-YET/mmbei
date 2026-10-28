@@ -1,0 +1,469 @@
+{
+  "figure": "q2/Q2_15_all_model_comparison.png",
+  "title": "全部候选沟谷成因判别模型（目标为成因类别）",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "",
+      "xlabel": "",
+      "ylabel": "空间留出ROC-AUC",
+      "xlim": [
+        -0.6400000000000001,
+        4.640000000000001
+      ],
+      "ylim": [
+        0.0,
+        1.08
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_child10",
+          "x_space": "axes_fraction",
+          "y_space": "data",
+          "color": "#888",
+          "linestyle": "--",
+          "marker": "None",
+          "linewidth": 1.0,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [],
+      "patches": [
+        {
+          "patch_id": "P001",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.12549019607843137,
+            0.3607843137254902,
+            0.5725490196078431,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P002",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.8549019607843137,
+            0.47058823529411764,
+            0.24705882352941178,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P003",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.1411764705882353,
+            0.5607843137254902,
+            0.5058823529411764,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P004",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P005",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.7803921568627451,
+            0.6666666666666666,
+            0.2549019607843137,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        }
+      ]
+    },
+    {
+      "axis": "A02",
+      "title": "",
+      "xlabel": "",
+      "ylabel": "空间留出平衡准确率",
+      "xlim": [
+        -0.6400000000000001,
+        4.640000000000001
+      ],
+      "ylim": [
+        0.0,
+        1.08
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_child10",
+          "x_space": "axes_fraction",
+          "y_space": "data",
+          "color": "#888",
+          "linestyle": "--",
+          "marker": "None",
+          "linewidth": 1.0,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [],
+      "patches": [
+        {
+          "patch_id": "P001",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.12549019607843137,
+            0.3607843137254902,
+            0.5725490196078431,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P002",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.8549019607843137,
+            0.47058823529411764,
+            0.24705882352941178,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P003",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.1411764705882353,
+            0.5607843137254902,
+            0.5058823529411764,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P004",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P005",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.7803921568627451,
+            0.6666666666666666,
+            0.2549019607843137,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        }
+      ]
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 12,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 2,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_bars.csv",
+      "kind": "bars_histogram_bins_and_spans",
+      "rows": 5,
+      "fields": [
+        "patch_id",
+        "label",
+        "x",
+        "y",
+        "width",
+        "height",
+        "angle_degree",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": "height is bin count/density exactly used in original plot; y+height gives histogram top"
+    },
+    {
+      "file": "A01_patch_vertices.csv",
+      "kind": "patch_vertices",
+      "rows": 25,
+      "fields": [
+        "patch_id",
+        "vertex_order",
+        "path_code",
+        "x_data",
+        "y_data"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_annotations.csv",
+      "kind": "numeric_annotations_and_labels",
+      "rows": 5,
+      "fields": [
+        "text_id",
+        "x",
+        "y",
+        "text",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A02_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 12,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 2,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_bars.csv",
+      "kind": "bars_histogram_bins_and_spans",
+      "rows": 5,
+      "fields": [
+        "patch_id",
+        "label",
+        "x",
+        "y",
+        "width",
+        "height",
+        "angle_degree",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A02",
+      "note": "height is bin count/density exactly used in original plot; y+height gives histogram top"
+    },
+    {
+      "file": "A02_patch_vertices.csv",
+      "kind": "patch_vertices",
+      "rows": 25,
+      "fields": [
+        "patch_id",
+        "vertex_order",
+        "path_code",
+        "x_data",
+        "y_data"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_annotations.csv",
+      "kind": "numeric_annotations_and_labels",
+      "rows": 5,
+      "fields": [
+        "text_id",
+        "x",
+        "y",
+        "text",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_curves_wide_01.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L001"
+      ],
+      "axis": "A02",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    }
+  ],
+  "decorative_colorbars": [],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

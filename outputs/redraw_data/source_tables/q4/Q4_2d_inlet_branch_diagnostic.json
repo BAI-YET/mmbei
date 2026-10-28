@@ -1,0 +1,16 @@
+{
+  "inlet_original_rc": [
+    8,
+    39
+  ],
+  "inlet_valley_rc": [
+    4,
+    36
+  ],
+  "lateral_snap_distance_m": 300.0,
+  "legacy_peak_depth_m": 47.94770631663723,
+  "updated_peak_depth_m": 47.928247527014136,
+  "legacy_flooded_area_km2": 0.5544,
+  "updated_flooded_area_km2": 0.3456,
+  "interpretation": "Local branch may be numerical inlet artefact when 3x3 injection intersects side slope; no factual claim of geological bifurcation."
+}

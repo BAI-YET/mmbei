@@ -1,0 +1,8 @@
+{
+  "shape": [
+    138,
+    145
+  ],
+  "units": "given by per-figure axis/colorbar metadata",
+  "mask_definition": "1=hidden by original plot; values still retained"
+}

@@ -1,0 +1,3 @@
+﻿series_id,series_label,point_order,x,y,x_datetime,y_datetime,x_space,y_space
+L001,预设预报预警阈值,0,0.0,0.25,,,axes_fraction,axes_fraction
+L001,预设预报预警阈值,1,1.0,0.25,,,axes_fraction,axes_fraction

@@ -10,30 +10,9 @@ venv/
 .env
 .env.*
 
-# Original attachments, downloaded products and derived caches stay local
-/data/
-/inputs/
+# Rebuildable temporary files and local delivery archives
 /tmp/
 /output/
-/assets/fonts/
-/docs/
 *.zip
 *.rar
-
-# Track only the original result PNGs; exclude tables, GIS, caches and redraw copies
-/outputs/*
-!/outputs/q1/
-!/outputs/q2/
-!/outputs/q3/
-!/outputs/q4/
-!/outputs/joint/
-/outputs/q1/*
-/outputs/q2/*
-/outputs/q3/*
-/outputs/q4/*
-/outputs/joint/*
-!/outputs/q1/*.png
-!/outputs/q2/*.png
-!/outputs/q3/*.png
-!/outputs/q4/*.png
-!/outputs/joint/*.png
+/data/**/.*

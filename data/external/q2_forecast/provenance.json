@@ -1,0 +1,15 @@
+{
+  "provider": "Open-Meteo (archived ECMWF initialised run)",
+  "docs": "https://open-meteo.com/en/docs/single-runs-api",
+  "download_url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=28.2877&longitude=85.52723&hourly=temperature_2m%2Cprecipitation%2Cshortwave_radiation%2Cfreezing_level_height&models=ecmwf_ifs&run=2026-08-25T18%3A00&timezone=UTC&forecast_hours=48&temperature_unit=celsius&precipitation_unit=mm",
+  "run_initialised_utc": "2026-08-25T18:00",
+  "minimum_scheduled_latency_h": 4,
+  "conservative_publication_latency_h": 6,
+  "source_coordinates": [
+    28.2877,
+    85.52723
+  ],
+  "raw_sha256": "81ac865ca6a5141a323d5df3fb84fec3917cbb7754fda61e92155fae8d65a23e",
+  "retrieved_utc": "2026-10-24T05:08:06.086524+00:00",
+  "do_not_use_as_observed_station_data": true
+}

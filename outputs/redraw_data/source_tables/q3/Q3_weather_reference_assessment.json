@@ -1,0 +1,186 @@
+{
+  "prediction_issue_bjt": "2026-08-26 09:00:00",
+  "event_time_reference_bjt": "2026-08-26 10:30:00",
+  "risk_condition_score": {
+    "threshold_quantile": 0.85,
+    "threshold": 0.3927317546108908,
+    "weights": {
+      "q2_melt_or_rain": 0.45,
+      "q1_independent_anomaly_groups": 0.55
+    },
+    "mode": "q1q2",
+    "inherited_Q1_variables": [
+      "temp_2m",
+      "sw_down",
+      "vpd_2m"
+    ],
+    "norm_reference": {
+      "temp_2m": {
+        "method": "month-hour historical median / robust MAD",
+        "baseline_years": [
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ]
+      },
+      "sw_down": {
+        "method": "month-hour historical median / robust MAD",
+        "baseline_years": [
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ]
+      },
+      "vpd_2m": {
+        "method": "month-hour historical median / robust MAD",
+        "baseline_years": [
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ]
+      }
+    },
+    "interpretation": "physical precursor state, not calibrated probability of debris-flow occurrence"
+  },
+  "first_actual_threshold_warning_bjt": "2026-08-25 18:00:00",
+  "alarm_rule": "yellow uses q75; 2h entry, 3h clearing, 6h renewal, missing -> unknown; only data before issuance",
+  "warning_tiers": {
+    "attention": {
+      "quantile": 0.7,
+      "threshold": 0.2670453319140616,
+      "first_2hour_alarm_bjt": "2026-08-19 19:00:00"
+    },
+    "yellow": {
+      "quantile": 0.75,
+      "threshold": 0.2972531971486516,
+      "first_2hour_alarm_bjt": "2026-08-24 20:00:00"
+    },
+    "orange": {
+      "quantile": 0.85,
+      "threshold": 0.3927317546108908,
+      "first_2hour_alarm_bjt": "2026-08-25 19:00:00"
+    }
+  },
+  "first_warning_advance_h_to_reference": 16.5,
+  "first_monitoring_warning_advance_h_to_reference": 16.5,
+  "conditional_95pct_interval_h_from_issue": [
+    0.0,
+    6.0
+  ],
+  "conditional_95pct_interval_times_bjt": [
+    "2026-08-26 09:00:00",
+    "2026-08-26 15:00:00"
+  ],
+  "median_trigger_h": 0.5,
+  "event_reference_in_interval": true,
+  "forecast_target": "first passage of the multi-channel meteorological trigger-condition threshold",
+  "predicted_condition_cross_probability": 0.9016666666666666,
+  "predicted_no_condition_cross_probability": 0.09833333333333338,
+  "forecast_distribution_method": "empirical first passage of data-derived condition trajectories",
+  "forecast_input_source": "Q1 observed-analogue trajectories + Q2 actual archived weather",
+  "interval_estimand": "first passage time conditional on meteorological condition crossing within the horizon",
+  "current_forecast_validation_scope": "archived-weather hybrid case replay; historical proxy metrics belong to the analogue-reference model",
+  "forecast_warning_probability_threshold": 0.25,
+  "forecast_warning_issued": true,
+  "forecast_warning_time_bjt": "2026-08-26 09:00:00",
+  "forecast_warning_lead_h_to_task_reference": 1.5,
+  "monitoring_episode_start_bjt": "2026-08-25 18:00:00",
+  "operational_warning_valid_until_bjt": "2026-08-26 15:00:00",
+  "warning_decision_uses_future_event_time": false,
+  "operational_warning_time_bjt": "2026-08-25 18:00:00",
+  "operational_warning_lead_h": 16.5,
+  "warning_decision_basis": "forecast P(condition passage within 6h) >= predeclared 0.25, or valid monitoring alarm",
+  "empirical_disaster_time_PICP": null,
+  "single_task_reference_hit": {
+    "n_evaluable_references": 1,
+    "n_interval_hits": 1,
+    "reference_kind": "task-reported impact clock, compared with the condition time window"
+  },
+  "reference_time_type": "10:30 is the task-reported disaster/impact reference; source trigger truth not independently observed",
+  "old_first_alarm_bjt": "2026-08-24 20:00:00",
+  "active_warning_at_issue": true,
+  "warning_valid_through_task_reference": true,
+  "last_observation_used_bjt": "2026-08-26 08:00:00",
+  "warning_rule_full": "enter after 2 above-threshold valid hours; renew for 6h on high scores; clear after 3 low hours or immediately on missing; decisions use previous hourly observation",
+  "proxy_backtest": {
+    "n_backtest": 151,
+    "n_proxy_crossings": 70,
+    "TP": 62,
+    "FP": 21,
+    "FN": 8,
+    "TN": 60,
+    "new_onset_warning_lead_distribution": {
+      "n": 24,
+      "minimum_h": 0.5,
+      "q25_h": 0.5,
+      "median_h": 3.75,
+      "q75_h": 4.5,
+      "maximum_h": 6.0
+    },
+    "proxy_recall": 0.8857142857142857,
+    "proxy_false_alarm": 0.25925925925925924,
+    "proxy_false_alarm_ratio": 0.25301204819277107,
+    "proxy_precision": 0.7469879518072289,
+    "proxy_interval_coverage": 1.0,
+    "n_proxy_intervals_evaluable": 70,
+    "n_new_onsets": 32,
+    "new_onset_interval_coverage": 1.0,
+    "proxy_coverage_7day_block_bootstrap_95": [
+      1.0,
+      1.0
+    ],
+    "mean_interval_width_h": 5.837748344370861,
+    "full_horizon_interval_width_h": 6.0,
+    "full_horizon_interval_coverage": 1.0,
+    "mean_width_reduction_vs_full_horizon": 0.027041942604856484,
+    "brier_score": 0.12360618101545255,
+    "persistence_brier": 0.2185430463576159,
+    "proxy_roc_auc": 0.9001763668430336,
+    "meaning": "out-of-time weather-condition exceedance; dates have dependence; NOT debris-flow occurrence",
+    "FPR_definition": "FP/(FP+TN)",
+    "false_alarm_ratio_definition": "FP/(TP+FP)",
+    "train_years": [
+      2021,
+      2022,
+      2023
+    ],
+    "calibration_year": 2024,
+    "test_year": 2025,
+    "excluded_issues": [
+      {
+        "issue_bjt": "2025-05-01 09:00:00",
+        "reason": "no_complete_earlier_day_analogues"
+      },
+      {
+        "issue_bjt": "2025-09-27 09:00:00",
+        "reason": "incomplete_verification_horizon"
+      }
+    ],
+    "n_scheduled_issues": 153,
+    "raw_proxy_interval_coverage": 0.9,
+    "calibration_proxy_event_count": 30,
+    "interval_expansion_h": 4.5,
+    "nominal_target": 0.95,
+    "calibration_caution": "conformal quantile is diagnostic under temporal dependence; no guaranteed disaster coverage"
+  },
+  "hazard_base_rate": {
+    "method": "empirical trajectory passage frequencies",
+    "assumed_disaster_count": null
+  },
+  "analogue_days": 21,
+  "external_Q3_download": false,
+  "input_reuse": "predeclared Q1 trio + Q2 rain/melt/station-energy condition index; 2026 Top5 used only for supplemental explanation",
+  "inherited_Q1_features": [
+    "temp_2m",
+    "sw_down",
+    "vpd_2m"
+  ],
+  "Q1_Q2_ablation_file": "Q3_Q1_Q2_ablation_validation.csv",
+  "forecast_method": "complete earlier day score trajectories adjusted to issuance observation; no future data"
+}

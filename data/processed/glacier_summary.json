@@ -1,0 +1,16 @@
+{
+  "n_gullies": 84,
+  "types": {
+    "降雨型": 41,
+    "冰水混合型": 25,
+    "冰雪融水型": 16,
+    "冰湖溃决型": 2
+  },
+  "historical_gully_dates_are_event_times": false,
+  "ice_area_km2": 6.4368,
+  "ice_total_volume_km3": 0.31918230652809143,
+  "median_ice_thickness_m": 43.0,
+  "median_slope_deg": 22.800674438476562,
+  "median_driving_shear_kpa": 128.81065368652344,
+  "notes": "Total glacier volume is NOT avalanche release volume; glacier velocity 2014-2024 is historical."
+}

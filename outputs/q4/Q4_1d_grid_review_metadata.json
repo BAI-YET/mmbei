@@ -1,0 +1,33 @@
+{
+  "fingerprint": "f3d9f3d8c578d9f5738d65f7285a4ab2d5502c8756e8412a29d8fb0c757d83fb",
+  "interpretation": "spacing sensitivity only; not proof of asymptotic convergence",
+  "records": [
+    {
+      "resolution_m": 30.0,
+      "runout_km": 14.7,
+      "arrival_min": NaN,
+      "max_depth_m": 167.84744630730256,
+      "max_wet_velocity_m_s": 84.80060204615125,
+      "mass_relative_error": 4.023313522338874e-15,
+      "topography_information": "same interpolated path; no new DEM information"
+    },
+    {
+      "resolution_m": 60.0,
+      "runout_km": 14.52,
+      "arrival_min": NaN,
+      "max_depth_m": 168.60517730027695,
+      "max_wet_velocity_m_s": 74.71967383239581,
+      "mass_relative_error": 1.6391277313232409e-15,
+      "topography_information": "same interpolated path; no new DEM information"
+    },
+    {
+      "resolution_m": 120.0,
+      "runout_km": 14.28,
+      "arrival_min": NaN,
+      "max_depth_m": 151.6863901454025,
+      "max_wet_velocity_m_s": 65.0,
+      "mass_relative_error": 0.0,
+      "topography_information": "same interpolated path; no new DEM information"
+    }
+  ]
+}

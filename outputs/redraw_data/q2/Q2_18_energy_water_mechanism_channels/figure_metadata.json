@@ -1,0 +1,370 @@
+{
+  "figure": "q2/Q2_18_energy_water_mechanism_channels.png",
+  "title": "降雨、前期热量与能量通道评估",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "a  本次事件的各通道位置",
+      "xlabel": "同一历史基准中的百分位",
+      "ylabel": "",
+      "xlim": [
+        0.0,
+        1.05
+      ],
+      "ylim": [
+        -0.69,
+        5.6899999999999995
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_child6",
+          "x_space": "data",
+          "y_space": "axes_fraction",
+          "color": "#666",
+          "linestyle": "--",
+          "marker": "None",
+          "linewidth": 1.5,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [],
+      "patches": [
+        {
+          "patch_id": "P001",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.12549019607843137,
+            0.3607843137254902,
+            0.5725490196078431,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P002",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.12549019607843137,
+            0.3607843137254902,
+            0.5725490196078431,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P003",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.12549019607843137,
+            0.3607843137254902,
+            0.5725490196078431,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P004",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.8549019607843137,
+            0.47058823529411764,
+            0.24705882352941178,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P005",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.12549019607843137,
+            0.3607843137254902,
+            0.5725490196078431,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P006",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.12549019607843137,
+            0.3607843137254902,
+            0.5725490196078431,
+            1.0
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": null,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        }
+      ]
+    },
+    {
+      "axis": "A02",
+      "title": "b  前期水热与能量累积",
+      "xlabel": "北京时间",
+      "ylabel": "历史百分位",
+      "xlim": [
+        20659.877083333333,
+        20692.83125
+      ],
+      "ylim": [
+        0.3257809487080602,
+        1.03210566910914
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": true,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "源区7日正积温",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#1f77b4",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.3,
+          "alpha": null
+        },
+        {
+          "series_id": "L002",
+          "label": "源区30日正积温",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#ff7f0e",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.3,
+          "alpha": null
+        },
+        {
+          "series_id": "L003",
+          "label": "站点正能量余量当量",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#2ca02c",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.3,
+          "alpha": null
+        },
+        {
+          "series_id": "L004",
+          "label": "_child3",
+          "x_space": "axes_fraction",
+          "y_space": "data",
+          "color": "#666",
+          "linestyle": "--",
+          "marker": "None",
+          "linewidth": 1.5,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [],
+      "patches": []
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 13,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 2,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_bars.csv",
+      "kind": "bars_histogram_bins_and_spans",
+      "rows": 6,
+      "fields": [
+        "patch_id",
+        "label",
+        "x",
+        "y",
+        "width",
+        "height",
+        "angle_degree",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": "height is bin count/density exactly used in original plot; y+height gives histogram top"
+    },
+    {
+      "file": "A01_patch_vertices.csv",
+      "kind": "patch_vertices",
+      "rows": 30,
+      "fields": [
+        "patch_id",
+        "vertex_order",
+        "path_code",
+        "x_data",
+        "y_data"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A02_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 17,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 2162,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_curves_wide_01.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 720,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L001",
+        "y_L002",
+        "y_L003"
+      ],
+      "axis": "A02",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    },
+    {
+      "file": "A02_curves_wide_02.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L004"
+      ],
+      "axis": "A02",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    }
+  ],
+  "decorative_colorbars": [],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

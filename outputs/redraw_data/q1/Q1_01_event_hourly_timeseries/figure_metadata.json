@@ -1,0 +1,5403 @@
+{
+  "figure": "q1/Q1_01_event_hourly_timeseries.png",
+  "title": "",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "灾前十天气象要素变化过程",
+      "xlabel": "",
+      "ylabel": "2 m 气温 (°C)",
+      "xlim": [
+        20680.8603,
+        20691.875700000004
+      ],
+      "ylim": [
+        7.054449999999999,
+        21.45455
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": true,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_child0",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#205C92",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.3,
+          "alpha": null
+        },
+        {
+          "series_id": "L002",
+          "label": "_child1",
+          "x_space": "data",
+          "y_space": "axes_fraction",
+          "color": "#CB5564",
+          "linestyle": "--",
+          "marker": "None",
+          "linewidth": 1.5,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [],
+      "patches": []
+    },
+    {
+      "axis": "A02",
+      "title": "",
+      "xlabel": "",
+      "ylabel": "净辐射 (W/m²)",
+      "xlim": [
+        20680.8603,
+        20691.875700000004
+      ],
+      "ylim": [
+        -166.70851350000004,
+        1116.7196435
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": true,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_child0",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#DA783F",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.3,
+          "alpha": null
+        },
+        {
+          "series_id": "L002",
+          "label": "_child1",
+          "x_space": "data",
+          "y_space": "axes_fraction",
+          "color": "#CB5564",
+          "linestyle": "--",
+          "marker": "None",
+          "linewidth": 1.5,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [],
+      "patches": []
+    },
+    {
+      "axis": "A03",
+      "title": "",
+      "xlabel": "",
+      "ylabel": "表层体积含水率",
+      "xlim": [
+        20680.8603,
+        20691.875700000004
+      ],
+      "ylim": [
+        0.07552117,
+        0.19434823
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": true,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_child0",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#248F81",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.3,
+          "alpha": null
+        },
+        {
+          "series_id": "L002",
+          "label": "_child1",
+          "x_space": "data",
+          "y_space": "axes_fraction",
+          "color": "#CB5564",
+          "linestyle": "--",
+          "marker": "None",
+          "linewidth": 1.5,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [],
+      "patches": []
+    },
+    {
+      "axis": "A04",
+      "title": "",
+      "xlabel": "北京时间（UTC+8）",
+      "ylabel": "降水量 (mm/h)",
+      "xlim": [
+        20680.8603,
+        20691.875700000004
+      ],
+      "ylim": [
+        0.0,
+        3.3600000000000003
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": true,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_child240",
+          "x_space": "data",
+          "y_space": "axes_fraction",
+          "color": "#CB5564",
+          "linestyle": "--",
+          "marker": "None",
+          "linewidth": 1.5,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [],
+      "patches": [
+        {
+          "patch_id": "P001",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P002",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P003",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P004",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P005",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P006",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P007",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P008",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P009",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P010",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P011",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P012",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P013",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P014",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P015",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P016",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P017",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P018",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P019",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P020",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P021",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P022",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P023",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P024",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P025",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P026",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P027",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P028",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P029",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P030",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P031",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P032",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P033",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P034",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P035",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P036",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P037",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P038",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P039",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P040",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P041",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P042",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P043",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P044",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P045",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P046",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P047",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P048",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P049",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P050",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P051",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P052",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P053",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P054",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P055",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P056",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P057",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P058",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P059",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P060",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P061",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P062",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P063",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P064",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P065",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P066",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P067",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P068",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P069",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P070",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P071",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P072",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P073",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P074",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P075",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P076",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P077",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P078",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P079",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P080",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P081",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P082",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P083",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P084",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P085",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P086",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P087",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P088",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P089",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P090",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P091",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P092",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P093",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P094",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P095",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P096",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P097",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P098",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P099",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P100",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P101",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P102",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P103",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P104",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P105",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P106",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P107",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P108",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P109",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P110",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P111",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P112",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P113",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P114",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P115",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P116",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P117",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P118",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P119",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P120",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P121",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P122",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P123",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P124",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P125",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P126",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P127",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P128",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P129",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P130",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P131",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P132",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P133",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P134",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P135",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P136",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P137",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P138",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P139",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P140",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P141",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P142",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P143",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P144",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P145",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P146",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P147",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P148",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P149",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P150",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P151",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P152",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P153",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P154",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P155",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P156",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P157",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P158",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P159",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P160",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P161",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P162",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P163",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P164",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P165",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P166",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P167",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P168",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P169",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P170",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P171",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P172",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P173",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P174",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P175",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P176",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P177",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P178",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P179",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P180",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P181",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P182",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P183",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P184",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P185",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P186",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P187",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P188",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P189",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P190",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P191",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P192",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P193",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P194",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P195",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P196",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P197",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P198",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P199",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P200",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P201",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P202",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P203",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P204",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P205",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P206",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P207",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P208",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P209",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P210",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P211",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P212",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P213",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P214",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P215",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P216",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P217",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P218",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P219",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P220",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P221",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P222",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P223",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P224",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P225",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P226",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P227",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P228",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P229",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P230",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P231",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P232",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P233",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P234",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P235",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P236",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P237",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P238",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P239",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P240",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5725490196078431,
+            0.4627450980392157,
+            0.6470588235294118,
+            0.75
+          ],
+          "edgecolor": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0.75,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        }
+      ]
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 5,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 242,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A02_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 5,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 242,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A03_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 4,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A03_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 242,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A04_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 10,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A04",
+      "note": ""
+    },
+    {
+      "file": "A04_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 2,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A04",
+      "note": ""
+    },
+    {
+      "file": "A04_bars.csv",
+      "kind": "bars_histogram_bins_and_spans",
+      "rows": 240,
+      "fields": [
+        "patch_id",
+        "label",
+        "x",
+        "y",
+        "width",
+        "height",
+        "angle_degree",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A04",
+      "note": "height is bin count/density exactly used in original plot; y+height gives histogram top"
+    },
+    {
+      "file": "A04_patch_vertices.csv",
+      "kind": "patch_vertices",
+      "rows": 1200,
+      "fields": [
+        "patch_id",
+        "vertex_order",
+        "path_code",
+        "x_data",
+        "y_data"
+      ],
+      "axis": "A04",
+      "note": ""
+    },
+    {
+      "file": "A04_curves_wide_01.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L001"
+      ],
+      "axis": "A04",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    }
+  ],
+  "decorative_colorbars": [],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

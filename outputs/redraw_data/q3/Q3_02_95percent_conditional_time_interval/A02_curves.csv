@@ -1,0 +1,16 @@
+﻿series_id,series_label,point_order,x,y,x_datetime,y_datetime,x_space,y_space
+L001,_child0,0,0.0,0.0,,,data,data
+L001,_child0,1,0.5,0.157751914054681,,,data,data
+L001,_child0,2,1.0,0.31034317689263524,,,data,data
+L001,_child0,3,1.5,0.43763542592297816,,,data,data
+L001,_child0,4,2.0,0.5406929545243363,,,data,data
+L001,_child0,5,2.5,0.6260162704585768,,,data,data
+L001,_child0,6,3.0,0.693906456281057,,,data,data
+L001,_child0,7,3.5,0.7544796065375685,,,data,data
+L001,_child0,8,4.0,0.8078447262656394,,,data,data
+L001,_child0,9,4.5,0.8591448366926715,,,data,data
+L001,_child0,10,5.0,0.9083985460512164,,,data,data
+L001,_child0,11,5.5,0.9553318313226236,,,data,data
+L001,_child0,12,6.0,0.9999999999999999,,,data,data
+L002,题面时刻；仅作评价,0,1.5,0.0,,,data,axes_fraction
+L002,题面时刻；仅作评价,1,1.5,1.0,,,data,axes_fraction

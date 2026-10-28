@@ -1,0 +1,6 @@
+﻿axis,tick_order,plot_coordinate,display_label
+y,0,-500.0,-500
+y,1,0.0,0
+y,2,500.0,500
+y,3,1000.0,1000
+y,4,1500.0,1500

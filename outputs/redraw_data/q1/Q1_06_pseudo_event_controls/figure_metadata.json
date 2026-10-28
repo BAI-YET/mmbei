@@ -1,0 +1,507 @@
+{
+  "figure": "q1/Q1_06_pseudo_event_controls.png",
+  "title": "",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "灾前气象异常与历史同期对照",
+      "xlabel": "入选五项的平均 |MAD Z|",
+      "ylabel": "历史伪事件窗口数",
+      "xlim": [
+        0.3375334336130192,
+        2.4153849520299175
+      ],
+      "ylim": [
+        0.0,
+        18.9
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "真实事件对照得分 1.66",
+          "x_space": "data",
+          "y_space": "axes_fraction",
+          "color": "#C45C41",
+          "linestyle": "--",
+          "marker": "None",
+          "linewidth": 2.0,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [],
+      "patches": [
+        {
+          "patch_id": "P001",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5411764705882353,
+            0.6549019607843137,
+            0.7137254901960784,
+            0.85
+          ],
+          "edgecolor": [
+            1.0,
+            1.0,
+            1.0,
+            0.85
+          ],
+          "alpha": 0.85,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P002",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5411764705882353,
+            0.6549019607843137,
+            0.7137254901960784,
+            0.85
+          ],
+          "edgecolor": [
+            1.0,
+            1.0,
+            1.0,
+            0.85
+          ],
+          "alpha": 0.85,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P003",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5411764705882353,
+            0.6549019607843137,
+            0.7137254901960784,
+            0.85
+          ],
+          "edgecolor": [
+            1.0,
+            1.0,
+            1.0,
+            0.85
+          ],
+          "alpha": 0.85,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P004",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5411764705882353,
+            0.6549019607843137,
+            0.7137254901960784,
+            0.85
+          ],
+          "edgecolor": [
+            1.0,
+            1.0,
+            1.0,
+            0.85
+          ],
+          "alpha": 0.85,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P005",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5411764705882353,
+            0.6549019607843137,
+            0.7137254901960784,
+            0.85
+          ],
+          "edgecolor": [
+            1.0,
+            1.0,
+            1.0,
+            0.85
+          ],
+          "alpha": 0.85,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P006",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5411764705882353,
+            0.6549019607843137,
+            0.7137254901960784,
+            0.85
+          ],
+          "edgecolor": [
+            1.0,
+            1.0,
+            1.0,
+            0.85
+          ],
+          "alpha": 0.85,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P007",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5411764705882353,
+            0.6549019607843137,
+            0.7137254901960784,
+            0.85
+          ],
+          "edgecolor": [
+            1.0,
+            1.0,
+            1.0,
+            0.85
+          ],
+          "alpha": 0.85,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P008",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5411764705882353,
+            0.6549019607843137,
+            0.7137254901960784,
+            0.85
+          ],
+          "edgecolor": [
+            1.0,
+            1.0,
+            1.0,
+            0.85
+          ],
+          "alpha": 0.85,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P009",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5411764705882353,
+            0.6549019607843137,
+            0.7137254901960784,
+            0.85
+          ],
+          "edgecolor": [
+            1.0,
+            1.0,
+            1.0,
+            0.85
+          ],
+          "alpha": 0.85,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P010",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5411764705882353,
+            0.6549019607843137,
+            0.7137254901960784,
+            0.85
+          ],
+          "edgecolor": [
+            1.0,
+            1.0,
+            1.0,
+            0.85
+          ],
+          "alpha": 0.85,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P011",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5411764705882353,
+            0.6549019607843137,
+            0.7137254901960784,
+            0.85
+          ],
+          "edgecolor": [
+            1.0,
+            1.0,
+            1.0,
+            0.85
+          ],
+          "alpha": 0.85,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P012",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5411764705882353,
+            0.6549019607843137,
+            0.7137254901960784,
+            0.85
+          ],
+          "edgecolor": [
+            1.0,
+            1.0,
+            1.0,
+            0.85
+          ],
+          "alpha": 0.85,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P013",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5411764705882353,
+            0.6549019607843137,
+            0.7137254901960784,
+            0.85
+          ],
+          "edgecolor": [
+            1.0,
+            1.0,
+            1.0,
+            0.85
+          ],
+          "alpha": 0.85,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P014",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5411764705882353,
+            0.6549019607843137,
+            0.7137254901960784,
+            0.85
+          ],
+          "edgecolor": [
+            1.0,
+            1.0,
+            1.0,
+            0.85
+          ],
+          "alpha": 0.85,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P015",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5411764705882353,
+            0.6549019607843137,
+            0.7137254901960784,
+            0.85
+          ],
+          "edgecolor": [
+            1.0,
+            1.0,
+            1.0,
+            0.85
+          ],
+          "alpha": 0.85,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P016",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5411764705882353,
+            0.6549019607843137,
+            0.7137254901960784,
+            0.85
+          ],
+          "edgecolor": [
+            1.0,
+            1.0,
+            1.0,
+            0.85
+          ],
+          "alpha": 0.85,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P017",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5411764705882353,
+            0.6549019607843137,
+            0.7137254901960784,
+            0.85
+          ],
+          "edgecolor": [
+            1.0,
+            1.0,
+            1.0,
+            0.85
+          ],
+          "alpha": 0.85,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        },
+        {
+          "patch_id": "P018",
+          "label": "_nolegend_",
+          "type": "Rectangle",
+          "facecolor": [
+            0.5411764705882353,
+            0.6549019607843137,
+            0.7137254901960784,
+            0.85
+          ],
+          "edgecolor": [
+            1.0,
+            1.0,
+            1.0,
+            0.85
+          ],
+          "alpha": 0.85,
+          "hatch": null,
+          "x_space": "artist_transform",
+          "y_space": "artist_transform"
+        }
+      ]
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 19,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 2,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_bars.csv",
+      "kind": "bars_histogram_bins_and_spans",
+      "rows": 18,
+      "fields": [
+        "patch_id",
+        "label",
+        "x",
+        "y",
+        "width",
+        "height",
+        "angle_degree",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": "height is bin count/density exactly used in original plot; y+height gives histogram top"
+    },
+    {
+      "file": "A01_patch_vertices.csv",
+      "kind": "patch_vertices",
+      "rows": 90,
+      "fields": [
+        "patch_id",
+        "vertex_order",
+        "path_code",
+        "x_data",
+        "y_data"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_curves_wide_01.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 2,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L001"
+      ],
+      "axis": "A01",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    }
+  ],
+  "decorative_colorbars": [],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

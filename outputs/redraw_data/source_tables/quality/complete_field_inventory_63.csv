@@ -1,0 +1,64 @@
+﻿dataset,raw_column,canonical_column,role,valid_observations,valid_years,qc_variable_exists
+MET,Ta_1m(degree C),temp_1m,physical_candidate,46761,6,True
+MET,Ta_2m(degree C),temp_2m,physical_candidate,46764,6,True
+MET,Ta_4m(degree C),temp_4m,physical_candidate,46764,6,True
+MET,Ta_10m(degree C),temp_10m,physical_candidate,46765,6,True
+MET,Ta_20m(degree C),temp_20m,physical_candidate,46766,6,True
+MET,WS_1m(m/s),wind_1m,physical_candidate,45848,6,True
+MET,WS_2m(m/s),wind_2m,physical_candidate,45845,6,True
+MET,WS_4m(m/s),wind_4m,physical_candidate,45063,6,True
+MET,WS_10m(m/s),wind_10m,physical_candidate,46074,6,True
+MET,WS_20m(m/s),wind_20m,physical_candidate,46108,6,True
+MET,WD_1m(degree),wd_1m,physical_candidate,46004,6,True
+MET,WD_2m(degree),wd_2m,physical_candidate,46019,6,True
+MET,WD_4m(degree),wd_4m,physical_candidate,45059,6,True
+MET,WD_10m(degree),wd_10m,physical_candidate,45973,6,True
+MET,WD_20m(degree),wd_20m,physical_candidate,46182,6,True
+MET,RH_1m(%),rh_1m,physical_candidate,46766,6,True
+MET,RH_2m(%),rh_2m,physical_candidate,46768,6,True
+MET,RH_4m(%),rh_4m,physical_candidate,46768,6,True
+MET,RH_10m(%),rh_10m,physical_candidate,46768,6,True
+MET,RH_20m(%),rh_20m,physical_candidate,46722,6,True
+MET,Pressure(hPa),pressure,physical_candidate,45629,6,True
+MET,Precip(mm),precip_mm,physical_candidate,46762,6,False
+RADM,Rsd(W/m2),sw_down,physical_candidate,45634,6,True
+RADM,Rsu(W/m2),sw_up,physical_candidate,45596,6,True
+RADM,Rld(W/m2),lw_down,physical_candidate,45638,6,True
+RADM,Rlu(W/m2),lw_up,physical_candidate,45578,6,True
+SOIL,soilT_0.1m(degree C),soilT_0p1,physical_candidate,46768,6,True
+SOIL,soilT_0.2m(degree C),soilT_0p2,physical_candidate,46768,6,True
+SOIL,soilT_0.4m(degree C),soilT_0p4,physical_candidate,46768,6,True
+SOIL,soilT_0.8m(degree C),soilT_0p8,physical_candidate,46768,6,True
+SOIL,soilT_1.6m(degree C),soilT_1p6,physical_candidate,46768,6,True
+SOIL,VWC_0.1m(m3/m3),vwc_0p1,physical_candidate,46737,6,True
+SOIL,VWC_0.2m(m3/m3),vwc_0p2,physical_candidate,46008,6,True
+SOIL,VWC_0.4m(m3/m3),vwc_0p4,physical_candidate,46768,6,True
+SOIL,VWC_0.8m(m3/m3),vwc_0p8,physical_candidate,46767,6,True
+SOIL,VWC_1.6m(m3/m3),vwc_1p6,physical_candidate,46768,6,True
+SOIL,G_0.1m(W/m2),soil_heat,physical_candidate,45681,6,True
+SOIL,G_0.2m(W/m2),soil_heat_0p2,physical_candidate,45681,6,True
+FLUX,Ux(m/s),flux_ux,physical_candidate,42019,6,False
+FLUX,Uy(m/s),flux_uy,physical_candidate,42019,6,False
+FLUX,Uz(m/s),flux_uz,physical_candidate,42019,6,False
+FLUX,T_SONIC(deg C),sonic_temp,physical_candidate,42019,6,False
+FLUX,amb_e(kPa),ambient_vapor_pressure,physical_candidate,37162,6,False
+FLUX,amb_e_sat(kPa),ambient_saturation_pressure,diagnostic_only,41524,6,False
+FLUX,e(kPa),vapor_pressure,physical_candidate,36982,6,False
+FLUX,e_sat(kPa),saturation_pressure,physical_candidate,35920,6,False
+FLUX,e_probe(kPa),probe_vapor_pressure,diagnostic_only,42203,6,False
+FLUX,e_sat_probe(kPa),probe_saturation_pressure,diagnostic_only,42204,6,False
+FLUX,H2O_probe(g/m3),water_probe,diagnostic_only,42203,6,False
+FLUX,PA(kPa),flux_pressure,diagnostic_only,42208,6,False
+FLUX,VPD(hPa),vpd,physical_candidate,35845,6,False
+FLUX,H2O_density(g/m3),water_density,physical_candidate,37162,6,False
+FLUX,FC_mass(mg/m2*s),fc_mass,diagnostic_only,36050,6,False
+FLUX,LE(W/m2),latent_heat,physical_candidate,36055,6,False
+FLUX,H(W/m2),sensible_heat,physical_candidate,35935,6,False
+FLUX,TAU(kg/m*s2),tau,physical_candidate,35937,6,False
+FLUX,USTAR(m/s),ustar,physical_candidate,42019,6,False
+FLUX,TSTAR(deg C),tstar,physical_candidate,36051,6,False
+FLUX,TKE(m2/s2),tke,physical_candidate,42019,6,False
+FLUX,FETCH_MAX(m),fetch_max,diagnostic_only,42001,6,False
+FLUX,FETCH_90(m),fetch90,diagnostic_only,41951,6,False
+FLUX,FETCH_55(m),fetch55,diagnostic_only,42001,6,False
+FLUX,FETCH_40(m),fetch40,diagnostic_only,42002,6,False

@@ -1,0 +1,9 @@
+{
+  "equation": "q = 0.5 * rho * velocity^2",
+  "pressure_units": "kPa",
+  "wet_threshold_m": 0.2,
+  "density_kg_m3": 1800.0,
+  "peak_dynamic_pressure_kPa": 1000.620377959068,
+  "interpretation": "depth-averaged dynamic-pressure proxy, not actual structural impact load",
+  "plot_vmax_percentile_98_kPa": 953.0950947279161
+}

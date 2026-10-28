@@ -1,0 +1,6 @@
+feature,status,event_same_hour_z,baseline_valid_hours,spearman_abs_anomaly_vs_Q3_reference,incremental_information_interpretation
+vpd,evaluated,1.9587773134792585,14977,0.26143565962207094,descriptive only; not cross-event validation
+temp_10m,evaluated,1.2646701740186157,15411,0.3242414100976656,descriptive only; not cross-event validation
+temp_20m,evaluated,1.216492262627433,15411,0.31487778145348105,descriptive only; not cross-event validation
+energy_balance_residual,evaluated,-0.08509744998048989,14969,0.13766912119780025,descriptive only; not cross-event validation
+temp_2m,evaluated,1.2661493204209784,15411,0.3382549493956452,descriptive only; not cross-event validation

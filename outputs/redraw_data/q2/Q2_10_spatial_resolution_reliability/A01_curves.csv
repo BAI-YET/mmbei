@@ -1,0 +1,7 @@
+﻿series_id,series_label,point_order,x,y,x_datetime,y_datetime,x_space,y_space
+L001,空间秩相关,0,30.0,0.9999999999835991,,,data,data
+L001,空间秩相关,1,60.0,0.9725141477916287,,,data,data
+L001,空间秩相关,2,120.0,0.9335876128315733,,,data,data
+L002,高危险区IoU,0,30.0,1.0,,,data,data
+L002,高危险区IoU,1,60.0,0.77561282212445,,,data,data
+L002,高危险区IoU,2,120.0,0.6690997566909975,,,data,data

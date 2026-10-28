@@ -1,0 +1,11 @@
+{
+  "status": "ACTUAL_Q2_FORECAST_FORCING_SENSITIVITY",
+  "baseline_method": "all-condition trajectory analogues",
+  "alternative_method": ".55*Q1 anomaly analogues + .45*Q2 archived-weather condition",
+  "forecast_threshold": 0.3927317546108908,
+  "alternative_proxy_exceedance_probability": 0.9016666666666666,
+  "reference_proxy_exceedance_probability": 0.9016666666666666,
+  "not_disaster_probability": true,
+  "archived_run_out_of_time_accuracy_evaluable": false,
+  "limitation": "one run only; model/site bias and future weather uncertainty not calibrated; retain analogue as validation reference"
+}

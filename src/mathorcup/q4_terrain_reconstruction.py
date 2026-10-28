@@ -88,7 +88,39 @@ def section_widths(z,tr,profile,relief_m=20.,sample_step_m=30.,half_span_m=900.)
     return widths,offsets,elevation,np.array(beds)
 
 
-def prepare_reconstruction_geometry(ctx,evidence):
+def prepare_reconstruction_geometry(ctx,evidence,output_question='q4'):
+    """Shared static geometry. Q2 prepares it; Q4 consumes the same arrays.
+
+    This utility uses only fixed source assumptions and official terrain,
+    never propagation results. Its numerical terrain algorithm is unchanged.
+    """
+    import hashlib,shutil
+    from .common import find_first
+    spec={k:evidence[k] for k in ['locations']}
+    spec['source_area_m2']=evidence['published_values']['source_area_m2']['value']
+    spec['transition_distance_m']=evidence['published_values']['confluence_to_port_distance_m']['value']
+    spec['settings']={k:evidence['reconstruction'][k] for k in ['routing_resolution_m','solver_dx_m','cross_section_relief_m']}
+    for name,path in [('glacier',find_first(ctx.raw/'unpacked/4','*.nc')),('dem',find_first(ctx.raw/'unpacked/7','DEM.tif'))]:
+        with path.open('rb') as f:spec[name]=hashlib.file_digest(f,'sha256').hexdigest()
+    basis=hashlib.sha256(json.dumps(spec,sort_keys=True).encode()).hexdigest()
+    if output_question=='q4' and not ctx.cfg.get('strict_route',False):
+        shared=ctx.folder('q2');meta=shared/'Q2_reconstruction_geometry.json'
+        if meta.exists():
+            quality=json.loads(meta.read_text())
+            if quality.get('geometry_contract_sha256')!=basis:
+                raise ValueError('Q2 geometry inputs changed; rerun Q2 before Q4')
+            out=ctx.folder('q4')
+            for suffix in ['route.csv','release_pixel_projection.csv','sections.npz']:
+                source=shared/('Q2_'+('reconstruction_'+suffix if suffix!='release_pixel_projection.csv' else suffix))
+                target=out/('Q4_'+('reconstruction_'+suffix if suffix!='release_pixel_projection.csv' else suffix))
+                shutil.copy2(source,target)
+            quality['input_geometry_origin']='Q2 shared source and DEM geometry'
+            write_json(out/'Q4_reconstruction_geometry.json',quality)
+            profile=pd.read_csv(out/'Q4_reconstruction_route.csv',float_precision='round_trip')
+            with np.load(out/'Q4_reconstruction_sections.npz') as a:
+                z=a['background_elevation_m'].copy();tr=Affine(*a['background_transform'][:6])
+            return profile,int(quality['confluence_index']),z,tr,quality
+    if output_question not in ('q2','q4'):raise ValueError('Static geometry owner must be q2 or q4')
     settings=evidence['reconstruction'];dx=float(settings['routing_resolution_m'])
     project=Transformer.from_crs('EPSG:4326',UTM_CRS,always_xy=True)
     mapped_source=project.transform(*evidence['locations']['source_lonlat']['value'])
@@ -168,9 +200,10 @@ def prepare_reconstruction_geometry(ctx,evidence):
     profile['effective_width_m']=np.maximum(bottom_width,source_width)
     profile['source_area_weight']=source_weights
     # Save exact arrays used by plots/solver; these generated tables remain local.
-    out=ctx.folder('q4');profile.to_csv(out/'Q4_reconstruction_route.csv',index=False)
-    projection.to_csv(out/'Q4_release_pixel_projection.csv',index=False)
-    np.savez_compressed(out/'Q4_reconstruction_sections.npz',offsets_m=offsets,elevation_m=sections,
+    out=ctx.folder(output_question);prefix=output_question.upper()
+    profile.to_csv(out/f'{prefix}_reconstruction_route.csv',index=False)
+    projection.to_csv(out/f'{prefix}_release_pixel_projection.csv',index=False)
+    np.savez_compressed(out/f'{prefix}_reconstruction_sections.npz',offsets_m=offsets,elevation_m=sections,
                         thalweg_elevation_m=beds,source_pixels_utm=pixels,
                         background_elevation_m=z,background_transform=np.array(tuple(tr)))
     quality={'method':method,'source_lonlat':evidence['locations']['source_lonlat'],
@@ -194,7 +227,9 @@ def prepare_reconstruction_geometry(ctx,evidence):
        'bank_side_slope_median':float(np.median(side)),
        'width_min_m':float(profile.effective_width_m.min()),'width_median_m':float(profile.effective_width_m.median()),
        'numerical_dx_m':settings['solver_dx_m'],'DEM_sampling_m':dx}
-    write_json(out/'Q4_reconstruction_geometry.json',quality)
+    quality['geometry_contract_sha256']=basis
+    quality['geometry_role']='fixed case-source assumption and static terrain, before time forecast or flow simulation'
+    write_json(out/f'{prefix}_reconstruction_geometry.json',quality)
     return profile,junction,z,tr,quality
 
 

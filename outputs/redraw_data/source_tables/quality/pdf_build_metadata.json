@@ -1,0 +1,19 @@
+{
+  "pdf": "/workspace/scratch/99da163004d1/project_v2_3_1/MathorCup_B_v2/docs/MathorCup_B_v2_3_1_question_answers.pdf",
+  "planned_pages": 10,
+  "page_titles": [
+    "吉隆泥石流预报与传播仿真",
+    "Q1：关联特征排序与天气过程",
+    "Q2：触发评估模型与临界条件",
+    "Q2：时间与空间尺度可靠性",
+    "Q3：触发时间分布与95%区间",
+    "Q3：预警、覆盖率与空间距离",
+    "Q4：仿真环境、方程与参数",
+    "Q4：源区至口岸的仿真过程",
+    "Q4：口岸局部二维传播结果",
+    "Q4：数值实验与结果评价"
+  ],
+  "source": "current v2.3.1 sequential model outputs",
+  "report_style": "question, equation, experiment, answer; assumptions stated once",
+  "revision_scope": "answer report only; numerical model and existing figures unchanged"
+}

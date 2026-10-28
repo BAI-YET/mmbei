@@ -1,0 +1,11 @@
+{
+  "method": "model-based spatial range in retrospective warning replay",
+  "source_to_port_corridor_km": 23.715,
+  "warning_envelope_km2": 9.578725254593541,
+  "release_grid_km2": 0.7596,
+  "variable_width_corridor_km2": 9.269141030148603,
+  "nested_2d_wet_km2": 0.6246,
+  "CRS": "EPSG:32645",
+  "width_basis": "computed maximum stages in DEM-derived, calibrated cross sections",
+  "end_of_model_domain": "port river reach; length is a protected corridor distance, not final runout beyond the port"
+}

@@ -1,0 +1,26 @@
+{
+  "external_data_scope": "QUESTION_2_ONLY",
+  "satellite_status": "REPORTED_MEASUREMENT_FROM_PUBLISHED_SENTINEL_1_ANALYSIS",
+  "satellite_summary": {
+    "product": "Sentinel-1 InSAR LOS deformation, ICIMOD published synthesis",
+    "source_url": "https://www.icimod.org/press-releases/second-major-himalayan-flood-in-seven-weeks-raises-new-questions-about-mountain-risk/",
+    "measurement_period_start": "2026-07-07",
+    "measurement_period_end": "2026-08-24",
+    "los_max_displacement_m": 0.4,
+    "duration_days": 48,
+    "average_los_motion_proxy_mm_day": 8.333,
+    "quantity": "maximum line-of-sight deformation in affected northern slope, not vertical fall or a grid",
+    "research_role": "retrospective external Q2 corroboration only; published after disaster",
+    "publication_date": "2026-10-13",
+    "available_at_2026_issue": false,
+    "cannot_create_pixel_displacement": true
+  },
+  "weather_historical_run_status": "ACTUAL_DOWNLOADED_ARCHIVED_FORECAST",
+  "forecast_retrieval_command": "python run.py --fetch-q2-external",
+  "forecast_url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=28.2877&longitude=85.52723&hourly=temperature_2m%2Cprecipitation%2Cshortwave_radiation%2Cfreezing_level_height&models=ecmwf_ifs&run=2026-08-25T18%3A00&timezone=UTC&forecast_hours=48&temperature_unit=celsius&precipitation_unit=mm",
+  "forecast_publication_timing": "2026-08-25 18:00 UTC init + 6h conservative latency before Beijing 09:00 issuance",
+  "post_event_8m_sar_dem_dataset_url": "https://zenodo.org/records/22842744",
+  "post_event_dem_use": "Q2 / Q4 retrospective geometric checking only; never forecasting input",
+  "forecast_data_rows": 48,
+  "interpolation_not_performed_if_missing": true
+}

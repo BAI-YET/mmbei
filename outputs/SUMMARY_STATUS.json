@@ -1,0 +1,117 @@
+{
+  "version": "v2.3.1",
+  "extra_data_only_question_2": true,
+  "question_order": [
+    "Q1 features",
+    "Q2 trigger assessment and static source/terrain",
+    "Q3 conditional event time and warning",
+    "Q4 flow simulation"
+  ],
+  "Q1_answer_mechanism_top5": [
+    {
+      "answer_rank": 1,
+      "feature": "vpd",
+      "label": "通量塔VPD",
+      "mechanism": "atmospheric_moisture",
+      "rarity_anomaly_score": 0.8890641444951927
+    },
+    {
+      "answer_rank": 2,
+      "feature": "temp_10m",
+      "label": "10 m 气温",
+      "mechanism": "air_temperature",
+      "rarity_anomaly_score": 0.7886532592589552
+    },
+    {
+      "answer_rank": 3,
+      "feature": "energy_balance_residual",
+      "label": "地表能量收支余量",
+      "mechanism": "energy_balance_residual",
+      "rarity_anomaly_score": 0.7638212050712874
+    },
+    {
+      "answer_rank": 4,
+      "feature": "sw_down",
+      "label": "向下短波辐射",
+      "mechanism": "radiation_energy",
+      "rarity_anomaly_score": 0.6028624047734823
+    },
+    {
+      "answer_rank": 5,
+      "feature": "vwc_gradient",
+      "label": "土壤水分梯度",
+      "mechanism": "soil_moisture",
+      "rarity_anomaly_score": 0.5924575229968008
+    }
+  ],
+  "Q2_inherited_features": [
+    "vpd",
+    "temp_10m",
+    "energy_balance_residual",
+    "sw_down",
+    "vwc_gradient"
+  ],
+  "Q2_critical_score": 0.320446031547102,
+  "Q2_score_at_issue": 0.38297248421323515,
+  "Q3_target": "mudslide event time conditional on the identified case source and occurrence within the forecast horizon",
+  "Q3_conditional_interval_bjt": [
+    "2026-08-26 09:04:00",
+    "2026-08-26 14:44:00"
+  ],
+  "Q3_warning_time_bjt": "2026-08-26 09:00:00",
+  "Q3_warning_lead_h": 1.5,
+  "Q3_case_reference_PICP": {
+    "n_references": 1,
+    "n_covered": 1,
+    "coverage": 1.0,
+    "binomial_95_interval": [
+      0.025,
+      1.0
+    ],
+    "scope": "one competition-reported reference under the adopted event clock, not multi-disaster generalization"
+  },
+  "Q3_empirical_disaster_PICP": null,
+  "Q3_validated_complete_event_forecast": false,
+  "Q3_model_based_question_outputs_available": true,
+  "Q3_spatial_distance_range_km": [
+    0.0,
+    23.715
+  ],
+  "Q3_uses_Q4_results": false,
+  "Q4_uses_Q2_geometry": true,
+  "shared_source_geometry_sha256": "29753a05f81c8d53974000eb01bfa1f2abcae67e0d893f026390b8449d0a3193",
+  "Q4_reconstructed_route_km": 23.715,
+  "Q4_arrival_s": 403.47169823523546,
+  "Q4_peak_discharge_m3_s": 208521.52536476956,
+  "Q4_cascade_volume_residual": 1.8807290827186362e-15,
+  "Q4_local_2d_grid_experiments": [
+    {
+      "resolution_m": 30.0,
+      "mass_relative_error": 5.053481640450479e-15,
+      "input_m3": 22115190.457859267,
+      "expected_input_from_1d_m3": 22115190.457859267,
+      "wet_area_km2": 0.6246,
+      "max_depth_m": 82.5777082122815,
+      "max_wet_speed_m_s": 56.212730903439414,
+      "port_neighbourhood_arrival_s": 399.3687345774741,
+      "port_evaluation_radius_m": 120.0,
+      "inlet_cells": 2,
+      "stored_final_m3": 2299023.198827055,
+      "outflow_m3": 19816167.259032324
+    },
+    {
+      "resolution_m": 60.0,
+      "mass_relative_error": 2.5267408202252395e-15,
+      "input_m3": 22115190.457859267,
+      "expected_input_from_1d_m3": 22115190.457859267,
+      "wet_area_km2": 0.6768,
+      "max_depth_m": 69.46535542836294,
+      "max_wet_speed_m_s": 54.018385856633486,
+      "port_neighbourhood_arrival_s": 409.49239576836703,
+      "port_evaluation_radius_m": 120.0,
+      "inlet_cells": 2,
+      "stored_final_m3": 2104828.209056704,
+      "outflow_m3": 20010362.248802505
+    }
+  ]
+}

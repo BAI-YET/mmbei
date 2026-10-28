@@ -1,0 +1,5 @@
+weight_experiment,weights,spearman_vs_reference,top20_IoU_vs_reference
+reference,"0.4,0.25,0.2,0.15",1.0,1.0
+equal,"0.25,0.25,0.25,0.25",0.9728613362635821,0.5988826815642458
+gravity_emphasis,"0.55,0.15,0.15,0.15",0.9664068988560449,0.6196943972835314
+motion_emphasis,"0.25,0.2,0.3,0.25",0.9704145738793666,0.5829646017699115

@@ -1,0 +1,1195 @@
+﻿图像,面板,字段,含义,单位或定义
+Q1_00_data_coverage,A01,x,曲线横坐标,见面板刻度/图题
+Q1_00_data_coverage,A01,y,曲线纵坐标,见面板刻度/图题
+Q1_00_data_coverage,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_00_data_coverage,A01,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q1_00_data_coverage,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_00_data_coverage,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q1_01_event_hourly_timeseries,A01,x,曲线横坐标,见面板刻度/图题
+Q1_01_event_hourly_timeseries,A01,y,曲线纵坐标,2 m 气温 (°C)
+Q1_01_event_hourly_timeseries,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_01_event_hourly_timeseries,A01,y_lower/y_upper,阴影区间下限/上限,2 m 气温 (°C)
+Q1_01_event_hourly_timeseries,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_01_event_hourly_timeseries,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q1_01_event_hourly_timeseries,A02,x,曲线横坐标,见面板刻度/图题
+Q1_01_event_hourly_timeseries,A02,y,曲线纵坐标,净辐射 (W/m²)
+Q1_01_event_hourly_timeseries,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_01_event_hourly_timeseries,A02,y_lower/y_upper,阴影区间下限/上限,净辐射 (W/m²)
+Q1_01_event_hourly_timeseries,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_01_event_hourly_timeseries,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q1_01_event_hourly_timeseries,A03,x,曲线横坐标,见面板刻度/图题
+Q1_01_event_hourly_timeseries,A03,y,曲线纵坐标,表层体积含水率
+Q1_01_event_hourly_timeseries,A03,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_01_event_hourly_timeseries,A03,y_lower/y_upper,阴影区间下限/上限,表层体积含水率
+Q1_01_event_hourly_timeseries,A03,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_01_event_hourly_timeseries,A03,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q1_01_event_hourly_timeseries,A04,x,曲线横坐标,北京时间（UTC+8）
+Q1_01_event_hourly_timeseries,A04,y,曲线纵坐标,降水量 (mm/h)
+Q1_01_event_hourly_timeseries,A04,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_01_event_hourly_timeseries,A04,y_lower/y_upper,阴影区间下限/上限,降水量 (mm/h)
+Q1_01_event_hourly_timeseries,A04,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_01_event_hourly_timeseries,A04,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q1_02_boundary_layer_profiles,A01,x,曲线横坐标,温度 (°C)
+Q1_02_boundary_layer_profiles,A01,y,曲线纵坐标,高度 (m)
+Q1_02_boundary_layer_profiles,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_02_boundary_layer_profiles,A01,y_lower/y_upper,阴影区间下限/上限,高度 (m)
+Q1_02_boundary_layer_profiles,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_02_boundary_layer_profiles,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q1_02_boundary_layer_profiles,A02,x,曲线横坐标,风速 (m/s)
+Q1_02_boundary_layer_profiles,A02,y,曲线纵坐标,高度 (m)
+Q1_02_boundary_layer_profiles,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_02_boundary_layer_profiles,A02,y_lower/y_upper,阴影区间下限/上限,高度 (m)
+Q1_02_boundary_layer_profiles,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_02_boundary_layer_profiles,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q1_03_top15_anomaly_ranking,A01,x,曲线横坐标,历史匹配异常稀有性评分（0–1）
+Q1_03_top15_anomaly_ranking,A01,y,曲线纵坐标,见面板刻度/图题
+Q1_03_top15_anomaly_ranking,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_03_top15_anomaly_ranking,A01,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q1_03_top15_anomaly_ranking,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_03_top15_anomaly_ranking,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q1_04_multiscale_anomaly_heatmap,A01,x,曲线横坐标,见面板刻度/图题
+Q1_04_multiscale_anomaly_heatmap,A01,y,曲线纵坐标,见面板刻度/图题
+Q1_04_multiscale_anomaly_heatmap,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_04_multiscale_anomaly_heatmap,A01,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q1_04_multiscale_anomaly_heatmap,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_04_multiscale_anomaly_heatmap,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q1_05_reference_year_sensitivity,A01,x,曲线横坐标,见面板刻度/图题
+Q1_05_reference_year_sensitivity,A01,y,曲线纵坐标,见面板刻度/图题
+Q1_05_reference_year_sensitivity,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_05_reference_year_sensitivity,A01,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q1_05_reference_year_sensitivity,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_05_reference_year_sensitivity,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q1_06_pseudo_event_controls,A01,x,曲线横坐标,入选五项的平均 |MAD Z|
+Q1_06_pseudo_event_controls,A01,y,曲线纵坐标,历史伪事件窗口数
+Q1_06_pseudo_event_controls,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_06_pseudo_event_controls,A01,y_lower/y_upper,阴影区间下限/上限,历史伪事件窗口数
+Q1_06_pseudo_event_controls,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_06_pseudo_event_controls,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q1_07_county_2005_2025_summer_climate,A01,x,曲线横坐标,年份（2005–2025）
+Q1_07_county_2005_2025_summer_climate,A01,y,曲线纵坐标,6–7月日均气温 (°C)
+Q1_07_county_2005_2025_summer_climate,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_07_county_2005_2025_summer_climate,A01,y_lower/y_upper,阴影区间下限/上限,6–7月日均气温 (°C)
+Q1_07_county_2005_2025_summer_climate,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_07_county_2005_2025_summer_climate,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q1_08_boundary_layer_seasonal_structure,A01,x,曲线横坐标,北京时间 (h)
+Q1_08_boundary_layer_seasonal_structure,A01,y,曲线纵坐标,逆温出现频率 (%)
+Q1_08_boundary_layer_seasonal_structure,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_08_boundary_layer_seasonal_structure,A01,y_lower/y_upper,阴影区间下限/上限,逆温出现频率 (%)
+Q1_08_boundary_layer_seasonal_structure,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_08_boundary_layer_seasonal_structure,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q1_08_boundary_layer_seasonal_structure,A02,x,曲线横坐标,北京时间 (h)
+Q1_08_boundary_layer_seasonal_structure,A02,y,曲线纵坐标,20–2 m风速差 (m/s)
+Q1_08_boundary_layer_seasonal_structure,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_08_boundary_layer_seasonal_structure,A02,y_lower/y_upper,阴影区间下限/上限,20–2 m风速差 (m/s)
+Q1_08_boundary_layer_seasonal_structure,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_08_boundary_layer_seasonal_structure,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q1_09_radiation_and_turbulent_energy,A01,x,曲线横坐标,见面板刻度/图题
+Q1_09_radiation_and_turbulent_energy,A01,y,曲线纵坐标,辐射通量 (W/m²)
+Q1_09_radiation_and_turbulent_energy,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_09_radiation_and_turbulent_energy,A01,y_lower/y_upper,阴影区间下限/上限,辐射通量 (W/m²)
+Q1_09_radiation_and_turbulent_energy,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_09_radiation_and_turbulent_energy,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q1_09_radiation_and_turbulent_energy,A02,x,曲线横坐标,北京时间（UTC+8）
+Q1_09_radiation_and_turbulent_energy,A02,y,曲线纵坐标,热通量 (W/m²)
+Q1_09_radiation_and_turbulent_energy,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_09_radiation_and_turbulent_energy,A02,y_lower/y_upper,阴影区间下限/上限,热通量 (W/m²)
+Q1_09_radiation_and_turbulent_energy,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_09_radiation_and_turbulent_energy,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q1_10_multidepth_soil_profiles,A01,x,曲线横坐标,°C
+Q1_10_multidepth_soil_profiles,A01,y,曲线纵坐标,土壤深度 (m)
+Q1_10_multidepth_soil_profiles,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_10_multidepth_soil_profiles,A01,y_lower/y_upper,阴影区间下限/上限,土壤深度 (m)
+Q1_10_multidepth_soil_profiles,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_10_multidepth_soil_profiles,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q1_10_multidepth_soil_profiles,A02,x,曲线横坐标,m³/m³
+Q1_10_multidepth_soil_profiles,A02,y,曲线纵坐标,土壤深度 (m)
+Q1_10_multidepth_soil_profiles,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_10_multidepth_soil_profiles,A02,y_lower/y_upper,阴影区间下限/上限,土壤深度 (m)
+Q1_10_multidepth_soil_profiles,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_10_multidepth_soil_profiles,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q1_11_all_candidate_ranking,A01,x,曲线横坐标,匹配异常-稀有性得分
+Q1_11_all_candidate_ranking,A01,y,曲线纵坐标,见面板刻度/图题
+Q1_11_all_candidate_ranking,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_11_all_candidate_ranking,A01,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q1_11_all_candidate_ranking,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_11_all_candidate_ranking,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q1_11_all_candidate_ranking,A02,x,曲线横坐标,匹配异常-稀有性得分
+Q1_11_all_candidate_ranking,A02,y,曲线纵坐标,见面板刻度/图题
+Q1_11_all_candidate_ranking,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_11_all_candidate_ranking,A02,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q1_11_all_candidate_ranking,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_11_all_candidate_ranking,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q1_11_part1_complete_ranking,A01,x,曲线横坐标,历史匹配异常-稀有性得分
+Q1_11_part1_complete_ranking,A01,y,曲线纵坐标,见面板刻度/图题
+Q1_11_part1_complete_ranking,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_11_part1_complete_ranking,A01,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q1_11_part1_complete_ranking,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_11_part1_complete_ranking,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q1_11_part2_complete_ranking,A01,x,曲线横坐标,历史匹配异常-稀有性得分
+Q1_11_part2_complete_ranking,A01,y,曲线纵坐标,见面板刻度/图题
+Q1_11_part2_complete_ranking,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_11_part2_complete_ranking,A01,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q1_11_part2_complete_ranking,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_11_part2_complete_ranking,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q1_12_all_factor_multiscale,A01,x,曲线横坐标,见面板刻度/图题
+Q1_12_all_factor_multiscale,A01,y,曲线纵坐标,见面板刻度/图题
+Q1_12_all_factor_multiscale,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_12_all_factor_multiscale,A01,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q1_12_all_factor_multiscale,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_12_all_factor_multiscale,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q1_13_all_factor_redundancy,A01,x,曲线横坐标,见面板刻度/图题
+Q1_13_all_factor_redundancy,A01,y,曲线纵坐标,见面板刻度/图题
+Q1_13_all_factor_redundancy,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_13_all_factor_redundancy,A01,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q1_13_all_factor_redundancy,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_13_all_factor_redundancy,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q1_14_mechanisms_and_extreme_weather,A01,x,曲线横坐标,历史匹配关联评分
+Q1_14_mechanisms_and_extreme_weather,A01,y,曲线纵坐标,见面板刻度/图题
+Q1_14_mechanisms_and_extreme_weather,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_14_mechanisms_and_extreme_weather,A01,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q1_14_mechanisms_and_extreme_weather,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_14_mechanisms_and_extreme_weather,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q1_14_mechanisms_and_extreme_weather,A02,x,曲线横坐标,事件前七日（北京时间）
+Q1_14_mechanisms_and_extreme_weather,A02,y,曲线纵坐标,见面板刻度/图题
+Q1_14_mechanisms_and_extreme_weather,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q1_14_mechanisms_and_extreme_weather,A02,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q1_14_mechanisms_and_extreme_weather,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q1_14_mechanisms_and_extreme_weather,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_01_history_gullies_and_oof_roc,A01,x,曲线横坐标,经度 (°E)
+Q2_01_history_gullies_and_oof_roc,A01,y,曲线纵坐标,纬度 (°N)
+Q2_01_history_gullies_and_oof_roc,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_01_history_gullies_and_oof_roc,A01,y_lower/y_upper,阴影区间下限/上限,纬度 (°N)
+Q2_01_history_gullies_and_oof_roc,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_01_history_gullies_and_oof_roc,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_01_history_gullies_and_oof_roc,A02,x,曲线横坐标,假阳性率
+Q2_01_history_gullies_and_oof_roc,A02,y,曲线纵坐标,真阳性率
+Q2_01_history_gullies_and_oof_roc,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_01_history_gullies_and_oof_roc,A02,y_lower/y_upper,阴影区间下限/上限,真阳性率
+Q2_01_history_gullies_and_oof_roc,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_01_history_gullies_and_oof_roc,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_02_spatial_holdout_auc,A01,x,曲线横坐标,留出块编号（按纬度分块）
+Q2_02_spatial_holdout_auc,A01,y,曲线纵坐标,ROC-AUC
+Q2_02_spatial_holdout_auc,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_02_spatial_holdout_auc,A01,y_lower/y_upper,阴影区间下限/上限,ROC-AUC
+Q2_02_spatial_holdout_auc,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_02_spatial_holdout_auc,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_03_elevation_drop_distributions,A01,x,曲线横坐标,沟谷高差 (m)
+Q2_03_elevation_drop_distributions,A01,y,曲线纵坐标,密度
+Q2_03_elevation_drop_distributions,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_03_elevation_drop_distributions,A01,y_lower/y_upper,阴影区间下限/上限,密度
+Q2_03_elevation_drop_distributions,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_03_elevation_drop_distributions,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_04_climate_condition_timeseries,A01,x,曲线横坐标,见面板刻度/图题
+Q2_04_climate_condition_timeseries,A01,y,曲线纵坐标,7日正积温 (°C·d)
+Q2_04_climate_condition_timeseries,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_04_climate_condition_timeseries,A01,y_lower/y_upper,阴影区间下限/上限,7日正积温 (°C·d)
+Q2_04_climate_condition_timeseries,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_04_climate_condition_timeseries,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_04_climate_condition_timeseries,A02,x,曲线横坐标,见面板刻度/图题
+Q2_04_climate_condition_timeseries,A02,y,曲线纵坐标,24小时累计降水 (mm)
+Q2_04_climate_condition_timeseries,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_04_climate_condition_timeseries,A02,y_lower/y_upper,阴影区间下限/上限,24小时累计降水 (mm)
+Q2_04_climate_condition_timeseries,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_04_climate_condition_timeseries,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_04_climate_condition_timeseries,A03,x,曲线横坐标,北京时间（UTC+8）
+Q2_04_climate_condition_timeseries,A03,y,曲线纵坐标,日平均净辐射 (W/m²)
+Q2_04_climate_condition_timeseries,A03,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_04_climate_condition_timeseries,A03,y_lower/y_upper,阴影区间下限/上限,日平均净辐射 (W/m²)
+Q2_04_climate_condition_timeseries,A03,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_04_climate_condition_timeseries,A03,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_05_glacier_physical_indicators,A01,x,曲线横坐标,UTM45N 东向坐标 (m)
+Q2_05_glacier_physical_indicators,A01,y,曲线纵坐标,UTM45N 北向坐标 (m)
+Q2_05_glacier_physical_indicators,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_05_glacier_physical_indicators,A01,y_lower/y_upper,阴影区间下限/上限,UTM45N 北向坐标 (m)
+Q2_05_glacier_physical_indicators,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_05_glacier_physical_indicators,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_05_glacier_physical_indicators,A02,x,曲线横坐标,UTM45N 东向坐标 (m)
+Q2_05_glacier_physical_indicators,A02,y,曲线纵坐标,见面板刻度/图题
+Q2_05_glacier_physical_indicators,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_05_glacier_physical_indicators,A02,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q2_05_glacier_physical_indicators,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_05_glacier_physical_indicators,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_05_glacier_physical_indicators,A03,x,曲线横坐标,UTM45N 东向坐标 (m)
+Q2_05_glacier_physical_indicators,A03,y,曲线纵坐标,见面板刻度/图题
+Q2_05_glacier_physical_indicators,A03,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_05_glacier_physical_indicators,A03,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q2_05_glacier_physical_indicators,A03,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_05_glacier_physical_indicators,A03,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_06_dem_landcover_history_overlay,A01,x,曲线横坐标,经度 (°E)
+Q2_06_dem_landcover_history_overlay,A01,y,曲线纵坐标,纬度 (°N)
+Q2_06_dem_landcover_history_overlay,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_06_dem_landcover_history_overlay,A01,y_lower/y_upper,阴影区间下限/上限,纬度 (°N)
+Q2_06_dem_landcover_history_overlay,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_06_dem_landcover_history_overlay,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_06_dem_landcover_history_overlay,A02,x,曲线横坐标,经度 (°E)
+Q2_06_dem_landcover_history_overlay,A02,y,曲线纵坐标,纬度 (°N)
+Q2_06_dem_landcover_history_overlay,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_06_dem_landcover_history_overlay,A02,y_lower/y_upper,阴影区间下限/上限,纬度 (°N)
+Q2_06_dem_landcover_history_overlay,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_06_dem_landcover_history_overlay,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_07_glacier_historic_thinning_optional,A01,x,曲线横坐标,见面板刻度/图题
+Q2_07_glacier_historic_thinning_optional,A01,y,曲线纵坐标,见面板刻度/图题
+Q2_07_glacier_historic_thinning_optional,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_07_glacier_historic_thinning_optional,A01,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q2_07_glacier_historic_thinning_optional,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_07_glacier_historic_thinning_optional,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_07_glacier_historic_thinning_optional,A02,x,曲线横坐标,见面板刻度/图题
+Q2_07_glacier_historic_thinning_optional,A02,y,曲线纵坐标,见面板刻度/图题
+Q2_07_glacier_historic_thinning_optional,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_07_glacier_historic_thinning_optional,A02,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q2_07_glacier_historic_thinning_optional,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_07_glacier_historic_thinning_optional,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_07_glacier_historic_thinning_optional,A03,x,曲线横坐标,见面板刻度/图题
+Q2_07_glacier_historic_thinning_optional,A03,y,曲线纵坐标,见面板刻度/图题
+Q2_07_glacier_historic_thinning_optional,A03,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_07_glacier_historic_thinning_optional,A03,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q2_07_glacier_historic_thinning_optional,A03,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_07_glacier_historic_thinning_optional,A03,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_07_glacier_historic_thinning_optional,A04,x,曲线横坐标,见面板刻度/图题
+Q2_07_glacier_historic_thinning_optional,A04,y,曲线纵坐标,见面板刻度/图题
+Q2_07_glacier_historic_thinning_optional,A04,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_07_glacier_historic_thinning_optional,A04,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q2_07_glacier_historic_thinning_optional,A04,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_07_glacier_historic_thinning_optional,A04,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_08_trigger_conditions_time_series,A01,x,曲线横坐标,见面板刻度/图题
+Q2_08_trigger_conditions_time_series,A01,y,曲线纵坐标,源区七日正积温 (°C·d)
+Q2_08_trigger_conditions_time_series,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_08_trigger_conditions_time_series,A01,y_lower/y_upper,阴影区间下限/上限,源区七日正积温 (°C·d)
+Q2_08_trigger_conditions_time_series,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_08_trigger_conditions_time_series,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_08_trigger_conditions_time_series,A02,x,曲线横坐标,见面板刻度/图题
+Q2_08_trigger_conditions_time_series,A02,y,曲线纵坐标,站点24小时降水量 (mm)
+Q2_08_trigger_conditions_time_series,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_08_trigger_conditions_time_series,A02,y_lower/y_upper,阴影区间下限/上限,站点24小时降水量 (mm)
+Q2_08_trigger_conditions_time_series,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_08_trigger_conditions_time_series,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_08_trigger_conditions_time_series,A03,x,曲线横坐标,北京时间（UTC+8）
+Q2_08_trigger_conditions_time_series,A03,y,曲线纵坐标,多通道触发条件指数
+Q2_08_trigger_conditions_time_series,A03,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_08_trigger_conditions_time_series,A03,y_lower/y_upper,阴影区间下限/上限,多通道触发条件指数
+Q2_08_trigger_conditions_time_series,A03,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_08_trigger_conditions_time_series,A03,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_09_source_spatial_condition_index,A01,x,曲线横坐标,UTM45N 东向坐标 (m)
+Q2_09_source_spatial_condition_index,A01,y,曲线纵坐标,UTM45N 北向坐标 (m)
+Q2_09_source_spatial_condition_index,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_09_source_spatial_condition_index,A01,y_lower/y_upper,阴影区间下限/上限,UTM45N 北向坐标 (m)
+Q2_09_source_spatial_condition_index,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_09_source_spatial_condition_index,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_09_source_spatial_condition_index,A02,x,曲线横坐标,UTM45N 东向坐标 (m)
+Q2_09_source_spatial_condition_index,A02,y,曲线纵坐标,见面板刻度/图题
+Q2_09_source_spatial_condition_index,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_09_source_spatial_condition_index,A02,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q2_09_source_spatial_condition_index,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_09_source_spatial_condition_index,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_09_source_spatial_condition_index,A03,x,曲线横坐标,UTM45N 东向坐标 (m)
+Q2_09_source_spatial_condition_index,A03,y,曲线纵坐标,见面板刻度/图题
+Q2_09_source_spatial_condition_index,A03,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_09_source_spatial_condition_index,A03,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q2_09_source_spatial_condition_index,A03,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_09_source_spatial_condition_index,A03,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_10_spatial_resolution_reliability,A01,x,曲线横坐标,空间网格分辨率 (m)
+Q2_10_spatial_resolution_reliability,A01,y,曲线纵坐标,与30m基准的一致性
+Q2_10_spatial_resolution_reliability,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_10_spatial_resolution_reliability,A01,y_lower/y_upper,阴影区间下限/上限,与30m基准的一致性
+Q2_10_spatial_resolution_reliability,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_10_spatial_resolution_reliability,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_11_temperature_lapse_sensitivity,A01,x,曲线横坐标,北京时间（UTC+8）
+Q2_11_temperature_lapse_sensitivity,A01,y,曲线纵坐标,源区七日正积温 (°C·d)
+Q2_11_temperature_lapse_sensitivity,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_11_temperature_lapse_sensitivity,A01,y_lower/y_upper,阴影区间下限/上限,源区七日正积温 (°C·d)
+Q2_11_temperature_lapse_sensitivity,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_11_temperature_lapse_sensitivity,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_12_forecast_weather_conditions,A01,x,曲线横坐标,见面板刻度/图题
+Q2_12_forecast_weather_conditions,A01,y,曲线纵坐标,模式格点2m气温 (°C)
+Q2_12_forecast_weather_conditions,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_12_forecast_weather_conditions,A01,y_lower/y_upper,阴影区间下限/上限,模式格点2m气温 (°C)
+Q2_12_forecast_weather_conditions,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_12_forecast_weather_conditions,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_12_forecast_weather_conditions,A02,x,曲线横坐标,见面板刻度/图题
+Q2_12_forecast_weather_conditions,A02,y,曲线纵坐标,零度层高程 (m)
+Q2_12_forecast_weather_conditions,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_12_forecast_weather_conditions,A02,y_lower/y_upper,阴影区间下限/上限,零度层高程 (m)
+Q2_12_forecast_weather_conditions,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_12_forecast_weather_conditions,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_12_forecast_weather_conditions,A03,x,曲线横坐标,北京时间（UTC+8）
+Q2_12_forecast_weather_conditions,A03,y,曲线纵坐标,逐小时降水量 (mm)
+Q2_12_forecast_weather_conditions,A03,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_12_forecast_weather_conditions,A03,y_lower/y_upper,阴影区间下限/上限,逐小时降水量 (mm)
+Q2_12_forecast_weather_conditions,A03,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_12_forecast_weather_conditions,A03,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_13_glacier_velocity_and_release_candidates,A01,x,曲线横坐标,栅格列
+Q2_13_glacier_velocity_and_release_candidates,A01,y,曲线纵坐标,栅格行
+Q2_13_glacier_velocity_and_release_candidates,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_13_glacier_velocity_and_release_candidates,A01,y_lower/y_upper,阴影区间下限/上限,栅格行
+Q2_13_glacier_velocity_and_release_candidates,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_13_glacier_velocity_and_release_candidates,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_13_glacier_velocity_and_release_candidates,A02,x,曲线横坐标,栅格列
+Q2_13_glacier_velocity_and_release_candidates,A02,y,曲线纵坐标,见面板刻度/图题
+Q2_13_glacier_velocity_and_release_candidates,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_13_glacier_velocity_and_release_candidates,A02,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q2_13_glacier_velocity_and_release_candidates,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_13_glacier_velocity_and_release_candidates,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_13_glacier_velocity_and_release_candidates,A03,x,曲线横坐标,栅格列
+Q2_13_glacier_velocity_and_release_candidates,A03,y,曲线纵坐标,见面板刻度/图题
+Q2_13_glacier_velocity_and_release_candidates,A03,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_13_glacier_velocity_and_release_candidates,A03,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q2_13_glacier_velocity_and_release_candidates,A03,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_13_glacier_velocity_and_release_candidates,A03,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_14_landcover_2020_2023_comparison,A01,x,曲线横坐标,见面板刻度/图题
+Q2_14_landcover_2020_2023_comparison,A01,y,曲线纵坐标,见面板刻度/图题
+Q2_14_landcover_2020_2023_comparison,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_14_landcover_2020_2023_comparison,A01,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q2_14_landcover_2020_2023_comparison,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_14_landcover_2020_2023_comparison,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_14_landcover_2020_2023_comparison,A02,x,曲线横坐标,见面板刻度/图题
+Q2_14_landcover_2020_2023_comparison,A02,y,曲线纵坐标,见面板刻度/图题
+Q2_14_landcover_2020_2023_comparison,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_14_landcover_2020_2023_comparison,A02,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q2_14_landcover_2020_2023_comparison,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_14_landcover_2020_2023_comparison,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_15_all_model_comparison,A01,x,曲线横坐标,见面板刻度/图题
+Q2_15_all_model_comparison,A01,y,曲线纵坐标,空间留出ROC-AUC
+Q2_15_all_model_comparison,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_15_all_model_comparison,A01,y_lower/y_upper,阴影区间下限/上限,空间留出ROC-AUC
+Q2_15_all_model_comparison,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_15_all_model_comparison,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_15_all_model_comparison,A02,x,曲线横坐标,见面板刻度/图题
+Q2_15_all_model_comparison,A02,y,曲线纵坐标,空间留出平衡准确率
+Q2_15_all_model_comparison,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_15_all_model_comparison,A02,y_lower/y_upper,阴影区间下限/上限,空间留出平衡准确率
+Q2_15_all_model_comparison,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_15_all_model_comparison,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_16_all_predictor_distributions,A01,x,曲线横坐标,见面板刻度/图题
+Q2_16_all_predictor_distributions,A01,y,曲线纵坐标,标准化变量（用于对比，不是失稳阈值）
+Q2_16_all_predictor_distributions,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_16_all_predictor_distributions,A01,y_lower/y_upper,阴影区间下限/上限,标准化变量（用于对比，不是失稳阈值）
+Q2_16_all_predictor_distributions,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_16_all_predictor_distributions,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_17_forward_time_reliability,A01,x,曲线横坐标,独立评估年份
+Q2_17_forward_time_reliability,A01,y,曲线纵坐标,仅更早年份计算的24h非零降雨阈值 (mm)
+Q2_17_forward_time_reliability,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_17_forward_time_reliability,A01,y_lower/y_upper,阴影区间下限/上限,仅更早年份计算的24h非零降雨阈值 (mm)
+Q2_17_forward_time_reliability,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_17_forward_time_reliability,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_17_forward_time_reliability,A02,x,曲线横坐标,监测更新间隔 (h)
+Q2_17_forward_time_reliability,A02,y,曲线纵坐标,相对小时基准漏掉的超限小时 (%)
+Q2_17_forward_time_reliability,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_17_forward_time_reliability,A02,y_lower/y_upper,阴影区间下限/上限,相对小时基准漏掉的超限小时 (%)
+Q2_17_forward_time_reliability,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_17_forward_time_reliability,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_18_energy_water_mechanism_channels,A01,x,曲线横坐标,同一历史基准中的百分位
+Q2_18_energy_water_mechanism_channels,A01,y,曲线纵坐标,见面板刻度/图题
+Q2_18_energy_water_mechanism_channels,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_18_energy_water_mechanism_channels,A01,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q2_18_energy_water_mechanism_channels,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_18_energy_water_mechanism_channels,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_18_energy_water_mechanism_channels,A02,x,曲线横坐标,北京时间
+Q2_18_energy_water_mechanism_channels,A02,y,曲线纵坐标,历史百分位
+Q2_18_energy_water_mechanism_channels,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_18_energy_water_mechanism_channels,A02,y_lower/y_upper,阴影区间下限/上限,历史百分位
+Q2_18_energy_water_mechanism_channels,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_18_energy_water_mechanism_channels,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_19_source_proxy_and_weight_sensitivity,A01,x,曲线横坐标,温度递减率 (°C/km)
+Q2_19_source_proxy_and_weight_sensitivity,A01,y,曲线纵坐标,源区7日正积温 (°C·d)
+Q2_19_source_proxy_and_weight_sensitivity,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_19_source_proxy_and_weight_sensitivity,A01,y_lower/y_upper,阴影区间下限/上限,源区7日正积温 (°C·d)
+Q2_19_source_proxy_and_weight_sensitivity,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_19_source_proxy_and_weight_sensitivity,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q2_19_source_proxy_and_weight_sensitivity,A02,x,曲线横坐标,见面板刻度/图题
+Q2_19_source_proxy_and_weight_sensitivity,A02,y,曲线纵坐标,见面板刻度/图题
+Q2_19_source_proxy_and_weight_sensitivity,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q2_19_source_proxy_and_weight_sensitivity,A02,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q2_19_source_proxy_and_weight_sensitivity,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q2_19_source_proxy_and_weight_sensitivity,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_01_precursor_and_scenario_hazard,A01,x,曲线横坐标,北京时间
+Q3_01_precursor_and_scenario_hazard,A01,y,曲线纵坐标,综合评估指数
+Q3_01_precursor_and_scenario_hazard,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_01_precursor_and_scenario_hazard,A01,y_lower/y_upper,阴影区间下限/上限,综合评估指数
+Q3_01_precursor_and_scenario_hazard,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_01_precursor_and_scenario_hazard,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_02_95percent_conditional_time_interval,A01,x,曲线横坐标,距发布时刻 (h)
+Q3_02_95percent_conditional_time_interval,A01,y,曲线纵坐标,条件时间概率质量
+Q3_02_95percent_conditional_time_interval,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_02_95percent_conditional_time_interval,A01,y_lower/y_upper,阴影区间下限/上限,条件时间概率质量
+Q3_02_95percent_conditional_time_interval,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_02_95percent_conditional_time_interval,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_02_95percent_conditional_time_interval,A02,x,曲线横坐标,距发布时刻 (h)
+Q3_02_95percent_conditional_time_interval,A02,y,曲线纵坐标,累计条件概率
+Q3_02_95percent_conditional_time_interval,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_02_95percent_conditional_time_interval,A02,y_lower/y_upper,阴影区间下限/上限,累计条件概率
+Q3_02_95percent_conditional_time_interval,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_02_95percent_conditional_time_interval,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_03_warning_lead_and_backtest,A01,x,曲线横坐标,距发布时刻 (h)
+Q3_03_warning_lead_and_backtest,A01,y,曲线纵坐标,见面板刻度/图题
+Q3_03_warning_lead_and_backtest,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_03_warning_lead_and_backtest,A01,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q3_03_warning_lead_and_backtest,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_03_warning_lead_and_backtest,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_05_spatial_warning_distance,A01,x,曲线横坐标,UTM东向坐标 (m)
+Q3_05_spatial_warning_distance,A01,y,曲线纵坐标,UTM北向坐标 (m)
+Q3_05_spatial_warning_distance,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_05_spatial_warning_distance,A01,y_lower/y_upper,阴影区间下限/上限,UTM北向坐标 (m)
+Q3_05_spatial_warning_distance,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_05_spatial_warning_distance,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_07_Q1_feature_inheritance,A01,x,曲线横坐标,北京时间
+Q3_07_Q1_feature_inheritance,A01,y,曲线纵坐标,标准化条件分值
+Q3_07_Q1_feature_inheritance,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_07_Q1_feature_inheritance,A01,y_lower/y_upper,阴影区间下限/上限,标准化条件分值
+Q3_07_Q1_feature_inheritance,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_07_Q1_feature_inheritance,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_07_Q1_feature_inheritance,A02,x,曲线横坐标,稳健Z值
+Q3_07_Q1_feature_inheritance,A02,y,曲线纵坐标,见面板刻度/图题
+Q3_07_Q1_feature_inheritance,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_07_Q1_feature_inheritance,A02,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q3_07_Q1_feature_inheritance,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_07_Q1_feature_inheritance,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_07_feature_group_ablation,A01,x,曲线横坐标,北京时间（UTC+8）
+Q3_07_feature_group_ablation,A01,y,曲线纵坐标,条件指数 / 相应历史阈值
+Q3_07_feature_group_ablation,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_07_feature_group_ablation,A01,y_lower/y_upper,阴影区间下限/上限,条件指数 / 相应历史阈值
+Q3_07_feature_group_ablation,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_07_feature_group_ablation,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_07_feature_group_ablation,A02,x,曲线横坐标,见面板刻度/图题
+Q3_07_feature_group_ablation,A02,y,曲线纵坐标,事件前七日高于85%分位的小时数
+Q3_07_feature_group_ablation,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_07_feature_group_ablation,A02,y_lower/y_upper,阴影区间下限/上限,事件前七日高于85%分位的小时数
+Q3_07_feature_group_ablation,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_07_feature_group_ablation,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_08_full_forward_validation,A01,x,曲线横坐标,见面板刻度/图题
+Q3_08_full_forward_validation,A01,y,曲线纵坐标,超限概率 / 状态
+Q3_08_full_forward_validation,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_08_full_forward_validation,A01,y_lower/y_upper,阴影区间下限/上限,超限概率 / 状态
+Q3_08_full_forward_validation,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_08_full_forward_validation,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_08_full_forward_validation,A02,x,曲线横坐标,见面板刻度/图题
+Q3_08_full_forward_validation,A02,y,曲线纵坐标,距发布时刻 (h)
+Q3_08_full_forward_validation,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_08_full_forward_validation,A02,y_lower/y_upper,阴影区间下限/上限,距发布时刻 (h)
+Q3_08_full_forward_validation,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_08_full_forward_validation,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_08_full_forward_validation,A03,x,曲线横坐标,2025年完整独立检验期（北京时间）
+Q3_08_full_forward_validation,A03,y,曲线纵坐标,累计气象区间覆盖率
+Q3_08_full_forward_validation,A03,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_08_full_forward_validation,A03,y_lower/y_upper,阴影区间下限/上限,累计气象区间覆盖率
+Q3_08_full_forward_validation,A03,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_08_full_forward_validation,A03,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_09_warning_episodes,A01,x,曲线横坐标,见面板刻度/图题
+Q3_09_warning_episodes,A01,y,曲线纵坐标,先兆条件指数
+Q3_09_warning_episodes,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_09_warning_episodes,A01,y_lower/y_upper,阴影区间下限/上限,先兆条件指数
+Q3_09_warning_episodes,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_09_warning_episodes,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_09_warning_episodes,A02,x,曲线横坐标,决策时刻（使用前一小时观测）
+Q3_09_warning_episodes,A02,y,曲线纵坐标,预警状态
+Q3_09_warning_episodes,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_09_warning_episodes,A02,y_lower/y_upper,阴影区间下限/上限,预警状态
+Q3_09_warning_episodes,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_09_warning_episodes,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_10_archived_forecast_sensitivity,A01,x,曲线横坐标,距09:00发布时刻 (h)
+Q3_10_archived_forecast_sensitivity,A01,y,曲线纵坐标,气象触发条件指数
+Q3_10_archived_forecast_sensitivity,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_10_archived_forecast_sensitivity,A01,y_lower/y_upper,阴影区间下限/上限,气象触发条件指数
+Q3_10_archived_forecast_sensitivity,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_10_archived_forecast_sensitivity,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_11_warning_time_and_lead_distribution,A01,x,曲线横坐标,由Q1关联评分归一化的设计权重
+Q3_11_warning_time_and_lead_distribution,A01,y,曲线纵坐标,见面板刻度/图题
+Q3_11_warning_time_and_lead_distribution,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_11_warning_time_and_lead_distribution,A01,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q3_11_warning_time_and_lead_distribution,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_11_warning_time_and_lead_distribution,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_11_warning_time_and_lead_distribution,A02,x,曲线横坐标,当前异常调制项的加权分量
+Q3_11_warning_time_and_lead_distribution,A02,y,曲线纵坐标,见面板刻度/图题
+Q3_11_warning_time_and_lead_distribution,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_11_warning_time_and_lead_distribution,A02,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q3_11_warning_time_and_lead_distribution,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_11_warning_time_and_lead_distribution,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_12_reconstructed_spatial_warning,A01,x,曲线横坐标,UTM东向 (m)
+Q3_12_reconstructed_spatial_warning,A01,y,曲线纵坐标,UTM北向 (m)
+Q3_12_reconstructed_spatial_warning,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_12_reconstructed_spatial_warning,A01,y_lower/y_upper,阴影区间下限/上限,UTM北向 (m)
+Q3_12_reconstructed_spatial_warning,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_12_reconstructed_spatial_warning,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_R01_weather_precursor_reference,A01,x,曲线横坐标,见面板刻度/图题
+Q3_R01_weather_precursor_reference,A01,y,曲线纵坐标,气象触发条件指数
+Q3_R01_weather_precursor_reference,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_R01_weather_precursor_reference,A01,y_lower/y_upper,阴影区间下限/上限,气象触发条件指数
+Q3_R01_weather_precursor_reference,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_R01_weather_precursor_reference,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_R01_weather_precursor_reference,A02,x,曲线横坐标,北京时间（UTC+8）
+Q3_R01_weather_precursor_reference,A02,y,曲线纵坐标,气象触发条件指数
+Q3_R01_weather_precursor_reference,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_R01_weather_precursor_reference,A02,y_lower/y_upper,阴影区间下限/上限,气象触发条件指数
+Q3_R01_weather_precursor_reference,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_R01_weather_precursor_reference,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_R02_weather_passage_reference,A01,x,曲线横坐标,距预报发布时刻 (h)
+Q3_R02_weather_passage_reference,A01,y,曲线纵坐标,条件时间概率
+Q3_R02_weather_passage_reference,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_R02_weather_passage_reference,A01,y_lower/y_upper,阴影区间下限/上限,条件时间概率
+Q3_R02_weather_passage_reference,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_R02_weather_passage_reference,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_R02_weather_passage_reference,A02,x,曲线横坐标,距预报发布时刻 (h)
+Q3_R02_weather_passage_reference,A02,y,曲线纵坐标,条件累计概率
+Q3_R02_weather_passage_reference,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_R02_weather_passage_reference,A02,y_lower/y_upper,阴影区间下限/上限,条件累计概率
+Q3_R02_weather_passage_reference,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_R02_weather_passage_reference,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_R03_weather_warning_reference,A01,x,曲线横坐标,距09:00预报发布时刻 (h)
+Q3_R03_weather_warning_reference,A01,y,曲线纵坐标,见面板刻度/图题
+Q3_R03_weather_warning_reference,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_R03_weather_warning_reference,A01,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q3_R03_weather_warning_reference,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_R03_weather_warning_reference,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_R03_weather_warning_reference,A02,x,曲线横坐标,见面板刻度/图题
+Q3_R03_weather_warning_reference,A02,y,曲线纵坐标,2025年检验发布数
+Q3_R03_weather_warning_reference,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_R03_weather_warning_reference,A02,y_lower/y_upper,阴影区间下限/上限,2025年检验发布数
+Q3_R03_weather_warning_reference,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_R03_weather_warning_reference,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_R04_weather_sensitivity_reference,A01,x,曲线横坐标,参考气象条件分位阈值
+Q3_R04_weather_sensitivity_reference,A01,y,曲线纵坐标,未来6小时至少超限一次的比例
+Q3_R04_weather_sensitivity_reference,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_R04_weather_sensitivity_reference,A01,y_lower/y_upper,阴影区间下限/上限,未来6小时至少超限一次的比例
+Q3_R04_weather_sensitivity_reference,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_R04_weather_sensitivity_reference,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_R04_weather_sensitivity_reference,A02,x,曲线横坐标,相似日回看窗口 (天)
+Q3_R04_weather_sensitivity_reference,A02,y,曲线纵坐标,基准模型6h条件超限频率
+Q3_R04_weather_sensitivity_reference,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_R04_weather_sensitivity_reference,A02,y_lower/y_upper,阴影区间下限/上限,基准模型6h条件超限频率
+Q3_R04_weather_sensitivity_reference,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_R04_weather_sensitivity_reference,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_R05_single_stage_spatial_reference,A01,x,曲线横坐标,UTM45N 东向坐标 (m)
+Q3_R05_single_stage_spatial_reference,A01,y,曲线纵坐标,UTM45N 北向坐标 (m)
+Q3_R05_single_stage_spatial_reference,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_R05_single_stage_spatial_reference,A01,y_lower/y_upper,阴影区间下限/上限,UTM45N 北向坐标 (m)
+Q3_R05_single_stage_spatial_reference,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_R05_single_stage_spatial_reference,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_R06_weather_validation_reference,A01,x,曲线横坐标,区间经验覆盖率 (%)
+Q3_R06_weather_validation_reference,A01,y,曲线纵坐标,见面板刻度/图题
+Q3_R06_weather_validation_reference,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_R06_weather_validation_reference,A01,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q3_R06_weather_validation_reference,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_R06_weather_validation_reference,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_R06_weather_validation_reference,A02,x,曲线横坐标,见面板刻度/图题
+Q3_R06_weather_validation_reference,A02,y,曲线纵坐标,百分比 (%)
+Q3_R06_weather_validation_reference,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_R06_weather_validation_reference,A02,y_lower/y_upper,阴影区间下限/上限,百分比 (%)
+Q3_R06_weather_validation_reference,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_R06_weather_validation_reference,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_R11_weather_warning_lead_reference,A01,x,曲线横坐标,预报发布至新超限的提前量 (h)
+Q3_R11_weather_warning_lead_reference,A01,y,曲线纵坐标,正确预警次数
+Q3_R11_weather_warning_lead_reference,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_R11_weather_warning_lead_reference,A01,y_lower/y_upper,阴影区间下限/上限,正确预警次数
+Q3_R11_weather_warning_lead_reference,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_R11_weather_warning_lead_reference,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q3_R11_weather_warning_lead_reference,A02,x,曲线横坐标,见面板刻度/图题
+Q3_R11_weather_warning_lead_reference,A02,y,曲线纵坐标,轨迹频率
+Q3_R11_weather_warning_lead_reference,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q3_R11_weather_warning_lead_reference,A02,y_lower/y_upper,阴影区间下限/上限,轨迹频率
+Q3_R11_weather_warning_lead_reference,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q3_R11_weather_warning_lead_reference,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_00B_local_true_DEM_detail,A01,x,曲线横坐标,UTM45N 东向坐标 (km)
+Q4_00B_local_true_DEM_detail,A01,y,曲线纵坐标,UTM45N 北向坐标 (km)
+Q4_00B_local_true_DEM_detail,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_00B_local_true_DEM_detail,A01,y_lower/y_upper,阴影区间下限/上限,UTM45N 北向坐标 (km)
+Q4_00B_local_true_DEM_detail,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_00B_local_true_DEM_detail,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_00_actual_DEM_geographic_context,A01,x,曲线横坐标,UTM45N 东向坐标 (km)
+Q4_00_actual_DEM_geographic_context,A01,y,曲线纵坐标,UTM45N 北向坐标 (km)
+Q4_00_actual_DEM_geographic_context,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_00_actual_DEM_geographic_context,A01,y_lower/y_upper,阴影区间下限/上限,UTM45N 北向坐标 (km)
+Q4_00_actual_DEM_geographic_context,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_00_actual_DEM_geographic_context,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_01_route_geolocation_quality_gate,A01,x,曲线横坐标,UTM45N 东向坐标 (m)
+Q4_01_route_geolocation_quality_gate,A01,y,曲线纵坐标,UTM45N 北向坐标 (m)
+Q4_01_route_geolocation_quality_gate,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_01_route_geolocation_quality_gate,A01,y_lower/y_upper,阴影区间下限/上限,UTM45N 北向坐标 (m)
+Q4_01_route_geolocation_quality_gate,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_01_route_geolocation_quality_gate,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_01_route_geolocation_quality_gate,A02,x,曲线横坐标,候选路径弧长 (km)
+Q4_01_route_geolocation_quality_gate,A02,y,曲线纵坐标,高程 (m)
+Q4_01_route_geolocation_quality_gate,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_01_route_geolocation_quality_gate,A02,y_lower/y_upper,阴影区间下限/上限,高程 (m)
+Q4_01_route_geolocation_quality_gate,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_01_route_geolocation_quality_gate,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_02_1d_runout_timespace,A01,x,曲线横坐标,见面板刻度/图题
+Q4_02_1d_runout_timespace,A01,y,曲线纵坐标,高程 (m)
+Q4_02_1d_runout_timespace,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_02_1d_runout_timespace,A01,y_lower/y_upper,阴影区间下限/上限,高程 (m)
+Q4_02_1d_runout_timespace,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_02_1d_runout_timespace,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_02_1d_runout_timespace,A02,x,曲线横坐标,沿程距离 (km)
+Q4_02_1d_runout_timespace,A02,y,曲线纵坐标,模拟启动后分钟数
+Q4_02_1d_runout_timespace,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_02_1d_runout_timespace,A02,y_lower/y_upper,阴影区间下限/上限,模拟启动后分钟数
+Q4_02_1d_runout_timespace,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_02_1d_runout_timespace,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_03_1d_hydrograph_and_mass_conservation,A01,x,曲线横坐标,模拟时间 (min)
+Q4_03_1d_hydrograph_and_mass_conservation,A01,y,曲线纵坐标,体积流量 (m³/s)
+Q4_03_1d_hydrograph_and_mass_conservation,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_03_1d_hydrograph_and_mass_conservation,A01,y_lower/y_upper,阴影区间下限/上限,体积流量 (m³/s)
+Q4_03_1d_hydrograph_and_mass_conservation,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_03_1d_hydrograph_and_mass_conservation,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_03_1d_hydrograph_and_mass_conservation,A02,x,曲线横坐标,模拟时间 (min)
+Q4_03_1d_hydrograph_and_mass_conservation,A02,y,曲线纵坐标,累计体积 (m³)
+Q4_03_1d_hydrograph_and_mass_conservation,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_03_1d_hydrograph_and_mass_conservation,A02,y_lower/y_upper,阴影区间下限/上限,累计体积 (m³)
+Q4_03_1d_hydrograph_and_mass_conservation,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_03_1d_hydrograph_and_mass_conservation,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_04_1d_12frames,A01,x,曲线横坐标,见面板刻度/图题
+Q4_04_1d_12frames,A01,y,曲线纵坐标,流深 (m)
+Q4_04_1d_12frames,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_04_1d_12frames,A01,y_lower/y_upper,阴影区间下限/上限,流深 (m)
+Q4_04_1d_12frames,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_04_1d_12frames,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_04_1d_12frames,A02,x,曲线横坐标,见面板刻度/图题
+Q4_04_1d_12frames,A02,y,曲线纵坐标,见面板刻度/图题
+Q4_04_1d_12frames,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_04_1d_12frames,A02,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_04_1d_12frames,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_04_1d_12frames,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_04_1d_12frames,A03,x,曲线横坐标,见面板刻度/图题
+Q4_04_1d_12frames,A03,y,曲线纵坐标,见面板刻度/图题
+Q4_04_1d_12frames,A03,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_04_1d_12frames,A03,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_04_1d_12frames,A03,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_04_1d_12frames,A03,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_04_1d_12frames,A04,x,曲线横坐标,见面板刻度/图题
+Q4_04_1d_12frames,A04,y,曲线纵坐标,见面板刻度/图题
+Q4_04_1d_12frames,A04,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_04_1d_12frames,A04,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_04_1d_12frames,A04,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_04_1d_12frames,A04,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_04_1d_12frames,A05,x,曲线横坐标,见面板刻度/图题
+Q4_04_1d_12frames,A05,y,曲线纵坐标,流深 (m)
+Q4_04_1d_12frames,A05,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_04_1d_12frames,A05,y_lower/y_upper,阴影区间下限/上限,流深 (m)
+Q4_04_1d_12frames,A05,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_04_1d_12frames,A05,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_04_1d_12frames,A06,x,曲线横坐标,见面板刻度/图题
+Q4_04_1d_12frames,A06,y,曲线纵坐标,见面板刻度/图题
+Q4_04_1d_12frames,A06,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_04_1d_12frames,A06,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_04_1d_12frames,A06,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_04_1d_12frames,A06,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_04_1d_12frames,A07,x,曲线横坐标,见面板刻度/图题
+Q4_04_1d_12frames,A07,y,曲线纵坐标,见面板刻度/图题
+Q4_04_1d_12frames,A07,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_04_1d_12frames,A07,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_04_1d_12frames,A07,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_04_1d_12frames,A07,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_04_1d_12frames,A08,x,曲线横坐标,见面板刻度/图题
+Q4_04_1d_12frames,A08,y,曲线纵坐标,见面板刻度/图题
+Q4_04_1d_12frames,A08,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_04_1d_12frames,A08,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_04_1d_12frames,A08,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_04_1d_12frames,A08,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_04_1d_12frames,A09,x,曲线横坐标,距离 (km)
+Q4_04_1d_12frames,A09,y,曲线纵坐标,流深 (m)
+Q4_04_1d_12frames,A09,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_04_1d_12frames,A09,y_lower/y_upper,阴影区间下限/上限,流深 (m)
+Q4_04_1d_12frames,A09,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_04_1d_12frames,A09,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_04_1d_12frames,A10,x,曲线横坐标,距离 (km)
+Q4_04_1d_12frames,A10,y,曲线纵坐标,见面板刻度/图题
+Q4_04_1d_12frames,A10,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_04_1d_12frames,A10,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_04_1d_12frames,A10,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_04_1d_12frames,A10,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_04_1d_12frames,A11,x,曲线横坐标,距离 (km)
+Q4_04_1d_12frames,A11,y,曲线纵坐标,见面板刻度/图题
+Q4_04_1d_12frames,A11,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_04_1d_12frames,A11,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_04_1d_12frames,A11,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_04_1d_12frames,A11,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_04_1d_12frames,A12,x,曲线横坐标,距离 (km)
+Q4_04_1d_12frames,A12,y,曲线纵坐标,见面板刻度/图题
+Q4_04_1d_12frames,A12,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_04_1d_12frames,A12,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_04_1d_12frames,A12,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_04_1d_12frames,A12,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_05_local_2d_depth_and_arrival,A01,x,曲线横坐标,UTM45N 东向坐标 (km)
+Q4_05_local_2d_depth_and_arrival,A01,y,曲线纵坐标,UTM45N 北向坐标 (km)
+Q4_05_local_2d_depth_and_arrival,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_05_local_2d_depth_and_arrival,A01,y_lower/y_upper,阴影区间下限/上限,UTM45N 北向坐标 (km)
+Q4_05_local_2d_depth_and_arrival,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_05_local_2d_depth_and_arrival,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_05_local_2d_depth_and_arrival,A02,x,曲线横坐标,UTM45N 东向坐标 (km)
+Q4_05_local_2d_depth_and_arrival,A02,y,曲线纵坐标,UTM45N 北向坐标 (km)
+Q4_05_local_2d_depth_and_arrival,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_05_local_2d_depth_and_arrival,A02,y_lower/y_upper,阴影区间下限/上限,UTM45N 北向坐标 (km)
+Q4_05_local_2d_depth_and_arrival,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_05_local_2d_depth_and_arrival,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_06A_onset_and_wet_area_diagnostic,A01,x,曲线横坐标,源区释放后时间 (min)
+Q4_06A_onset_and_wet_area_diagnostic,A01,y,曲线纵坐标,耦合断面流量 (千 m³/s)
+Q4_06A_onset_and_wet_area_diagnostic,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_06A_onset_and_wet_area_diagnostic,A01,y_lower/y_upper,阴影区间下限/上限,耦合断面流量 (千 m³/s)
+Q4_06A_onset_and_wet_area_diagnostic,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_06A_onset_and_wet_area_diagnostic,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_06A_onset_and_wet_area_diagnostic,A02,x,曲线横坐标,源区释放后时间 (min)
+Q4_06A_onset_and_wet_area_diagnostic,A02,y,曲线纵坐标,"二维湿润面积 (km², h>0.2 m)"
+Q4_06A_onset_and_wet_area_diagnostic,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_06A_onset_and_wet_area_diagnostic,A02,y_lower/y_upper,阴影区间下限/上限,"二维湿润面积 (km², h>0.2 m)"
+Q4_06A_onset_and_wet_area_diagnostic,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_06A_onset_and_wet_area_diagnostic,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_06B_inlet_position_ablation,A01,x,曲线横坐标,UTM45N 东向坐标 (km)
+Q4_06B_inlet_position_ablation,A01,y,曲线纵坐标,UTM45N 北向坐标 (km)
+Q4_06B_inlet_position_ablation,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_06B_inlet_position_ablation,A01,y_lower/y_upper,阴影区间下限/上限,UTM45N 北向坐标 (km)
+Q4_06B_inlet_position_ablation,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_06B_inlet_position_ablation,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_06B_inlet_position_ablation,A02,x,曲线横坐标,UTM45N 东向坐标 (km)
+Q4_06B_inlet_position_ablation,A02,y,曲线纵坐标,UTM45N 北向坐标 (km)
+Q4_06B_inlet_position_ablation,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_06B_inlet_position_ablation,A02,y_lower/y_upper,阴影区间下限/上限,UTM45N 北向坐标 (km)
+Q4_06B_inlet_position_ablation,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_06B_inlet_position_ablation,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_06C_2x2_inlet_boundary_factorial,A01,x,曲线横坐标,UTM45N 东向坐标 (km)
+Q4_06C_2x2_inlet_boundary_factorial,A01,y,曲线纵坐标,UTM45N 北向坐标 (km)
+Q4_06C_2x2_inlet_boundary_factorial,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_06C_2x2_inlet_boundary_factorial,A01,y_lower/y_upper,阴影区间下限/上限,UTM45N 北向坐标 (km)
+Q4_06C_2x2_inlet_boundary_factorial,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_06C_2x2_inlet_boundary_factorial,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_06C_2x2_inlet_boundary_factorial,A02,x,曲线横坐标,UTM45N 东向坐标 (km)
+Q4_06C_2x2_inlet_boundary_factorial,A02,y,曲线纵坐标,UTM45N 北向坐标 (km)
+Q4_06C_2x2_inlet_boundary_factorial,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_06C_2x2_inlet_boundary_factorial,A02,y_lower/y_upper,阴影区间下限/上限,UTM45N 北向坐标 (km)
+Q4_06C_2x2_inlet_boundary_factorial,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_06C_2x2_inlet_boundary_factorial,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_06C_2x2_inlet_boundary_factorial,A03,x,曲线横坐标,UTM45N 东向坐标 (km)
+Q4_06C_2x2_inlet_boundary_factorial,A03,y,曲线纵坐标,UTM45N 北向坐标 (km)
+Q4_06C_2x2_inlet_boundary_factorial,A03,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_06C_2x2_inlet_boundary_factorial,A03,y_lower/y_upper,阴影区间下限/上限,UTM45N 北向坐标 (km)
+Q4_06C_2x2_inlet_boundary_factorial,A03,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_06C_2x2_inlet_boundary_factorial,A03,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_06C_2x2_inlet_boundary_factorial,A04,x,曲线横坐标,UTM45N 东向坐标 (km)
+Q4_06C_2x2_inlet_boundary_factorial,A04,y,曲线纵坐标,UTM45N 北向坐标 (km)
+Q4_06C_2x2_inlet_boundary_factorial,A04,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_06C_2x2_inlet_boundary_factorial,A04,y_lower/y_upper,阴影区间下限/上限,UTM45N 北向坐标 (km)
+Q4_06C_2x2_inlet_boundary_factorial,A04,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_06C_2x2_inlet_boundary_factorial,A04,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_06_local_2d_10frames,A01,x,曲线横坐标,见面板刻度/图题
+Q4_06_local_2d_10frames,A01,y,曲线纵坐标,北向坐标 (km)
+Q4_06_local_2d_10frames,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_06_local_2d_10frames,A01,y_lower/y_upper,阴影区间下限/上限,北向坐标 (km)
+Q4_06_local_2d_10frames,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_06_local_2d_10frames,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_06_local_2d_10frames,A02,x,曲线横坐标,见面板刻度/图题
+Q4_06_local_2d_10frames,A02,y,曲线纵坐标,见面板刻度/图题
+Q4_06_local_2d_10frames,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_06_local_2d_10frames,A02,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_06_local_2d_10frames,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_06_local_2d_10frames,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_06_local_2d_10frames,A03,x,曲线横坐标,见面板刻度/图题
+Q4_06_local_2d_10frames,A03,y,曲线纵坐标,见面板刻度/图题
+Q4_06_local_2d_10frames,A03,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_06_local_2d_10frames,A03,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_06_local_2d_10frames,A03,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_06_local_2d_10frames,A03,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_06_local_2d_10frames,A04,x,曲线横坐标,见面板刻度/图题
+Q4_06_local_2d_10frames,A04,y,曲线纵坐标,见面板刻度/图题
+Q4_06_local_2d_10frames,A04,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_06_local_2d_10frames,A04,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_06_local_2d_10frames,A04,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_06_local_2d_10frames,A04,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_06_local_2d_10frames,A05,x,曲线横坐标,见面板刻度/图题
+Q4_06_local_2d_10frames,A05,y,曲线纵坐标,见面板刻度/图题
+Q4_06_local_2d_10frames,A05,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_06_local_2d_10frames,A05,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_06_local_2d_10frames,A05,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_06_local_2d_10frames,A05,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_06_local_2d_10frames,A06,x,曲线横坐标,东向坐标 (km)
+Q4_06_local_2d_10frames,A06,y,曲线纵坐标,北向坐标 (km)
+Q4_06_local_2d_10frames,A06,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_06_local_2d_10frames,A06,y_lower/y_upper,阴影区间下限/上限,北向坐标 (km)
+Q4_06_local_2d_10frames,A06,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_06_local_2d_10frames,A06,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_06_local_2d_10frames,A07,x,曲线横坐标,东向坐标 (km)
+Q4_06_local_2d_10frames,A07,y,曲线纵坐标,见面板刻度/图题
+Q4_06_local_2d_10frames,A07,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_06_local_2d_10frames,A07,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_06_local_2d_10frames,A07,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_06_local_2d_10frames,A07,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_06_local_2d_10frames,A08,x,曲线横坐标,东向坐标 (km)
+Q4_06_local_2d_10frames,A08,y,曲线纵坐标,见面板刻度/图题
+Q4_06_local_2d_10frames,A08,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_06_local_2d_10frames,A08,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_06_local_2d_10frames,A08,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_06_local_2d_10frames,A08,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_06_local_2d_10frames,A09,x,曲线横坐标,东向坐标 (km)
+Q4_06_local_2d_10frames,A09,y,曲线纵坐标,见面板刻度/图题
+Q4_06_local_2d_10frames,A09,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_06_local_2d_10frames,A09,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_06_local_2d_10frames,A09,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_06_local_2d_10frames,A09,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_06_local_2d_10frames,A10,x,曲线横坐标,东向坐标 (km)
+Q4_06_local_2d_10frames,A10,y,曲线纵坐标,见面板刻度/图题
+Q4_06_local_2d_10frames,A10,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_06_local_2d_10frames,A10,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_06_local_2d_10frames,A10,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_06_local_2d_10frames,A10,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_07_parameter_sensitivity,A01,x,曲线横坐标,参数相对基线变化 (%)
+Q4_07_parameter_sensitivity,A01,y,曲线纵坐标,最大传播距离 (km)
+Q4_07_parameter_sensitivity,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_07_parameter_sensitivity,A01,y_lower/y_upper,阴影区间下限/上限,最大传播距离 (km)
+Q4_07_parameter_sensitivity,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_07_parameter_sensitivity,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_07_parameter_sensitivity,A02,x,曲线横坐标,参数相对基线变化 (%)
+Q4_07_parameter_sensitivity,A02,y,曲线纵坐标,全时段最大等效流深 (m)
+Q4_07_parameter_sensitivity,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_07_parameter_sensitivity,A02,y_lower/y_upper,阴影区间下限/上限,全时段最大等效流深 (m)
+Q4_07_parameter_sensitivity,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_07_parameter_sensitivity,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_07_parameter_sensitivity,A03,x,曲线横坐标,参数相对基线变化 (%)
+Q4_07_parameter_sensitivity,A03,y,曲线纵坐标,下游首次到达时间 (min)
+Q4_07_parameter_sensitivity,A03,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_07_parameter_sensitivity,A03,y_lower/y_upper,阴影区间下限/上限,下游首次到达时间 (min)
+Q4_07_parameter_sensitivity,A03,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_07_parameter_sensitivity,A03,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_08_volume_friction_phase_diagram,A01,x,曲线横坐标,释放量 (百万 m³)
+Q4_08_volume_friction_phase_diagram,A01,y,曲线纵坐标,库仑摩擦系数 μ
+Q4_08_volume_friction_phase_diagram,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_08_volume_friction_phase_diagram,A01,y_lower/y_upper,阴影区间下限/上限,库仑摩擦系数 μ
+Q4_08_volume_friction_phase_diagram,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_08_volume_friction_phase_diagram,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_08_volume_friction_phase_diagram,A02,x,曲线横坐标,释放量 (百万 m³)
+Q4_08_volume_friction_phase_diagram,A02,y,曲线纵坐标,库仑摩擦系数 μ
+Q4_08_volume_friction_phase_diagram,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_08_volume_friction_phase_diagram,A02,y_lower/y_upper,阴影区间下限/上限,库仑摩擦系数 μ
+Q4_08_volume_friction_phase_diagram,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_08_volume_friction_phase_diagram,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_09_grid_resolution_reliability,A01,x,曲线横坐标,网格分辨率 (m)
+Q4_09_grid_resolution_reliability,A01,y,曲线纵坐标,模拟淹没面积 (km²)
+Q4_09_grid_resolution_reliability,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_09_grid_resolution_reliability,A01,y_lower/y_upper,阴影区间下限/上限,模拟淹没面积 (km²)
+Q4_09_grid_resolution_reliability,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_09_grid_resolution_reliability,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_09_grid_resolution_reliability,A02,x,曲线横坐标,网格分辨率 (m)
+Q4_09_grid_resolution_reliability,A02,y,曲线纵坐标,最大流深 (m)
+Q4_09_grid_resolution_reliability,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_09_grid_resolution_reliability,A02,y_lower/y_upper,阴影区间下限/上限,最大流深 (m)
+Q4_09_grid_resolution_reliability,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_09_grid_resolution_reliability,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_10_impact_pressure_distribution,A01,x,曲线横坐标,UTM 东向坐标 (m)
+Q4_10_impact_pressure_distribution,A01,y,曲线纵坐标,UTM 北向坐标 (m)
+Q4_10_impact_pressure_distribution,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_10_impact_pressure_distribution,A01,y_lower/y_upper,阴影区间下限/上限,UTM 北向坐标 (m)
+Q4_10_impact_pressure_distribution,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_10_impact_pressure_distribution,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_11_six_key_frames,A01,x,曲线横坐标,东向坐标 (km)
+Q4_11_six_key_frames,A01,y,曲线纵坐标,北向坐标 (km)
+Q4_11_six_key_frames,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_11_six_key_frames,A01,y_lower/y_upper,阴影区间下限/上限,北向坐标 (km)
+Q4_11_six_key_frames,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_11_six_key_frames,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_11_six_key_frames,A02,x,曲线横坐标,东向坐标 (km)
+Q4_11_six_key_frames,A02,y,曲线纵坐标,北向坐标 (km)
+Q4_11_six_key_frames,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_11_six_key_frames,A02,y_lower/y_upper,阴影区间下限/上限,北向坐标 (km)
+Q4_11_six_key_frames,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_11_six_key_frames,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_11_six_key_frames,A03,x,曲线横坐标,东向坐标 (km)
+Q4_11_six_key_frames,A03,y,曲线纵坐标,北向坐标 (km)
+Q4_11_six_key_frames,A03,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_11_six_key_frames,A03,y_lower/y_upper,阴影区间下限/上限,北向坐标 (km)
+Q4_11_six_key_frames,A03,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_11_six_key_frames,A03,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_11_six_key_frames,A04,x,曲线横坐标,东向坐标 (km)
+Q4_11_six_key_frames,A04,y,曲线纵坐标,北向坐标 (km)
+Q4_11_six_key_frames,A04,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_11_six_key_frames,A04,y_lower/y_upper,阴影区间下限/上限,北向坐标 (km)
+Q4_11_six_key_frames,A04,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_11_six_key_frames,A04,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_11_six_key_frames,A05,x,曲线横坐标,东向坐标 (km)
+Q4_11_six_key_frames,A05,y,曲线纵坐标,北向坐标 (km)
+Q4_11_six_key_frames,A05,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_11_six_key_frames,A05,y_lower/y_upper,阴影区间下限/上限,北向坐标 (km)
+Q4_11_six_key_frames,A05,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_11_six_key_frames,A05,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_11_six_key_frames,A06,x,曲线横坐标,东向坐标 (km)
+Q4_11_six_key_frames,A06,y,曲线纵坐标,北向坐标 (km)
+Q4_11_six_key_frames,A06,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_11_six_key_frames,A06,y_lower/y_upper,阴影区间下限/上限,北向坐标 (km)
+Q4_11_six_key_frames,A06,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_11_six_key_frames,A06,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_12_secondary_inflow_transfer,A01,x,曲线横坐标,见面板刻度/图题
+Q4_12_secondary_inflow_transfer,A01,y,曲线纵坐标,实际1D耦合断面通量 (m³/s)
+Q4_12_secondary_inflow_transfer,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_12_secondary_inflow_transfer,A01,y_lower/y_upper,阴影区间下限/上限,实际1D耦合断面通量 (m³/s)
+Q4_12_secondary_inflow_transfer,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_12_secondary_inflow_transfer,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_12_secondary_inflow_transfer,A02,x,曲线横坐标,源区释放后时间 (min)
+Q4_12_secondary_inflow_transfer,A02,y,曲线纵坐标,断面湿润单元速度 (m/s)
+Q4_12_secondary_inflow_transfer,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_12_secondary_inflow_transfer,A02,y_lower/y_upper,阴影区间下限/上限,断面湿润单元速度 (m/s)
+Q4_12_secondary_inflow_transfer,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_12_secondary_inflow_transfer,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_13_1d_grid_resolution,A01,x,曲线横坐标,一维步长 (m)
+Q4_13_1d_grid_resolution,A01,y,曲线纵坐标,最大传播距离 (km)
+Q4_13_1d_grid_resolution,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_13_1d_grid_resolution,A01,y_lower/y_upper,阴影区间下限/上限,最大传播距离 (km)
+Q4_13_1d_grid_resolution,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_13_1d_grid_resolution,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_13_1d_grid_resolution,A02,x,曲线横坐标,一维步长 (m)
+Q4_13_1d_grid_resolution,A02,y,曲线纵坐标,最大等效流深 (m)
+Q4_13_1d_grid_resolution,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_13_1d_grid_resolution,A02,y_lower/y_upper,阴影区间下限/上限,最大等效流深 (m)
+Q4_13_1d_grid_resolution,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_13_1d_grid_resolution,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_14_drainage_route_and_cross_sections,A01,x,曲线横坐标,UTM东向 (m)
+Q4_14_drainage_route_and_cross_sections,A01,y,曲线纵坐标,UTM北向 (m)
+Q4_14_drainage_route_and_cross_sections,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_14_drainage_route_and_cross_sections,A01,y_lower/y_upper,阴影区间下限/上限,UTM北向 (m)
+Q4_14_drainage_route_and_cross_sections,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_14_drainage_route_and_cross_sections,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_14_drainage_route_and_cross_sections,A02,x,曲线横坐标,沿程距离 (km)
+Q4_14_drainage_route_and_cross_sections,A02,y,曲线纵坐标,高程 (m)
+Q4_14_drainage_route_and_cross_sections,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_14_drainage_route_and_cross_sections,A02,y_lower/y_upper,阴影区间下限/上限,高程 (m)
+Q4_14_drainage_route_and_cross_sections,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_14_drainage_route_and_cross_sections,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_14_drainage_route_and_cross_sections,A03,x,曲线横坐标,沿程距离 (km)
+Q4_14_drainage_route_and_cross_sections,A03,y,曲线纵坐标,DEM等效断面宽度 (m)
+Q4_14_drainage_route_and_cross_sections,A03,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_14_drainage_route_and_cross_sections,A03,y_lower/y_upper,阴影区间下限/上限,DEM等效断面宽度 (m)
+Q4_14_drainage_route_and_cross_sections,A03,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_14_drainage_route_and_cross_sections,A03,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_15_calibrated_cascade_process,A01,x,曲线横坐标,源区释放后 (s)
+Q4_15_calibrated_cascade_process,A01,y,曲线纵坐标,断面流量 (m³/s)
+Q4_15_calibrated_cascade_process,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_15_calibrated_cascade_process,A01,y_lower/y_upper,阴影区间下限/上限,断面流量 (m³/s)
+Q4_15_calibrated_cascade_process,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_15_calibrated_cascade_process,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_15_calibrated_cascade_process,A02,x,曲线横坐标,源区释放后 (s)
+Q4_15_calibrated_cascade_process,A02,y,曲线纵坐标,口岸断面流速 (m/s)
+Q4_15_calibrated_cascade_process,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_15_calibrated_cascade_process,A02,y_lower/y_upper,阴影区间下限/上限,口岸断面流速 (m/s)
+Q4_15_calibrated_cascade_process,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_15_calibrated_cascade_process,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_15_calibrated_cascade_process,A03,x,曲线横坐标,本河段距离 (km)
+Q4_15_calibrated_cascade_process,A03,y,曲线纵坐标,源区释放后 (s)
+Q4_15_calibrated_cascade_process,A03,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_15_calibrated_cascade_process,A03,y_lower/y_upper,阴影区间下限/上限,源区释放后 (s)
+Q4_15_calibrated_cascade_process,A03,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_15_calibrated_cascade_process,A03,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_15_calibrated_cascade_process,A04,x,曲线横坐标,本河段距离 (km)
+Q4_15_calibrated_cascade_process,A04,y,曲线纵坐标,源区释放后 (s)
+Q4_15_calibrated_cascade_process,A04,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_15_calibrated_cascade_process,A04,y_lower/y_upper,阴影区间下限/上限,源区释放后 (s)
+Q4_15_calibrated_cascade_process,A04,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_15_calibrated_cascade_process,A04,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_16_event_constraint_comparison,A01,x,曲线横坐标,见面板刻度/图题
+Q4_16_event_constraint_comparison,A01,y,曲线纵坐标,s
+Q4_16_event_constraint_comparison,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_16_event_constraint_comparison,A01,y_lower/y_upper,阴影区间下限/上限,s
+Q4_16_event_constraint_comparison,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_16_event_constraint_comparison,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_16_event_constraint_comparison,A02,x,曲线横坐标,见面板刻度/图题
+Q4_16_event_constraint_comparison,A02,y,曲线纵坐标,m³/s
+Q4_16_event_constraint_comparison,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_16_event_constraint_comparison,A02,y_lower/y_upper,阴影区间下限/上限,m³/s
+Q4_16_event_constraint_comparison,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_16_event_constraint_comparison,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_16_event_constraint_comparison,A03,x,曲线横坐标,见面板刻度/图题
+Q4_16_event_constraint_comparison,A03,y,曲线纵坐标,m/s
+Q4_16_event_constraint_comparison,A03,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_16_event_constraint_comparison,A03,y_lower/y_upper,阴影区间下限/上限,m/s
+Q4_16_event_constraint_comparison,A03,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_16_event_constraint_comparison,A03,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_17_calibration_parameter_experiments,A01,x,曲线横坐标,库仑摩擦 μ
+Q4_17_calibration_parameter_experiments,A01,y,曲线纵坐标,河道传播时间 (s)
+Q4_17_calibration_parameter_experiments,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_17_calibration_parameter_experiments,A01,y_lower/y_upper,阴影区间下限/上限,河道传播时间 (s)
+Q4_17_calibration_parameter_experiments,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_17_calibration_parameter_experiments,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_17_calibration_parameter_experiments,A02,x,曲线横坐标,库仑摩擦 μ
+Q4_17_calibration_parameter_experiments,A02,y,曲线纵坐标,口岸峰值流量 (m³/s)
+Q4_17_calibration_parameter_experiments,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_17_calibration_parameter_experiments,A02,y_lower/y_upper,阴影区间下限/上限,口岸峰值流量 (m³/s)
+Q4_17_calibration_parameter_experiments,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_17_calibration_parameter_experiments,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_18_reconstructed_2d_depth_speed_arrival,A01,x,曲线横坐标,UTM东向 (m)
+Q4_18_reconstructed_2d_depth_speed_arrival,A01,y,曲线纵坐标,UTM北向 (m)
+Q4_18_reconstructed_2d_depth_speed_arrival,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_18_reconstructed_2d_depth_speed_arrival,A01,y_lower/y_upper,阴影区间下限/上限,UTM北向 (m)
+Q4_18_reconstructed_2d_depth_speed_arrival,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_18_reconstructed_2d_depth_speed_arrival,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_18_reconstructed_2d_depth_speed_arrival,A02,x,曲线横坐标,UTM东向 (m)
+Q4_18_reconstructed_2d_depth_speed_arrival,A02,y,曲线纵坐标,UTM北向 (m)
+Q4_18_reconstructed_2d_depth_speed_arrival,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_18_reconstructed_2d_depth_speed_arrival,A02,y_lower/y_upper,阴影区间下限/上限,UTM北向 (m)
+Q4_18_reconstructed_2d_depth_speed_arrival,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_18_reconstructed_2d_depth_speed_arrival,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_18_reconstructed_2d_depth_speed_arrival,A03,x,曲线横坐标,UTM东向 (m)
+Q4_18_reconstructed_2d_depth_speed_arrival,A03,y,曲线纵坐标,UTM北向 (m)
+Q4_18_reconstructed_2d_depth_speed_arrival,A03,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_18_reconstructed_2d_depth_speed_arrival,A03,y_lower/y_upper,阴影区间下限/上限,UTM北向 (m)
+Q4_18_reconstructed_2d_depth_speed_arrival,A03,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_18_reconstructed_2d_depth_speed_arrival,A03,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_18_reconstructed_2d_depth_speed_arrival,A04,x,曲线横坐标,UTM东向 (m)
+Q4_18_reconstructed_2d_depth_speed_arrival,A04,y,曲线纵坐标,UTM北向 (m)
+Q4_18_reconstructed_2d_depth_speed_arrival,A04,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_18_reconstructed_2d_depth_speed_arrival,A04,y_lower/y_upper,阴影区间下限/上限,UTM北向 (m)
+Q4_18_reconstructed_2d_depth_speed_arrival,A04,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_18_reconstructed_2d_depth_speed_arrival,A04,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_19_reconstructed_2d_six_frames,A01,x,曲线横坐标,见面板刻度/图题
+Q4_19_reconstructed_2d_six_frames,A01,y,曲线纵坐标,见面板刻度/图题
+Q4_19_reconstructed_2d_six_frames,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_19_reconstructed_2d_six_frames,A01,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_19_reconstructed_2d_six_frames,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_19_reconstructed_2d_six_frames,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_19_reconstructed_2d_six_frames,A02,x,曲线横坐标,见面板刻度/图题
+Q4_19_reconstructed_2d_six_frames,A02,y,曲线纵坐标,见面板刻度/图题
+Q4_19_reconstructed_2d_six_frames,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_19_reconstructed_2d_six_frames,A02,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_19_reconstructed_2d_six_frames,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_19_reconstructed_2d_six_frames,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_19_reconstructed_2d_six_frames,A03,x,曲线横坐标,见面板刻度/图题
+Q4_19_reconstructed_2d_six_frames,A03,y,曲线纵坐标,见面板刻度/图题
+Q4_19_reconstructed_2d_six_frames,A03,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_19_reconstructed_2d_six_frames,A03,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_19_reconstructed_2d_six_frames,A03,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_19_reconstructed_2d_six_frames,A03,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_19_reconstructed_2d_six_frames,A04,x,曲线横坐标,见面板刻度/图题
+Q4_19_reconstructed_2d_six_frames,A04,y,曲线纵坐标,见面板刻度/图题
+Q4_19_reconstructed_2d_six_frames,A04,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_19_reconstructed_2d_six_frames,A04,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_19_reconstructed_2d_six_frames,A04,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_19_reconstructed_2d_six_frames,A04,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_19_reconstructed_2d_six_frames,A05,x,曲线横坐标,见面板刻度/图题
+Q4_19_reconstructed_2d_six_frames,A05,y,曲线纵坐标,见面板刻度/图题
+Q4_19_reconstructed_2d_six_frames,A05,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_19_reconstructed_2d_six_frames,A05,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_19_reconstructed_2d_six_frames,A05,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_19_reconstructed_2d_six_frames,A05,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_19_reconstructed_2d_six_frames,A06,x,曲线横坐标,见面板刻度/图题
+Q4_19_reconstructed_2d_six_frames,A06,y,曲线纵坐标,见面板刻度/图题
+Q4_19_reconstructed_2d_six_frames,A06,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_19_reconstructed_2d_six_frames,A06,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_19_reconstructed_2d_six_frames,A06,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_19_reconstructed_2d_six_frames,A06,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_20_cascade_volume_and_grid_experiments,A01,x,曲线横坐标,体积 (百万m³)
+Q4_20_cascade_volume_and_grid_experiments,A01,y,曲线纵坐标,见面板刻度/图题
+Q4_20_cascade_volume_and_grid_experiments,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_20_cascade_volume_and_grid_experiments,A01,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_20_cascade_volume_and_grid_experiments,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_20_cascade_volume_and_grid_experiments,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_20_cascade_volume_and_grid_experiments,A02,x,曲线横坐标,体积 (百万m³)
+Q4_20_cascade_volume_and_grid_experiments,A02,y,曲线纵坐标,见面板刻度/图题
+Q4_20_cascade_volume_and_grid_experiments,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_20_cascade_volume_and_grid_experiments,A02,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_20_cascade_volume_and_grid_experiments,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_20_cascade_volume_and_grid_experiments,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_20_cascade_volume_and_grid_experiments,A03,x,曲线横坐标,二维网格 (m)
+Q4_20_cascade_volume_and_grid_experiments,A03,y,曲线纵坐标,累计湿润面积 (km²)
+Q4_20_cascade_volume_and_grid_experiments,A03,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_20_cascade_volume_and_grid_experiments,A03,y_lower/y_upper,阴影区间下限/上限,累计湿润面积 (km²)
+Q4_20_cascade_volume_and_grid_experiments,A03,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_20_cascade_volume_and_grid_experiments,A03,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_21_cross_sections_and_1d_grid_experiment,A01,x,曲线横坐标,横向距中心 (m)
+Q4_21_cross_sections_and_1d_grid_experiment,A01,y,曲线纵坐标,相对最低高程 (m)
+Q4_21_cross_sections_and_1d_grid_experiment,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_21_cross_sections_and_1d_grid_experiment,A01,y_lower/y_upper,阴影区间下限/上限,相对最低高程 (m)
+Q4_21_cross_sections_and_1d_grid_experiment,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_21_cross_sections_and_1d_grid_experiment,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_21_cross_sections_and_1d_grid_experiment,A02,x,曲线横坐标,数值步长 (m)
+Q4_21_cross_sections_and_1d_grid_experiment,A02,y,曲线纵坐标,源区释放后到达时间 (s)
+Q4_21_cross_sections_and_1d_grid_experiment,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_21_cross_sections_and_1d_grid_experiment,A02,y_lower/y_upper,阴影区间下限/上限,源区释放后到达时间 (s)
+Q4_21_cross_sections_and_1d_grid_experiment,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_21_cross_sections_and_1d_grid_experiment,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_21_cross_sections_and_1d_grid_experiment,A03,x,曲线横坐标,数值步长 (m)
+Q4_21_cross_sections_and_1d_grid_experiment,A03,y,曲线纵坐标,口岸峰值流量 (m³/s)
+Q4_21_cross_sections_and_1d_grid_experiment,A03,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_21_cross_sections_and_1d_grid_experiment,A03,y_lower/y_upper,阴影区间下限/上限,口岸峰值流量 (m³/s)
+Q4_21_cross_sections_and_1d_grid_experiment,A03,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_21_cross_sections_and_1d_grid_experiment,A03,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_22_time_alignment_and_residuals,A01,x,曲线横坐标,经历时间 (s)
+Q4_22_time_alignment_and_residuals,A01,y,曲线纵坐标,见面板刻度/图题
+Q4_22_time_alignment_and_residuals,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_22_time_alignment_and_residuals,A01,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_22_time_alignment_and_residuals,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_22_time_alignment_and_residuals,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_22_time_alignment_and_residuals,A02,x,曲线横坐标,相对文献重建参照偏差 (%)
+Q4_22_time_alignment_and_residuals,A02,y,曲线纵坐标,见面板刻度/图题
+Q4_22_time_alignment_and_residuals,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_22_time_alignment_and_residuals,A02,y_lower/y_upper,阴影区间下限/上限,同面板Y单位
+Q4_22_time_alignment_and_residuals,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_22_time_alignment_and_residuals,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_23_whole_route_six_stages,A01,x,曲线横坐标,UTM东向 (km)
+Q4_23_whole_route_six_stages,A01,y,曲线纵坐标,UTM北向 (km)
+Q4_23_whole_route_six_stages,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_23_whole_route_six_stages,A01,y_lower/y_upper,阴影区间下限/上限,UTM北向 (km)
+Q4_23_whole_route_six_stages,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_23_whole_route_six_stages,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_23_whole_route_six_stages,A02,x,曲线横坐标,UTM东向 (km)
+Q4_23_whole_route_six_stages,A02,y,曲线纵坐标,UTM北向 (km)
+Q4_23_whole_route_six_stages,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_23_whole_route_six_stages,A02,y_lower/y_upper,阴影区间下限/上限,UTM北向 (km)
+Q4_23_whole_route_six_stages,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_23_whole_route_six_stages,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_23_whole_route_six_stages,A03,x,曲线横坐标,UTM东向 (km)
+Q4_23_whole_route_six_stages,A03,y,曲线纵坐标,UTM北向 (km)
+Q4_23_whole_route_six_stages,A03,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_23_whole_route_six_stages,A03,y_lower/y_upper,阴影区间下限/上限,UTM北向 (km)
+Q4_23_whole_route_six_stages,A03,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_23_whole_route_six_stages,A03,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_23_whole_route_six_stages,A04,x,曲线横坐标,UTM东向 (km)
+Q4_23_whole_route_six_stages,A04,y,曲线纵坐标,UTM北向 (km)
+Q4_23_whole_route_six_stages,A04,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_23_whole_route_six_stages,A04,y_lower/y_upper,阴影区间下限/上限,UTM北向 (km)
+Q4_23_whole_route_six_stages,A04,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_23_whole_route_six_stages,A04,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_23_whole_route_six_stages,A05,x,曲线横坐标,UTM东向 (km)
+Q4_23_whole_route_six_stages,A05,y,曲线纵坐标,UTM北向 (km)
+Q4_23_whole_route_six_stages,A05,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_23_whole_route_six_stages,A05,y_lower/y_upper,阴影区间下限/上限,UTM北向 (km)
+Q4_23_whole_route_six_stages,A05,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_23_whole_route_six_stages,A05,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_23_whole_route_six_stages,A06,x,曲线横坐标,UTM东向 (km)
+Q4_23_whole_route_six_stages,A06,y,曲线纵坐标,UTM北向 (km)
+Q4_23_whole_route_six_stages,A06,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_23_whole_route_six_stages,A06,y_lower/y_upper,阴影区间下限/上限,UTM北向 (km)
+Q4_23_whole_route_six_stages,A06,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_23_whole_route_six_stages,A06,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_24_resolution_response_comparison,A01,x,曲线横坐标,一维网格 (m)
+Q4_24_resolution_response_comparison,A01,y,曲线纵坐标,口岸峰值流量 (万m³/s)
+Q4_24_resolution_response_comparison,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_24_resolution_response_comparison,A01,y_lower/y_upper,阴影区间下限/上限,口岸峰值流量 (万m³/s)
+Q4_24_resolution_response_comparison,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_24_resolution_response_comparison,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_24_resolution_response_comparison,A02,x,曲线横坐标,一维网格 (m)
+Q4_24_resolution_response_comparison,A02,y,曲线纵坐标,源区释放后到达时间 (s)
+Q4_24_resolution_response_comparison,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_24_resolution_response_comparison,A02,y_lower/y_upper,阴影区间下限/上限,源区释放后到达时间 (s)
+Q4_24_resolution_response_comparison,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_24_resolution_response_comparison,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_25_release_geometry_and_elevation,A01,x,曲线横坐标,UTM东向 (km)
+Q4_25_release_geometry_and_elevation,A01,y,曲线纵坐标,UTM北向 (km)
+Q4_25_release_geometry_and_elevation,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_25_release_geometry_and_elevation,A01,y_lower/y_upper,阴影区间下限/上限,UTM北向 (km)
+Q4_25_release_geometry_and_elevation,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_25_release_geometry_and_elevation,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q4_25_release_geometry_and_elevation,A02,x,曲线横坐标,官方源区像元高程 (m)
+Q4_25_release_geometry_and_elevation,A02,y,曲线纵坐标,投影路径高程 (m)
+Q4_25_release_geometry_and_elevation,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q4_25_release_geometry_and_elevation,A02,y_lower/y_upper,阴影区间下限/上限,投影路径高程 (m)
+Q4_25_release_geometry_and_elevation,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q4_25_release_geometry_and_elevation,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q34_trigger_and_arrival_time,A01,x,曲线横坐标,相对发布时刻 / h
+Q34_trigger_and_arrival_time,A01,y,曲线纵坐标,模拟次数
+Q34_trigger_and_arrival_time,A01,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q34_trigger_and_arrival_time,A01,y_lower/y_upper,阴影区间下限/上限,模拟次数
+Q34_trigger_and_arrival_time,A01,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q34_trigger_and_arrival_time,A01,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q34_trigger_and_arrival_time,A02,x,曲线横坐标,传播 / min
+Q34_trigger_and_arrival_time,A02,y,曲线纵坐标,模拟次数
+Q34_trigger_and_arrival_time,A02,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q34_trigger_and_arrival_time,A02,y_lower/y_upper,阴影区间下限/上限,模拟次数
+Q34_trigger_and_arrival_time,A02,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q34_trigger_and_arrival_time,A02,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF
+Q34_trigger_and_arrival_time,A03,x,曲线横坐标,相对发布时刻 / h
+Q34_trigger_and_arrival_time,A03,y,曲线纵坐标,模拟次数
+Q34_trigger_and_arrival_time,A03,x_datetime,原图横坐标时钟日期,YYYY-MM-DD HH:mm:ss；站点采用北京时间
+Q34_trigger_and_arrival_time,A03,y_lower/y_upper,阴影区间下限/上限,模拟次数
+Q34_trigger_and_arrival_time,A03,height/width,柱形或直方图区间高度/宽度,参照XY轴；不是统一的计数单位
+Q34_trigger_and_arrival_time,A03,x_center/y_center,栅格像元中心坐标,原图坐标；GIS原生坐标另见GeoTIFF

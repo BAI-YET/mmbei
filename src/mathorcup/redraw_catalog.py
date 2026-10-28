@@ -79,8 +79,15 @@ def build_redraw_catalog(ctx):
     base=ctx.out/'redraw_data';base.mkdir(exist_ok=True)
     source_tables=base/'source_tables';source_tables.mkdir(exist_ok=True)
     source_spatial=base/'source_spatial';source_spatial.mkdir(exist_ok=True)
+    for old in source_spatial.iterdir():
+        if old.is_file():old.unlink()
     # Preserve all original quantitative files in the main archive; provide common imports in this annex.
     for q in ['q1','q2','q3','q4','joint','quality']:
+        target=source_tables/q
+        if target.exists():
+            for old in target.iterdir():
+                if old.is_file():old.unlink()
+        target.mkdir(exist_ok=True)
         for p in (ctx.out/q).glob('*'):
             if not p.is_file() or not (p.suffix in ('.csv','.json','.npz','.tif','.gpkg') or p.name.endswith('.csv.gz')):continue
             dest=source_tables/q/p.name;dest.parent.mkdir(exist_ok=True)
@@ -101,6 +108,9 @@ def build_redraw_catalog(ctx):
     if nc:shutil.copy2(nc[0],source_spatial/nc[0].name)
     index=[];files=[];dictionary=[];raster_index=[];warnings=[]
     originals=[p for p in ctx.out.rglob('*.png') if 'redraw_data' not in p.parts]
+    active_previews={str(p.relative_to(ctx.out)) for p in originals}
+    for old in (base/'previews').rglob('*.png'):
+        if str(old.relative_to(base/'previews')) not in active_previews:old.unlink()
     order={'q1':1,'q2':2,'q3':3,'q4':4,'joint':5};originals.sort(key=lambda p:(order.get(p.parent.name,9),p.name))
     for number,p in enumerate(originals,1):
         folder=base/p.parent.name/p.stem;mp=folder/'figure_metadata.json'

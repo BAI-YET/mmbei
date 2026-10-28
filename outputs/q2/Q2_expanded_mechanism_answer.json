@@ -1,0 +1,76 @@
+{
+  "baseline_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "reference_quantile": 0.9,
+  "channels": [
+    {
+      "channel": "source_PDD7_Cday",
+      "value_at_issue": 42.33180598958334,
+      "historical_q90": 46.51137265625,
+      "historical_percentile": 0.7082083446959367,
+      "exceeds_q90": false,
+      "reference_n": 18335,
+      "reference_years": "2021,2022,2023,2024,2025"
+    },
+    {
+      "channel": "source_PDD30_Cday",
+      "value_at_issue": 171.2135078125,
+      "historical_q90": 194.9235924479167,
+      "historical_percentile": 0.6307246053438946,
+      "exceeds_q90": false,
+      "reference_n": 17927,
+      "reference_years": "2021,2022,2023,2024,2025"
+    },
+    {
+      "channel": "station_net_shortwave_7d_mmwe",
+      "value_at_issue": 423.18556458682633,
+      "historical_q90": 505.8080531137725,
+      "historical_percentile": 0.5061665535188957,
+      "exceeds_q90": false,
+      "reference_n": 17676,
+      "reference_years": "2021,2022,2023,2024,2025"
+    },
+    {
+      "channel": "station_positive_energy_residual_7d_mmwe",
+      "value_at_issue": 192.72076908035928,
+      "historical_q90": 189.45794246647907,
+      "historical_percentile": 0.9228692634014655,
+      "exceeds_q90": true,
+      "reference_n": 15558,
+      "reference_years": "2021,2022,2023,2024,2025"
+    },
+    {
+      "channel": "source_freeze_thaw_transitions_7d",
+      "value_at_issue": 0.0,
+      "historical_q90": 16.0,
+      "historical_percentile": 0.0,
+      "exceeds_q90": false,
+      "reference_n": 10336,
+      "reference_years": "2021,2022,2023,2024,2025"
+    },
+    {
+      "channel": "rain24_mm",
+      "value_at_issue": 0.0,
+      "historical_q90": 10.2,
+      "historical_percentile": 0.0,
+      "exceeds_q90": false,
+      "reference_n": 6124,
+      "reference_years": "2021,2022,2023,2024,2025"
+    }
+  ],
+  "channels_exceeding_reference": [
+    "station_positive_energy_residual_7d_mmwe"
+  ],
+  "compound_mean_rank": 0.4613281278266988,
+  "compound_mean_rank_q90": 0.5644518007892201,
+  "compound_reference_exceeded": false,
+  "energy_conversion": "positive measured station flux W/m² ×3600 /334000 J/kg; 1kg/m²=1mm water equivalent",
+  "source_temperature": "station T minus declared lapse rate times source-station elevation difference",
+  "quantity_scope": "station energy potential and lapse-adjusted thermal proxies; no fabricated source melt or pore-pressure measurement",
+  "threshold_selection": "fixed historical q90; not adjusted to make the focal event cross"
+}

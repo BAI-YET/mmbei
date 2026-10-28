@@ -1,0 +1,43 @@
+[
+  {
+    "dataset": 1,
+    "status": "existing_unpacked",
+    "path": "/workspace/scratch/99da163004d1/project_v2_3_1/MathorCup_B_v2/data/raw/unpacked/1"
+  },
+  {
+    "dataset": 2,
+    "status": "existing_unpacked",
+    "path": "/workspace/scratch/99da163004d1/project_v2_3_1/MathorCup_B_v2/data/raw/unpacked/2"
+  },
+  {
+    "dataset": 3,
+    "status": "four_selected_regional_periods",
+    "path": "/workspace/scratch/99da163004d1/project_v2_3_1/MathorCup_B_v2/data/raw/unpacked/3_selected",
+    "files": 4
+  },
+  {
+    "dataset": 4,
+    "status": "existing_unpacked",
+    "path": "/workspace/scratch/99da163004d1/project_v2_3_1/MathorCup_B_v2/data/raw/unpacked/4"
+  },
+  {
+    "dataset": 5,
+    "status": "existing_unpacked",
+    "path": "/workspace/scratch/99da163004d1/project_v2_3_1/MathorCup_B_v2/data/raw/unpacked/5"
+  },
+  {
+    "dataset": 6,
+    "status": "existing_unpacked",
+    "path": "/workspace/scratch/99da163004d1/project_v2_3_1/MathorCup_B_v2/data/raw/unpacked/6"
+  },
+  {
+    "dataset": 7,
+    "status": "existing_unpacked",
+    "path": "/workspace/scratch/99da163004d1/project_v2_3_1/MathorCup_B_v2/data/raw/unpacked/7"
+  },
+  {
+    "dataset": 8,
+    "status": "existing_unpacked",
+    "path": "/workspace/scratch/99da163004d1/project_v2_3_1/MathorCup_B_v2/data/raw/unpacked/8"
+  }
+]

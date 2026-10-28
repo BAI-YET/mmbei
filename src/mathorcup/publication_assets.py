@@ -17,6 +17,11 @@ PURPOSE={
  'Q3_08':'完整2025检验期，三组输入、区间与覆盖过程',
  'Q3_09':'预警进入、维持、续期、解除和有效期',
  'Q3_10':'实际起报天气预报进入Q2条件后的未来驱动敏感性',
+ 'Q2_20':'有效应力临界条件与灾前稳定性；参数试验不是实测强度',
+ 'Q3_01':'Q1特征进入Q2后形成的同一触发评估指数预报',
+ 'Q3_02':'明确发生条件下的事件时间分布及95%区间',
+ 'Q3_03':'主时间模型与均匀先验、强度平方敏感性的区间比较',
+ 'Q3_13':'固定力学模型的天气驱动检验；非真实灾害覆盖率',
  'Q4_11':'六个关键传播阶段；共同色标，来自本次二维数组',
  'Q4_12':'次级预设方量情景的真实1D通量、速度及累计量'
 }
@@ -65,8 +70,18 @@ def make_publication_assets(ctx):
             code='q4_terrain_reconstruction.py;q4_cascade_reconstruction.py;q4_reconstructed_spatial.py;q4_diagnostics.py'
             data='Q4_cascade_reconstruction.json;Q4_reconstruction_geometry.json;Q4_reconstruction_2d_summary.json'
         if stem.startswith('Q2_19'):code='q2_trigger_evaluation.py';data='Q2_source_elevation_lapse_sensitivity.csv;Q2_static_weight_sensitivity.csv'
+        role='supporting_evidence'
+        if stem.startswith('Q2_20'):
+            code='q2_trigger_evaluation.py';data='Q2_source_stability_contract.json;Q2_mechanical_parameter_experiments.csv';role='primary_mechanism_experiment'
+        elif q=='q3' and stem.startswith(('Q3_01','Q3_02','Q3_03','Q3_11')):
+            code='q3_task_aligned.py;question_completion.py';data='Q3_primary_competition_answer.json;Q3_source_initiation_time_distribution.csv;Q3_time_model_comparison.csv';role='primary_conditional_time_model'
+        elif stem.startswith('Q3_05'):
+            code='q3_task_aligned.py';data='Q3_primary_competition_answer.json;Q2_reconstruction_route.csv';role='static_Q2_geometry_inherited_before_Q4'
+        elif stem.startswith(('Q3_R','Q3_07','Q3_08','Q3_09','Q3_10')) or (q=='q4' and not stem.startswith(tuple(f'Q4_{i}' for i in range(14,26)))):
+            role='retained_reference_experiment'
+        elif stem.startswith('Q3_12') or q=='q4':role='post_event_propagation_reconstruction'
         rows.append({'question':q.upper(),'figure':str(path.relative_to(ctx.out)),'purpose':purpose,'generating_code':';'.join('src/mathorcup/'+part for part in code.split(';')),
-            'numerical_evidence':data,'figure_type':'历史观测/物理条件' if q in ('q1','q2') else '气象回测/条件情景' if q=='q3' else '参数情景/数值验证'})
+            'numerical_evidence':data,'experiment_role':role,'figure_type':'历史观测/机制实验' if q in ('q1','q2') else '起动模型实验/气象参考' if q=='q3' else '参数情景/数值验证'})
     with (ctx.out/'FIGURE_INDEX.csv').open('w',encoding='utf-8-sig',newline='') as f:
         w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)
     return rows
@@ -76,10 +91,15 @@ def one_dimensional_grid_review(ctx):
     """Isolate 1D numerical spacing on the SAME fixed candidate topography."""
     import hashlib
     from .q4_solver import simulate_1d
-    out=ctx.folder('q4');p=pd.read_csv(out/'Q4_route_profile.csv');cfg=ctx.cfg['q4']
+    out=ctx.folder('q4')
+    if not (out/'Q4_route_profile.csv').exists():return None
+    p=pd.read_csv(out/'Q4_route_profile.csv');cfg=ctx.cfg['q4']
     fingerprint=hashlib.sha256((Path(__file__).with_name('q4_solver.py').read_text()+json.dumps(cfg,sort_keys=True)+(out/'Q4_route_profile.csv').read_text()).encode()).hexdigest()
     meta=out/'Q4_1d_grid_review_metadata.json';target=out/'Q4_1d_grid_resolution_reliability.csv'
-    if meta.exists() and target.exists() and json.loads(meta.read_text()).get('fingerprint')==fingerprint:return pd.read_csv(target)
+    picture=out/'Q4_13_1d_grid_resolution.png'
+    redraw=ctx.out/'redraw_data/q4/Q4_13_1d_grid_resolution/figure_metadata.json'
+    if (meta.exists() and target.exists() and picture.exists() and redraw.exists()
+            and json.loads(meta.read_text()).get('fingerprint')==fingerprint):return pd.read_csv(target)
     records=[]
     for dx in [30.,60.,120.]:
         s=np.arange(0,float(p.distance_m.max()),dx)

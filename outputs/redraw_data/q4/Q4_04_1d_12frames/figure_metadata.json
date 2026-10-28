@@ -1,0 +1,1313 @@
+{
+  "figure": "q4/Q4_04_1d_12frames.png",
+  "title": "一维泥石流流深演进过程",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "0.0 min",
+      "xlabel": "",
+      "ylabel": "流深 (m)",
+      "xlim": [
+        -1.11,
+        23.31
+      ],
+      "ylim": [
+        -8.005421168203602,
+        168.11384453227564
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_child0",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#205C92",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.6,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [
+        {
+          "collection_id": "C001",
+          "type": "FillBetweenPolyCollection",
+          "label": "_child1",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": 0.2
+        }
+      ],
+      "patches": []
+    },
+    {
+      "axis": "A02",
+      "title": "2.7 min",
+      "xlabel": "",
+      "ylabel": "",
+      "xlim": [
+        -1.11,
+        23.31
+      ],
+      "ylim": [
+        -8.005421168203602,
+        168.11384453227564
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_child0",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#205C92",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.6,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [
+        {
+          "collection_id": "C001",
+          "type": "FillBetweenPolyCollection",
+          "label": "_child1",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": 0.2
+        }
+      ],
+      "patches": []
+    },
+    {
+      "axis": "A03",
+      "title": "5.5 min",
+      "xlabel": "",
+      "ylabel": "",
+      "xlim": [
+        -1.11,
+        23.31
+      ],
+      "ylim": [
+        -8.005421168203602,
+        168.11384453227564
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_child0",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#205C92",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.6,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [
+        {
+          "collection_id": "C001",
+          "type": "FillBetweenPolyCollection",
+          "label": "_child1",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": 0.2
+        }
+      ],
+      "patches": []
+    },
+    {
+      "axis": "A04",
+      "title": "8.2 min",
+      "xlabel": "",
+      "ylabel": "",
+      "xlim": [
+        -1.11,
+        23.31
+      ],
+      "ylim": [
+        -8.005421168203602,
+        168.11384453227564
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_child0",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#205C92",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.6,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [
+        {
+          "collection_id": "C001",
+          "type": "FillBetweenPolyCollection",
+          "label": "_child1",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": 0.2
+        }
+      ],
+      "patches": []
+    },
+    {
+      "axis": "A05",
+      "title": "10.9 min",
+      "xlabel": "",
+      "ylabel": "流深 (m)",
+      "xlim": [
+        -1.11,
+        23.31
+      ],
+      "ylim": [
+        -8.005421168203602,
+        168.11384453227564
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_child0",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#205C92",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.6,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [
+        {
+          "collection_id": "C001",
+          "type": "FillBetweenPolyCollection",
+          "label": "_child1",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": 0.2
+        }
+      ],
+      "patches": []
+    },
+    {
+      "axis": "A06",
+      "title": "13.6 min",
+      "xlabel": "",
+      "ylabel": "",
+      "xlim": [
+        -1.11,
+        23.31
+      ],
+      "ylim": [
+        -8.005421168203602,
+        168.11384453227564
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_child0",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#205C92",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.6,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [
+        {
+          "collection_id": "C001",
+          "type": "FillBetweenPolyCollection",
+          "label": "_child1",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": 0.2
+        }
+      ],
+      "patches": []
+    },
+    {
+      "axis": "A07",
+      "title": "16.4 min",
+      "xlabel": "",
+      "ylabel": "",
+      "xlim": [
+        -1.11,
+        23.31
+      ],
+      "ylim": [
+        -8.005421168203602,
+        168.11384453227564
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_child0",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#205C92",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.6,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [
+        {
+          "collection_id": "C001",
+          "type": "FillBetweenPolyCollection",
+          "label": "_child1",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": 0.2
+        }
+      ],
+      "patches": []
+    },
+    {
+      "axis": "A08",
+      "title": "19.1 min",
+      "xlabel": "",
+      "ylabel": "",
+      "xlim": [
+        -1.11,
+        23.31
+      ],
+      "ylim": [
+        -8.005421168203602,
+        168.11384453227564
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_child0",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#205C92",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.6,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [
+        {
+          "collection_id": "C001",
+          "type": "FillBetweenPolyCollection",
+          "label": "_child1",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": 0.2
+        }
+      ],
+      "patches": []
+    },
+    {
+      "axis": "A09",
+      "title": "21.8 min",
+      "xlabel": "距离 (km)",
+      "ylabel": "流深 (m)",
+      "xlim": [
+        -1.11,
+        23.31
+      ],
+      "ylim": [
+        -8.005421168203602,
+        168.11384453227564
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_child0",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#205C92",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.6,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [
+        {
+          "collection_id": "C001",
+          "type": "FillBetweenPolyCollection",
+          "label": "_child1",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": 0.2
+        }
+      ],
+      "patches": []
+    },
+    {
+      "axis": "A10",
+      "title": "24.6 min",
+      "xlabel": "距离 (km)",
+      "ylabel": "",
+      "xlim": [
+        -1.11,
+        23.31
+      ],
+      "ylim": [
+        -8.005421168203602,
+        168.11384453227564
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_child0",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#205C92",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.6,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [
+        {
+          "collection_id": "C001",
+          "type": "FillBetweenPolyCollection",
+          "label": "_child1",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": 0.2
+        }
+      ],
+      "patches": []
+    },
+    {
+      "axis": "A11",
+      "title": "27.3 min",
+      "xlabel": "距离 (km)",
+      "ylabel": "",
+      "xlim": [
+        -1.11,
+        23.31
+      ],
+      "ylim": [
+        -8.005421168203602,
+        168.11384453227564
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_child0",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#205C92",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.6,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [
+        {
+          "collection_id": "C001",
+          "type": "FillBetweenPolyCollection",
+          "label": "_child1",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": 0.2
+        }
+      ],
+      "patches": []
+    },
+    {
+      "axis": "A12",
+      "title": "30.0 min",
+      "xlabel": "距离 (km)",
+      "ylabel": "",
+      "xlim": [
+        -1.11,
+        23.31
+      ],
+      "ylim": [
+        -8.005421168203602,
+        168.11384453227564
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "_child0",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#205C92",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 1.6,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [
+        {
+          "collection_id": "C001",
+          "type": "FillBetweenPolyCollection",
+          "label": "_child1",
+          "cmap": "viridis",
+          "clim": [
+            null,
+            null
+          ],
+          "alpha": 0.2
+        }
+      ],
+      "patches": []
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 6,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 371,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_C001_paths.csv",
+      "kind": "contours_polygons_and_intervals",
+      "rows": 745,
+      "fields": [
+        "path_id",
+        "vertex_order",
+        "path_code",
+        "x",
+        "y"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_C001_intervals.csv",
+      "kind": "interval_band_lower_upper",
+      "rows": 371,
+      "fields": [
+        "path_id",
+        "x",
+        "y_lower",
+        "y_upper",
+        "x_datetime"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A02_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 0,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 371,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_C001_paths.csv",
+      "kind": "contours_polygons_and_intervals",
+      "rows": 745,
+      "fields": [
+        "path_id",
+        "vertex_order",
+        "path_code",
+        "x",
+        "y"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_C001_intervals.csv",
+      "kind": "interval_band_lower_upper",
+      "rows": 371,
+      "fields": [
+        "path_id",
+        "x",
+        "y_lower",
+        "y_upper",
+        "x_datetime"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A03_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 0,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A03_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 371,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A03_C001_paths.csv",
+      "kind": "contours_polygons_and_intervals",
+      "rows": 745,
+      "fields": [
+        "path_id",
+        "vertex_order",
+        "path_code",
+        "x",
+        "y"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A03_C001_intervals.csv",
+      "kind": "interval_band_lower_upper",
+      "rows": 371,
+      "fields": [
+        "path_id",
+        "x",
+        "y_lower",
+        "y_upper",
+        "x_datetime"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A04_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 0,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A04",
+      "note": ""
+    },
+    {
+      "file": "A04_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 371,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A04",
+      "note": ""
+    },
+    {
+      "file": "A04_C001_paths.csv",
+      "kind": "contours_polygons_and_intervals",
+      "rows": 745,
+      "fields": [
+        "path_id",
+        "vertex_order",
+        "path_code",
+        "x",
+        "y"
+      ],
+      "axis": "A04",
+      "note": ""
+    },
+    {
+      "file": "A04_C001_intervals.csv",
+      "kind": "interval_band_lower_upper",
+      "rows": 371,
+      "fields": [
+        "path_id",
+        "x",
+        "y_lower",
+        "y_upper",
+        "x_datetime"
+      ],
+      "axis": "A04",
+      "note": ""
+    },
+    {
+      "file": "A05_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 6,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A05",
+      "note": ""
+    },
+    {
+      "file": "A05_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 371,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A05",
+      "note": ""
+    },
+    {
+      "file": "A05_C001_paths.csv",
+      "kind": "contours_polygons_and_intervals",
+      "rows": 745,
+      "fields": [
+        "path_id",
+        "vertex_order",
+        "path_code",
+        "x",
+        "y"
+      ],
+      "axis": "A05",
+      "note": ""
+    },
+    {
+      "file": "A05_C001_intervals.csv",
+      "kind": "interval_band_lower_upper",
+      "rows": 371,
+      "fields": [
+        "path_id",
+        "x",
+        "y_lower",
+        "y_upper",
+        "x_datetime"
+      ],
+      "axis": "A05",
+      "note": ""
+    },
+    {
+      "file": "A06_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 0,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A06",
+      "note": ""
+    },
+    {
+      "file": "A06_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 371,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A06",
+      "note": ""
+    },
+    {
+      "file": "A06_C001_paths.csv",
+      "kind": "contours_polygons_and_intervals",
+      "rows": 745,
+      "fields": [
+        "path_id",
+        "vertex_order",
+        "path_code",
+        "x",
+        "y"
+      ],
+      "axis": "A06",
+      "note": ""
+    },
+    {
+      "file": "A06_C001_intervals.csv",
+      "kind": "interval_band_lower_upper",
+      "rows": 371,
+      "fields": [
+        "path_id",
+        "x",
+        "y_lower",
+        "y_upper",
+        "x_datetime"
+      ],
+      "axis": "A06",
+      "note": ""
+    },
+    {
+      "file": "A07_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 0,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A07",
+      "note": ""
+    },
+    {
+      "file": "A07_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 371,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A07",
+      "note": ""
+    },
+    {
+      "file": "A07_C001_paths.csv",
+      "kind": "contours_polygons_and_intervals",
+      "rows": 745,
+      "fields": [
+        "path_id",
+        "vertex_order",
+        "path_code",
+        "x",
+        "y"
+      ],
+      "axis": "A07",
+      "note": ""
+    },
+    {
+      "file": "A07_C001_intervals.csv",
+      "kind": "interval_band_lower_upper",
+      "rows": 371,
+      "fields": [
+        "path_id",
+        "x",
+        "y_lower",
+        "y_upper",
+        "x_datetime"
+      ],
+      "axis": "A07",
+      "note": ""
+    },
+    {
+      "file": "A08_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 0,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A08",
+      "note": ""
+    },
+    {
+      "file": "A08_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 371,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A08",
+      "note": ""
+    },
+    {
+      "file": "A08_C001_paths.csv",
+      "kind": "contours_polygons_and_intervals",
+      "rows": 745,
+      "fields": [
+        "path_id",
+        "vertex_order",
+        "path_code",
+        "x",
+        "y"
+      ],
+      "axis": "A08",
+      "note": ""
+    },
+    {
+      "file": "A08_C001_intervals.csv",
+      "kind": "interval_band_lower_upper",
+      "rows": 371,
+      "fields": [
+        "path_id",
+        "x",
+        "y_lower",
+        "y_upper",
+        "x_datetime"
+      ],
+      "axis": "A08",
+      "note": ""
+    },
+    {
+      "file": "A09_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 13,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A09",
+      "note": ""
+    },
+    {
+      "file": "A09_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 371,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A09",
+      "note": ""
+    },
+    {
+      "file": "A09_C001_paths.csv",
+      "kind": "contours_polygons_and_intervals",
+      "rows": 745,
+      "fields": [
+        "path_id",
+        "vertex_order",
+        "path_code",
+        "x",
+        "y"
+      ],
+      "axis": "A09",
+      "note": ""
+    },
+    {
+      "file": "A09_C001_intervals.csv",
+      "kind": "interval_band_lower_upper",
+      "rows": 371,
+      "fields": [
+        "path_id",
+        "x",
+        "y_lower",
+        "y_upper",
+        "x_datetime"
+      ],
+      "axis": "A09",
+      "note": ""
+    },
+    {
+      "file": "A10_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 7,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A10",
+      "note": ""
+    },
+    {
+      "file": "A10_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 371,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A10",
+      "note": ""
+    },
+    {
+      "file": "A10_C001_paths.csv",
+      "kind": "contours_polygons_and_intervals",
+      "rows": 745,
+      "fields": [
+        "path_id",
+        "vertex_order",
+        "path_code",
+        "x",
+        "y"
+      ],
+      "axis": "A10",
+      "note": ""
+    },
+    {
+      "file": "A10_C001_intervals.csv",
+      "kind": "interval_band_lower_upper",
+      "rows": 371,
+      "fields": [
+        "path_id",
+        "x",
+        "y_lower",
+        "y_upper",
+        "x_datetime"
+      ],
+      "axis": "A10",
+      "note": ""
+    },
+    {
+      "file": "A11_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 7,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A11",
+      "note": ""
+    },
+    {
+      "file": "A11_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 371,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A11",
+      "note": ""
+    },
+    {
+      "file": "A11_C001_paths.csv",
+      "kind": "contours_polygons_and_intervals",
+      "rows": 745,
+      "fields": [
+        "path_id",
+        "vertex_order",
+        "path_code",
+        "x",
+        "y"
+      ],
+      "axis": "A11",
+      "note": ""
+    },
+    {
+      "file": "A11_C001_intervals.csv",
+      "kind": "interval_band_lower_upper",
+      "rows": 371,
+      "fields": [
+        "path_id",
+        "x",
+        "y_lower",
+        "y_upper",
+        "x_datetime"
+      ],
+      "axis": "A11",
+      "note": ""
+    },
+    {
+      "file": "A12_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 7,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A12",
+      "note": ""
+    },
+    {
+      "file": "A12_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 371,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A12",
+      "note": ""
+    },
+    {
+      "file": "A12_C001_paths.csv",
+      "kind": "contours_polygons_and_intervals",
+      "rows": 745,
+      "fields": [
+        "path_id",
+        "vertex_order",
+        "path_code",
+        "x",
+        "y"
+      ],
+      "axis": "A12",
+      "note": ""
+    },
+    {
+      "file": "A12_C001_intervals.csv",
+      "kind": "interval_band_lower_upper",
+      "rows": 371,
+      "fields": [
+        "path_id",
+        "x",
+        "y_lower",
+        "y_upper",
+        "x_datetime"
+      ],
+      "axis": "A12",
+      "note": ""
+    },
+    {
+      "file": "A12_curves_wide_01.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 371,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L001"
+      ],
+      "axis": "A12",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    }
+  ],
+  "decorative_colorbars": [],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

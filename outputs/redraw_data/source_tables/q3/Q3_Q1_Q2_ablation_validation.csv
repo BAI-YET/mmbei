@@ -1,0 +1,4 @@
+model,historical_condition_threshold,precursor_score_at_issuance,precursor_max_in_week,hours_above_own_threshold,first_high_level_warning,interpretation
+Q1+Q2,0.3927317546108908,0.3958614573068357,0.5381142601217372,8,2026-08-25 19:00:00,physical input group ablation; not true-event accuracy
+Q1-only,0.31161378335645556,0.2102994429299919,0.61129538307827,16,2026-08-19 19:00:00,physical input group ablation; not true-event accuracy
+Q2-only,0.5866092600484121,0.6226594748785336,0.654319718917857,15,2026-08-25 20:00:00,physical input group ablation; not true-event accuracy

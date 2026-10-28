@@ -1,0 +1,14 @@
+﻿patch_id,label,x,y,width,height,angle_degree,x_space,y_space
+P001,_nolegend_,0.0,0.0,0.5,0.0,0.0,artist_transform,artist_transform
+P002,_nolegend_,0.5,0.0,0.5,7.0,0.0,artist_transform,artist_transform
+P003,_nolegend_,1.0,0.0,0.5,3.0,0.0,artist_transform,artist_transform
+P004,_nolegend_,1.5,0.0,0.5,0.0,0.0,artist_transform,artist_transform
+P005,_nolegend_,2.0,0.0,0.5,0.0,0.0,artist_transform,artist_transform
+P006,_nolegend_,2.5,0.0,0.5,1.0,0.0,artist_transform,artist_transform
+P007,_nolegend_,3.0,0.0,0.5,0.0,0.0,artist_transform,artist_transform
+P008,_nolegend_,3.5,0.0,0.5,1.0,0.0,artist_transform,artist_transform
+P009,_nolegend_,4.0,0.0,0.5,4.0,0.0,artist_transform,artist_transform
+P010,_nolegend_,4.5,0.0,0.5,3.0,0.0,artist_transform,artist_transform
+P011,_nolegend_,5.0,0.0,0.5,1.0,0.0,artist_transform,artist_transform
+P012,_nolegend_,5.5,0.0,0.5,1.0,0.0,artist_transform,artist_transform
+P013,_nolegend_,6.0,0.0,0.5,3.0,0.0,artist_transform,artist_transform

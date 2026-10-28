@@ -1,0 +1,39 @@
+{
+  "role": "prespecified upper-volume sensitivity, separate from primary",
+  "parameters": {
+    "mu": 0.04,
+    "xi": 2500,
+    "width": 150.0,
+    "volume": 80000000,
+    "duration": 180,
+    "total_seconds": 1800,
+    "cfl": 0.35,
+    "frames": 12,
+    "initial_velocity_m_s": 65.0
+  },
+  "mass": {
+    "injected_m3": 80000000.00000001,
+    "outflow_m3": 1258195.7302583468,
+    "material_in_domain_m3": 78741804.26974168,
+    "relative_absolute_mass_residual": 1.8626451492309567e-16,
+    "numerical_negative_clip_m3": 0.0,
+    "n_steps": 4132,
+    "dx_m": 60.0,
+    "first_arrival_to_coupling_sensor_s": 362.646374237969,
+    "first_arrival_to_downstream_end_s": 432.63910150091544,
+    "coupling_sensor_distance_m": 19680.0,
+    "max_runout_m": 22200.0,
+    "max_runout_fraction_of_route": 1.0,
+    "max_depth_over_time_m": 206.6599719475968,
+    "max_depth_to_assumed_width_ratio": 1.377733146317312,
+    "max_adjacent_bed_step_m": 101.85018009205669,
+    "coarse_steep_dry_front_caution": true,
+    "velocity_statistics_wet_threshold_m": 0.2,
+    "depth_averaging_geometry_caution": true,
+    "max_speed_over_time_m_s": 88.04281906985537,
+    "max_coupling_discharge_m3_s": 70881.1981828373,
+    "initial_velocity_m_s": 65.0,
+    "model_scope": "competition simulation conditional on stated assumptions; not a uniquely identified physical reconstruction"
+  },
+  "primary_case_reaches": false
+}

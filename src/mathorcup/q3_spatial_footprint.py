@@ -65,5 +65,5 @@ def execute_q3_spatial(ctx):
     ax.scatter([xy[0,0],xy[-1,0]],[xy[0,1],xy[-1,1]],c=['#164c6a','#cb5b3e'],s=55,marker='s')
     ax.text(.02,.98,f'基准传播 {runout/1000:.2f} km\n参数范围 {report["sensitivity_runout_range_km"][0]:.2f}-{report["sensitivity_runout_range_km"][1]:.2f} km\n基准条件范围 {union.area/1e6:.2f} km²',transform=ax.transAxes,va='top',fontsize=9,bbox=dict(fc='white',ec='#ccc',alpha=.9))
     ax.set(xlabel='UTM45N 东向坐标 (m)',ylabel='UTM45N 北向坐标 (m)',title='按物理可达性约束的空间预警情景');ax.set_aspect('equal');ax.legend(loc='lower right',fontsize=8)
-    savefig(fig,out/'Q3_05_spatial_warning_distance.png')
+    savefig(fig,out/'Q3_R05_single_stage_spatial_reference.png')
     return report

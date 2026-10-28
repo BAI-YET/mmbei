@@ -1,0 +1,186 @@
+{
+  "figure": "q1/Q1_08_boundary_layer_seasonal_structure.png",
+  "title": "近地层稳定结构的季节变化",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "a  冬夏逆温日变化",
+      "xlabel": "北京时间 (h)",
+      "ylabel": "逆温出现频率 (%)",
+      "xlim": [
+        -1.1500000000000001,
+        24.15
+      ],
+      "ylim": [
+        0.0,
+        100.0
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "冬季",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#6586A8",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 2.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L002",
+          "label": "暖季",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#D67A51",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 2.0,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [],
+      "patches": []
+    },
+    {
+      "axis": "A02",
+      "title": "b  近地层风切变日变化",
+      "xlabel": "北京时间 (h)",
+      "ylabel": "20–2 m风速差 (m/s)",
+      "xlim": [
+        -1.1500000000000001,
+        24.15
+      ],
+      "ylim": [
+        -0.24355000000000002,
+        4.43255
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [
+        {
+          "series_id": "L001",
+          "label": "冬季",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#6586A8",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 2.0,
+          "alpha": null
+        },
+        {
+          "series_id": "L002",
+          "label": "暖季",
+          "x_space": "data",
+          "y_space": "data",
+          "color": "#D67A51",
+          "linestyle": "-",
+          "marker": "None",
+          "linewidth": 2.0,
+          "alpha": null
+        }
+      ],
+      "rasters": [],
+      "collections": [],
+      "patches": []
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 13,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 48,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A02_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 14,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_curves.csv",
+      "kind": "lines_and_markers",
+      "rows": 48,
+      "fields": [
+        "series_id",
+        "series_label",
+        "point_order",
+        "x",
+        "y",
+        "x_datetime",
+        "y_datetime",
+        "x_space",
+        "y_space"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_curves_wide_01.csv",
+      "kind": "wide_aligned_curves",
+      "rows": 24,
+      "fields": [
+        "x",
+        "x_datetime",
+        "x_space",
+        "y_L001",
+        "y_L002"
+      ],
+      "axis": "A02",
+      "note": "同一X网格的一列X、多列Y，可直接导入Origin/Excel；列名中的L编号对应figure_metadata.lines"
+    }
+  ],
+  "decorative_colorbars": [],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

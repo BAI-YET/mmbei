@@ -1,0 +1,44 @@
+{
+  "model_role": "native-DEM nested 2D event reconstruction",
+  "grid_experiments": [
+    {
+      "resolution_m": 30.0,
+      "mass_relative_error": 5.053481640450479e-15,
+      "input_m3": 22115190.457859267,
+      "expected_input_from_1d_m3": 22115190.457859267,
+      "wet_area_km2": 0.6246,
+      "max_depth_m": 82.5777082122815,
+      "max_wet_speed_m_s": 56.212730903439414,
+      "port_neighbourhood_arrival_s": 399.3687345774741,
+      "port_evaluation_radius_m": 120.0,
+      "inlet_cells": 2,
+      "stored_final_m3": 2299023.198827055,
+      "outflow_m3": 19816167.259032324
+    },
+    {
+      "resolution_m": 60.0,
+      "mass_relative_error": 2.5267408202252395e-15,
+      "input_m3": 22115190.457859267,
+      "expected_input_from_1d_m3": 22115190.457859267,
+      "wet_area_km2": 0.6768,
+      "max_depth_m": 69.46535542836294,
+      "max_wet_speed_m_s": 54.018385856633486,
+      "port_neighbourhood_arrival_s": 409.49239576836703,
+      "port_evaluation_radius_m": 120.0,
+      "inlet_cells": 2,
+      "stored_final_m3": 2104828.209056704,
+      "outflow_m3": 20010362.248802505
+    }
+  ],
+  "input_source": "accepted 1D finite-volume interface flux and cumulative volume; no synthetic inlet",
+  "inlet_width_from_calibrated_1d_section_m": 324.84704862976787,
+  "inlet_stage_from_1d_peak_flow_m": 16.534204064224944,
+  "reference_density_for_unit_conversion_kg_m3": 1000,
+  "displayed_intensity": "specific kinetic energy 0.5*u^2 in J/kg, not a measured mixture density",
+  "stage2_friction_parameters": {
+    "mu": 0.0030058597796809978,
+    "xi": 2711.1803234595104,
+    "section_capacity_scale": 3.0000000000000004
+  },
+  "reverse_flux_at_1d_section_m3": 0.0
+}

@@ -1,0 +1,26 @@
+{
+  "source": "official DEM transverse section at model transition",
+  "model_confluence_deposit_m3": 14941015.68677632,
+  "unit_channel_length_m": 100,
+  "interpretation": "geometric occupancy per unit reach; the reporting length is not a measured dam length",
+  "results": [
+    {
+      "relative_fill_height_m": 5.0,
+      "fill_cross_section_area_m2": 242.28515625,
+      "volume_per_100m_channel_m3": 24228.515625,
+      "fraction_of_model_confluence_deposit": 0.0016216110158055496
+    },
+    {
+      "relative_fill_height_m": 10.0,
+      "fill_cross_section_area_m2": 692.28515625,
+      "volume_per_100m_channel_m3": 69228.515625,
+      "fraction_of_model_confluence_deposit": 0.004633454450240041
+    },
+    {
+      "relative_fill_height_m": 20.0,
+      "fill_cross_section_area_m2": 2225.4052734375,
+      "volume_per_100m_channel_m3": 222540.52734375,
+      "fraction_of_model_confluence_deposit": 0.014894605026130285
+    }
+  ]
+}

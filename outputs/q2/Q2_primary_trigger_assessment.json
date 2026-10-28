@@ -1,0 +1,347 @@
+{
+  "task": "Q1-feature-informed statistical trigger assessment with a shared case source",
+  "official_inputs": [
+    "MET/RADM/SOIL/FLUX",
+    "historic temperature",
+    "glacier mask/thickness/slope/velocity",
+    "historical gullies",
+    "DEM"
+  ],
+  "external_satellite_evidence_used": {
+    "product": "Sentinel-1 InSAR LOS deformation, ICIMOD published synthesis",
+    "source_url": "https://www.icimod.org/press-releases/second-major-himalayan-flood-in-seven-weeks-raises-new-questions-about-mountain-risk/",
+    "measurement_period_start": "2026-07-07",
+    "measurement_period_end": "2026-08-24",
+    "los_max_displacement_m": 0.4,
+    "duration_days": 48,
+    "average_los_motion_proxy_mm_day": 8.333,
+    "quantity": "maximum line-of-sight deformation in affected northern slope, not vertical fall or a grid",
+    "research_role": "retrospective external Q2 corroboration only; published after disaster",
+    "publication_date": "2026-10-13",
+    "available_at_2026_issue": false,
+    "cannot_create_pixel_displacement": true
+  },
+  "external_forecast_status": "ACTUAL_DOWNLOADED_ARCHIVED_FORECAST",
+  "external_forecast_summary": {
+    "status": "ACTUAL_ARCHIVED_RUN_PROPAGATED_THROUGH_Q2",
+    "n_future_hours": 41,
+    "model_surface_elevation_m": 5038.0,
+    "model_grid_lonlat": [
+      85.61225,
+      28.295254
+    ],
+    "requested_source_lonlat": [
+      85.52723,
+      28.2877
+    ],
+    "model_grid_offset_km": 8.38202672866548,
+    "valid_count_by_variable": {
+      "temperature_2m": 41,
+      "precipitation": 41,
+      "shortwave_radiation": 41,
+      "freezing_level_height": 0
+    },
+    "freezing_height_above_source_n": null,
+    "precip_future_24h_mm": 10.7,
+    "first6h_max_condition_index": 0.5817842424503689,
+    "temperature_adjustment": "source T = grid T - lapse*(source elevation-model surface elevation)",
+    "spatial_proxy_limitation": "past rain/thermal memory from distant station, future source grid; no site-calibrated correction",
+    "availability_at_issue": "run init + assumed 6h publication latency; actual historic dissemination not independently observed",
+    "used_for_current_issue_sensitivity": true,
+    "energy_forecast_rule": "nonnegative seven-day energy memory lower bound from pre-issue measured contributions; future contributions unknown"
+  },
+  "thresholds": {
+    "baseline_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "reference_quantile": 0.9,
+    "station_elevation_m": 4140,
+    "source_elevation_m": 5132.0390625,
+    "lapse_rate_C_per_km": 6.5,
+    "source_pdd7_warmseason_q90_Cday": 46.51137265625,
+    "rain_24h_nonzero_q90_mm": 10.2,
+    "hourly_nonzero_precip_q90_mm_h": 2.2,
+    "station_positive_energy_7d_q90_mmwe": 189.45794246647907,
+    "station_energy_gate_response_scale_mmwe": 6.6501723921272635,
+    "primary_dynamic_channels": [
+      "rain",
+      "source_positive_temperature",
+      "station_energy_support"
+    ],
+    "threshold_role": "historical_reference_condition",
+    "station_energy_scope": "station positive residual energy equivalent; thermal support proxy",
+    "zero_rain_cannot_activate_rain_trigger": true,
+    "all_quantiles_are_climate_conditions_not_demonstrated_failure_strength": true
+  },
+  "current": {
+    "snapshot_bjt": "2026-08-26 09:00:00",
+    "rain_24h_mm": 0.0,
+    "rain_condition_met": false,
+    "source_pdd7_Cday": 42.33180598958334,
+    "melt_condition_met": false,
+    "trigger_condition_index": 0.6226594748785336,
+    "station_energy_gate": 0.6226594748785336,
+    "spatial_index_max": 0.3594910344829767,
+    "spatial_index_mean": 0.1287577744588446
+  },
+  "model": "I(t)=R(t)*(a+(1-a)*A_Q1(t)); historical statistical critical levels; fixed terrain/material source assumption",
+  "sequential_model": {
+    "model": "I=R*(a+(1-a)*A_Q1)",
+    "assessment_issue_bjt": "2026-08-26 09:00:00",
+    "Q1_answer_sha256": "4d9a0f983e27179472a91a6703b2ee628e95ae62e2c38d095a0f7862b68971da",
+    "Q1_features": [
+      "vpd",
+      "temp_10m",
+      "energy_balance_residual",
+      "sw_down",
+      "vwc_gradient"
+    ],
+    "Q1_weights": {
+      "vpd": 0.24445936941154747,
+      "temp_10m": 0.21685013352132584,
+      "energy_balance_residual": 0.21002224787831925,
+      "sw_down": 0.1657646011543225,
+      "vwc_gradient": 0.16290364803448493
+    },
+    "Q1_definition": {
+      "vpd": {
+        "direction": 1.0,
+        "weight": 0.24445936941154747,
+        "scale_floor": 0.6927813219600001
+      },
+      "temp_10m": {
+        "direction": 1.0,
+        "weight": 0.21685013352132584,
+        "scale_floor": 0.7531607999999997
+      },
+      "energy_balance_residual": {
+        "direction": 1.0,
+        "weight": 0.21002224787831925,
+        "scale_floor": 18.57272456886
+      },
+      "sw_down": {
+        "direction": 1.0,
+        "weight": 0.1657646011543225,
+        "scale_floor": 9.4340595636
+      },
+      "vwc_gradient": {
+        "direction": 1.0,
+        "weight": 0.16290364803448493,
+        "scale_floor": 0.05
+      }
+    },
+    "Q1_selection_role": "case-informed Q1 analysis; no claim of independent cross-event feature selection",
+    "q1_modulation_floor": 0.5,
+    "critical_score": 0.320446031547102,
+    "monitoring_score": 0.22721818384525633,
+    "threshold_role": "historical statistical critical level, explicitly defined for this model",
+    "current_score": 0.38297248421323515,
+    "current_Q1_anomaly": 0.2301185468604463,
+    "current_dynamic_water_heat": 0.6226594748785336,
+    "baseline_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "source_geometry_file": "Q2_reconstruction_geometry.json",
+    "source_sections_file": "Q2_reconstruction_sections.npz",
+    "source_route_file": "Q2_reconstruction_route.csv",
+    "source_geometry_sha256": "29753a05f81c8d53974000eb01bfa1f2abcae67e0d893f026390b8449d0a3193",
+    "source_to_port_km": 23.715,
+    "source_area_km2": 0.7596,
+    "fixed_source_assumption": "case-mapped source, adequate material and connecting terrain; not a blind source-identification claim",
+    "score_is_calibrated_disaster_probability": false,
+    "observations_end_before_issue": true
+  },
+  "mechanics": null,
+  "climate_reference_model": "static source-condition index x multichannel climate-condition index; retained as supporting evidence",
+  "static_weights": {
+    "gravity_shear": 0.4,
+    "ice_thickness": 0.25,
+    "historic_speed": 0.2,
+    "velocity_strain": 0.15
+  },
+  "not_failure_probability": true,
+  "source_proxy_sensitivity": {
+    "elevation_lapse_cases": [
+      {
+        "glacier_elevation_quantile": 0.1,
+        "source_elevation_m": 4104.49560546875,
+        "lapse_C_per_km": 5.0,
+        "source_pdd7_Cday": 88.71223714192708,
+        "historical_pdd7_q90_Cday": 92.88170380859376,
+        "condition_index": 0.6226594748785336
+      },
+      {
+        "glacier_elevation_quantile": 0.1,
+        "source_elevation_m": 4104.49560546875,
+        "lapse_C_per_km": 6.5,
+        "source_pdd7_Cday": 89.08503328450522,
+        "historical_pdd7_q90_Cday": 93.2544999511719,
+        "condition_index": 0.6226594748785336
+      },
+      {
+        "glacier_elevation_quantile": 0.1,
+        "source_elevation_m": 4104.49560546875,
+        "lapse_C_per_km": 8.0,
+        "source_pdd7_Cday": 89.45782942708334,
+        "historical_pdd7_q90_Cday": 93.62729609375,
+        "condition_index": 0.6226594748785336
+      },
+      {
+        "glacier_elevation_quantile": 0.5,
+        "source_elevation_m": 5297.36083984375,
+        "lapse_C_per_km": 5.0,
+        "source_pdd7_Cday": 46.96195393880208,
+        "historical_pdd7_q90_Cday": 51.135203938802086,
+        "condition_index": 0.6226594748785336
+      },
+      {
+        "glacier_elevation_quantile": 0.5,
+        "source_elevation_m": 5297.36083984375,
+        "lapse_C_per_km": 6.5,
+        "source_pdd7_Cday": 34.80966512044271,
+        "historical_pdd7_q90_Cday": 39.05462080281576,
+        "condition_index": 0.6226594748785336
+      },
+      {
+        "glacier_elevation_quantile": 0.5,
+        "source_elevation_m": 5297.36083984375,
+        "lapse_C_per_km": 8.0,
+        "source_pdd7_Cday": 22.916680501302082,
+        "historical_pdd7_q90_Cday": 27.509058268229168,
+        "condition_index": 0.6226594748785336
+      },
+      {
+        "glacier_elevation_quantile": 0.9,
+        "source_elevation_m": 5568.00146484375,
+        "lapse_C_per_km": 5.0,
+        "source_pdd7_Cday": 37.48953206380209,
+        "historical_pdd7_q90_Cday": 41.70535068359375,
+        "condition_index": 0.6226594748785336
+      },
+      {
+        "glacier_elevation_quantile": 0.9,
+        "source_elevation_m": 5568.00146484375,
+        "lapse_C_per_km": 6.5,
+        "source_pdd7_Cday": 22.769773030598962,
+        "historical_pdd7_q90_Cday": 27.370830409749363,
+        "condition_index": 0.6226594748785336
+      },
+      {
+        "glacier_elevation_quantile": 0.9,
+        "source_elevation_m": 5568.00146484375,
+        "lapse_C_per_km": 8.0,
+        "source_pdd7_Cday": 12.815377604166667,
+        "historical_pdd7_q90_Cday": 17.072108203125005,
+        "condition_index": 0.6226594748785336
+      }
+    ],
+    "static_weight_cases": [
+      {
+        "weight_experiment": "reference",
+        "weights": "0.4,0.25,0.2,0.15",
+        "spearman_vs_reference": 1.0,
+        "top20_IoU_vs_reference": 1.0
+      },
+      {
+        "weight_experiment": "equal",
+        "weights": "0.25,0.25,0.25,0.25",
+        "spearman_vs_reference": 0.9728613362635821,
+        "top20_IoU_vs_reference": 0.5988826815642458
+      },
+      {
+        "weight_experiment": "gravity_emphasis",
+        "weights": "0.55,0.15,0.15,0.15",
+        "spearman_vs_reference": 0.9664068988560449,
+        "top20_IoU_vs_reference": 0.6196943972835314
+      },
+      {
+        "weight_experiment": "motion_emphasis",
+        "weights": "0.25,0.2,0.3,0.25",
+        "spearman_vs_reference": 0.9704145738793666,
+        "top20_IoU_vs_reference": 0.5829646017699115
+      }
+    ],
+    "design_role": "declared sensitivity experiments; no disaster labels fitted"
+  },
+  "weather_station_not_nepal_source": true,
+  "release_candidate_regions": [
+    {
+      "upper_score_quantile": 0.8,
+      "selected_score_threshold": 0.5227951755847833,
+      "candidate_area_km2": 0.8226,
+      "candidate_inventory_ice_volume_m3": 80170200.0,
+      "n_pixels": 914,
+      "candidate_centroid_utm_x": 356651.613785558,
+      "candidate_centroid_utm_y": 3129769.753829322,
+      "n_spatial_components": 25
+    },
+    {
+      "upper_score_quantile": 0.85,
+      "selected_score_threshold": 0.5552034956185277,
+      "candidate_area_km2": 0.6552,
+      "candidate_inventory_ice_volume_m3": 66060900.0,
+      "n_pixels": 728,
+      "candidate_centroid_utm_x": 356615.65934065933,
+      "candidate_centroid_utm_y": 3129799.464285714,
+      "n_spatial_components": 19
+    },
+    {
+      "upper_score_quantile": 0.9,
+      "selected_score_threshold": 0.5977544745882407,
+      "candidate_area_km2": 0.4023,
+      "candidate_inventory_ice_volume_m3": 43655400.0,
+      "n_pixels": 447,
+      "candidate_centroid_utm_x": 356517.9697986577,
+      "candidate_centroid_utm_y": 3129952.83557047,
+      "n_spatial_components": 20
+    }
+  ],
+  "time_resolution_reliability": [
+    {
+      "temporal_resolution_h": 1,
+      "fraction_of_time_trigger_index_ge_0p5": 0.44583333333333336,
+      "fraction_of_time_rain_gate_positive": 0.0763888888888889,
+      "n_valid_records": 720
+    },
+    {
+      "temporal_resolution_h": 6,
+      "fraction_of_time_trigger_index_ge_0p5": 0.45,
+      "fraction_of_time_rain_gate_positive": 0.075,
+      "n_valid_records": 120
+    },
+    {
+      "temporal_resolution_h": 24,
+      "fraction_of_time_trigger_index_ge_0p5": 0.4666666666666667,
+      "fraction_of_time_rain_gate_positive": 0.06666666666666667,
+      "n_valid_records": 30
+    }
+  ],
+  "spatial_resolution_reliability": [
+    {
+      "grid_resolution_m": 30,
+      "n_valid_original_pixels": 7152,
+      "spearman_vs_30m": 0.9999999999835991,
+      "high20percent_IoU": 1.0
+    },
+    {
+      "grid_resolution_m": 60,
+      "n_valid_original_pixels": 7058,
+      "spearman_vs_30m": 0.9725141477916287,
+      "high20percent_IoU": 0.77561282212445
+    },
+    {
+      "grid_resolution_m": 120,
+      "n_valid_original_pixels": 6836,
+      "spearman_vs_30m": 0.9335876128315733,
+      "high20percent_IoU": 0.6690997566909975
+    }
+  ]
+}

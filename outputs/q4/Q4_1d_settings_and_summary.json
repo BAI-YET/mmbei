@@ -1,0 +1,43 @@
+{
+  "parameters": {
+    "mu": 0.04,
+    "xi": 2500,
+    "width": 150.0,
+    "volume": 50000000,
+    "duration": 180,
+    "total_seconds": 1800,
+    "cfl": 0.35,
+    "frames": 12,
+    "initial_velocity_m_s": 65.0
+  },
+  "mass": {
+    "injected_m3": 50000000.00000005,
+    "outflow_m3": 0.0,
+    "material_in_domain_m3": 49999999.99999996,
+    "relative_absolute_mass_residual": 1.788139343261717e-15,
+    "numerical_negative_clip_m3": 0.0,
+    "n_steps": 3816,
+    "dx_m": 60.0,
+    "first_arrival_to_coupling_sensor_s": null,
+    "first_arrival_to_downstream_end_s": null,
+    "coupling_sensor_distance_m": 19680.0,
+    "max_runout_m": 14520.0,
+    "max_runout_fraction_of_route": 0.654054054054054,
+    "max_depth_over_time_m": 168.60517730027723,
+    "max_depth_to_assumed_width_ratio": 1.1240345153351816,
+    "max_adjacent_bed_step_m": 101.85018009205669,
+    "coarse_steep_dry_front_caution": true,
+    "velocity_statistics_wet_threshold_m": 0.2,
+    "depth_averaging_geometry_caution": true,
+    "max_speed_over_time_m_s": 74.71967383239571,
+    "max_coupling_discharge_m3_s": 0.0,
+    "initial_velocity_m_s": 65.0,
+    "model_scope": "competition simulation conditional on stated assumptions; not a uniquely identified physical reconstruction"
+  },
+  "path_verified": false,
+  "scenario_only": true,
+  "source_ice_volume_is_not_release_volume": true,
+  "spatial_discretization": "Audusse hydrostatic reconstruction + Rusanov finite-volume; lake-at-rest tested; steep coarse dry-front limitation recorded",
+  "literature_scale_total_avalanche_m3": 103000000,
+  "literature_scale_mobile_debris_m3": 36000000
+}

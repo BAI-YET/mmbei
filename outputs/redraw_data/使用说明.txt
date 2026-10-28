@@ -1,0 +1,19 @@
+﻿绘图数据保留与重绘说明
+
+本附件覆盖85张现有图像。数值从实际绘图对象及模型输出直接导出，没有从PNG反推。
+
+1. 先打开00_重绘数据索引.csv，按图像文件名定位数据目录。CSV采用UTF-8 BOM，Excel/Origin可直接导入。
+2. 曲线优先使用A##_curves_wide_##.csv：一列X、多列Y；A##_curves.csv是完整长表。series_id/列名L编号与figure_metadata.json中的图例对应。
+3. 日期曲线使用x_datetime。x是Matplotlib内部日期数值，不能直接当作Excel日期。原始站点时钟为北京时间。
+4. 柱形和直方图用A##_bars.csv：x、y是矩形起点，width、height是实际绘图宽高。横向柱图数值一般是width，纵向柱图和直方图一般是height。类别标签见A##_ticks.csv。可以用source_tables里的原始数据另选分箱。
+5. 置信/分位阴影用*_intervals.csv的y_lower与y_upper。多边形、等高线和盒图形状的完整顶点保存在*_paths.csv或*_patch_vertices.csv中，点序及path_code必须保留。
+6. 散点用*_scatter.csv。color_value缺失表示原图直接指定颜色；RGBA列给出原图显示颜色，并不代表新的科学变量。
+7. 热图和栅格数值放在shared_rasters/<编号>/values.csv。第一列是row_index，其余列为网格数值，不要把row_index当作数据列。显示掩膜display_mask为1表示原图隐藏该像元，隐藏前的数值仍保留；缺测为空，不填0。
+8. 栅格坐标、单位、行序、像元中心、色标及截断上下限见02_空间栅格图层.csv与figure_metadata.json。色标截断不删除超限原始值。对数色标仍保存原始数值，并未预先取对数。
+9. GeoTIFF中名称带_display者按原图掩膜显示，其他GeoTIFF保留完整原始数值。GIS图优先用GeoTIFF及source_spatial中的GeoPackage/NetCDF。UTM45N为EPSG:32645；经纬度为EPSG:4326。原图中某些轴以米存储、刻度按千米显示，不能据标签自行将原始米坐标再乘1000。
+10. 同一数值矩阵在多图重复使用时只在shared_rasters保存一次，每张图均有明确引用。重绘时保留整个redraw_data目录，不要只复制某张图的子目录。
+11. source_tables保留原有CSV/JSON/NPZ等；csv.gz已另解压为CSV。previews中有对应原PNG和SVG，方便比照。数组NPZ同时保留，普通制图不需要先编程解包NPZ。
+12. Q4参数敏感性图中，叉号y是为展示“未到达”设置的摆放高度，并非到达时间；对应散点CSV用marker_role说明，actual_arrival_time_min保持空值。Q3_01阴影为得分的5%-95%范围，不能当作95%触发时间区间。
+13. 这些数据保留原先证据含义。气象先兆覆盖率不是泥石流实测覆盖率；未到达的时间保持缺失；80百万m³二维情景与50百万m³基准分开，不将两者混用。
+
+代码：src/mathorcup/redraw_export.py在保存图像前导出数值，redraw_catalog.py生成数据索引。可运行python scripts/export_redraw_data.py在隔离目录回放导出，并核对原结果不变。

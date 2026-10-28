@@ -1,0 +1,155 @@
+{
+  "role": "post-event reconstruction calibrated against published event evidence",
+  "calibration_reference": {
+    "url": "https://jms.imde.ac.cn/en/article/doi/10.1007/s11629-026-1482-y",
+    "doi": "10.1007/s11629-026-1482-y",
+    "authors": "Li Hao et al.",
+    "year": 2026,
+    "role": "published_event_reconstruction"
+  },
+  "published_constraints": {
+    "release_volume_m3": 103000000,
+    "source_area_m2": 760000,
+    "source_elevation_m": 5190,
+    "initial_ice_volume_m3": 12600000,
+    "glacier_impact_elevation_m": 4010,
+    "impact_elapsed_s": 30,
+    "confluence_elapsed_s": 130,
+    "retained_deposit_volume_m3": 67000000,
+    "mobile_debris_volume_m3": 36000000,
+    "source_to_port_distance_m": 22800,
+    "confluence_to_port_distance_m": 14200,
+    "confluence_to_port_elapsed_s": 350,
+    "port_peak_discharge_m3_s": 246000,
+    "port_cross_section_mean_velocity_m_s": 36.2
+  },
+  "geometry_file": "Q4_reconstruction_geometry.json",
+  "release_initial_velocity_m_s": 0,
+  "release_spatial_distribution": "official glacier pixels near mapped source, projected to route",
+  "stage1_parameters": {
+    "mu": 0.12,
+    "xi": 1000
+  },
+  "stage2_parameters": {
+    "mu": 0.0030058597796809978,
+    "xi": 2711.1803234595104,
+    "section_capacity_scale": 3.0000000000000004
+  },
+  "capacity_scale_basis": "fit effective cross-section to reconstructed peak area Q/u and propagation constraints; not a surveyed width",
+  "upstream": {
+    "injected_m3": 103000000.0,
+    "outflow_m3": 50941015.68677632,
+    "stored_m3": 52058984.31322385,
+    "relative_mass_error": 1.7360576148172027e-15,
+    "negative_clip_m3": 0.0,
+    "arrival_s": 98.5297401096401,
+    "sensor_arrival_s": 56.11776869015438,
+    "peak_discharge_m3_s": 599305.2307257911,
+    "velocity_at_peak_discharge_m_s": 42.853647244917866,
+    "maximum_depth_m": 110.99179052212303,
+    "maximum_wet_speed_m_s": 106.79342006800873,
+    "steps": 8458,
+    "dx_m": 15.0,
+    "sensor_distance_m": 5940.0,
+    "numerical_method": "first-order Rusanov",
+    "numerical_order": 1,
+    "generous_energy_speed_bound_m_s": 223.5054457942291
+  },
+  "downstream": {
+    "injected_m3": 36000000.0,
+    "outflow_m3": 20979337.70597765,
+    "stored_m3": 15020662.294022378,
+    "relative_mass_error": 8.27842288547092e-16,
+    "negative_clip_m3": 0.0,
+    "arrival_s": 403.47169823523546,
+    "sensor_arrival_s": 349.24015531519444,
+    "peak_discharge_m3_s": 208521.52536476956,
+    "velocity_at_peak_discharge_m_s": 43.264159323074466,
+    "maximum_depth_m": 43.61164860097017,
+    "maximum_wet_speed_m_s": 75.83335702818788,
+    "steps": 28179,
+    "dx_m": 7.5,
+    "sensor_distance_m": 12772.5,
+    "numerical_method": "MUSCL-HLL / SSP-RK2",
+    "numerical_order": 2,
+    "generous_energy_speed_bound_m_s": 158.7300091279988
+  },
+  "mobile_fraction_of_computed_upper_outflow": 0.706699690115232,
+  "published_mobile_fraction_of_release": 0.34951456310679613,
+  "mobile_input_derived_m3": 36000000.0,
+  "deposit_partition_m3": 14941015.68677632,
+  "cascade_volume_residual": 1.8807290827186362e-15,
+  "calibration_objective": {
+    "stage1_deposition_and_transition_constraint": 0.1973392992138249,
+    "stage2_mean_squared_relative_log_error": 0.026030390742350012
+  },
+  "downstream_transit_s": 304.94195812559536,
+  "tongue_elevation_crossing_s": 16.9909958168385,
+  "input_hydrograph": "recorded upstream finite-volume flux times published mobile fraction",
+  "calibration_is_independent_validation": false,
+  "event_clock": {
+    "zero": "initial source release",
+    "numerical_arrival_definition": "first local depth >0.2 m",
+    "reference_source_to_port_elapsed_s": 480,
+    "reference_time_role": "approximate published event reconstruction milestones",
+    "comparison_file": "Q4_calibration_residuals.csv"
+  },
+  "parameter_bound_diagnostics": {
+    "capacity_scale": 3.0000000000000004,
+    "capacity_scale_bounds": [
+      0.5,
+      3.0
+    ],
+    "at_search_bound": true,
+    "capacity_is_field_measurement": false,
+    "all_parameters": [
+      {
+        "parameter": "stage1_mu",
+        "value": 0.12,
+        "lower": 0.12,
+        "upper": 0.24,
+        "at_bound": true
+      },
+      {
+        "parameter": "stage1_xi",
+        "value": 1000.0,
+        "lower": 500.0,
+        "upper": 2500.0,
+        "at_bound": false
+      },
+      {
+        "parameter": "stage2_mu",
+        "value": 0.0030058597796809978,
+        "lower": 0.003,
+        "upper": 0.12,
+        "at_bound": false
+      },
+      {
+        "parameter": "stage2_xi",
+        "value": 2711.1803234595104,
+        "lower": 500.0,
+        "upper": 15000.0,
+        "at_bound": false
+      },
+      {
+        "parameter": "section_capacity_scale",
+        "value": 3.0000000000000004,
+        "lower": 0.5,
+        "upper": 3.0,
+        "at_bound": true
+      }
+    ]
+  },
+  "numerical_formulation": {
+    "upstream": "variable-section Rusanov-Voellmy",
+    "downstream_transport": "MUSCL-HLL with SSP-RK2 transport update",
+    "friction": "dissipative semi-implicit quadratic drag",
+    "parameters_fitted_grid_m": 15.0,
+    "downstream_output_grid_m": 7.5
+  },
+  "calibration_objective_at_fitted_grid": {
+    "stage1_deposition_and_transition_constraint": 0.1973392992138249,
+    "stage2_mean_squared_relative_log_error": 0.03254296298763574
+  },
+  "output_grid_evaluation": "fixed accepted parameters evaluated at the declared finer grid; no retuning"
+}

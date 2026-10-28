@@ -1,0 +1,12 @@
+{
+  "primary_predeclared_Q1_features": [
+    "temp_2m",
+    "sw_down",
+    "vpd_2m"
+  ],
+  "mode": "joint conditions",
+  "Q1_only_threshold": 0.31161378335645556,
+  "Q2_only_threshold": 0.5866092600484121,
+  "current_Q2_static_physical_role": "spatial_prior_only, not a fabricated time-series",
+  "Q1_feature_selection_caution": "Top5 selected after event for explanation; historical meteorological backtest is diagnostic, not fully prospective event validation"
+}

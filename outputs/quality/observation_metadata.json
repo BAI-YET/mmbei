@@ -1,0 +1,9 @@
+{
+  "clock": "Asia/Shanghai UTC+08:00 official site documentation",
+  "no_interpolation": true,
+  "rows": 52584,
+  "columns": 63,
+  "first_valid": "2021-04-23 11:00:00",
+  "last_valid": "2026-08-27 08:00:00",
+  "snapshot_cut": "2026-08-26 09:00:00"
+}

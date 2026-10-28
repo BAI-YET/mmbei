@@ -1,0 +1,87 @@
+{
+  "baseline_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "thresholds": {
+    "pdd_7d": {
+      "q75": 87.2284375,
+      "q90": 91.06422500000001,
+      "q95": 93.706375,
+      "n": 22055,
+      "conditioning": "warm-season baseline"
+    },
+    "rain_24h": {
+      "q75": 5.000000000000001,
+      "q90": 10.4,
+      "q95": 14.6,
+      "n": 6500,
+      "conditioning": "nonzero rainfall only"
+    },
+    "rain_72h": {
+      "q75": 8.999999999999998,
+      "q90": 17.4,
+      "q95": 23.85,
+      "n": 11356,
+      "conditioning": "nonzero rainfall only"
+    },
+    "net_radiation": {
+      "q75": 159.61552858333334,
+      "q90": 182.26935280000004,
+      "q95": 194.32020630416667,
+      "n": 21327,
+      "conditioning": "warm-season baseline"
+    },
+    "vwc_0p1": {
+      "q75": 0.104,
+      "q90": 0.1594614,
+      "q95": 0.186,
+      "n": 22080,
+      "conditioning": "warm-season baseline"
+    },
+    "precip_mm": {
+      "q75": 1.2,
+      "q90": 2.2,
+      "q95": 3.2,
+      "n": 1090,
+      "conditioning": "nonzero rainfall only"
+    }
+  },
+  "snapshot_bjt": "2026-08-26 09:00:00",
+  "event_state": {
+    "pdd_7d": {
+      "pre_issue_value": 87.46958333333333,
+      "q95": 93.706375,
+      "exceeds_q95": false
+    },
+    "rain_24h": {
+      "pre_issue_value": 0.0,
+      "q95": 14.6,
+      "exceeds_q95": false
+    },
+    "rain_72h": {
+      "pre_issue_value": 0.0,
+      "q95": 23.85,
+      "exceeds_q95": false
+    },
+    "net_radiation": {
+      "pre_issue_value": 183.19533275,
+      "q95": 194.32020630416667,
+      "exceeds_q95": false
+    },
+    "vwc_0p1": {
+      "pre_issue_value": 0.0827027,
+      "q95": 0.186,
+      "exceeds_q95": false
+    },
+    "precip_mm": {
+      "pre_issue_value": 0.0,
+      "q95": 3.2,
+      "exceeds_q95": false
+    }
+  },
+  "claim": "Climate candidate thresholds not mechanically measured slope-failure limits."
+}

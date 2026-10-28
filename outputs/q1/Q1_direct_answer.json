@@ -1,0 +1,120 @@
+{
+  "event_window_start": "2026-08-19 09:00:00",
+  "event_window_end": "2026-08-26 08:00:00",
+  "historical_match": "same calendar ±15 days and same clock hour; observed valid years only",
+  "mechanism_top5": [
+    {
+      "answer_rank": 1,
+      "feature": "vpd",
+      "label": "通量塔VPD",
+      "mechanism": "atmospheric_moisture",
+      "rarity_anomaly_score": 0.8890641444951927
+    },
+    {
+      "answer_rank": 2,
+      "feature": "temp_10m",
+      "label": "10 m 气温",
+      "mechanism": "air_temperature",
+      "rarity_anomaly_score": 0.7886532592589552
+    },
+    {
+      "answer_rank": 3,
+      "feature": "energy_balance_residual",
+      "label": "地表能量收支余量",
+      "mechanism": "energy_balance_residual",
+      "rarity_anomaly_score": 0.7638212050712874
+    },
+    {
+      "answer_rank": 4,
+      "feature": "sw_down",
+      "label": "向下短波辐射",
+      "mechanism": "radiation_energy",
+      "rarity_anomaly_score": 0.6028624047734823
+    },
+    {
+      "answer_rank": 5,
+      "feature": "vwc_gradient",
+      "label": "土壤水分梯度",
+      "mechanism": "soil_moisture",
+      "rarity_anomaly_score": 0.5924575229968008
+    }
+  ],
+  "raw_top5_file": "Q1_top5_with_stability.csv",
+  "extreme_summary": [
+    {
+      "feature": "temp_2m",
+      "label": "2 m 气温",
+      "valid_event_hours": 168,
+      "hours_above_matched_q95": 15,
+      "hours_above_matched_q99": 3,
+      "new_matched_record_hours": 0,
+      "longest_consecutive_q95_hours": 6,
+      "event_max": 20.8,
+      "event_max_time_bjt": "2026-08-25 16:00:00",
+      "maximum_matched_percentile": 0.9935483870967742
+    },
+    {
+      "feature": "temp_20m",
+      "label": "20 m 气温",
+      "valid_event_hours": 168,
+      "hours_above_matched_q95": 16,
+      "hours_above_matched_q99": 3,
+      "new_matched_record_hours": 0,
+      "longest_consecutive_q95_hours": 6,
+      "event_max": 19.64,
+      "event_max_time_bjt": "2026-08-25 16:00:00",
+      "maximum_matched_percentile": 0.9935483870967742
+    },
+    {
+      "feature": "vpd",
+      "label": "通量塔VPD",
+      "valid_event_hours": 166,
+      "hours_above_matched_q95": 29,
+      "hours_above_matched_q99": 6,
+      "new_matched_record_hours": 3,
+      "longest_consecutive_q95_hours": 9,
+      "event_max": 21.95717,
+      "event_max_time_bjt": "2026-08-25 16:00:00",
+      "maximum_matched_percentile": 1.0
+    },
+    {
+      "feature": "sw_down",
+      "label": "向下短波辐射",
+      "valid_event_hours": 168,
+      "hours_above_matched_q95": 6,
+      "hours_above_matched_q99": 0,
+      "new_matched_record_hours": 0,
+      "longest_consecutive_q95_hours": 3,
+      "event_max": 1225.1,
+      "event_max_time_bjt": "2026-08-21 14:00:00",
+      "maximum_matched_percentile": 0.9806451612903225
+    },
+    {
+      "feature": "energy_balance_residual",
+      "label": "地表能量收支余量",
+      "valid_event_hours": 167,
+      "hours_above_matched_q95": 15,
+      "hours_above_matched_q99": 5,
+      "new_matched_record_hours": 2,
+      "longest_consecutive_q95_hours": 4,
+      "event_max": 610.16659,
+      "event_max_time_bjt": "2026-08-21 15:00:00",
+      "maximum_matched_percentile": 1.0
+    },
+    {
+      "feature": "rain_24h",
+      "label": "24h累计降水",
+      "valid_event_hours": 168,
+      "hours_above_matched_q95": 0,
+      "hours_above_matched_q99": 0,
+      "new_matched_record_hours": 0,
+      "longest_consecutive_q95_hours": 0,
+      "event_max": 6.399999999999997,
+      "event_max_time_bjt": "2026-08-19 23:00:00",
+      "maximum_matched_percentile": 0.9290322580645162
+    }
+  ],
+  "positive_mean_temperature_days_at_end_of_available_record": 30,
+  "positive_temperature_streak_search_days": 30,
+  "daily_minimum_valid_hours": 18
+}

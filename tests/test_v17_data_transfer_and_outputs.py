@@ -73,9 +73,13 @@ def test_q3_q1_factors_all_transferred_and_two_other_feature_groups_preserved():
         trans=pd.read_csv(f)
         assert set(selected)==set(trans.feature)
         assert len(selected)==5
-        assert not trans.used_by_primary_forward_model.any()
         r=json.loads((ROOT/'outputs/q3/Q3_primary_competition_answer.json').read_text())
-        assert r['inherited_Q1_features']==['temp_2m','sw_down','vpd_2m']
+        q2=json.loads((ROOT/'outputs/q2/Q2_sequential_model_contract.json').read_text())
+        assert r['inherited_Q1_features']==q2['Q1_features']
+        assert trans.used_by_primary_forward_model.tolist()==[f in q2['Q1_features'] for f in trans.feature]
+        reference=ROOT/'outputs/q3/Q3_weather_reference_assessment.json'
+        if reference.exists():
+            assert json.loads(reference.read_text())['inherited_Q1_features']==['temp_2m','sw_down','vpd_2m']
     a=ROOT/'outputs'/'q3'/'Q3_Q1_Q2_ablation_validation.csv'
     if a.exists():
         d=pd.read_csv(a)
@@ -91,7 +95,8 @@ def test_q3_calendar_alarm_is_actually_on_graph_timeline():
     assert 'x_alarm' in src
     assert 'xlim=(left,right)' in src
     assert "-18" not in src  # derived from timestamps, not hardcoded
-    assert (ROOT/'outputs'/'q3'/'Q3_07_feature_group_ablation.png').exists() or not (ROOT/'outputs'/'q3'/'Q3_primary_competition_answer.json').exists()
+    reference=ROOT/'outputs/q3/Q3_weather_reference_assessment.json'
+    if reference.exists():assert (ROOT/'outputs/q3/Q3_07_feature_group_ablation.png').exists()
 
 
 def test_q4_dynamic_pressure_nonnegative_and_density_linear_scaling():

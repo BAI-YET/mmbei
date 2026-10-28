@@ -1,0 +1,12 @@
+{
+  "exit_code": 0,
+  "passed": 103,
+  "failed": 0,
+  "errors": 0,
+  "skipped": 0,
+  "duration_s": 8.766824496000481,
+  "summary": "103 passed in 7.92s",
+  "command": "python -m pytest -q tests",
+  "stdout": "........................................................................ [ 69%]\n...............................                                          [100%]\n103 passed in 7.92s\n",
+  "interpretation": "implementation checks and serialized-data contracts; multi-event forecast validation is separate"
+}

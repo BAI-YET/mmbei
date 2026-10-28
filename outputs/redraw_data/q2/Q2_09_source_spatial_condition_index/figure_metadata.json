@@ -1,0 +1,371 @@
+{
+  "figure": "q2/Q2_09_source_spatial_condition_index.png",
+  "title": "冰川源区地形物源条件分布",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "冰川坡度 (°)",
+      "xlabel": "UTM45N 东向坐标 (m)",
+      "ylabel": "UTM45N 北向坐标 (m)",
+      "xlim": [
+        353457.5,
+        357777.5
+      ],
+      "ylim": [
+        3127932.5,
+        3132042.5
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [],
+      "rasters": [
+        {
+          "image_id": "I001",
+          "raster_id": "615da7a5ab4ca8247f19",
+          "shared_data": "shared_rasters/615da7a5ab4ca8247f19",
+          "shape": [
+            138,
+            145
+          ],
+          "extent": [
+            353457.5,
+            357777.5,
+            3127932.5,
+            3132042.5
+          ],
+          "origin": "upper",
+          "coordinates": "A01_I001_coordinates.csv",
+          "cmap": "YlOrBr",
+          "norm": "Normalize",
+          "vmin": 0.46447762846946716,
+          "vmax": 69.830078125,
+          "alpha": null,
+          "interpolation": "nearest",
+          "raw_coordinate_unit": "m",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": "EPSG:32645",
+          "colorbar_label": "",
+          "GeoTIFF": "A01_I001_georeferenced.tif",
+          "quantity": "冰川坡度",
+          "value_unit": "degree",
+          "GeoTIFF_display": "A01_I001_georeferenced_display.tif"
+        }
+      ],
+      "collections": [],
+      "patches": []
+    },
+    {
+      "axis": "A02",
+      "title": "驱动剪应力代理 (kPa)",
+      "xlabel": "UTM45N 东向坐标 (m)",
+      "ylabel": "",
+      "xlim": [
+        353457.5,
+        357777.5
+      ],
+      "ylim": [
+        3127932.5,
+        3132042.5
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [],
+      "rasters": [
+        {
+          "image_id": "I001",
+          "raster_id": "d5e8986075b0db5402ef",
+          "shared_data": "shared_rasters/d5e8986075b0db5402ef",
+          "shape": [
+            138,
+            145
+          ],
+          "extent": [
+            353457.5,
+            357777.5,
+            3127932.5,
+            3132042.5
+          ],
+          "origin": "upper",
+          "coordinates": "A02_I001_coordinates.csv",
+          "cmap": "magma",
+          "norm": "Normalize",
+          "vmin": 6.263016223907471,
+          "vmax": 428.0876770019531,
+          "alpha": null,
+          "interpolation": "nearest",
+          "raw_coordinate_unit": "m",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": "EPSG:32645",
+          "colorbar_label": "",
+          "GeoTIFF": "A02_I001_georeferenced.tif",
+          "quantity": "驱动剪应力代理",
+          "value_unit": "kPa",
+          "GeoTIFF_display": "A02_I001_georeferenced_display.tif"
+        }
+      ],
+      "collections": [],
+      "patches": []
+    },
+    {
+      "axis": "A03",
+      "title": "地形物源条件指数",
+      "xlabel": "UTM45N 东向坐标 (m)",
+      "ylabel": "",
+      "xlim": [
+        353457.5,
+        357777.5
+      ],
+      "ylim": [
+        3127932.5,
+        3132042.5
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": false,
+      "lines": [],
+      "rasters": [
+        {
+          "image_id": "I001",
+          "raster_id": "8628e9dccc15430f9a40",
+          "shared_data": "shared_rasters/8628e9dccc15430f9a40",
+          "shape": [
+            138,
+            145
+          ],
+          "extent": [
+            353457.5,
+            357777.5,
+            3127932.5,
+            3132042.5
+          ],
+          "origin": "upper",
+          "coordinates": "A03_I001_coordinates.csv",
+          "cmap": "viridis",
+          "norm": "Normalize",
+          "vmin": 0.0,
+          "vmax": 0.9386863268297254,
+          "alpha": null,
+          "interpolation": "nearest",
+          "raw_coordinate_unit": "m",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": "EPSG:32645",
+          "colorbar_label": "",
+          "GeoTIFF": "A03_I001_georeferenced.tif",
+          "quantity": "静态物源条件指数",
+          "value_unit": "无量纲0-1",
+          "GeoTIFF_display": "A03_I001_georeferenced_display.tif"
+        }
+      ],
+      "collections": [],
+      "patches": []
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 17,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I001_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 145,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I001_georeferenced.tif",
+      "kind": "georeferenced_full_raster",
+      "rows": 20010,
+      "fields": [
+        "raster_values"
+      ],
+      "axis": "A01",
+      "note": "original numeric values; display mask is a separate file"
+    },
+    {
+      "file": "shared_rasters/615da7a5ab4ca8247f19/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 20010,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A02_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 17,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_I001_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 145,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A02_I001_georeferenced.tif",
+      "kind": "georeferenced_full_raster",
+      "rows": 20010,
+      "fields": [
+        "raster_values"
+      ],
+      "axis": "A02",
+      "note": "original numeric values; display mask is a separate file"
+    },
+    {
+      "file": "shared_rasters/d5e8986075b0db5402ef/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 20010,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A02",
+      "note": ""
+    },
+    {
+      "file": "A03_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 17,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A03_I001_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 145,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A03",
+      "note": ""
+    },
+    {
+      "file": "A03_I001_georeferenced.tif",
+      "kind": "georeferenced_full_raster",
+      "rows": 20010,
+      "fields": [
+        "raster_values"
+      ],
+      "axis": "A03",
+      "note": "original numeric values; display mask is a separate file"
+    },
+    {
+      "file": "shared_rasters/8628e9dccc15430f9a40/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 20010,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A03",
+      "note": ""
+    }
+  ],
+  "decorative_colorbars": [
+    {
+      "label": "",
+      "ticks": [
+        0.0,
+        10.0,
+        20.0,
+        30.0,
+        40.0,
+        50.0,
+        60.0,
+        70.0
+      ],
+      "vmin": 0.46447762846946716,
+      "vmax": 69.830078125,
+      "norm": "Normalize"
+    },
+    {
+      "label": "",
+      "ticks": [
+        0.0,
+        50.0,
+        100.0,
+        150.0,
+        200.0,
+        250.0,
+        300.0,
+        350.0,
+        400.0,
+        450.0
+      ],
+      "vmin": 6.263016223907471,
+      "vmax": 428.0876770019531,
+      "norm": "Normalize"
+    },
+    {
+      "label": "",
+      "ticks": [
+        0.0,
+        0.2,
+        0.4,
+        0.6000000000000001,
+        0.8,
+        1.0
+      ],
+      "vmin": 0.0,
+      "vmax": 0.9386863268297254,
+      "norm": "Normalize"
+    }
+  ],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

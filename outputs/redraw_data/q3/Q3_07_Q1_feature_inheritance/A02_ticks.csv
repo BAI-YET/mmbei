@@ -1,0 +1,17 @@
+﻿axis,tick_order,plot_coordinate,display_label
+x,0,-0.25,-0.25
+x,1,0.0,0.00
+x,2,0.25,0.25
+x,3,0.5,0.50
+x,4,0.75,0.75
+x,5,1.0,1.00
+x,6,1.25,1.25
+x,7,1.5,1.50
+x,8,1.75,1.75
+x,9,2.0,2.00
+x,10,2.25,2.25
+y,0,0.0,vpd
+y,1,1.0,temp_10m
+y,2,2.0,temp_20m
+y,3,3.0,energy_balance_residual
+y,4,4.0,temp_2m

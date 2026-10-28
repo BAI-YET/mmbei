@@ -1,0 +1,124 @@
+{
+  "figure": "q1/Q1_12_all_factor_multiscale.png",
+  "title": "",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "全部有效因素的多时间尺度有向异常",
+      "xlabel": "",
+      "ylabel": "",
+      "xlim": [
+        -0.5,
+        3.5
+      ],
+      "ylim": [
+        55.5,
+        -0.5
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": true,
+      "lines": [],
+      "rasters": [
+        {
+          "image_id": "I001",
+          "raster_id": "144bc3a4df9e3f3ca71b",
+          "shared_data": "shared_rasters/144bc3a4df9e3f3ca71b",
+          "shape": [
+            56,
+            4
+          ],
+          "extent": [
+            -0.5,
+            3.5,
+            55.5,
+            -0.5
+          ],
+          "origin": "upper",
+          "coordinates": "A01_I001_coordinates.csv",
+          "cmap": "RdBu_r",
+          "norm": "Normalize",
+          "vmin": -1.8327625280160245,
+          "vmax": 1.8327625280160245,
+          "alpha": null,
+          "interpolation": "auto",
+          "raw_coordinate_unit": "plot_axis_units",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": null,
+          "colorbar_label": "MAD Z；灰色为不可估计",
+          "quantity": "有向MAD Z",
+          "value_unit": "无量纲"
+        }
+      ],
+      "collections": [],
+      "patches": []
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 60,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I001_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 56,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "shared_rasters/144bc3a4df9e3f3ca71b/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 224,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A01",
+      "note": ""
+    }
+  ],
+  "decorative_colorbars": [
+    {
+      "label": "MAD Z；灰色为不可估计",
+      "ticks": [
+        -2.0,
+        -1.5,
+        -1.0,
+        -0.5,
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0
+      ],
+      "vmin": -1.8327625280160245,
+      "vmax": 1.8327625280160245,
+      "norm": "Normalize"
+    }
+  ],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

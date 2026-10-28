@@ -1,0 +1,124 @@
+{
+  "figure": "q1/Q1_13_all_factor_redundancy.png",
+  "title": "",
+  "export_stage": "actual Matplotlib artist arrays before savefig; no pixel digitization",
+  "csv_encoding": "UTF-8 with BOM",
+  "missing_values": "blank/NaN; never converted to zero",
+  "time_note": "date strings follow original axis clock; naive station dates are Beijing wall time",
+  "axes": [
+    {
+      "axis": "A01",
+      "title": "全部候选因素的历史同期相关结构（编号同排序图）",
+      "xlabel": "",
+      "ylabel": "",
+      "xlim": [
+        -0.5,
+        55.5
+      ],
+      "ylim": [
+        55.5,
+        -0.5
+      ],
+      "xscale": "linear",
+      "yscale": "linear",
+      "x_is_date": false,
+      "y_is_date": false,
+      "x_inverted": false,
+      "y_inverted": true,
+      "lines": [],
+      "rasters": [
+        {
+          "image_id": "I001",
+          "raster_id": "f04305431f5e02ba297d",
+          "shared_data": "shared_rasters/f04305431f5e02ba297d",
+          "shape": [
+            56,
+            56
+          ],
+          "extent": [
+            -0.5,
+            55.5,
+            55.5,
+            -0.5
+          ],
+          "origin": "upper",
+          "coordinates": "A01_I001_coordinates.csv",
+          "cmap": "RdBu_r",
+          "norm": "Normalize",
+          "vmin": -1.0,
+          "vmax": 1.0,
+          "alpha": null,
+          "interpolation": "auto",
+          "raw_coordinate_unit": "plot_axis_units",
+          "GIS_coordinate_factor": 1.0,
+          "GIS_crs": null,
+          "colorbar_label": "Spearman ρ",
+          "quantity": "Spearman相关系数",
+          "value_unit": "无量纲[-1,1]"
+        }
+      ],
+      "collections": [],
+      "patches": []
+    }
+  ],
+  "datasets": [
+    {
+      "file": "A01_ticks.csv",
+      "kind": "tick_labels",
+      "rows": 112,
+      "fields": [
+        "axis",
+        "tick_order",
+        "plot_coordinate",
+        "display_label"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "A01_I001_coordinates.csv",
+      "kind": "raster_coordinate_vectors",
+      "rows": 56,
+      "fields": [
+        "index",
+        "x_center",
+        "y_center"
+      ],
+      "axis": "A01",
+      "note": ""
+    },
+    {
+      "file": "shared_rasters/f04305431f5e02ba297d/values.csv",
+      "kind": "raster_numeric_matrix",
+      "rows": 3136,
+      "fields": [
+        "row_index",
+        "col_*"
+      ],
+      "axis": "A01",
+      "note": ""
+    }
+  ],
+  "decorative_colorbars": [
+    {
+      "label": "Spearman ρ",
+      "ticks": [
+        -1.0,
+        -0.75,
+        -0.5,
+        -0.25,
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "vmin": -1.0,
+      "vmax": 1.0,
+      "norm": "Normalize"
+    }
+  ],
+  "warnings": [],
+  "source_data_location": "source_tables/<question>",
+  "note": "原始图值完整保存；mask、缺测、未到达与实测/情景含义均保留。"
+}

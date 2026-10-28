@@ -1,0 +1,5 @@
+﻿series_id,series_label,point_order,x,y,x_datetime,y_datetime,x_space,y_space
+L001,_child0,0,2023.0,10.8,,,data,data
+L001,_child0,1,2024.0,9.2,,,data,data
+L001,_child0,2,2025.0,10.2,,,data,data
+L001,_child0,3,2026.0,10.2,,,data,data

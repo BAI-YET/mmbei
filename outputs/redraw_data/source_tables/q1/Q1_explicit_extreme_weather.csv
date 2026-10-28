@@ -1,0 +1,7 @@
+﻿feature,label,valid_event_hours,hours_above_matched_q95,hours_above_matched_q99,new_matched_record_hours,longest_consecutive_q95_hours,event_max,event_max_time_bjt,maximum_matched_percentile
+temp_2m,2 m 气温,168,15,3,0,6,20.8,2026-08-25 16:00:00,0.9935483870967742
+temp_20m,20 m 气温,168,16,3,0,6,19.64,2026-08-25 16:00:00,0.9935483870967742
+vpd,通量塔VPD,166,29,6,3,9,21.95717,2026-08-25 16:00:00,1.0
+sw_down,向下短波辐射,168,6,0,0,3,1225.1,2026-08-21 14:00:00,0.9806451612903225
+energy_balance_residual,地表能量收支余量,167,15,5,2,4,610.16659,2026-08-21 15:00:00,1.0
+rain_24h,24h累计降水,168,0,0,0,0,6.399999999999997,2026-08-19 23:00:00,0.9290322580645162

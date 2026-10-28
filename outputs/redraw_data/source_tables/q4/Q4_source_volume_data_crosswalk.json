@@ -1,0 +1,11 @@
+{
+  "Q2_physical_candidate_ice_inventory_m3_sorted": [
+    43655400.0,
+    66060900.0,
+    80170200.0
+  ],
+  "Q4_effective_mixture_volume_scenario_m3": 50000000.0,
+  "scenario_ratio_to_mid_inventory": 0.756877366187866,
+  "quantity_type_warning": "ice inventory != actual release != downstream water/solid mixture",
+  "Q4_release_parameters_are_assessed_with_sensitivity": true
+}

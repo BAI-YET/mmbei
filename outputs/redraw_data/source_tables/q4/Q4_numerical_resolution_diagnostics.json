@@ -1,0 +1,12 @@
+{
+  "fixed_inlet_and_parameters": true,
+  "physical_endpoints_held_fixed": true,
+  "comparison": "two finest tested grids; sensitivity, not a claim of asymptotic convergence",
+  "fine_dx_m": 3.75,
+  "primary_dx_m": 7.5,
+  "peak_discharge_relative_change": 0.024092092803422505,
+  "arrival_relative_change": 0.011900286953214212,
+  "maximum_depth_relative_change": 0.13176275114408764,
+  "maximum_mass_error": 1.241763432820638e-15,
+  "mass_conservation_and_resolution_reported_separately": true
+}

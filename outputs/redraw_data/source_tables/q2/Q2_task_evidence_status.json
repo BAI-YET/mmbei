@@ -1,0 +1,7 @@
+{
+  "trigger_model_calibrated_on_disaster_occurrence": false,
+  "thresholds_are": "conditional climate exceedance candidates, not measured rock/ice shear strength",
+  "time_reliability": "earlier-year threshold fit + later-year evaluation + update-delay errors",
+  "space_reliability": "gully-type held-out classification + raster scale agreement; neither validates event occurrence",
+  "external_forecast_status": "ACTUAL_DOWNLOADED_ARCHIVED_FORECAST"
+}

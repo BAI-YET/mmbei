@@ -5,3 +5,9 @@
 *.txt text eol=lf
 *.csv text eol=lf
 *.png binary
+*.pdf binary
+
+# Preserve supplied inputs and recorded results byte-for-byte.
+data/** -text
+outputs/** -text
+assets/fonts/** -text
